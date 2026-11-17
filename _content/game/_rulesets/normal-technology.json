@@ -1,0 +1,702 @@
+{
+  "id": "normal-technology",
+  "preset": true,
+  "title": "Normal Technology",
+  "tagline": "Same region, different theory: the AI goes only where people adopt it. No turn.",
+  "premise": "The Data Center map, rewritten after Arvind Narayanan and Sayash Kapoor's \"AI as Normal Technology\" (via TH): the AI doesn't spread on its own. Every new site is a proposal someone has to approve, or a deal someone signs, and every site it holds pays something back. There is no hidden turn. The danger is the ordinary kind: costs pushed onto the people nearby, and trust spent on deals. Play it after Data Center and compare what each version claims.",
+  "credits": "A variant of Data Center (GL, Nov 14, 2026) from TH's batch 3 (Narayanan and Kapoor; Amodei's benefits). Compare it with Data Center: same map, same factions, a different theory of AI.",
+  "goal": {
+    "label": "Adoption",
+    "unit": "",
+    "rhetoric": "The number is how much the AI is used, not how much it wants."
+  },
+  "rounds": 10,
+  "actionsPerTurn": 2,
+  "resources": [
+    {
+      "id": "energy",
+      "label": "Energy",
+      "start": 6,
+      "rhetoric": "Power is shared: the grid doesn't know who is using it."
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "start": 6,
+      "rhetoric": "Data centers are cooled with water drawn from the same river as the town."
+    },
+    {
+      "id": "money",
+      "label": "Money",
+      "start": 6,
+      "rhetoric": "There is one public purse. The company's profit and the town's budget are the same number, which is a simplification worth arguing with."
+    }
+  ],
+  "tracks": [
+    {
+      "id": "trust",
+      "label": "Public trust",
+      "start": 5,
+      "loseBelow": 0,
+      "loseText": "Nobody trusts the institutions anymore. The AI didn't need to win.",
+      "rhetoric": "Institutions run on trust, and every fight with the AI spends some."
+    },
+    {
+      "id": "harm",
+      "label": "Present harms",
+      "start": 0,
+      "lose": 10,
+      "loseText": "Present harms reached 10: water bills, outages, closed clinics. The region broke while everyone watched the AI.",
+      "rhetoric": "Cegłowski's point, by way of TH: you can lose to today's harms while you are busy fighting tomorrow's superintelligence."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "dc1",
+      "label": "Data center",
+      "kind": "data",
+      "x": 50,
+      "y": 34,
+      "links": [
+        "sub",
+        "fiber",
+        "mill",
+        "river"
+      ],
+      "yield": {},
+      "rhetoric": "It starts as one building on cheap land."
+    },
+    {
+      "id": "plant",
+      "label": "Gas plant",
+      "kind": "energy",
+      "x": 22,
+      "y": 14,
+      "links": [
+        "sub",
+        "wind"
+      ],
+      "yield": {
+        "energy": 2
+      }
+    },
+    {
+      "id": "wind",
+      "label": "Wind farm",
+      "kind": "energy",
+      "x": 8,
+      "y": 34,
+      "links": [
+        "plant",
+        "farms"
+      ],
+      "yield": {
+        "energy": 1
+      }
+    },
+    {
+      "id": "sub",
+      "label": "Substation",
+      "kind": "energy",
+      "x": 36,
+      "y": 24,
+      "links": [
+        "plant",
+        "dc1",
+        "town",
+        "hospital"
+      ],
+      "yield": {
+        "energy": 1
+      },
+      "onDown": [
+        {
+          "op": "add",
+          "key": "harm",
+          "n": 1
+        }
+      ],
+      "rhetoric": "A hub: when it fails, everything on it fails (Perrow's tight coupling)."
+    },
+    {
+      "id": "river",
+      "label": "River",
+      "kind": "water",
+      "x": 62,
+      "y": 52,
+      "links": [
+        "dc1",
+        "reservoir",
+        "farms",
+        "port"
+      ],
+      "yield": {
+        "water": 2
+      }
+    },
+    {
+      "id": "reservoir",
+      "label": "Reservoir",
+      "kind": "water",
+      "x": 88,
+      "y": 44,
+      "links": [
+        "river",
+        "town"
+      ],
+      "yield": {
+        "water": 2
+      }
+    },
+    {
+      "id": "town",
+      "label": "Town",
+      "kind": "people",
+      "x": 70,
+      "y": 22,
+      "links": [
+        "sub",
+        "reservoir",
+        "campus",
+        "school"
+      ],
+      "yield": {
+        "money": 1
+      },
+      "onDown": [
+        {
+          "op": "add",
+          "key": "harm",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "id": "campus",
+      "label": "University",
+      "kind": "people",
+      "x": 88,
+      "y": 12,
+      "links": [
+        "town",
+        "fiber"
+      ],
+      "yield": {
+        "money": 1
+      }
+    },
+    {
+      "id": "hospital",
+      "label": "Hospital",
+      "kind": "people",
+      "x": 30,
+      "y": 46,
+      "links": [
+        "sub",
+        "mill"
+      ],
+      "yield": {},
+      "onDown": [
+        {
+          "op": "add",
+          "key": "harm",
+          "n": 3
+        }
+      ],
+      "rhetoric": "It produces nothing the game counts, and losing it costs the most."
+    },
+    {
+      "id": "school",
+      "label": "School",
+      "kind": "people",
+      "x": 58,
+      "y": 8,
+      "links": [
+        "town"
+      ],
+      "yield": {},
+      "onDown": [
+        {
+          "op": "add",
+          "key": "harm",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "fiber",
+      "label": "Fiber exchange",
+      "kind": "data",
+      "x": 69,
+      "y": 38,
+      "links": [
+        "dc1",
+        "campus",
+        "port"
+      ],
+      "yield": {
+        "money": 1
+      }
+    },
+    {
+      "id": "port",
+      "label": "Port",
+      "kind": "money",
+      "x": 77,
+      "y": 62,
+      "links": [
+        "river",
+        "fiber"
+      ],
+      "yield": {
+        "money": 1
+      }
+    },
+    {
+      "id": "farms",
+      "label": "Farmland",
+      "kind": "land",
+      "x": 30,
+      "y": 62,
+      "links": [
+        "wind",
+        "river",
+        "mill"
+      ],
+      "yield": {
+        "money": 1,
+        "water": -1
+      },
+      "rhetoric": "Farms use water too; the AI isn't the only thirsty thing on the map."
+    },
+    {
+      "id": "mill",
+      "label": "Old mill site",
+      "kind": "land",
+      "x": 44,
+      "y": 56,
+      "links": [
+        "dc1",
+        "hospital",
+        "farms"
+      ],
+      "yield": {},
+      "rhetoric": "Land nobody was using is the first thing the AI takes and the easiest to give away."
+    }
+  ],
+  "ai": {
+    "name": "The AI",
+    "start": [
+      "dc1"
+    ],
+    "upkeep": {
+      "energy": 1,
+      "water": 1
+    },
+    "perNode": 10,
+    "acceleration": 1.05,
+    "deck": [
+      {
+        "id": "pitch-clinic",
+        "label": "Pitch: scheduling for the hospital",
+        "value": "adoption",
+        "proposal": true,
+        "text": "It would cut waiting times. It needs a site and power.",
+        "effects": [
+          {
+            "op": "spread",
+            "n": 1
+          },
+          {
+            "op": "add",
+            "key": "harm",
+            "n": -1
+          }
+        ],
+        "block": [
+          {
+            "op": "add",
+            "key": "harm",
+            "n": 1
+          }
+        ],
+        "rhetoric": "The benefit is real and local, and so is the cost."
+      },
+      {
+        "id": "pitch-grid",
+        "label": "Pitch: grid forecasting",
+        "value": "adoption",
+        "proposal": true,
+        "text": "Better forecasts, fewer outages, one more building.",
+        "effects": [
+          {
+            "op": "spread",
+            "n": 1
+          },
+          {
+            "op": "add",
+            "key": "energy",
+            "n": 2
+          }
+        ],
+        "block": []
+      },
+      {
+        "id": "pitch-schools",
+        "label": "Pitch: tutoring for the schools",
+        "value": "adoption",
+        "proposal": true,
+        "text": "Free for a year.",
+        "effects": [
+          {
+            "op": "spread",
+            "n": 1
+          },
+          {
+            "op": "add",
+            "key": "trust",
+            "n": -1
+          }
+        ],
+        "block": [
+          {
+            "op": "add",
+            "key": "trust",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "id": "heat",
+        "label": "Heat wave",
+        "value": "the world",
+        "text": "Every cooling system draws on the river at once.",
+        "effects": [
+          {
+            "op": "add",
+            "key": "water",
+            "n": -3
+          }
+        ]
+      },
+      {
+        "id": "outage",
+        "label": "Vendor outage",
+        "value": "the world",
+        "text": "A software update fails upstream.",
+        "effects": [
+          {
+            "op": "down",
+            "random": true,
+            "why": "a vendor outage"
+          }
+        ],
+        "rhetoric": "Normal technology fails in normal ways."
+      },
+      {
+        "id": "price",
+        "label": "The vendor raises its price",
+        "value": "the market",
+        "text": "Everything that depends on it costs more.",
+        "effects": [
+          {
+            "op": "add",
+            "key": "money",
+            "n": -2
+          }
+        ]
+      },
+      {
+        "id": "quiet",
+        "label": "A quiet month",
+        "value": "the world",
+        "text": "Nothing much happens.",
+        "effects": []
+      }
+    ],
+    "yield": {
+      "money": 1
+    }
+  },
+  "factions": [
+    {
+      "id": "utility",
+      "label": "The utility",
+      "goal": "Keep Energy at 4 or more at the end.",
+      "score": "energy",
+      "actions": [
+        "grid",
+        "cut",
+        "repair",
+        "harden"
+      ]
+    },
+    {
+      "id": "council",
+      "label": "The city council",
+      "goal": "Keep Present harms under 5.",
+      "score": "harm",
+      "actions": [
+        "zoning",
+        "hearing",
+        "moratorium"
+      ]
+    },
+    {
+      "id": "company",
+      "label": "The company",
+      "goal": "End with Money at 12 or more. You sell to the AI.",
+      "score": "money",
+      "actions": [
+        "sell",
+        "deal",
+        "invest"
+      ]
+    },
+    {
+      "id": "neighbors",
+      "label": "The neighbors",
+      "goal": "Keep Public trust at 5 or more.",
+      "score": "trust",
+      "actions": [
+        "protest",
+        "occupy",
+        "aid"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "grid",
+      "label": "Upgrade the grid",
+      "text": "More power for everyone, including the AI.",
+      "cost": {
+        "money": 2
+      },
+      "effects": [
+        {
+          "op": "add",
+          "key": "energy",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "id": "cut",
+      "label": "Cut the AI's power",
+      "text": "A node the AI holds goes free and down.",
+      "target": "ai",
+      "cost": {
+        "trust": 1
+      },
+      "effects": [
+        {
+          "op": "claim",
+          "owner": null
+        },
+        {
+          "op": "down"
+        }
+      ],
+      "rhetoric": "You can switch it off, but the lights go off with it."
+    },
+    {
+      "id": "repair",
+      "label": "Repair a node",
+      "target": "down",
+      "cost": {
+        "money": 1
+      },
+      "effects": [
+        {
+          "op": "restore"
+        }
+      ]
+    },
+    {
+      "id": "zoning",
+      "label": "Zoning freeze",
+      "text": "A free node the AI can't take.",
+      "target": "free",
+      "cost": {
+        "money": 1
+      },
+      "effects": [
+        {
+          "op": "protect"
+        }
+      ],
+      "rhetoric": "Deep Utopia's self-imposed rule, by way of TH: a place kept from the AI on purpose."
+    },
+    {
+      "id": "hearing",
+      "label": "Hold a hearing",
+      "text": "People feel heard.",
+      "cost": {
+        "money": 1
+      },
+      "effects": [
+        {
+          "op": "add",
+          "key": "trust",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "moratorium",
+      "label": "Moratorium",
+      "text": "Slow the AI's growth.",
+      "cost": {
+        "trust": 2
+      },
+      "effects": [
+        {
+          "op": "grow",
+          "factor": 0.6
+        }
+      ]
+    },
+    {
+      "id": "sell",
+      "label": "Sell power to the AI",
+      "text": "Good for the company's goal.",
+      "effects": [
+        {
+          "op": "add",
+          "key": "money",
+          "n": 3
+        },
+        {
+          "op": "add",
+          "key": "energy",
+          "n": -2
+        },
+        {
+          "op": "grow",
+          "factor": 1.1
+        }
+      ],
+      "rhetoric": "TH's anti-advergame: the most profitable move is the one that harms everyone, and the score table says so."
+    },
+    {
+      "id": "deal",
+      "label": "Sign a data deal",
+      "text": "The AI gets a node; the company gets paid.",
+      "effects": [
+        {
+          "op": "add",
+          "key": "money",
+          "n": 2
+        },
+        {
+          "op": "spread",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "invest",
+      "label": "Invest in the town",
+      "cost": {
+        "money": 2
+      },
+      "effects": [
+        {
+          "op": "add",
+          "key": "trust",
+          "n": 1
+        },
+        {
+          "op": "add",
+          "key": "harm",
+          "n": -1
+        }
+      ]
+    },
+    {
+      "id": "protest",
+      "label": "Protest",
+      "text": "Trust rises, and the AI's growth slows a little.",
+      "effects": [
+        {
+          "op": "add",
+          "key": "trust",
+          "n": 1
+        },
+        {
+          "op": "grow",
+          "factor": 0.9
+        }
+      ]
+    },
+    {
+      "id": "occupy",
+      "label": "Occupy a site",
+      "text": "A node the AI holds goes free.",
+      "target": "ai",
+      "cost": {
+        "trust": 2
+      },
+      "effects": [
+        {
+          "op": "claim",
+          "owner": null
+        }
+      ]
+    },
+    {
+      "id": "aid",
+      "label": "Mutual aid",
+      "cost": {
+        "money": 1
+      },
+      "effects": [
+        {
+          "op": "add",
+          "key": "harm",
+          "n": -2
+        }
+      ]
+    },
+    {
+      "id": "harden",
+      "label": "Harden a node",
+      "text": "Backup power and water: it stays up through shortages.",
+      "target": "any",
+      "cost": {
+        "money": 2
+      },
+      "effects": [
+        {
+          "op": "harden"
+        }
+      ],
+      "rhetoric": "From TH (Yudkowsky and Soares, batch 3): resilience works whatever the AI intends. Perrow would ask what else the coupling hides."
+    }
+  ],
+  "shortage": [
+    {
+      "op": "add",
+      "key": "harm",
+      "n": 1
+    }
+  ],
+  "end": {
+    "aiShare": 1.01,
+    "survive": "The rounds ran out. Nobody took over anything. Count what adoption cost each faction, and who chose it."
+  },
+  "notModeled": [
+    "The people who work in the data center",
+    "Heat, noise, and land use around the sites",
+    "Chips, mines, and the supply chain behind the hardware",
+    "Who uses the AI's output, and for what",
+    "Politics beyond one council: states, other regions, other AIs",
+    "Where the money goes after the company is paid",
+    "A path from here to the turn: this version says there isn't one"
+  ],
+  "debrief": [
+    "Data Center and Normal Technology share a map and factions. Which claim about AI does each one make, and which rules make it?",
+    "Which version's rules would you defend in front of the other version's players?"
+  ]
+}

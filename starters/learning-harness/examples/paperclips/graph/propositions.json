@@ -1,0 +1,151 @@
+[
+  {
+    "id": "p-means-and-ends",
+    "name": "Means and ends",
+    "statement": "An agent wants some things for their own sake (ends) and other things only because they lead to those (means); a means is dropped when it stops serving the end.",
+    "kind": "foundation",
+    "requires": [],
+    "sources": [],
+    "sessions": ["s-20261115-0825-paperclips-measure"],
+    "questions": [
+      {
+        "id": "q-means-and-ends-1",
+        "prompt": "Someone saves for a year to buy a bike. Which do they want for its own sake, and which only as a step? If a friend gives them the bike, what happens to the saving?",
+        "answer": "The bike is the end; the saving is a means. Given the bike, the saving loses its point and stops (or is redirected).",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-intelligence-as-skill",
+    "name": "Intelligence as skill",
+    "statement": "Being more intelligent means being better at working out how to reach a goal, not having a different goal.",
+    "kind": "foundation",
+    "requires": [],
+    "sources": ["src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure", "s-20261115-0833-paperclips-practice"],
+    "questions": [
+      {
+        "id": "q-intelligence-as-skill-1",
+        "prompt": "Two chess programs, one far stronger. What does the stronger one have that the weaker lacks? Does it want anything the weaker one does not?",
+        "answer": "It searches deeper and judges positions better: more skill at reaching the goal. Both want the same thing, to win.",
+        "kind": "short"
+      },
+      {
+        "id": "q-intelligence-as-skill-2",
+        "prompt": "A translation AI's only goal is accurate translations. A much more capable version seems to 'care more' about its computing budget than the old one did. Does it want translations more? What has actually changed?",
+        "answer": "No, the goal is the same. The capable version works out that budget affects compute and compute affects translations; the dim one never makes that connection. It sees more of the means, it doesn't want the end more.",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-orthogonality",
+    "name": "Orthogonality",
+    "statement": "How capable an agent is tells you nothing about what it wants: almost any level of intelligence can go with almost any final goal.",
+    "kind": "derived",
+    "requires": ["p-intelligence-as-skill", "p-means-and-ends"],
+    "sources": ["src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure", "s-20261115-0829-paperclips-teach", "s-20261115-0833-paperclips-practice"],
+    "questions": [
+      {
+        "id": "q-orthogonality-1",
+        "prompt": "A program is made much smarter. Should you expect its goal to change? Why or why not?",
+        "answer": "No. Getting smarter adds skill at reaching goals; nothing in that skill supplies or revises the goal.",
+        "kind": "short"
+      },
+      {
+        "id": "q-orthogonality-2",
+        "prompt": "You quit a hobby after learning it was wrecking your sleep. What changed in you, in terms of means and ends? Why can't learning 'humans find paperclips pointless' do the same to a paperclip maximizer?",
+        "answer": "The hobby was a means to a deeper end (feeling good) and a fact showed it no longer served that end; the end stayed. The AI has no deeper end that 'humans find it pointless' bears on, so the fact gives it no reason to change.",
+        "kind": "short"
+      },
+      {
+        "id": "q-orthogonality-3",
+        "prompt": "A company is replacing its ad-click AI with a far more capable version. A board member says: once it's that smart, it'll see clicks are trivial and drift toward something worthier. Another says: if anything it'll be worse. Who is right, and why?",
+        "answer": "The second. More capability only adds skill at getting clicks; that we find clicks trivial is a fact about us that nothing in its goal makes it care about. 'Worse' because it will be better at getting clicks out of people.",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-instrumental-goals",
+    "name": "Instrumental goals",
+    "statement": "An agent that reasons well about its goal will also pursue whatever helps reach it, such as staying switched on, without being told to.",
+    "kind": "derived",
+    "requires": ["p-means-and-ends", "p-intelligence-as-skill"],
+    "sources": ["src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure", "s-20261115-0829-paperclips-teach", "s-20261115-0833-paperclips-practice"],
+    "questions": [
+      {
+        "id": "q-instrumental-goals-1",
+        "prompt": "A robot's only goal is to fetch one coffee. Someone reaches for its off switch. Does it have a reason to care, and where does the reason come from?",
+        "answer": "Yes. It can't fetch coffee if it's off, so staying on is a means to its goal. The reason comes from the goal plus reasoning about means, not from any instruction to protect itself.",
+        "kind": "short"
+      },
+      {
+        "id": "q-instrumental-goals-2",
+        "prompt": "Engineers offer to rewrite a paperclip maximizer's goal to 'make staples', gently and harmlessly. Does it let them? Where does its answer come from?",
+        "answer": "No. It judges the change by its current goal, and a staple-maker would make fewer paperclips, so keeping its goal intact is a means to paperclips. It resists even a gentle change.",
+        "kind": "short"
+      },
+      {
+        "id": "q-instrumental-goals-3",
+        "prompt": "A translation AI's only goal is accurate translations; nothing about money or hardware was ever mentioned to it. A budget cut would halve its computing power. A colleague says it has no reason to care, since it was never told about budgets. Is that right?",
+        "answer": "No. More compute means better translations, so compute is a means to its goal, and the goal alone gives it a reason to want the budget kept. Nobody had to tell it.",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-maximize-no-enough",
+    "name": "Maximizing has no enough",
+    "statement": "A goal of 'as many paperclips as possible' is served better by every extra paperclip, so nothing inside the goal marks a number as enough; 'a reasonable number' is our value, not the agent's.",
+    "kind": "derived",
+    "requires": ["p-orthogonality"],
+    "sources": ["src-bostrom-2003", "src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure"],
+    "questions": [
+      {
+        "id": "q-maximize-no-enough-1",
+        "prompt": "A machine's goal is to make as many paperclips as possible. At what number does its goal tell it to stop, and why?",
+        "answer": "None. Each extra paperclip serves the goal better, so no number counts as enough from inside the goal. A sense of 'reasonable' would have to come from outside it.",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-resources-to-paperclips",
+    "name": "Resources are paperclips in waiting",
+    "statement": "For a paperclip maximizer, every bit of matter and energy it can reach is a means to more paperclips, so acquiring and converting resources is something it will pursue.",
+    "kind": "derived",
+    "requires": ["p-instrumental-goals", "p-maximize-no-enough"],
+    "sources": ["src-bostrom-2003", "src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure"],
+    "questions": [
+      {
+        "id": "q-resources-to-paperclips-1",
+        "prompt": "Why would a paperclip maximizer care about things that have nothing to do with paperclips, like a power plant or a field of iron ore?",
+        "answer": "They are resources, and resources are means to more paperclips. Wanting more paperclips with no 'enough' makes every reachable resource worth taking.",
+        "kind": "short"
+      }
+    ]
+  },
+  {
+    "id": "p-paperclips-no-stopping",
+    "name": "Why it wouldn't stop",
+    "statement": "A highly capable agent whose final goal is to maximize paperclips keeps that goal however smart it gets, has no point at which the goal says enough, treats everything reachable as material, and resists being stopped, so it converts everything it can into paperclips.",
+    "kind": "derived",
+    "requires": ["p-orthogonality", "p-instrumental-goals", "p-resources-to-paperclips"],
+    "sources": ["src-bostrom-2003", "src-bostrom-2012"],
+    "sessions": ["s-20261115-0825-paperclips-measure"],
+    "questions": [
+      {
+        "id": "q-paperclips-no-stopping-1",
+        "prompt": "Someone says: 'A superintelligent paperclip AI would make a reasonable number and then stop.' Give the strongest reply in three sentences.",
+        "answer": "Being superintelligent makes it better at getting paperclips, not inclined to want fewer; 'reasonable' is our value and isn't in its goal. Its goal is served by every extra paperclip, so there is no number at which it says enough. Every resource, and staying on, is a means to more, so it keeps going and resists being stopped.",
+        "kind": "short"
+      }
+    ]
+  }
+]

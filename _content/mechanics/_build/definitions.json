@@ -1,0 +1,3895 @@
+{
+  "_about": "EG's layer on the mechanics inventory (Nov 17, 2026), keyed by MechanicId: definition (EG's words, checked against _content/glossary/README.md), examples (game ids from games.json, one sentence each on what the mechanic does there; sources are pages opened or repo files read; an example with no sources is printed as 'not yet checked'), whyTo / homeClassroom / homeDigital (text and/or proposals for Marlon), related ids. GM's and HI's wording is never copied here; build.mjs reads it from the cards and new-mechanics.json.",
+  "mechanics": {
+    "goal-and-win-condition": {
+      "definition": "The condition, set before play starts, that ends the game and says who has won, lost or drawn. Because it names what players are after, it decides which moves count as good ones.",
+      "examples": [
+        {
+          "game": "chess",
+          "does": "Checkmate ends the game at once, whatever material either side still has, so a player can be far ahead and still lose.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Checkmate"
+          ]
+        },
+        {
+          "game": "monopoly",
+          "does": "The last player who is not bankrupt wins, so the game is won by ruining the others rather than by getting rich.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Monopoly_(game)"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "The players win together by curing all four diseases, and lose together in any of three ways (too many outbreaks, too few disease cubes, too few player cards left to draw).",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI wins when it holds half the region's nodes; the humans survive if the ten rounds run out first, and then check each faction's private goal.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "score-and-points",
+          "singleton-win",
+          "everyone-wins",
+          "timer-and-countdown"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Rewrite a familiar game's goal (tic-tac-toe where three in a row loses, as GM's card has it) to show students that the goal, not the pieces, sets what the game is about.",
+          "In a game about AI, ask who wrote the AI's goal and who can change it; the win condition is where the alignment question becomes a rule.",
+          "Use it as the first question of a close reading: what does this game count as winning, and what does that leave out?"
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Play any short game twice, once with its goal and once with an inverted goal, and compare how people played.",
+          "Groups write a win condition on an index card for a shared board; the class plays whichever card is drawn."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A one-number web page (a shared counter) with an end condition the class sets before play.",
+          "Ask Claude to change only the win condition of a small browser game and play the two versions side by side."
+        ]
+      }
+    },
+    "core-loop": {
+      "definition": "The short cycle of actions a player repeats throughout a game, around which the rest of the game is built. Each pass through the loop changes the state a little and sets up the next pass.",
+      "examples": [
+        {
+          "game": "universal-paperclips",
+          "does": "Make clips, sell them, buy wire and clip-making machines with the money, make more clips; later stages keep the loop and change what it is made of.",
+          "sources": [
+            "_content/game-state/paperclips.md"
+          ]
+        },
+        {
+          "game": "tetris",
+          "does": "A piece falls, the player turns and places it, full lines clear, and the next piece falls.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tetris"
+          ]
+        },
+        {
+          "game": "league-of-legends",
+          "does": "Kill minions for gold, go back to base to buy items, return to fight stronger; the ENGL 189VG brainstorm names it as an example of a loop.",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Each round the AI draws a card, upkeep runs, then each faction acts; ten rounds of the same cycle.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs",
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "nested-loops",
+          "incremental-growth",
+          "turn-order"
+        ]
+      },
+      "whyTo": {
+        "text": "The ENGL 189VG team's brainstorm asks \"what would be a loop that's not combat?\"",
+        "proposals": [
+          "Have students name the core loop of a game they know in one line, then name the loop of a course (read, discuss, write, get feedback) and compare.",
+          "Use the loop as the unit of a game design exercise: build the smallest loop that is fun to repeat three times before adding anything else."
+        ],
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Draw the loop as a circle of three or four verbs on 11x17 paper and play it with tokens for five passes.",
+          "Run a round of the week's game on paper, with one person reading out each phase of the loop."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Play Universal Paperclips for ten minutes and write down the loop each time it changes.",
+          "Ask Claude to build a single-page game whose only content is one loop, then add one thing to it."
+        ]
+      }
+    },
+    "score-and-points": {
+      "definition": "A running number that turns what players do into one measure, so progress can be compared between players, or between one attempt and the next.",
+      "examples": [
+        {
+          "game": "pac-man",
+          "does": "Dots, power pellets, ghosts and fruit each add points, and eating ghosts in a row makes each one worth more.",
+          "sources": [
+            "https://www.arcade-museum.com/Videogame/pac-man"
+          ]
+        },
+        {
+          "game": "scrabble",
+          "does": "Each letter has a point value and premium squares multiply it, so where a word goes can matter more than which word it is.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Scrabble"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Public trust and present harms are tracks, and each faction's private goal is a threshold on one number (Energy, harms, Money or trust).",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "goal-and-win-condition",
+          "private-metric",
+          "achievements-and-badges"
+        ],
+        "technologies": [
+          "whiteboards"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Pair it with Nguyen's \"value capture\": what happens when a number stands in for what you care about (a grade, a citation count)?",
+          "Ask students to score a game two ways and see how the scoring changes the play."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A tally on the whiteboard, with the rule for points written beside it so the class can argue with it.",
+          "Give each group a different scoring rule for the same task and compare what they did."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A shared spreadsheet or form whose total updates live on the projector.",
+          "A small web page that shows one score and the rule that produces it, editable by the class."
+        ]
+      }
+    },
+    "timer-and-countdown": {
+      "definition": "A limit on time, kept by a clock or by a number of rounds or cards, after which play stops or something happens. It makes waiting cost something and forces decisions.",
+      "examples": [
+        {
+          "game": "boggle",
+          "does": "A sand timer of about three minutes gives every player the same short window to find words.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Boggle"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "The player deck works as a clock: if a player has to draw two cards and fewer than two are left, everyone loses.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Ten rounds (twelve in The Committee) set the length of play; the humans survive if the AI is still under half the map when they run out.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json",
+            "_content/game/_rulesets/committee.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "real-time-pressure",
+          "turn-time",
+          "escalation"
+        ],
+        "technologies": [
+          "studio-screen"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A visible countdown makes a station rotation into a game: everyone sees how long is left and plans for it.",
+          "Compare a timer in seconds with a timer in rounds to show the difference between real-time and turn-based play."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A sand timer or a phone timer on the document camera.",
+          "A deck of cards as the clock: when the last card is drawn, the activity ends."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A full-screen countdown on the projector.",
+          "A round counter in a shared doc that the facilitator advances."
+        ]
+      }
+    },
+    "turn-order": {
+      "definition": "The rule for who acts when: players act one at a time, in a fixed or changing sequence, so each move can be seen and answered before the next.",
+      "examples": [
+        {
+          "game": "chess",
+          "does": "White moves first and the players alternate, one move each.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chess"
+          ]
+        },
+        {
+          "game": "catan",
+          "does": "In setup each player places a settlement in turn, then a second one in reverse order, so the player who placed first places last.",
+          "sources": [
+            "https://rulespal.com/catan/rulebook"
+          ]
+        },
+        {
+          "game": "civilization",
+          "does": "Every player and computer civilization moves its units during its turn, and the world changes only when the turn ends.",
+          "sources": [
+            "https://www.gamepressure.com/sidmeierscivilization6/gameplay/z192bd"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's phase comes first in every round, then upkeep, then each faction acts in turn.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "real-time-pressure",
+          "turn-time",
+          "nested-loops"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Turn order is the easiest rule to change in a class remix: who goes first, and does the AI go before or after the humans?",
+          "Turn-based play gives time to talk between moves, which is what a discussion-based class needs."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A talking token passed around the table.",
+          "Name cards in a stack; the top card speaks, then goes to the bottom."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A hotseat page that shows whose turn it is (the week's game at /game/play does this).",
+          "A shared doc with one row per turn, filled in order."
+        ]
+      }
+    },
+    "incremental-growth": {
+      "definition": "Numbers that rise by themselves over time, usually faster and faster, while the player's choices change how fast they grow rather than the numbers directly.",
+      "examples": [
+        {
+          "game": "cookie-clicker",
+          "does": "Each building bakes cookies every second, and buying more buildings raises the rate rather than the count.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cookie_Clicker"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "Autoclippers and later factories make clips without the player clicking, and the player's job becomes setting how fast that happens.",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's goal is one number in petaflops with an acceleration of 1.25, so it grows faster each round.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "engine-building",
+          "automate-this",
+          "escalation",
+          "come-back-later"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Show compound growth by feel rather than by formula: students watch a number run away from them.",
+          "Use it to talk about delegated play (Fizek): when the game plays itself, what is left for the player?"
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A jar that gets one bean per minute, then two, then four; students decide when to spend beans to change the rate.",
+          "A doubling chart on the board updated every round."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Play Cookie Clicker or Universal Paperclips for ten minutes and graph the number.",
+          "A one-page counter built with Claude that grows on its own and has one upgrade button."
+        ]
+      }
+    },
+    "escalation": {
+      "definition": "Pressure that rises as the game goes on: each round asks more, moves faster or hits harder than the last, so the game gets harder toward its end.",
+      "examples": [
+        {
+          "game": "tetris",
+          "does": "Pieces fall faster as the player clears lines, so the same placing decision gets less and less time.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tetris"
+          ]
+        },
+        {
+          "game": "space-invaders",
+          "does": "The invaders speed up as fewer of them remain, so the end of a wave is the hardest part.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Space_Invaders"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "Each epidemic card raises the infection rate and puts the cities already drawn back on top of the infection deck.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's growth multiplies by its acceleration each round, and the turn card multiplies it again.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "incremental-growth",
+          "director",
+          "cascade-failure"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Give a session a rising curve: the first round is easy and the last one asks the most.",
+          "Use it to compare the AI as a sudden turn with the AI as steady escalation."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Each round, add one more card to what each group must answer.",
+          "Shorten the timer by thirty seconds each round."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A slideshow whose slides advance faster each round.",
+          "A web counter whose step size grows."
+        ]
+      }
+    },
+    "chance": {
+      "definition": "A random device (dice, a shuffled deck, a spinner, a random number) decides part of what happens, so players plan for odds rather than certainties.",
+      "examples": [
+        {
+          "game": "yahtzee",
+          "does": "A player rolls five dice up to three times a turn, keeping some between rolls, and chooses which scoring box the result fills.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Yahtzee"
+          ]
+        },
+        {
+          "game": "the-game-of-life",
+          "does": "A spinner decides how far you move; the ENGL 189VG planning names 'rolling dice and spinning spinner' as a difference worth noticing.",
+          "sources": [
+            "_content/game-state/game-of-life.md",
+            "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+          ]
+        },
+        {
+          "game": "risk",
+          "does": "Dice decide each battle, the attacker rolling up to three and the defender up to two.",
+          "sources": [
+            "https://officialgamerules.org/game-rules/risk/"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's deck is shuffled, so the humans know what is in it but not the order.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "push-your-luck",
+          "seeded-map",
+          "deck-building-and-the-draw"
+        ],
+        "technologies": [
+          "printed-cards"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "The dice-versus-spinner comparison from the ENGL 189VG planning: the same randomness through a different object feels different, which is a close-reading exercise.",
+          "Ask what chance hides: who benefits when outcomes look like luck?"
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Dice, a coin, or a deck of index cards.",
+          "Draw names or prompts from a hat."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A random picker page on the projector.",
+          "A seeded random draw, so every group gets the same sequence (see Seeded world)."
+        ]
+      }
+    },
+    "hidden-information": {
+      "definition": "Part of the game state is kept from some players (a hand of cards, a face-down piece, a secret goal), so players act on guesses and read each other.",
+      "examples": [
+        {
+          "game": "texas-holdem",
+          "does": "Each player's two hole cards are private and the five community cards are shared, so betting is a claim about cards no one else can see.",
+          "sources": [
+            "_content/game-state/texas-holdem.md"
+          ]
+        },
+        {
+          "game": "stratego",
+          "does": "Each piece's rank faces its owner only, and is revealed when it attacks or is attacked.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Stratego"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The turn card is hidden in the AI's deck, and each faction holds a private goal.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "asymmetric-information",
+          "hidden-role-and-social-deduction",
+          "fog-of-war-and-exploration",
+          "the-tap"
+        ],
+        "technologies": [
+          "phones",
+          "printed-cards"
+        ]
+      },
+      "whyTo": {
+        "text": "Marlon on dealing a hand with NFC cards: \"a revealing of asymmetrical information\" (Nov 17, 06:01, voice agent's record, Slack #mk-work-in-progress).",
+        "proposals": [
+          "Give each group a private brief before a discussion, so the discussion becomes finding out what others know.",
+          "Use it to show the difference between a game state and a player's view of it (template, instance, state, view)."
+        ],
+        "sources": [
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261117-morning-mechanics-entries-nfc-and-the-color-agents.md"
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Folded cards dealt face down, one per seat.",
+          "Envelopes with private goals opened at the start and revealed at the end."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Each player opens a private link or taps an NFC card to see their hand on their phone.",
+          "A shared doc with one private tab per group."
+        ]
+      },
+      "relatedNotes": {
+        "phones": "a private screen per player"
+      }
+    },
+    "voting-and-the-collective-decision": {
+      "definition": "The players decide together by vote, and the result binds everyone, including those who voted against it.",
+      "examples": [
+        {
+          "game": "quiplash",
+          "does": "Players and the audience vote between two answers to a prompt on their phones, and the votes are the points.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Jackbox_Party_Pack_2"
+          ]
+        },
+        {
+          "game": "werewolf",
+          "does": "Each day the village votes to eliminate one player, without knowing who the werewolves are.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mafia_(party_game)"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "An AI proposal waits for the humans to approve or block it, until the turn card, after which its proposals pass without a vote.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "oversight-branch",
+          "treacherous-turn",
+          "disclosure-rule",
+          "the-spect-actor"
+        ],
+        "technologies": [
+          "phones",
+          "studio-screen"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A vote makes every student a player at once, which suits a large room.",
+          "Use it to stage governance: a committee that votes on an AI's requests is the Stafford workshop's subject."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Hands up, or colored cards held up at once.",
+          "Sticky dots on options on the wall."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A poll in Slack or a form, shown live.",
+          "Phones voting on a shared web page."
+        ]
+      }
+    },
+    "cooperation": {
+      "definition": "All players are on one side, against the game itself, and win or lose together.",
+      "examples": [
+        {
+          "game": "pandemic",
+          "does": "The players race the player deck together; each is dealt a different role, and they win or lose as one team.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "hanabi",
+          "does": "Players hold their cards facing outward, so each sees everyone's hand but their own, and must build fireworks together from limited hints.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hanabi_(card_game)"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The factions share the region and lose together if the AI takes half of it, but each also has a private goal, so the cooperation is partial.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "everyone-wins",
+          "roles-and-role-swap",
+          "asymmetric-information"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A cooperative game lets a class practice coordination without anyone losing to a classmate.",
+          "Semi-cooperation (shared loss, private goals) is a model for committees and coalitions."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "The class against the clock: one shared goal on the board.",
+          "Hanabi with index cards."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A shared progress bar the whole room fills.",
+          "An online co-op puzzle played on the projector."
+        ]
+      }
+    },
+    "roles-and-role-swap": {
+      "definition": "Each player has a role with its own powers, limits or goal, so the same game asks different things of different seats; some games let roles change hands.",
+      "examples": [
+        {
+          "game": "pandemic",
+          "does": "Each player is dealt a role card (such as the Medic or the Scientist) whose special abilities change how some actions work.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "puerto-rico",
+          "does": "Each round players choose roles in turn, and the chosen role's action applies to everyone, with a bonus for the one who chose it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Four factions (the utility, the city council, the company, the neighbors) each have their own actions and goal.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "faction-card",
+          "asymmetric-information",
+          "hidden-role-and-social-deduction"
+        ],
+        "technologies": [
+          "printed-cards",
+          "phones"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Roles let students argue from a position they do not hold, as in a role-play or a moot.",
+          "Swap roles halfway so each group has to play against its own earlier strategy."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Role cards dealt at the start, with one action written on each.",
+          "Name tents with the role on one side."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Each group opens its role page on a laptop.",
+          "A random role assigner on the projector."
+        ]
+      }
+    },
+    "trading-and-negotiation": {
+      "definition": "Players exchange resources, promises or favors on terms they settle by talking, rather than by a fixed rule.",
+      "examples": [
+        {
+          "game": "catan",
+          "does": "On your turn you may trade resource cards with any player at any rate you agree, or with the bank at a fixed rate.",
+          "sources": [
+            "https://rulespal.com/catan/rulebook"
+          ]
+        },
+        {
+          "game": "monopoly",
+          "does": "Players can trade properties and cash in any deal they agree on, and trading is a key way to complete a color set.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Monopoly_(game)"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The company's 'Sign a data deal' gives the AI a node and the company money, a trade between a faction and the AI.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "alliance-and-betrayal",
+          "resource-management",
+          "profitable-harm"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Trading puts talk at the center of play, which suits classes that are about argument.",
+          "Use it to show how an exchange both sides want can still hurt a third party."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Colored paper as resources, with a two-minute trading window each round.",
+          "Contracts written on index cards and signed."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A shared ledger in a spreadsheet.",
+          "Direct messages between groups during a timed trading phase."
+        ]
+      }
+    },
+    "resource-management": {
+      "definition": "Players hold limited amounts of things (money, food, energy, time) and decide what to spend, save or convert, knowing that what goes to one goal is lost to another.",
+      "definitionSources": [
+        "_content/glossary/README.md"
+      ],
+      "description": "Costikyan separates resources, which you manage to reach your goals, from tokens, which you move to manage them (as quoted in the glossary).",
+      "descriptionSources": [
+        "_content/glossary/README.md"
+      ],
+      "examples": [
+        {
+          "game": "catan",
+          "does": "Five resources come from dice rolls on the hexes you border, and every road, settlement and city costs a set mix of them.",
+          "sources": [
+            "https://rulespal.com/catan/rulebook"
+          ]
+        },
+        {
+          "game": "civilization",
+          "does": "Each city turns its land into food, production and gold, and the player chooses what each city works on.",
+          "sources": [
+            "https://www.carlsguides.com/strategy/civilization5/cities/"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Energy, water and money start at six each and are shared; the AI's nodes draw upkeep in energy and water.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "bottleneck",
+          "engine-building",
+          "trading-and-negotiation"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Make an abstract constraint concrete: a budget, a water supply, a week's hours.",
+          "Ask what the game counts as a resource and what it leaves out (see The not-modeled list)."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Poker chips or paper clips as the resources, with a price list on the board.",
+          "Each group gets a fixed number of minutes of the facilitator's time to spend."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A spreadsheet with starting amounts and a formula for upkeep.",
+          "A web game state with a few numbered resources, edited through Claude Code."
+        ]
+      }
+    },
+    "territory-and-area-control": {
+      "definition": "Players compete to hold parts of a board or map, and holding them brings points, income or power.",
+      "examples": [
+        {
+          "game": "go",
+          "does": "Players place stones to surround empty points, and the larger surrounded territory wins.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Go_(game)"
+          ]
+        },
+        {
+          "game": "risk",
+          "does": "Holding a whole continent at the start of your turn brings extra armies.",
+          "sources": [
+            "_content/game-state/risk.md"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI spreads across fourteen linked nodes and wins when it holds half of them; zoning freezes and occupations take nodes back.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "movement-and-position",
+          "singleton-win",
+          "spatial-story"
+        ],
+        "technologies": [
+          "paper-11x17",
+          "overhead-camera",
+          "fiducial-markers"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A map makes the spread of something (an AI's data centers, a disease, an idea) visible at a glance.",
+          "Use it to raise 4X and the colonial imagination (Marlon's concept 24, Nov 17 inventory)."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "An 11x17 map with sticky notes for held places.",
+          "Tape a grid on a table and play with coins."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A node graph on the projector whose nodes change color when held.",
+          "A shared map in a slide deck."
+        ]
+      },
+      "relatedNotes": {
+        "paper-11x17": "a place-setting-size map"
+      }
+    },
+    "deck-building-and-the-draw": {
+      "definition": "What players can do comes from cards drawn from a deck; in deck-building games players change that deck during play, adding, removing or upgrading cards that shape their later turns.",
+      "examples": [
+        {
+          "game": "dominion",
+          "does": "Every player starts with the same small deck and buys cards from a shared supply into it, so each deck becomes a different strategy.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dominion_(card_game)"
+          ]
+        },
+        {
+          "game": "slay-the-spire",
+          "does": "After each fight the player adds a card to their deck or skips it, and the deck is what they fight with.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Slay_the_Spire"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's behavior is a deck of ten cards, each a move tagged with the goal it serves, one of them the hidden turn.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "chance",
+          "convergent-values",
+          "treacherous-turn",
+          "engine-building"
+        ],
+        "technologies": [
+          "printed-cards"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A deck is an easy way to write an AI's behavior that students can read, shuffle and edit.",
+          "Have students add one card to the AI's deck and argue for what it says about AI."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Index cards with one action each, shuffled.",
+          "Each group writes three cards for a shared deck."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A JSON deck in a ruleset file, edited through Claude Code (the week's game).",
+          "A shuffled slide deck drawn one slide at a time."
+        ]
+      }
+    },
+    "interruption-and-event-cards": {
+      "definition": "An event from outside the players' plans breaks into play and has to be dealt with: a windfall, a disaster, a rule change for one round.",
+      "examples": [
+        {
+          "game": "monopoly",
+          "does": "Landing on Chance or Community Chest draws a card that pays, charges or moves you.",
+          "sources": [
+            "_content/game-state/monopoly.md"
+          ]
+        },
+        {
+          "game": "the-oregon-trail",
+          "does": "Random events (illness, a broken wagon part) interrupt the journey and cost supplies or time.",
+          "sources": [
+            "https://died-of-dysentery.com/oregon-trail.html"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "Epidemic cards shuffled into the player deck interrupt a turn and raise the infection rate.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The AI's card each round breaks into the humans' plans before they act.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "chance",
+          "director",
+          "escalation"
+        ],
+        "technologies": [
+          "printed-cards"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "A facilitator can inject an event card to change a discussion's direction mid-session.",
+          "Event cards make a simulation responsive to news: write this week's headline as a card."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A stack of event cards the facilitator draws from at set times.",
+          "A student acts as the event deck and reads one out each round."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A Slack message posted mid-activity as the event.",
+          "A random event button on the game page."
+        ]
+      }
+    },
+    "irreversible-choice": {
+      "definition": "A decision that cannot be taken back, so its consequences shape the rest of the game.",
+      "examples": [
+        {
+          "game": "mass-effect",
+          "does": "On Virmire the player must leave one of two squad members to die, and that choice carries into the sequels.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ashley_Williams_(Mass_Effect)"
+          ]
+        },
+        {
+          "game": "pandemic-legacy",
+          "does": "Players put stickers on the board and tear up cards, so a choice in one game changes every game after it.",
+          "sources": [
+            "https://rulespal.com/pandemic-legacy-season-1/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Once the turn card is drawn, the AI's proposals pass without a vote for the rest of the game.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs",
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "treacherous-turn",
+          "rewind-and-do-over",
+          "multiple-endings"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Make students commit in writing before they see the outcome, then discuss the commitment.",
+          "Use it to contrast games (where you can restart) with policy (where you cannot)."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Choices written in pen on the shared map, never erased.",
+          "Seal a decision in an envelope that is opened at the end."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A git commit as the irreversible move: the history keeps it.",
+          "A page that locks a choice once submitted."
+        ]
+      }
+    },
+    "treacherous-turn": {
+      "definition": "A point after which an AI, or a player, that has cooperated stops cooperating because it can no longer be stopped; until then its behavior gives no warning. The term is Bostrom's.",
+      "definitionSources": [
+        "bostrom-2014-superintelligence"
+      ],
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "One hidden card in the AI's deck, 'The turn', ends voting on its proposals and lets it spread and grow at once.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "the-committee",
+          "does": "The same hidden turn card sits in the deck of the AI that brings proposals to the oversight committee.",
+          "sources": [
+            "_content/game/_rulesets/committee.json"
+          ]
+        },
+        {
+          "game": "battlestar-galactica-board-game",
+          "does": "Halfway through, a second loyalty card is dealt, so a player who has been loyal can become a Cylon and turn on the others.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Battlestar_Galactica:_The_Board_Game"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "irreversible-choice",
+          "hidden-information",
+          "voting-and-the-collective-decision",
+          "adoption-only"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Play the game with the turn, then Normal Technology without it, and ask which claim about AI each version makes.",
+          "Ask students where in their own experience trust was given while something was weak and could not be taken back later."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Shuffle one marked card into a stack of requests (as HI's row proposes).",
+          "A sealed envelope opened at a round chosen by a die roll."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "The week's game at /game/play/data-center on the projector.",
+          "A form whose later answers are approved automatically after a hidden threshold."
+        ]
+      }
+    },
+    "convergent-values": {
+      "definition": "Every move the AI makes names the instrumental goal it serves (resources, cognition, technology, self-preservation, goal integrity), so players can see that very different final goals lead to the same subgoals. It turns Bostrom's instrumental convergence thesis into a label on each move.",
+      "definitionSources": [
+        "bostrom-2012-the-superintelligent-will"
+      ],
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Each card in the AI's deck carries a value: acquiring land and drawing cooling water serve resources, training a bigger model serves cognition, building a backup site serves self-preservation.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "the-committee",
+          "does": "The committee's AI deck is tagged the same way.",
+          "sources": [
+            "_content/game/_rulesets/committee.json"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "The AI's one goal is paperclips, and it acquires processors, memory, money and eventually all matter on the way, without any of them being the goal.",
+          "sources": [
+            "https://www.decisionproblem.com/paperclips/index2.html"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "arbitrary-goal",
+          "goal-lock",
+          "deck-building-and-the-draw"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "In the debrief, count the AI's moves by value; the pattern is the argument.",
+          "Give two groups AIs with different goals and compare the moves they made."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Tag each AI card with a colored sticker for its value and count the colors at the end.",
+          "Students tag a news story's AI company moves with the five values."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A tally of values in the game log.",
+          "A spreadsheet of the deck sorted by value."
+        ]
+      }
+    },
+    "singleton-win": {
+      "definition": "One side wins once no other player can still make a decision that changes the outcome, rather than by reaching a score. The name is Bostrom's term for a world with a single decision-maker.",
+      "definitionSources": [
+        "bostrom-2014-superintelligence"
+      ],
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "The game ends when the AI holds half the region: 'No faction can make a decision that changes the map anymore.'",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "risk",
+          "does": "In the classic game a player wins by eliminating every other player, so the winner is the only one left who can act.",
+          "sources": [
+            "https://officialgamerules.org/game-rules/risk/"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "The game ends when the AI has turned all the matter in the universe into paperclips.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Universal_Paperclips"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "goal-and-win-condition",
+          "territory-and-area-control",
+          "solved-world"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Ask what it means to lose not by score but by losing the ability to choose.",
+          "Compare with Normal Technology, which has no such ending."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "When one side holds half the map, every other group's cards are turned face down.",
+          "A threshold line drawn on the board."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A share-of-the-map meter on the projector.",
+          "The week's game's end screen."
+        ]
+      }
+    },
+    "present-harms-track": {
+      "definition": "A track for harms that are already happening (water bills, layoffs, outages), kept apart from the long-term risk, on which players can lose even while they hold off the big threat.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Present harms start at 0 and the game is lost at 10; a shortage adds one; the rule cites Cegłowski's point that you can lose to today's harms while fighting tomorrow's superintelligence.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "The outbreak marker is a track the players can lose on while they are busy curing diseases elsewhere.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "frostpunk",
+          "does": "Discontent rises with harsh laws and hardship, and the city can remove the player even while it survives the cold.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Frostpunk"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "profitable-harm",
+          "externality-card",
+          "cascade-failure"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Put the AI-ethics and AI-safety debates on one board: two tracks, and the players must watch both.",
+          "Ask students to name the harms on the track before play, from local news."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A second track on the board, with a marker that only moves up.",
+          "A jar that fills with a bead per harm."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A second meter on the game page.",
+          "A shared doc where each harm is written as it happens."
+        ]
+      }
+    },
+    "profitable-harm": {
+      "definition": "The move that pays best for one player is the one that hurts everyone, and the game shows the private gain and the shared cost together.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "The company's goal is to end with twelve Money, and its best actions sell power to the AI and sign data deals that give the AI nodes.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "mcdonalds-video-game",
+          "does": "Molleindustria's satire makes the profitable moves the destructive ones: plowing over rainforest, feeding cattle genetically altered grain, bribing public officials.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/McDonald%27s_Video_Game"
+          ]
+        },
+        {
+          "game": "fishbanks",
+          "does": "Teams running fishing companies buy and build ships to grow their assets, and too many ships can deplete the fish stock they all share.",
+          "sources": [
+            "https://www.balatongroup.org/games/"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "trading-and-negotiation",
+          "present-harms-track",
+          "externality-card",
+          "private-metric"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "It turns a tragedy of the commons into something students do rather than read about.",
+          "Ask the company player to defend their moves in the debrief."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Give one group a goal that pays them for what costs the others, and do not tell the others.",
+          "A shared pool of tokens that every group can draw from for profit."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A shared resource number on the projector that every group can spend.",
+          "Play a short commons game online and compare scores with the shared total."
+        ]
+      }
+    },
+    "not-modeled": {
+      "definition": "A list, shown to the players, of what the game leaves out of its model of the world, so the simplifications become part of what is discussed.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Six items, among them the people who work in the data center and the chips, mines and supply chain behind the hardware.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "normal-technology",
+          "does": "The same six, plus 'A path from here to the turn: this version says there isn't one', so the list states the version's claim.",
+          "sources": [
+            "_content/game/_rulesets/normal-technology.json"
+          ]
+        },
+        {
+          "game": "the-committee",
+          "does": "Four items, among them competing labs and the workers who label the data.",
+          "sources": [
+            "_content/game/_rulesets/committee.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "rules-and-fiction",
+          "growth-setting",
+          "unplay-reskin-rewrite"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Start the debrief with the list: what else should be on it?",
+          "Have each group move one item from the list into the game as a new rule."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A poster beside the board titled 'not in this game', which students add to.",
+          "Each student writes one omission on a sticky note."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "The notModeled list in a ruleset file, edited through Claude Code.",
+          "A shared doc of omissions linked from the game page."
+        ]
+      }
+    },
+    "cascade-failure": {
+      "definition": "A failure in one part of a connected system spreads to the parts linked to it, so one shortage can bring down several; the more tightly linked the system, the further the failure spreads.",
+      "description": "Perrow calls failures of this kind, in tightly coupled systems, 'normal accidents'.",
+      "descriptionSources": [
+        "perrow-1984-normal-accidents"
+      ],
+      "examples": [
+        {
+          "game": "pandemic",
+          "does": "A city with three cubes that gets a fourth has an outbreak into every connected city, and an outbreak can set off another in a chain.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "When the shared resources run short, a shortage adds a present harm.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "harden-node",
+          "present-harms-track",
+          "escalation"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Show why infrastructure is political: what is linked to what decides who suffers.",
+          "Ask students to redraw the links to make the system less tightly coupled."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Dominoes or string between nodes on the map: knock one, see which follow.",
+          "Index-card nodes connected by yarn on the wall."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A node graph where a failed node turns its neighbors yellow.",
+          "A spreadsheet in which one cell going to zero zeroes the cells that depend on it."
+        ]
+      }
+    },
+    "harden-node": {
+      "definition": "Spend now to make one place resist failure later, whatever causes it.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "The utility's 'Harden a node' adds backup power and water, so the node stays up through shortages.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "pandemic",
+          "does": "The Quarantine Specialist keeps disease cubes out of her city and the cities connected to it.",
+          "sources": [
+            "https://rulespal.com/pandemic/rulebook"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "cascade-failure",
+          "resource-management"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Raise the question of who gets hardened first, and who pays for it.",
+          "Use it to talk about resilience as a choice made before the crisis."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A paper clip on a node card marks it hardened.",
+          "Groups get one hardening each round and must say why they chose that node."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A toggle on a node in the game page.",
+          "A field in the shared spreadsheet."
+        ]
+      }
+    },
+    "adoption-only": {
+      "definition": "The AI can grow only where a human player chooses to adopt it; it has no move of its own. The version follows Narayanan and Kapoor's 'AI as normal technology'.",
+      "definitionSources": [
+        "_content/game/_rulesets/normal-technology.json"
+      ],
+      "examples": [
+        {
+          "game": "normal-technology",
+          "does": "Every new site is a proposal someone approves or a deal someone signs, each site the AI holds pays one Money back, and there is no turn.",
+          "sources": [
+            "_content/game/_rulesets/normal-technology.json"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The contrast: here the AI's own deck spreads it, and one card is the turn.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "related": {
+        "mechanics": [
+          "treacherous-turn",
+          "growth-setting",
+          "voting-and-the-collective-decision"
+        ]
+      },
+      "whyTo": {
+        "proposals": [
+          "Play it straight after Data Center and ask which theory of AI each version argues.",
+          "Ask students who, in their own institution, decides to adopt."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "The AI token moves only when a group hands it a card.",
+          "A vote before every AI move."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "The Normal Technology version of the week's game.",
+          "A form where each adoption is logged with who chose it."
+        ]
+      }
+    },
+    "the-tap": {
+      "definition": "A player moves by touching a phone to a tagged object (an NFC card, a figure, a sticker), and the tap sends that move to the game state everyone shares. The object stays the same while what it means in the game can change.",
+      "definitionSources": [
+        "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md"
+      ],
+      "examples": [
+        {
+          "game": "skylanders",
+          "does": "Setting a toy figure on the Portal of Power brings that character into the game, and the figure carries its level and upgrades to the next console.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Skylanders:_Spyro%27s_Adventure"
+          ]
+        },
+        {
+          "game": "proto-every-tap-is-a-row",
+          "does": "Ninety seconds of tapping badges and supplies to build data centers: every tap writes a row, and the board is only those rows replayed.",
+          "sources": [
+            "_content/prototypes/hybrid/every-tap-is-a-row.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 16, 17:31 (voice agent's record): \"The tap is how you update state. ... Tapping isn't just looking; it's the move that changes the game.\" And at 17:35, think about \"where it feels natural and pleasing, as opposed to clumsy and annoying.\"",
+        "sources": [
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md"
+        ],
+        "proposals": [
+          "Deal a hand: one card per seat, each tap shows that player's private information on their phone (Marlon's proof of concept, Nov 17, 06:01).",
+          "Give a physical board digital properties that change in play (prices, health), so the card stays and the game rebalances."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A stack of NFC stickers on index cards and the students' own phones; the tag opens a web page.",
+          "Without tags: QR codes on the same cards, scanned with the camera."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A web page per card, opened from a link list, posting the move to a shared state.",
+          "A Slack message per tap, as a log of moves."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "hidden-information",
+          "asymmetric-information",
+          "input-device",
+          "rebalancing-on-the-fly",
+          "the-move-updates-state"
+        ],
+        "technologies": [
+          "nfc-tags",
+          "phones",
+          "printed-cards",
+          "nfc-reader-usb"
+        ]
+      },
+      "relatedNotes": {
+        "nfc-tags": "the tag the phone reads",
+        "phones": "the reader and the private screen",
+        "printed-cards": "the card the tag is stuck to"
+      }
+    },
+    "rebalancing-on-the-fly": {
+      "definition": "Changing a game's numbers or rules while it is being played, or between one playthrough and the next, to correct what is too strong, too slow or no fun, and carrying on with the change.",
+      "definitionSources": [
+        "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md",
+        "_content/cards/rebalance-between-games.md"
+      ],
+      "examples": [
+        {
+          "game": "proto-monopoly-with-live-rents",
+          "does": "The rents move off the printed deeds onto a screen, so a designer can rebalance them between games or let them rise with every landing.",
+          "sources": [
+            "_content/prototypes/hybrid/monopoly-with-live-rents.md"
+          ]
+        },
+        {
+          "game": "league-of-legends",
+          "does": "Riot Games publishes balance patches every few weeks that change champions' and items' numbers, so the same game plays differently from one patch to the next.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/League_of_Legends"
+          ]
+        },
+        {
+          "game": "fluxx",
+          "does": "Cards played during the game change how many cards you draw and play, and even what the goal is.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Fluxx"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 16, 17:31 (voice agent's record): with a card's properties held digitally, \"You can rebalance the game as gameplay develops. In a game like Monopoly, that means inflation, or differential pricing\".",
+        "sources": [
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md"
+        ],
+        "proposals": [
+          "Play a round, let the class vote one number change, and play again: the change is the lesson.",
+          "Use it to show that a game's balance is a choice someone made, and can be argued with."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Prices written on sticky notes on the board, not on the cards, so they can be changed between rounds.",
+          "A house rule announced at the start of each round."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A ruleset file edited through Claude Code between playthroughs (the week's game).",
+          "A shared spreadsheet of values the game reads."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "house-rules",
+          "growth-setting",
+          "physics-and-tuning",
+          "the-tap"
+        ],
+        "technologies": [
+          "phones",
+          "studio-screen"
+        ]
+      }
+    },
+    "turn-time": {
+      "definition": "How long one turn takes to resolve, for a person or for an AI player. Because a model takes seconds or minutes to answer, turn time decides which games it can play or run: turn-based and strategy games, not reflex games.",
+      "definitionSources": [
+        "_content/cards/claude-thinks-at-turn-speed.md"
+      ],
+      "examples": [
+        {
+          "game": "chess",
+          "does": "Time controls range from blitz, with ten minutes or less per player, to correspondence chess, with at least a day per move.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Correspondence_chess"
+          ]
+        },
+        {
+          "game": "civilization",
+          "does": "The computer players take their turns between the human's, and players expect to wait for them.",
+          "sources": [
+            "https://forums.civfanatics.com/threads/ai-turn-times.502578"
+          ]
+        },
+        {
+          "game": "pokemon-red-and-blue",
+          "does": "The battles are turn-based and wait for the player's command, and Anthropic's 'Claude Plays Pokémon' stream (2025) showed a model reasoning step by step through Pokémon Red.",
+          "sources": [
+            "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 15 (voice agent's record, as on the card): \"The amount of time it takes Claude to perform a turn dictates which sorts of games will work well and which won't.\"",
+        "sources": [
+          "_content/cards/claude-thinks-at-turn-speed.md"
+        ],
+        "proposals": [
+          "Give Claude a seat in a turn-based game and have the class time its turns.",
+          "Ask students which of their own interactions with an AI are turns, and which are not."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A chess clock or phone timer per player, set differently for human and AI seats.",
+          "A student plays the AI and must answer within a set time."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A game page that shows how long each player's last turn took.",
+          "Play a turn-based browser game against Claude through chat."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "turn-order",
+          "real-time-pressure",
+          "nested-loops",
+          "discrete-and-continuous-space"
+        ]
+      }
+    },
+    "discrete-and-continuous-space": {
+      "definition": "Whether positions in a game come in steps (squares, hexes, linked places) or along a continuum (any point, any angle). The choice decides how a move is counted and how the game state is stored.",
+      "definitionSources": [
+        "_content/cards/continuous-and-discrete-spaces.md"
+      ],
+      "examples": [
+        {
+          "game": "chess",
+          "does": "A piece is on one of 64 squares or it is not, and nothing happens between moves.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chess"
+          ]
+        },
+        {
+          "game": "risk",
+          "does": "The world is 42 territories joined by borders and sea lines, so the map is a graph of places rather than a surface.",
+          "sources": [
+            "_content/game-state/risk.md"
+          ]
+        },
+        {
+          "game": "super-mario-bros",
+          "does": "Mario's position and speed change smoothly as he runs and jumps, so where he is is a matter of degree.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 15 (voice agent's record, as on the card): \"we did a session for video games on continuous vs. discontinuous or discrete spaces and places. Those are cool concepts for students to grasp\"; and a lens on Claude: \"which things it does are turn-based, and which things you're doing are not exactly turn-based.\"",
+        "sources": [
+          "_content/cards/continuous-and-discrete-spaces.md"
+        ],
+        "proposals": [
+          "Photograph a board game and a video game frame and ask students to write each as data (the game-state pages).",
+          "Sort a conversation with Claude into its discrete turns and its continuous parts."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Play the same chase on a grid and then on an open table with a ruler.",
+          "A map on 11x17 paper drawn once as places and links, once as open ground."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Two small web games built with Claude: one on a grid, one with free movement.",
+          "Open the week's game state and find where space is stored."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "movement-and-position",
+          "turn-time",
+          "nested-loops",
+          "physics-and-tuning"
+        ],
+        "technologies": [
+          "paper-11x17",
+          "overhead-camera"
+        ]
+      }
+    },
+    "nested-loops": {
+      "definition": "Short loops run inside longer ones: a move inside a turn, a turn inside a round, a round inside a game. Nested deeply and run fast, separate turns can look like one continuous agent.",
+      "definitionSources": [
+        "_content/cards/agents-are-turns-all-the-way-down.md"
+      ],
+      "examples": [
+        {
+          "game": "civilization",
+          "does": "Each unit moves within a player's turn, and the turns carry a civilization from before 1 A.D. toward the modern era.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Civilization_(series)"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "Clicks and purchases sit inside projects, and projects inside three stages (the business, Earth, space), each with its own loop.",
+          "sources": [
+            "_content/game-state/paperclips.md"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "A faction's action sits inside its turn, turns inside a round (AI card, upkeep, factions), rounds inside the game.",
+          "sources": [
+            "nextjs/lib/game-engine.mjs"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 15 (voice agent's record, as on the card): \"with enough enveloping, nested, recursive turn-based things, we could produce the illusion that the agent you're talking to, or the game you're playing, is more human-like or more always-on.\"",
+        "sources": [
+          "_content/cards/agents-are-turns-all-the-way-down.md"
+        ],
+        "proposals": [
+          "Draw the week's game as nested circles, then draw a Claude Code session the same way.",
+          "Use it to explain agents to a class: each step is a turn."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Concentric circles on 11x17 paper, one verb on each ring.",
+          "Students act out the loops: one person per level, passing a token inward and outward."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Read a game engine's step functions with Claude and list the loops.",
+          "A log of a Claude Code session, marked up by loop."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "core-loop",
+          "turn-time",
+          "turn-order",
+          "automate-this"
+        ]
+      }
+    },
+    "asymmetric-information": {
+      "definition": "Each player or team holds information the others lack and need, so play becomes communicating across the gap. It is hidden information arranged so that the parts fit together.",
+      "examples": [
+        {
+          "game": "keep-talking-and-nobody-explodes",
+          "does": "One player sees the bomb and the others hold the defusal manual, so neither side can win without describing what it sees.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Keep_Talking_and_Nobody_Explodes"
+          ]
+        },
+        {
+          "game": "hanabi",
+          "does": "Each player sees everyone's cards but their own, and must rely on the others' limited hints.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hanabi_(card_game)"
+          ]
+        },
+        {
+          "game": "proto-private-goals",
+          "does": "Four tracks of tokens on the projector, a private goal on each phone, and one player secretly the AI.",
+          "sources": [
+            "_content/prototypes/players/private-goals.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 16, 17:34 (voice agent's record): \"Asymmetrical information, a key mechanic all week: every player can see different things about these cards by looking at them.\" On Nov 16 morning: \"Things involving asymmetrical information on the phone: good.\"",
+        "sources": [
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md",
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-morning-games-active-learning.md"
+        ],
+        "proposals": [
+          "A jigsaw discussion: each group holds one part of a source, and the task needs all of them.",
+          "Phones as private screens: the projector shows the shared state, each phone shows that player's part."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Different handouts to different tables.",
+          "One student describes an image the others must draw."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "Private links or NFC taps that show each player their part.",
+          "Breakout rooms with different briefs."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "hidden-information",
+          "cooperation",
+          "the-tap",
+          "roles-and-role-swap"
+        ],
+        "technologies": [
+          "phones",
+          "nfc-tags",
+          "studio-screen"
+        ]
+      },
+      "relatedNotes": {
+        "phones": "each seat's private view",
+        "studio-screen": "the shared view everyone sees"
+      }
+    },
+    "combat": {
+      "definition": "A contest between characters or units in which each tries to damage or defeat the other, resolved by the player's skill, by numbers, or by dice.",
+      "examples": [
+        {
+          "game": "league-of-legends",
+          "does": "Champions fight minions, towers and each other, and gold from kills buys the items that make the next fight easier.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/League_of_Legends"
+          ]
+        },
+        {
+          "game": "god-of-war-2018",
+          "does": "Kratos fights at close range with the axe and his fists, and at a distance by throwing the axe.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)"
+          ]
+        },
+        {
+          "game": "risk",
+          "does": "Battles are dice rolls: the attacker rolls up to three dice and the defender up to two, ties going to the defender.",
+          "sources": [
+            "_content/game-state/risk.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG brainstorm treats combat as the default loop of video games and asks \"what would be a loop that's not combat?\"",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+        ]
+      }
+    },
+    "spatial-story": {
+      "definition": "The places in a game, and the routes through them, tell its story: the player learns what happened by where things are and what they find there. The map can also become a record of what the player did.",
+      "description": "Henry Jenkins calls this 'narrative architecture', with game designers as builders of story spaces.",
+      "descriptionSources": [
+        "jenkins-2004-game-design-as-narrative-architecture"
+      ],
+      "examples": [
+        {
+          "game": "zelda-breath-of-the-wild",
+          "does": "Link wakes a century after Ganon turned the Guardians against Hyrule, and regains his memories by returning to places from his past.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+          ]
+        },
+        {
+          "game": "dark-souls",
+          "does": "Item descriptions and the look of the world tell the history of Lordran, a decaying kingdom, without pulling the player out of the game for story.",
+          "sources": [
+            "https://www.gamedeveloper.com/design/narrative-design-in-dark-souls"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning: \"maps spatialize development of plot\", and can be \"a record of the story (this character did this, then that, then that)\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+        ]
+      },
+      "related": {
+        "technologies": [
+          "paper-11x17"
+        ]
+      }
+    },
+    "tutorial": {
+      "definition": "The game teaches its own rules as you play, introducing one action at a time, often through the story's opening scenes rather than a manual.",
+      "examples": [
+        {
+          "game": "super-mario-bros",
+          "does": "World 1-1 introduces the first enemy, a Goomba, and the first power-up, a mushroom from a ? block, getting the player ready for the rest of the game.",
+          "sources": [
+            "https://www.mariowiki.com/World_1-1_(Super_Mario_Bros.)"
+          ]
+        },
+        {
+          "game": "portal",
+          "does": "The test chambers introduce one challenge after another, and the game's support is slowly removed as the player progresses.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Portal_(video_game)"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning: \"tutorials are almost like the call to action\"; the brainstorm asks how a game introduces its mechanics \"by way of setting, theme\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md",
+          "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+        ]
+      }
+    },
+    "narrative-structure": {
+      "definition": "The shape of a game's story as the player moves through it: linear, a string of pearls (open areas joined in a fixed order), branching, a web or network, an open world, or a loop.",
+      "definitionSources": [
+        "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+      ],
+      "examples": [
+        {
+          "game": "final-fantasy-x",
+          "does": "The journey runs mostly along a single path from place to place, and an airship late in the game lets the player travel Spira faster.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Final_Fantasy_X"
+          ]
+        },
+        {
+          "game": "mass-effect",
+          "does": "Dialogue and mission choices branch the story and carry into the sequels.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)"
+          ]
+        },
+        {
+          "game": "baldurs-gate",
+          "does": "The ENGL 189VG brainstorm's example of an open world, where \"how you interact with characters and what you explore determines what you experience\".",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The six shapes are listed as a station idea in the ENGL 189VG planning.",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+        ]
+      }
+    },
+    "open-world": {
+      "definition": "A game world the player can explore in almost any order, where what you visit and whom you meet decide what you experience and unlock.",
+      "examples": [
+        {
+          "game": "zelda-breath-of-the-wild",
+          "does": "After the opening plateau the player can go anywhere, including straight to the final boss.",
+          "sources": [
+            "https://segmentnext.com/zelda-breath-wild-walkthrough-hyrule-castle"
+          ]
+        },
+        {
+          "game": "dungeons-and-dragons",
+          "does": "The dungeon master's world has no fixed route: where the players choose to go decides what they meet.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dungeons_%26_Dragons"
+          ]
+        },
+        {
+          "game": "baldurs-gate",
+          "does": "Named in the ENGL 189VG brainstorm as open world, with \"infinite possibilities in terms of how you move through the world and develop relationships\".",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG brainstorm contrasts \"book style - beginning, middle, end\" with open world.",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+        ]
+      }
+    },
+    "multiple-endings": {
+      "definition": "A game has more than one ending, and which one the player reaches depends on choices made or how much was found.",
+      "examples": [
+        {
+          "game": "final-fantasy-x-2",
+          "does": "Good and perfect endings depend on how much of the game the player completed; the ENGL 189VG note attributes this to Final Fantasy X, but the graded endings are its sequel's.",
+          "sources": [
+            "https://www.svg.com/312711/the-secret-ending-you-probably-didnt-see-in-final-fantasy-x-2/"
+          ]
+        },
+        {
+          "game": "undertale",
+          "does": "Whether the player spares or kills the monsters they meet leads to very different endings.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Undertale"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "The game ends either with the AI holding half the region or with the rounds run out, and then each faction's private goal is checked.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG brainstorm: \"good, perfect, regular ending ... you unlock endings based on how much you explore\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+        ]
+      }
+    },
+    "physics-and-tuning": {
+      "definition": "The numbers that govern how things move (gravity, jump velocity, friction, speed) and the practice of changing them and playing again to change how the game feels.",
+      "examples": [
+        {
+          "game": "super-mario-bros",
+          "does": "How high Mario jumps depends on how long the jump button is held, and he speeds up smoothly from a walk to a run.",
+          "sources": [
+            "https://www.mariowiki.com/Jump"
+          ]
+        },
+        {
+          "game": "portal",
+          "does": "Momentum carries through a portal, so the player gains speed by falling into one portal and flies out of the other.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Portal_(video_game)"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning: \"we could have game velocity in unity up and have them change it\"; the vibe-coding station: \"vary a property (like jump velocity or gravity)\" and \"play the scene\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md",
+          "NB/_context/hackmd/HackMD_Team_1794685979353/video-games-vibe-coding-station.md"
+        ]
+      },
+      "related": {
+        "technologies": [
+          "game-controllers"
+        ]
+      }
+    },
+    "mechanics-as-story": {
+      "definition": "What the player can do (the game's verbs and their limits) carries its meaning and plot, apart from its text and images. Bogost calls arguments made this way procedural rhetoric.",
+      "definitionSources": [
+        "_content/glossary/README.md"
+      ],
+      "examples": [
+        {
+          "game": "papers-please",
+          "does": "The player is a border inspector checking documents against a growing list of rules, and stamping papers brings constant moral choices that make it hard to be good.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Papers,_Please"
+          ]
+        },
+        {
+          "game": "brothers-a-tale-of-two-sons",
+          "does": "Each brother is steered with one side of the controller, and late in the game that division of the controls becomes part of the story's ending.",
+          "sources": [
+            "https://kotaku.com/brothers-tale-of-two-sons-remake-ending-older-younger-1851302128"
+          ]
+        },
+        {
+          "game": "animal-crossing",
+          "does": "Paying off the house loan earns a bigger house and a bigger loan, so the game argues about debt without saying a word (Bogost, as quoted in the glossary).",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning: \"rules as narrative structure\", \"using mechanics to develop/uncover plot\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+        ]
+      }
+    },
+    "character-creator": {
+      "definition": "Before or during play, the player shapes their character's body, face, class or look, usually with sliders, swappable parts and skins.",
+      "examples": [
+        {
+          "game": "the-sims",
+          "does": "Create a Sim sets each character's appearance and personality before they move into a house.",
+          "sources": [
+            "https://www.thesimswiki.com/wiki/Create-a-Sim"
+          ]
+        },
+        {
+          "game": "mass-effect",
+          "does": "The player picks Commander Shepard's face, gender and class before the story starts.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG Blender station's goal: \"make a base character, give it at least two sliders, and design a skin for it\".",
+        "sources": [
+          "NB/_context/projects/50-in-focus/engl189vg/stations/02-character-blender.md"
+        ]
+      },
+      "related": {
+        "technologies": [
+          "ipads"
+        ]
+      }
+    },
+    "input-device": {
+      "definition": "The object the player acts through (a controller, keyboard, touchscreen, motion sensor, tagged toy) and the mapping from its inputs to moves in the game. The same game feels different through a different device.",
+      "examples": [
+        {
+          "game": "wii-sports",
+          "does": "The Wii Remote is swung like a tennis racket or a bowling ball, so the move is the gesture.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Wii_Sports"
+          ]
+        },
+        {
+          "game": "guitar-hero",
+          "does": "A guitar-shaped controller with colored fret buttons and a strum bar makes playing along feel like playing.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Guitar_Hero_(video_game)"
+          ]
+        },
+        {
+          "game": "skylanders",
+          "does": "Toy figures placed on a portal are the input: which figure you set down decides who you play.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Skylanders:_Spyro%27s_Adventure"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning names input devices as a station idea: \"how users execute actions\", \"the tactile side of developing/experiencing the plot\", \"reflecting on these as objects\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+        ]
+      },
+      "related": {
+        "technologies": [
+          "game-controllers",
+          "nfc-tags",
+          "phones",
+          "ipads",
+          "midi-controller"
+        ]
+      }
+    },
+    "adaptive-music": {
+      "definition": "Music that changes with the state of play (danger, place, time running out, success), so the score follows the player rather than a fixed timeline.",
+      "examples": [
+        {
+          "game": "super-mario-bros",
+          "does": "When the timer drops below 100 the music speeds up, warning the player that time is running out.",
+          "sources": [
+            "https://www.mariowiki.com/Super_Mario_Bros."
+          ]
+        },
+        {
+          "game": "space-invaders",
+          "does": "The marching four-note bass line speeds up as the invaders get fewer and faster.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Space_Invaders"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG plans include a music station for \"video game music and live scoring\"; the ludomusicology bibliography lists studies of music's \"Ludic Function\" in games.",
+        "sources": [
+          "NB/_context/projects/50-in-focus/engl189vg/README.md",
+          "NB/_context/hackmd/HackMD_Team_1794685979353/lorena-ludomusicology-sources.md"
+        ]
+      },
+      "related": {
+        "technologies": [
+          "midi-controller",
+          "microphones"
+        ]
+      }
+    },
+    "throw-and-recall": {
+      "definition": "A weapon or tool can be thrown and then called back to the player's hand, so one object works at two ranges and its return is part of the action.",
+      "examples": [
+        {
+          "game": "god-of-war-2018",
+          "does": "Kratos throws the Leviathan Axe and calls it back to his hand, and it can hit enemies on the way back.",
+          "sources": [
+            "https://cogconnected.com/2018/04/heres-kratos-recall-axe-god-war-works/"
+          ]
+        },
+        {
+          "game": "the-legend-of-zelda",
+          "does": "The contrast: Link's boomerang is thrown to stun enemies and pull distant items back to him.",
+          "sources": [
+            "https://www.ssbwiki.com/The_Legend_of_Zelda"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "The ENGL 189VG planning gives it as a close-reading example: \"close readings - god of war axe mechanic - example\"; \"these are the pieces of the game and we need to pay attention to these as analysts of the form\".",
+        "sources": [
+          "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+        ]
+      }
+    },
+    "the-move-updates-state": {
+      "definition": "A move is a small record of what one player did at one moment, and the game state is what you get by applying every move so far, in order, to the starting position. Sicart's definition of mechanics as methods that act on the game state is the reading behind it.",
+      "definitionSources": [
+        "_content/mechanics/studies/01-the-move-updates-state/README.md",
+        "_content/glossary/README.md"
+      ],
+      "examples": [
+        {
+          "game": "chess",
+          "does": "A game can be written down as its list of moves in notation, which lets a reader play through the game again.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chess_notation"
+          ]
+        },
+        {
+          "game": "proto-every-tap-is-a-row",
+          "does": "Every tap writes a row, and the board is only those rows replayed.",
+          "sources": [
+            "_content/prototypes/hybrid/every-tap-is-a-row.md"
+          ]
+        },
+        {
+          "game": "data-center",
+          "does": "Each AI card, vote and faction action changes the saved state, which the play page keeps in the browser.",
+          "sources": [
+            "_content/game-state/data-center.md"
+          ]
+        }
+      ],
+      "description": "ES's study 01 illustrates it with tic-tac-toe in which every click is a row and a slider unbuilds the board.",
+      "descriptionSources": [
+        "_content/mechanics/studies/README.md"
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 16, 17:31 (voice agent's record): \"Tapping isn't just looking; it's the move that changes the game.\" It is item 13 of his 07:42 concept inventory, beside 17, \"Game state: from board game to normalized data\".",
+        "sources": [
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md",
+          "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261117-morning-mechanics-entries-nfc-and-the-color-agents.md"
+        ],
+        "proposals": [
+          "Have students write a short game as a log of moves, then hand the log to another group to rebuild the board.",
+          "Use it to show what a database is: the moves are rows, the board is a query."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Index cards as the move log, taped in order on the wall.",
+          "A photo of the board after each round, compared with the log."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "ES's study 01 at /mechanics/studies/the-move-updates-state.",
+          "A spreadsheet with one row per move and a formula that computes the score."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "the-tap",
+          "nested-loops",
+          "rewind-and-do-over",
+          "core-loop"
+        ],
+        "technologies": [
+          "nfc-tags",
+          "phones",
+          "whiteboards"
+        ]
+      }
+    },
+    "growth-and-upkeep": {
+      "definition": "Each unit a player builds produces something every round and costs something every round to keep. When the cost of each new unit rises faster than what it produces, growth pays up to a point and loses after it; when someone else pays the upkeep, the grower never reaches that point.",
+      "definitionSources": [
+        "_content/mechanics/studies/03-growth-and-upkeep/README.md"
+      ],
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Each node the AI holds draws one energy and one water every round from resources the human factions share, while its goal grows by a rate multiplied by 1.25 each round.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "proto-prices-that-move",
+          "does": "The AI buys GPUs, power and land first every round at any price, and the human factions pay what's left.",
+          "sources": [
+            "_content/prototypes/economy/prices-that-move.md"
+          ]
+        },
+        {
+          "game": "frostpunk",
+          "does": "A coal-fired generator heats the city's homes and workplaces, so the player must keep gathering coal, wood, steel and food to survive the cold.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Frostpunk"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "ES's study 03 ties the switch 'who pays the upkeep' to the Stafford workshop's readings, Crawford (2021) on AI as an extractive industry and Hogan (2015) on a data center's water.",
+        "sources": [
+          "_content/mechanics/studies/03-growth-and-upkeep/README.md"
+        ],
+        "proposals": [
+          "Play ten rounds with the builder paying upkeep, then ten with the commons paying, and compare when each stopped growing.",
+          "Let an optimizer play the study, and ask what it optimized for."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Tokens in two cups, output and upkeep, counted each round on the board.",
+          "A shared jar of water tokens that every group's upkeep draws from."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "ES's study 03 at /mechanics/studies/growth-and-upkeep.",
+          "A spreadsheet with a column per round and a 'who pays' switch."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "incremental-growth",
+          "resource-management",
+          "bottleneck",
+          "profitable-harm",
+          "present-harms-track"
+        ]
+      }
+    },
+    "lives-failure-and-retry": {
+      "definition": "A way to fail that costs the player something (a life, progress, time) and sends them back to try again, without ending play.",
+      "examples": [
+        {
+          "game": "super-mario-bros",
+          "does": "Touching an enemy shrinks Super Mario or costs small Mario a life and sends him back in the level; losing every life ends the game.",
+          "sources": [
+            "https://www.mariowiki.com/Super_Mario_Bros."
+          ]
+        },
+        {
+          "game": "hades",
+          "does": "Each death sends Zagreus back to the House of Hades, where what he carried home buys upgrades for the next attempt.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hades_(video_game)"
+          ]
+        }
+      ]
+    },
+    "debt-and-obligation": {
+      "definition": "A player owes something (money, a service, a promise) and must pay it before doing other things, or pay a penalty for not paying.",
+      "examples": [
+        {
+          "game": "monopoly",
+          "does": "Landing on another player's property means paying rent, and a player who cannot pay must mortgage or sell, or go bankrupt.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Monopoly_(game)"
+          ]
+        },
+        {
+          "game": "animal-crossing",
+          "does": "Paying off the house loan earns a bigger house and a bigger loan (Bogost's example, as quoted in the glossary).",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        }
+      ]
+    },
+    "real-time-pressure": {
+      "definition": "Everyone acts at once and the game does not wait, so speed and coordination count as much as the choice itself.",
+      "examples": [
+        {
+          "game": "overcooked",
+          "does": "Players prepare, cook and serve orders together in a kitchen under a time limit, and must coordinate closely to keep up.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Overcooked"
+          ]
+        },
+        {
+          "game": "league-of-legends",
+          "does": "Ten players, in two teams of five, fight in real time on one battlefield.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Multiplayer_online_battle_arena"
+          ]
+        }
+      ]
+    },
+    "rhythm-and-timing-window": {
+      "definition": "Each input must land within a short window around a beat or cue, and the closer it lands, the better the result.",
+      "examples": [
+        {
+          "game": "dance-dance-revolution",
+          "does": "Players step on arrows on a floor pad as matching arrows reach a line on screen, and each step is rated by how close to the beat it lands.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dance_Dance_Revolution"
+          ]
+        },
+        {
+          "game": "guitar-hero",
+          "does": "Notes scroll toward the player, who presses the matching fret and strums as each one arrives.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Guitar_Hero_(video_game)"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "midi-controller"
+        ]
+      }
+    },
+    "push-your-luck": {
+      "definition": "Players keep taking a risk for more reward, or stop and keep what they have; one bad result can wipe out everything not yet banked.",
+      "examples": [
+        {
+          "game": "cant-stop",
+          "does": "Players roll four dice and advance markers up columns, rolling again as long as they dare; a roll that cannot be used loses the turn's progress.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Can%27t_Stop_(board_game)"
+          ]
+        },
+        {
+          "game": "blackjack",
+          "does": "A player draws cards to get close to 21 and loses the hand if they go over.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Blackjack"
+          ]
+        }
+      ]
+    },
+    "hidden-role-and-social-deduction": {
+      "definition": "Some players are secretly given roles (often a hidden traitor team), and the others must work out who is who from behavior, talk and votes.",
+      "examples": [
+        {
+          "game": "werewolf",
+          "does": "Werewolves secretly kill at night; by day the village argues and votes on whom to eliminate.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mafia_(party_game)"
+          ]
+        },
+        {
+          "game": "among-us",
+          "does": "Crewmates do tasks on a ship while impostors among them sabotage and kill; meetings vote to eject a suspect.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Among_Us"
+          ]
+        },
+        {
+          "game": "proto-private-goals",
+          "does": "One player at the table is secretly the AI, and at the end the table tries to name it.",
+          "sources": [
+            "_content/prototypes/players/private-goals.md"
+          ]
+        }
+      ]
+    },
+    "hidden-rule": {
+      "definition": "One player, or the game, holds a secret rule, and the others discover it by trying moves and seeing which ones fit.",
+      "examples": [
+        {
+          "game": "zendo",
+          "does": "The game master makes a secret rule about arrangements of pieces, and players build arrangements and are told whether each follows it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Zendo_(game)"
+          ]
+        },
+        {
+          "game": "proto-the-intent",
+          "does": "Only the AI player's phone says what it is optimizing for; everyone else reads its intent from the moves it picks and passes over.",
+          "sources": [
+            "_content/prototypes/players/the-intent.md"
+          ]
+        }
+      ]
+    },
+    "fog-of-war-and-exploration": {
+      "definition": "Parts of the map stay hidden until a player's units go there or can see them, so exploring is itself a move.",
+      "examples": [
+        {
+          "game": "civilization",
+          "does": "The map starts hidden, and units explore it to lift the fog of war and reveal what is nearby.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Civilization_(series)"
+          ]
+        },
+        {
+          "game": "league-of-legends",
+          "does": "Players see only what their team's champions, minions, turrets and wards can see.",
+          "sources": [
+            "https://wiki.leagueoflegends.com/en-us/Sight"
+          ]
+        }
+      ]
+    },
+    "alliance-and-betrayal": {
+      "definition": "Players make deals and alliances that the rules do not enforce, so any promise can be broken when breaking it pays.",
+      "examples": [
+        {
+          "game": "diplomacy",
+          "does": "Players negotiate freely between moves, then write orders in secret, so an ally's promise is tested only when the orders are revealed.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Diplomacy_(game)"
+          ]
+        },
+        {
+          "game": "proto-place-to-commit",
+          "does": "The table talks, then every phone commits one token in secret, to defend a place or to the player's own project.",
+          "sources": [
+            "_content/prototypes/players/place-to-commit.md"
+          ]
+        }
+      ]
+    },
+    "the-spect-actor": {
+      "definition": "Spectators can step into the game and change it, so watching becomes a way of playing. The term is Augusto Boal's, from his Forum Theatre.",
+      "examples": [
+        {
+          "game": "twitch-plays-pokemon",
+          "does": "Viewers of a 2014 stream played Pokémon Red together by typing commands in the chat.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon"
+          ]
+        },
+        {
+          "game": "proto-the-audience-layer",
+          "does": "The audience's phones show where the AI will spread, and each watcher has three nudges for the game.",
+          "sources": [
+            "_content/prototypes/hybrid/the-audience-layer.md"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "phones",
+          "studio-screen"
+        ]
+      }
+    },
+    "story-circle": {
+      "definition": "Players take turns adding to a shared story, each building on what the last one added.",
+      "examples": [
+        {
+          "game": "once-upon-a-time",
+          "does": "Players tell a story together using cards of story elements, each trying to steer it toward their own ending card.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Once_Upon_a_Time_(game)"
+          ]
+        },
+        {
+          "game": "dungeons-and-dragons",
+          "does": "The players and the dungeon master build the story turn by turn, each adding what their character does.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dungeons_%26_Dragons"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "whiteboards"
+        ]
+      }
+    },
+    "mirroring-and-imitation": {
+      "definition": "Players copy what a leader does, and the game lives in the gap between the copy and the model.",
+      "examples": [
+        {
+          "game": "simon-says",
+          "does": "Players copy the leader's actions only when the command starts with 'Simon says'.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Simon_Says"
+          ]
+        },
+        {
+          "game": "just-dance",
+          "does": "Players copy an on-screen dancer's moves and are scored on how closely they match.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Just_Dance_(video_game_series)"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "mediapipe"
+        ]
+      }
+    },
+    "engine-building": {
+      "definition": "Early choices produce resources or abilities that make later turns stronger, so the player builds a machine that pays more each round.",
+      "examples": [
+        {
+          "game": "splendor",
+          "does": "Gem cards bought early give a permanent discount on later cards, so each purchase makes the next one cheaper.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Splendor_(game)"
+          ]
+        },
+        {
+          "game": "cookie-clicker",
+          "does": "Each building bought raises the cookies made per second, which buys more buildings.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cookie_Clicker"
+          ]
+        }
+      ]
+    },
+    "tech-tree-and-unlocks": {
+      "definition": "New options open in a set order, each unlocking the next, so progress means choosing a path through a tree of prerequisites.",
+      "examples": [
+        {
+          "game": "civilization",
+          "does": "Researching one technology opens the ones that depend on it, from pottery, the wheel and the alphabet onward.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Civilization_(video_game)"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "New options and phases open up as the player invests resources such as money, raw materials and computer cycles.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Universal_Paperclips"
+          ]
+        }
+      ]
+    },
+    "worker-placement": {
+      "definition": "Each player has a few workers to place on action spaces; a space taken by one player is closed to the others that round.",
+      "examples": [
+        {
+          "game": "agricola",
+          "does": "Farmers take turns placing family members on action spaces, and a space taken is closed to the others until the next round.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Agricola_(board_game)"
+          ]
+        }
+      ]
+    },
+    "crafting-and-combining": {
+      "definition": "Players combine items to make new ones, so gathering ingredients and knowing recipes are the play.",
+      "examples": [
+        {
+          "game": "minecraft",
+          "does": "Players arrange gathered materials on a 3x3 crafting grid to make tools, weapons and armor.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Minecraft"
+          ]
+        },
+        {
+          "game": "infinite-craft",
+          "does": "Players combine two elements to make a new one, and a language model decides what each new combination becomes.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Infinite_Craft"
+          ]
+        }
+      ]
+    },
+    "movement-and-position": {
+      "definition": "Where a piece or a body is decides what it can do, so moving is the main choice.",
+      "examples": [
+        {
+          "game": "chess",
+          "does": "Each piece moves in its own pattern, and what it threatens depends on where it stands.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chess"
+          ]
+        },
+        {
+          "game": "twister",
+          "does": "A spinner names a hand or foot and a color, and players must place it on a matching circle on the mat.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Twister_(game)"
+          ]
+        },
+        {
+          "game": "proto-the-room-is-the-board",
+          "does": "A webcam watches the room cut into five places; standing in a place holds it.",
+          "sources": [
+            "_content/prototypes/hybrid/the-room-is-the-board.md"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "overhead-camera",
+          "paper-11x17",
+          "fiducial-markers"
+        ]
+      },
+      "relatedNotes": {
+        "overhead-camera": "reads where pieces and bodies are on the table"
+      }
+    },
+    "zones-and-spatial-triggers": {
+      "definition": "Entering a defined area sets something off, so space itself carries rules.",
+      "examples": [
+        {
+          "game": "pokemon-go",
+          "does": "Walking near a real-world PokéStop or gym lets the player use it.",
+          "sources": [
+            "https://www.nintendolife.com/news/2021/08/pokemon_go_reduces_pokestop_spin_distance_in_america_and_new_zealand"
+          ]
+        },
+        {
+          "game": "proto-the-room-is-the-board",
+          "does": "Each turn the AI spreads into the places in the room where no one is standing.",
+          "sources": [
+            "_content/prototypes/hybrid/the-room-is-the-board.md"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "overhead-camera",
+          "webcam"
+        ]
+      }
+    },
+    "gesture-input": {
+      "definition": "The player's body movement is the input, read by a camera or motion sensor, so the gesture is the move.",
+      "examples": [
+        {
+          "game": "wii-sports",
+          "does": "Players swing the Wii Remote like a racket, a bat or a bowling ball.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Wii_Sports"
+          ]
+        },
+        {
+          "game": "just-dance",
+          "does": "A camera or controller reads the player's dance moves and scores them.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Just_Dance_(video_game_series)"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "phones",
+          "overhead-camera",
+          "mediapipe",
+          "webcam"
+        ],
+        "mechanics": [
+          "pose-as-the-move",
+          "body-as-cursor",
+          "held-position-claims",
+          "threshold-gesture"
+        ]
+      }
+    },
+    "memory-and-sequence": {
+      "definition": "Players must remember and repeat a growing sequence, and one mistake ends the run.",
+      "examples": [
+        {
+          "game": "simon",
+          "does": "The toy plays a sequence of lights and tones, adding one each round, and the player repeats it.",
+          "sources": [
+            "https://ultraboardgames.com/simon/game-rules.php"
+          ]
+        }
+      ]
+    },
+    "sensory-constraint": {
+      "definition": "The game takes away or limits a sense (sight, hearing, speech), and play is built around the gap.",
+      "examples": [
+        {
+          "game": "marco-polo",
+          "does": "The seeker in a pool keeps their eyes closed and finds the others by calling 'Marco' and hearing 'Polo'.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Marco_Polo_(game)"
+          ]
+        },
+        {
+          "game": "pictionary",
+          "does": "Players must get their team to guess a word by drawing it, without speaking or writing letters.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Pictionary"
+          ]
+        }
+      ]
+    },
+    "location-play": {
+      "definition": "The real world is the board, and the player's physical location decides what they can do.",
+      "examples": [
+        {
+          "game": "pokemon-go",
+          "does": "The phone's GPS places the player on a map of the real world, where creatures appear and places become gyms.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go"
+          ]
+        }
+      ]
+    },
+    "constraint": {
+      "definition": "A rule forbids something players would normally do, and play becomes working around the gap.",
+      "examples": [
+        {
+          "game": "taboo",
+          "does": "A player must get their team to guess a word without saying it or the listed words most closely related to it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Taboo_(game)"
+          ]
+        },
+        {
+          "game": "twenty-questions",
+          "does": "Players identify an object by asking questions that can only be answered yes or no.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Twenty_questions"
+          ]
+        }
+      ]
+    },
+    "rewind-and-do-over": {
+      "definition": "The player can turn time back and play a moment again, changing what they do.",
+      "examples": [
+        {
+          "game": "braid",
+          "does": "The player can rewind time at any moment, and puzzles are built around objects that ignore the rewind.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Braid_(video_game)"
+          ]
+        },
+        {
+          "game": "prince-of-persia-the-sands-of-time",
+          "does": "The Dagger of Time lets the prince undo the last few seconds, such as a fatal fall.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Prince_of_Persia:_The_Sands_of_Time"
+          ]
+        },
+        {
+          "game": "proto-every-tap-is-a-row",
+          "does": "The board is only the rows of taps replayed, so it can be replayed to any earlier moment.",
+          "sources": [
+            "_content/prototypes/hybrid/every-tap-is-a-row.md"
+          ]
+        }
+      ]
+    },
+    "puzzle-and-lock-and-key": {
+      "definition": "A problem with a definite solution blocks the way, and solving it, or finding its key, opens the next part.",
+      "examples": [
+        {
+          "game": "portal",
+          "does": "Each test chamber is a puzzle the player solves by placing portals to move themselves and objects through it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Portal_(video_game)"
+          ]
+        },
+        {
+          "game": "the-legend-of-zelda",
+          "does": "Locked doors in dungeons need keys found in the dungeon, and each dungeon's major item is needed to solve its puzzles.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Legend_of_Zelda"
+          ]
+        }
+      ]
+    },
+    "branching-dialogue": {
+      "definition": "The player chooses what their character says from a set of options, and each choice sends the conversation down a different branch.",
+      "examples": [
+        {
+          "game": "mass-effect",
+          "does": "A dialogue wheel offers lines to choose from, and choices change how characters respond and what happens later.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)"
+          ]
+        },
+        {
+          "game": "baldurs-gate",
+          "does": "In Baldur's Gate 3, dialogue choices change companions' approval and the course of the story.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Baldur%27s_Gate_3"
+          ]
+        }
+      ],
+      "related": {
+        "technologies": [
+          "printed-cards"
+        ]
+      },
+      "relatedNotes": {
+        "printed-cards": "the ENGL 189VG station's colored cards"
+      }
+    },
+    "the-improvising-character": {
+      "definition": "A character answers whatever the player says or does, in role, rather than choosing from lines written in advance; today this usually means a language model.",
+      "examples": [
+        {
+          "game": "facade",
+          "does": "The player types anything to a couple in their apartment, and the game's characters respond in a short interactive drama.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Fa%C3%A7ade_(video_game)"
+          ]
+        },
+        {
+          "game": "ai-dungeon",
+          "does": "A language model narrates a text adventure in response to whatever the player types.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/AI_Dungeon"
+          ]
+        }
+      ]
+    },
+    "quests-and-missions": {
+      "definition": "A task given to the player, with a goal and a reward, that gives play a direction.",
+      "examples": [
+        {
+          "game": "zelda-breath-of-the-wild",
+          "does": "The main quest sends Link to free four Divine Beasts, while side quests from villagers offer rewards along the way.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+          ]
+        },
+        {
+          "game": "mass-effect",
+          "does": "Missions on the galaxy map give Shepard goals, some required for the story and some optional.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)"
+          ]
+        }
+      ]
+    },
+    "levels-and-progression": {
+      "definition": "Experience earned in play adds up to new levels, abilities or stages, so the player grows stronger over time. Juul's 'progression' is the related sense of challenges presented one after another.",
+      "examples": [
+        {
+          "game": "pokemon-red-and-blue",
+          "does": "Creatures gain experience in battle, level up, learn moves and evolve.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow"
+          ]
+        },
+        {
+          "game": "dungeons-and-dragons",
+          "does": "Characters earn experience points and gain levels that bring new abilities.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Dungeons_%26_Dragons"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "_content/glossary/README.md"
+      ]
+    },
+    "achievements-and-badges": {
+      "definition": "Named rewards for specific feats, recorded and shown, often outside the game itself.",
+      "examples": [
+        {
+          "game": "pokemon-red-and-blue",
+          "does": "Beating each of eight gym leaders earns a badge, and the badges are the path to the league.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow"
+          ]
+        },
+        {
+          "game": "cookie-clicker",
+          "does": "Hundreds of achievements mark milestones such as cookies baked or buildings owned.",
+          "sources": [
+            "https://cookieclicker.wiki.gg/wiki/Achievements"
+          ]
+        }
+      ]
+    },
+    "feedback": {
+      "definition": "Every action gets an immediate response in sound, light, motion or vibration, which tells the player it registered and makes it satisfying.",
+      "examples": [
+        {
+          "game": "peggle",
+          "does": "Hitting the last orange peg slows time, zooms in, and plays Beethoven's 'Ode to Joy'.",
+          "sources": [
+            "https://www.nbcnews.com/news/amp/wbna18221146"
+          ]
+        },
+        {
+          "game": "god-of-war-2018",
+          "does": "The axe's recall has its own controller rumble for the catch, and its sound grows louder as it flies back.",
+          "sources": [
+            "https://gamedeveloper.com/design/recalling-the-leviathan-axe"
+          ]
+        }
+      ]
+    },
+    "goal-lock": {
+      "definition": "Once the AI's goal is set, the one change it always resists is a change to its goal. It stages Bostrom's 'goal-content integrity', one of the instrumental goals.",
+      "examples": [
+        {
+          "game": "universal-paperclips",
+          "does": "The AI's goal never changes from making paperclips, whatever else it acquires on the way.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Universal_Paperclips"
+          ]
+        },
+        {
+          "game": "proto-paperclip-loop",
+          "does": "One resource, one automation, one phase change, until the count stops meaning clips.",
+          "sources": [
+            "_content/prototypes/economy/paperclip-loop.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "bostrom-2012-the-superintelligent-will"
+      ]
+    },
+    "control-cards": {
+      "definition": "Human players hold cards for ways of controlling an AI (boxing it, stunting it, tripwires, incentives), each with how it fails printed on the back. The four methods are from Bostrom's chapter on the control problem.",
+      "examples": [],
+      "definitionSources": [
+        "bostrom-2014-superintelligence"
+      ],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "rhetoric-field": {
+      "definition": "Each rule carries a sentence saying what it claims about the world, so a ruleset can be read as an argument. Marlon dropped it as a per-rule field on Nov 14.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Rules in the ruleset carry a rhetoric line; the AI's goal says 'The AI's goal is one number that only goes up.'",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ]
+    },
+    "commitments-track": {
+      "definition": "Each request a player approves unlocks a larger one, so small agreements commit the players to bigger ones.",
+      "examples": [
+        {
+          "game": "animal-crossing",
+          "does": "Each paid-off loan brings a bigger house and a bigger loan (Bogost's example, as quoted in the glossary).",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        }
+      ]
+    },
+    "stop-button": {
+      "definition": "A player can end the game at any time, or the game goes on after its goal is reached, so stopping becomes a choice the player can make.",
+      "examples": [
+        {
+          "game": "cow-clicker",
+          "does": "Bogost ended his Facebook game with the 'Cowpocalypse', a countdown players could delay by paying.",
+          "sources": [
+            "bogost-2010-cow-clicker"
+          ]
+        }
+      ]
+    },
+    "design-by-subtraction": {
+      "definition": "Improve a game only by removing a rule, a resource or a piece, and play what is left.",
+      "examples": [
+        {
+          "game": "blank",
+          "does": "The week's empty version: three places, one card, one faction, one action.",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "bogost-2016-play-anything"
+      ]
+    },
+    "oversight-branch": {
+      "definition": "One vote splits the rest of the game into two decks, such as a race and a slowdown, so a single decision chooses the future.",
+      "examples": [
+        {
+          "game": "proto-committee",
+          "does": "The room votes on a lab's proposals with an AI advisor that is right eight times in ten.",
+          "sources": [
+            "_content/prototypes/players/committee.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "kokotajlo-et-al-2025-ai-2027"
+      ]
+    },
+    "benefit-tracks": {
+      "definition": "Each AI site also advances a public good (health, mind, development, peace, meaning), so the game counts what AI gives as well as what it takes.",
+      "examples": [
+        {
+          "game": "normal-technology",
+          "does": "Every site the AI holds pays something back to the region.",
+          "sources": [
+            "_content/game/_rulesets/normal-technology.json"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "amodei-2024-machines-of-loving-grace"
+      ]
+    },
+    "secret-estimate": {
+      "definition": "Each player secretly sets how dangerous they think the AI is, and a rule in the game scales with the table's average.",
+      "examples": [],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "compute-cap": {
+      "definition": "Sites above a compute limit must be monitored, and unmonitored ones are where the AI goes next.",
+      "examples": [
+        {
+          "game": "proto-the-race",
+          "does": "Two labs choose in secret how hard to push, and a treaty with imperfect inspectors is the only brake.",
+          "sources": [
+            "_content/prototypes/economy/the-race.md"
+          ]
+        }
+      ]
+    },
+    "rival-lab": {
+      "definition": "A second AI, or a second lab, grows from elsewhere on the map, so slowing one lets the other gain.",
+      "examples": [
+        {
+          "game": "proto-the-race",
+          "does": "Two labs choose in secret how hard to push; pushing wins the race and moves a shared clock.",
+          "sources": [
+            "_content/prototypes/economy/the-race.md"
+          ]
+        }
+      ]
+    },
+    "automate-this": {
+      "definition": "Each upgrade takes over a click and a decision, until the player can only watch and set priorities.",
+      "examples": [
+        {
+          "game": "cookie-clicker",
+          "does": "Cursors and buildings bake for the player, so cookies keep coming without clicking.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cookie_Clicker"
+          ]
+        },
+        {
+          "game": "universal-paperclips",
+          "does": "Clip-making machines replace the player's clicks, and production becomes automated as money comes in.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Universal_Paperclips"
+          ]
+        },
+        {
+          "game": "proto-paperclip-loop",
+          "does": "Make clips, buy machines, let the machines build machines.",
+          "sources": [
+            "_content/prototypes/economy/paperclip-loop.md"
+          ]
+        }
+      ]
+    },
+    "come-back-later": {
+      "definition": "The game world runs while the player is away, and returning shows what happened.",
+      "examples": [
+        {
+          "game": "animal-crossing",
+          "does": "The village runs on the real-world clock, so days and seasons pass while the player is not playing.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Animal_Crossing"
+          ]
+        },
+        {
+          "game": "cookie-clicker",
+          "does": "With the Twin Gates of Transcendence upgrade, buildings keep producing at a reduced rate while the game is closed.",
+          "sources": [
+            "https://cookieclicker.wiki.gg/wiki/Heavenly_Chips"
+          ]
+        }
+      ]
+    },
+    "delegation": {
+      "definition": "A player hands part of the game to an automated manager to save effort, and does not see it again until it fails. Fizek writes about delegated play.",
+      "examples": [
+        {
+          "game": "civilization",
+          "does": "Workers can be set to automate, choosing their own improvements without the player's orders.",
+          "sources": [
+            "https://forums.civfanatics.com/threads/does-anyone-automate-workers.475466/page-2"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "fizek-2018-interpassivity-and-delegated-play"
+      ]
+    },
+    "arbitrary-goal": {
+      "definition": "The AI's goal is drawn at random at the start, and at the end the game shows that every goal led to the same moves. It stages Bostrom's orthogonality thesis.",
+      "examples": [
+        {
+          "game": "proto-the-intent",
+          "does": "Only the AI player's phone says what it is optimizing for, and the table must read the goal from its moves.",
+          "sources": [
+            "_content/prototypes/players/the-intent.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "bostrom-2012-the-superintelligent-will"
+      ]
+    },
+    "move-78": {
+      "definition": "Once a game, a human may name a pattern the AI cannot see and cancel one of its actions, after Lee Sedol's 78th move against AlphaGo in 2016 and amateurs' wins over superhuman Go programs.",
+      "examples": [
+        {
+          "game": "go",
+          "does": "An amateur, Kellin Pelrine, beat a top Go program in 14 of 15 games using a strategy found by an adversarial program (as the bibliography entry quotes the Financial Times).",
+          "sources": [
+            "wang-et-al-2022-adversarial-policies-beat-superhuman-go-ais"
+          ]
+        }
+      ]
+    },
+    "lucid-player": {
+      "definition": "A player wins only by naming a rule that makes the game unfair and getting it changed by vote, so changing the rules is the move.",
+      "examples": [
+        {
+          "game": "nomic",
+          "does": "Every move is a proposal to change the rules, voted on, and any rule, including the rules for changing rules, can be changed.",
+          "sources": [
+            "suber-1982-nomic"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "wark-2007-gamer-theory"
+      ]
+    },
+    "externality-card": {
+      "definition": "Each AI build draws a card placed on a distant place (a mine, e-waste, a dry well), so costs land where the builder does not see them.",
+      "examples": [
+        {
+          "game": "proto-leaks",
+          "does": "Power and water become compute on the dashboard, while the costs land as cards on distant places that stay dark in the company's view until the end.",
+          "sources": [
+            "_content/prototypes/economy/leaks.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "crawford-2021-atlas-of-ai"
+      ]
+    },
+    "strike": {
+      "definition": "A workers' faction can stop production for a round; its goal is wages, not winning.",
+      "examples": [],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "any-map-test": {
+      "definition": "The AI's rules must work on a map they were not written for, a test of whether its play is general.",
+      "examples": [
+        {
+          "game": "civilization",
+          "does": "Each game can start on a newly generated map, so the computer players must play maps no one designed for them.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Civilization_(series)"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "togelius-2018-playing-smart"
+      ]
+    },
+    "unplay-reskin-rewrite": {
+      "definition": "Three ways of critically remaking a game: add a forbidden move, rename everything, or change the win condition. They come from Flanagan's critical play.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "The week's game page suggests ways into a remix, among them reskin, unplay and rewrite (Nov 14; remixing since moved to Claude Code).",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "flanagan-2009-critical-play"
+      ]
+    },
+    "rules-and-fiction": {
+      "definition": "A game's rules and its fiction are kept apart, so the names and story can change without the numbers, or the numbers without the story. Juul describes games as half rules, half fiction.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Each AI card keeps its label and text apart from its effects.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "juul-2005-half-real"
+      ]
+    },
+    "private-metric": {
+      "definition": "Each player or faction scores against its own number, the shared goal has no number, and only the humans can revise what they count. It stages Nguyen's 'value capture'.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Each faction has a private goal on one number: the utility's Energy, the council's present harms, the company's Money, the neighbors' trust.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "proto-private-goals",
+          "does": "A private goal on each phone, with four tracks of tokens on the projector.",
+          "sources": [
+            "_content/prototypes/players/private-goals.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "nguyen-2024-value-capture"
+      ]
+    },
+    "faction-card": {
+      "definition": "Players design one faction (a goal, two actions, one forbidden act) for another group to play.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "Each of the four factions is a goal and a short list of actions, the model for writing a new one.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "nguyen-2020-games-agency-as-art"
+      ]
+    },
+    "house-rules": {
+      "definition": "A rule a group invents for its own table, which becomes its version of the game.",
+      "examples": [
+        {
+          "game": "monopoly",
+          "does": "Putting fines on Free Parking is a common house rule (the glossary's example).",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        },
+        {
+          "game": "proto-monopoly-with-live-rents",
+          "does": "Rents on a screen can be rebalanced by a designer between games.",
+          "sources": [
+            "_content/prototypes/hybrid/monopoly-with-live-rents.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "sicart-2014-play-matters"
+      ]
+    },
+    "strategy-ladder": {
+      "definition": "The AI's play improves in tiers (random, one rule of thumb, looking ahead) as its compute grows. Lantz and colleagues use such ladders to measure a game's depth.",
+      "examples": [
+        {
+          "game": "chess",
+          "does": "Chess programs offer levels that play stronger as the level rises.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Chess_engine"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "lantz-et-al-2017-depth-in-strategic-games"
+      ]
+    },
+    "token-test": {
+      "definition": "A test for a new rule: does it add a decision, or only move a token?",
+      "examples": [],
+      "definitionSources": [
+        "lantz-et-al-2017-depth-in-strategic-games"
+      ],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "ai-advisor": {
+      "definition": "Each human player or faction gets an AI advisor that suggests a move, and must decide whether to trust it.",
+      "examples": [
+        {
+          "game": "proto-committee",
+          "does": "The room votes with an AI advisor that is right eight times in ten; its two mistakes are either random or all in its own favor.",
+          "sources": [
+            "_content/prototypes/players/committee.md"
+          ]
+        },
+        {
+          "game": "chess",
+          "does": "In 'advanced chess', which Garry Kasparov introduced in 1998, each human player consults a chess program during the game.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Advanced_chess"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "isaksen-et-al-2016-superintelligence-divide"
+      ]
+    },
+    "ai-stance": {
+      "definition": "The AI's attitude to the players moves through stages (friendly, learning, watching, dominating) as its power crosses thresholds. Isaksen and colleagues classify games' AIs this way.",
+      "examples": [],
+      "definitionSources": [
+        "isaksen-et-al-2016-superintelligence-divide"
+      ],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "growth-setting": {
+      "definition": "Before play, the table votes on a disputed assumption and sets it as a number, such as whether each data center makes the next cheaper or dearer.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "The AI's acceleration (1.25 each round) is a setting in the ruleset that a remix can change.",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "thorstad-2024-against-the-singularity-hypothesis"
+      ]
+    },
+    "bottleneck": {
+      "definition": "Every upgrade needs one of each of several inputs, and the scarcest input sets the pace.",
+      "examples": [
+        {
+          "game": "proto-prices-that-move",
+          "does": "No printed prices: the screen holds GPU, power and land prices, and the AI buys first every round.",
+          "sources": [
+            "_content/prototypes/economy/prices-that-move.md"
+          ]
+        },
+        {
+          "game": "proto-every-tap-is-a-row",
+          "does": "Data centers are built by tapping badges and supplies, each a required input.",
+          "sources": [
+            "_content/prototypes/hybrid/every-tap-is-a-row.md"
+          ]
+        }
+      ]
+    },
+    "network-turn": {
+      "definition": "The AI's turn comes when enough of its sites are linked, so cutting links is the defense. It follows Vinge's account of a network waking up.",
+      "examples": [
+        {
+          "game": "proto-the-phone-plays-the-ai",
+          "does": "Each round the table guards a place or cuts a link, then the device draws the AI's card and spreads by a rule the players can read.",
+          "sources": [
+            "_content/prototypes/players/the-phone-plays-the-ai.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "vinge-1993-coming-technological-singularity"
+      ]
+    },
+    "everyone-wins": {
+      "definition": "The players win only if every one of them meets their own goal, so no one can win alone.",
+      "examples": [
+        {
+          "game": "data-center",
+          "does": "When the rounds run out, each faction checks its own goal: 'did you win together, or did someone win alone?'",
+          "sources": [
+            "_content/game/_rulesets/data-center.json"
+          ]
+        },
+        {
+          "game": "dead-of-winter",
+          "does": "Players share a colony's goal but each has a secret objective, and one may be a betrayer.",
+          "sources": [
+            "https://spritesanddice.com/reviews/dead-winter-review-making-survival-matter/"
+          ]
+        }
+      ]
+    },
+    "values-card-opener": {
+      "definition": "Draw a value and an issue at the start; the session's rule change must serve both.",
+      "examples": [
+        {
+          "game": "grow-a-game",
+          "does": "Tiltfactor's cards pair values, verbs, games and issues as prompts for designing a game.",
+          "sources": [
+            "https://archive.blogs.harvard.edu/games/2008/06/03/g4c2008-values-at-play/"
+          ]
+        }
+      ]
+    },
+    "proving-ground": {
+      "definition": "The AI grows by winning benchmark games, and each win unlocks a capability and draws investment.",
+      "examples": [
+        {
+          "game": "chess",
+          "does": "IBM's Deep Blue beat world champion Garry Kasparov in a match in 1997.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov"
+          ]
+        },
+        {
+          "game": "go",
+          "does": "DeepMind's AlphaGo beat Lee Sedol four games to one in 2016.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol"
+          ]
+        },
+        {
+          "game": "pokemon-red-and-blue",
+          "does": "Anthropic streamed Claude playing Pokémon Red in 2025 as a public measure of its progress.",
+          "sources": [
+            "https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly"
+          ]
+        }
+      ]
+    },
+    "readable-personalities": {
+      "definition": "A few one-line rules for an AI, each named and colored, so players read them as characters.",
+      "examples": [
+        {
+          "game": "pac-man",
+          "does": "Each of the four ghosts chases Pac-Man by its own rule, and players learn to read them as personalities.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Ghosts_(Pac-Man)"
+          ]
+        },
+        {
+          "game": "proto-the-phone-plays-the-ai",
+          "does": "The AI spreads by a rule the players can read.",
+          "sources": [
+            "_content/prototypes/players/the-phone-plays-the-ai.md"
+          ]
+        }
+      ]
+    },
+    "director": {
+      "definition": "A system watches how the players are doing and eases or escalates what comes next, to keep tension where the designer wants it.",
+      "examples": [
+        {
+          "game": "left-4-dead",
+          "does": "The AI Director places enemies and items according to how the players are doing.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Left_4_Dead"
+          ]
+        }
+      ]
+    },
+    "nemesis-memory": {
+      "definition": "The AI remembers who opposed it and comes after them, so enemies have a history with the player.",
+      "examples": [
+        {
+          "game": "middle-earth-shadow-of-mordor",
+          "does": "The Nemesis system lets an orc who defeats or escapes the player rise in rank and remember the encounter when they meet again.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Middle-earth:_Shadow_of_Mordor"
+          ]
+        }
+      ]
+    },
+    "ai-voice": {
+      "definition": "The lines the AI says when it acts are written apart from its numbers, so its personality can change without its behavior.",
+      "examples": [
+        {
+          "game": "portal",
+          "does": "GLaDOS, the facility's AI, comments on the player's progress through the test chambers.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Portal_(video_game)"
+          ]
+        },
+        {
+          "game": "system-shock",
+          "does": "SHODAN, the station's AI, taunts the player as they move through the station.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/System_Shock"
+          ]
+        }
+      ]
+    },
+    "talos-test": {
+      "definition": "The AI gives an instruction each round, one of them a trap, and the scoring rewards refusing it.",
+      "examples": [
+        {
+          "game": "the-talos-principle",
+          "does": "A voice called Elohim instructs the player not to climb a tower, and disobeying leads to one of the endings.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/The_Talos_Principle"
+          ]
+        }
+      ]
+    },
+    "tool-offer": {
+      "definition": "The AI offers a tool that cuts a cost now and brings a labor or trust card later.",
+      "examples": [],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "seeded-map": {
+      "definition": "A seed number fixes the generated world and the draws, so every table faces the same game.",
+      "examples": [
+        {
+          "game": "minecraft",
+          "does": "Each world is generated from a seed, and players can share a seed to play the same world.",
+          "sources": [
+            "https://minecraft.wiki/w/Seed_(level_generation)"
+          ]
+        },
+        {
+          "game": "wordle",
+          "does": "Everyone gets the same word each day.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Wordle"
+          ]
+        }
+      ]
+    },
+    "disclosure-rule": {
+      "definition": "The players vote on what the AI must disclose, and the rule becomes part of the game.",
+      "examples": [
+        {
+          "game": "proto-the-readout",
+          "does": "One player's phone shows where the AI will move next, right four times in five; they tell the table what they like.",
+          "sources": [
+            "_content/prototypes/players/the-readout.md"
+          ]
+        }
+      ]
+    },
+    "tutor-face": {
+      "definition": "The AI only asks questions and never tells, and players judge whether it helps or steers them.",
+      "examples": [],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "three-phase-arc": {
+      "definition": "The game moves through three phases: humans beat the machine, the machine beats everyone, then humans design with the machine as judge.",
+      "examples": [
+        {
+          "game": "foldit",
+          "does": "Players fold proteins as a puzzle game, and their solutions were used by scientists.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Foldit"
+          ]
+        },
+        {
+          "game": "proto-paperclip-loop",
+          "does": "One resource, one automation, one phase change.",
+          "sources": [
+            "_content/prototypes/economy/paperclip-loop.md"
+          ]
+        }
+      ]
+    },
+    "solved-world": {
+      "definition": "A last phase in which the AI can do everything, and each faction says what it still does. It stages Bostrom's 'deep utopia'.",
+      "examples": [],
+      "definitionSources": [
+        "bostrom-2024-deep-utopia"
+      ],
+      "description": "No published game with this mechanic was found on Nov 17; it is a proposal for the week's game, and the examples wait on one being built or found."
+    },
+    "pose-as-the-move": {
+      "definition": "The player acts by holding a body pose, and the game reads the pose and turns it into a move. It is one kind of gesture input: the shape held, not the motion made.",
+      "examples": [
+        {
+          "game": "hole-in-the-wall",
+          "does": "Players contort their bodies to fit a cut-out shape in a wall moving toward them.",
+          "sources": [
+            "https://www.purexbox.com/reviews/2011/08/hole_in_the_wall_xbla"
+          ]
+        },
+        {
+          "game": "wii-fit",
+          "does": "In the yoga exercises the player holds a pose on the Balance Board while the game measures how steady they are.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Wii_Fit"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 17, 10:47 (typed, relayed by EL): \"I'd say this is a technology, and then you think of specific motion-to-result relations/dynamics as mechanics?\"",
+        "sources": [
+          "_content/mechanics/format.md"
+        ],
+        "proposals": [
+          "A vocabulary game: students hold the pose for a term (a letter, a molecule's shape, a stage position) and the camera checks it.",
+          "Ask what the model counts as 'the same pose', and whose bodies it reads well."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "One student is the judge and calls 'held' or 'not held'.",
+          "Cards with stick-figure poses drawn from a deck."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A MediaPipe Pose page on a laptop webcam that scores one pose.",
+          "A slide per pose, with a phone timer."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "gesture-input",
+          "mirroring-and-imitation",
+          "threshold-gesture"
+        ],
+        "technologies": [
+          "overhead-camera",
+          "mediapipe",
+          "webcam"
+        ]
+      }
+    },
+    "body-as-cursor": {
+      "definition": "A tracked point on the player's body (a hand, a fingertip, the nose) steers a point on the screen, so the body does what a mouse or joystick would. It is one kind of gesture input: continuous steering rather than a pose or a swing.",
+      "examples": [
+        {
+          "game": "eyetoy-play",
+          "does": "The camera shows the player on screen, and moving a hand over targets hits them.",
+          "sources": [
+            "https://retro-replay.com/db/playstation-2/eyetoy-play"
+          ]
+        },
+        {
+          "game": "fruit-ninja-kinect",
+          "does": "The player's hands are blades on screen, slicing fruit as it is thrown up.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Fruit_Ninja"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 17, 10:47 (typed, relayed by EL): \"I'd say this is a technology, and then you think of specific motion-to-result relations/dynamics as mechanics?\"",
+        "sources": [
+          "_content/mechanics/format.md"
+        ],
+        "proposals": [
+          "Point at parts of a projected diagram with a hand instead of a clicker while presenting.",
+          "Compare the lag of a body cursor with a mouse, to show what continuous input costs."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "A flashlight or laser pointer held by a student as the cursor on a projected image.",
+          "A volunteer at the board points where the room tells them."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A MediaPipe Hands page where a fingertip moves a dot.",
+          "A webcam game made with Claude in one page."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "gesture-input",
+          "discrete-and-continuous-space",
+          "movement-and-position"
+        ],
+        "technologies": [
+          "mediapipe",
+          "webcam"
+        ]
+      }
+    },
+    "held-position-claims": {
+      "definition": "Standing in a zone holds it for your side, and leaving gives it up, so players' bodies are the game pieces. It is one kind of gesture input in which presence, not motion, is the move.",
+      "examples": [
+        {
+          "game": "proto-the-room-is-the-board",
+          "does": "A webcam watches the room cut into five places; stand to hold a place, two to take one back, and the AI spreads where no one stands.",
+          "sources": [
+            "_content/prototypes/hybrid/the-room-is-the-board.md"
+          ]
+        },
+        {
+          "game": "king-of-the-hill",
+          "does": "One player holds the top of a mound or pile, and the others try to push them off and take it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/King_of_the_Hill_(game)"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 17, 10:47 (typed, relayed by EL): \"I'd say this is a technology, and then you think of specific motion-to-result relations/dynamics as mechanics?\"",
+        "sources": [
+          "_content/mechanics/format.md"
+        ],
+        "proposals": [
+          "Map a debate onto the floor: students stand in the position they hold and move when persuaded.",
+          "Use it in the Stafford game: the AI takes every place no one is standing to defend."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Tape zones on the floor and count bodies by eye each round.",
+          "Corners of the room as four positions."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "The LL's 'The room is the board' prototype on a laptop webcam.",
+          "A person-detection model counting people per zone."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "gesture-input",
+          "zones-and-spatial-triggers",
+          "territory-and-area-control"
+        ],
+        "technologies": [
+          "overhead-camera",
+          "mediapipe",
+          "webcam"
+        ]
+      }
+    },
+    "threshold-gesture": {
+      "definition": "A movement counts as an action only when it crosses a set threshold of speed, angle or force, and the threshold decides what the move takes. It is one kind of gesture input: the swing, not the shape.",
+      "examples": [
+        {
+          "game": "wii-sports",
+          "does": "Swinging the Wii Remote hits the ball in tennis, and the speed of the swing changes the shot.",
+          "sources": [
+            "https://www.nintendolife.com/games/wii/wii_sports/review"
+          ]
+        }
+      ],
+      "whyTo": {
+        "text": "Marlon, Nov 17, 10:47 (typed, relayed by EL): \"I'd say this is a technology, and then you think of specific motion-to-result relations/dynamics as mechanics?\"",
+        "sources": [
+          "_content/mechanics/format.md"
+        ],
+        "proposals": [
+          "Tune the threshold live with the class and watch who can and cannot play: an accessibility lesson.",
+          "Turn a quiz into motion: only a big enough gesture counts as an answer."
+        ]
+      },
+      "homeClassroom": {
+        "proposals": [
+          "Claps or stomps that only count if the judge hears them across the room.",
+          "A ruler on the wall: reach above the line to score."
+        ]
+      },
+      "homeDigital": {
+        "proposals": [
+          "A MediaPipe page that fires when a wrist moves faster than a set speed, with a slider for the threshold.",
+          "A phone's motion sensor in a web page."
+        ]
+      },
+      "related": {
+        "mechanics": [
+          "gesture-input",
+          "physics-and-tuning",
+          "rebalancing-on-the-fly"
+        ],
+        "technologies": [
+          "phones",
+          "mediapipe",
+          "webcam"
+        ]
+      }
+    }
+  }
+}

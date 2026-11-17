@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(./graph/**)",
+      "Edit(./sessions/**)",
+      "Edit(./graph.md)",
+      "Bash(date)",
+      "Bash(date *)",
+      "Bash(node --version)",
+      "Bash(node scripts/check-graph.mjs)",
+      "Bash(node scripts/check-graph.mjs *)"
+    ]
+  }
+}

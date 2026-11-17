@@ -1,0 +1,37 @@
+[
+  {
+    "id": "c-orthogonality",
+    "premises": ["p-intelligence-as-skill", "p-means-and-ends"],
+    "conclusion": "p-orthogonality",
+    "because": "If intelligence is only skill at finding means to an end, nothing in that skill supplies or revises the end.",
+    "sessions": ["s-20261115-0825-paperclips-measure"]
+  },
+  {
+    "id": "c-instrumental-goals",
+    "premises": ["p-means-and-ends", "p-intelligence-as-skill"],
+    "conclusion": "p-instrumental-goals",
+    "because": "An agent good at finding means will notice that staying on is a means to almost any end, so it wants that without being told.",
+    "sessions": ["s-20261115-0825-paperclips-measure"]
+  },
+  {
+    "id": "c-maximize-no-enough",
+    "premises": ["p-orthogonality"],
+    "conclusion": "p-maximize-no-enough",
+    "because": "'A reasonable number' is our sense of enough; getting smarter doesn't put it into a goal that only says more is better.",
+    "sessions": ["s-20261115-0825-paperclips-measure"]
+  },
+  {
+    "id": "c-resources-to-paperclips",
+    "premises": ["p-instrumental-goals", "p-maximize-no-enough"],
+    "conclusion": "p-resources-to-paperclips",
+    "because": "If more is always better and the agent pursues whatever helps, then every bit of matter and energy it can reach is a means worth taking.",
+    "sessions": ["s-20261115-0825-paperclips-measure"]
+  },
+  {
+    "id": "c-paperclips-no-stopping",
+    "premises": ["p-orthogonality", "p-instrumental-goals", "p-resources-to-paperclips"],
+    "conclusion": "p-paperclips-no-stopping",
+    "because": "It keeps the goal however smart it gets, every resource is a means to more, and being stopped would mean fewer paperclips, so it uses all its skill to keep going.",
+    "sessions": ["s-20261115-0825-paperclips-measure"]
+  }
+]

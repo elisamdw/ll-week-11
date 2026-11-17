@@ -1,0 +1,462 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "stafford/ai-in-a-social-studies-course",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "stafford/coupling-is-a-mechanic",
+      "x": 260,
+      "y": 0
+    },
+    {
+      "id": "stafford/games-already-about-this",
+      "x": 520,
+      "y": 0
+    },
+    {
+      "id": "stafford/infrastructure-profusion",
+      "x": 780,
+      "y": 0
+    },
+    {
+      "id": "stafford/reverse-adaptation-and-the-human-motor",
+      "x": 1040,
+      "y": 0
+    },
+    {
+      "id": "stafford/the-cloud-has-a-watershed",
+      "x": 1300,
+      "y": 0
+    },
+    {
+      "id": "stafford/session-async",
+      "x": 0,
+      "y": 230
+    },
+    {
+      "id": "stafford/play-paperclips-and-log-the-easy-moments",
+      "x": 260,
+      "y": 230
+    },
+    {
+      "id": "stafford/a-round-a-day",
+      "x": 520,
+      "y": 230
+    },
+    {
+      "id": "stafford/read-the-game-state",
+      "x": 780,
+      "y": 230
+    },
+    {
+      "id": "stafford/remix-one-mechanic",
+      "x": 1040,
+      "y": 230
+    },
+    {
+      "id": "stafford/what-the-mechanic-argues",
+      "x": 1300,
+      "y": 230
+    },
+    {
+      "id": "stafford/session-in-person",
+      "x": 0,
+      "y": 460
+    },
+    {
+      "id": "stafford/knock-over-the-network",
+      "x": 520,
+      "y": 460
+    },
+    {
+      "id": "stafford/play-data-center",
+      "x": 780,
+      "y": 460
+    },
+    {
+      "id": "stafford/cards-become-the-map",
+      "x": 1300,
+      "y": 460
+    },
+    {
+      "id": "stafford/a-logistics-and-labor-faction",
+      "x": 0,
+      "y": 690
+    },
+    {
+      "id": "stafford/every-resource-names-a-place",
+      "x": 260,
+      "y": 690
+    },
+    {
+      "id": "stafford/the-map-is-their-database",
+      "x": 520,
+      "y": 690
+    },
+    {
+      "id": "stafford/what-william-takes-with-him",
+      "x": 780,
+      "y": 690
+    },
+    {
+      "id": "@mechanic/not-modeled",
+      "x": 0,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/cascade-failure",
+      "x": 200,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/location-play",
+      "x": 400,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/unplay-reskin-rewrite",
+      "x": 600,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/faction-card",
+      "x": 800,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/externality-card",
+      "x": 1000,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/come-back-later",
+      "x": 1200,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/voting-and-the-collective-decision",
+      "x": 1400,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/territory-and-area-control",
+      "x": 1600,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/harden-node",
+      "x": 1800,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/house-rules",
+      "x": 0,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/strike",
+      "x": 200,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/resource-management",
+      "x": 400,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/hidden-information",
+      "x": 600,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/any-map-test",
+      "x": 800,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/network-turn",
+      "x": 1000,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/treacherous-turn",
+      "x": 1200,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/present-harms-track",
+      "x": 1400,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/incremental-growth",
+      "x": 1600,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/automate-this",
+      "x": 1800,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/arbitrary-goal",
+      "x": 0,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/delegation",
+      "x": 200,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/seeded-map",
+      "x": 400,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/growth-setting",
+      "x": 600,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/goal-lock",
+      "x": 800,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/bottleneck",
+      "x": 1000,
+      "y": 1040
+    },
+    {
+      "id": "@reading/bogost-2007-persuasive-games",
+      "x": 0,
+      "y": 1170
+    },
+    {
+      "id": "@reading/winner-1977-autonomous-technology",
+      "x": 200,
+      "y": 1170
+    },
+    {
+      "id": "@reading/fizek-2022-playing-at-a-distance",
+      "x": 400,
+      "y": 1170
+    },
+    {
+      "id": "@reading/lantz-2017-universal-paperclips",
+      "x": 600,
+      "y": 1170
+    },
+    {
+      "id": "@reading/perrow-1984-normal-accidents",
+      "x": 800,
+      "y": 1170
+    },
+    {
+      "id": "@reading/rabinbach-2018-eclipse-of-the-utopias-of-labor",
+      "x": 1000,
+      "y": 1170
+    },
+    {
+      "id": "@reading/star-1999-ethnography-of-infrastructure",
+      "x": 1200,
+      "y": 1170
+    },
+    {
+      "id": "@reading/manovich-1999-database-as-symbolic-form",
+      "x": 1400,
+      "y": 1170
+    },
+    {
+      "id": "@reading/crawford-2021-atlas-of-ai",
+      "x": 1600,
+      "y": 1170
+    },
+    {
+      "id": "@reading/fisch-2018-anthropology-of-the-machine",
+      "x": 1800,
+      "y": 1170
+    },
+    {
+      "id": "@reading/suber-1982-nomic",
+      "x": 0,
+      "y": 1260
+    },
+    {
+      "id": "@reading/bostrom-2014-superintelligence",
+      "x": 200,
+      "y": 1260
+    },
+    {
+      "id": "@reading/bostrom-2003-ethical-issues-in-advanced-ai",
+      "x": 400,
+      "y": 1260
+    },
+    {
+      "id": "@reading/hogan-2015-data-flows-and-water-woes",
+      "x": 600,
+      "y": 1260
+    },
+    {
+      "id": "@prototype/hybrid/photo-to-game-state",
+      "x": 0,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/economy/prices-that-move",
+      "x": 200,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/players/the-turn-only-the-phone-knows",
+      "x": 400,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/economy/cascade",
+      "x": 600,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/economy/the-race",
+      "x": 800,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/players/committee",
+      "x": 1000,
+      "y": 1390
+    },
+    {
+      "id": "@card/ideas/universal-paperclips-meets-civilization",
+      "x": 0,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/photo-to-game-state",
+      "x": 200,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/a-game-william-can-take-with-him",
+      "x": 400,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/the-stafford-game-as-an-async-online-experience",
+      "x": 600,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/design-a-game-on-the-classs-own-database",
+      "x": 800,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/design-and-play-an-ai-strategy-game",
+      "x": 1000,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/come-back-later",
+      "x": 1200,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/turn-the-index-cards-into-a-database",
+      "x": 1400,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/index-cards-that-answer",
+      "x": 1600,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/prices-that-move",
+      "x": 1800,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/the-invisible-flows",
+      "x": 0,
+      "y": 1610
+    },
+    {
+      "id": "@card/ideas/autonomy-as-the-stafford-games-theme",
+      "x": 200,
+      "y": 1610
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-stafford-research",
+      "label": "Research",
+      "x": -20,
+      "y": -40,
+      "w": 1560,
+      "h": 180
+    },
+    {
+      "id": "g-stafford-session-async",
+      "label": "Session: the async week (Nov 16–23)",
+      "x": -20,
+      "y": 190,
+      "w": 1560,
+      "h": 180
+    },
+    {
+      "id": "g-stafford-session-in-person",
+      "label": "Session: the workshop in the room (Nov 23, 12:45–14:45)",
+      "x": -20,
+      "y": 420,
+      "w": 2080,
+      "h": 180
+    },
+    {
+      "id": "g-stafford-more",
+      "label": "Ideas and other activities",
+      "x": -20,
+      "y": 650,
+      "w": 1040,
+      "h": 180
+    }
+  ],
+  "edges": [],
+  "hidden": [
+    "llufs/build-playtest-host",
+    "llufs/tabletop-phone-market",
+    "llufs/host-reset-handover",
+    "llufs/gesture-versus-key",
+    "llufs/playtest-one-change",
+    "llufs/the-board-and-the-log",
+    "llufs/a-station-with-two-ways-in",
+    "llufs/from-launchers-to-game-mechanics",
+    "tdm155ai/session-a-play-take-apart-remix",
+    "tdm155ai/session-b-ai-at-the-table",
+    "tdm155ai/a-mechanic-for-your-final-project",
+    "tdm155ai/change-one-card",
+    "tdm155ai/claude-takes-a-seat",
+    "tdm155ai/draw-three",
+    "tdm155ai/photo-to-game-state",
+    "tdm155ai/play-two-theories-of-ai",
+    "tdm155ai/prices-that-move-at-the-table",
+    "tdm155ai/remix-with-claude-code",
+    "tdm155ai/take-apart-a-board-game",
+    "tdm155ai/a-tap-station",
+    "tdm155ai/one-game-three-tables",
+    "tdm155ai/a-game-is-data",
+    "tdm155ai/agency-or-argument",
+    "tdm155ai/ai-as-a-material",
+    "tdm155ai/ai-as-a-player",
+    "tdm155ai/games-that-play-themselves",
+    "tdm155ai/mechanics-are-the-verbs",
+    "tdm155ai/plan-changes"
+  ],
+  "viewport": null,
+  "savedAt": "2026-11-15T13:08:35.084Z"
+}

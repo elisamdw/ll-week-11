@@ -1,0 +1,17 @@
+{
+  "format": "ll-learner-graph/0.1",
+  "topic": "Bostrom's paperclip argument",
+  "goal": ["p-paperclips-no-stopping"],
+  "goalStatement": "I want to understand why a paperclip AI would actually turn everything into paperclips instead of just making a reasonable number: why it wouldn't stop.",
+  "plan": [
+    "p-means-and-ends",
+    "p-intelligence-as-skill",
+    "p-orthogonality",
+    "p-instrumental-goals",
+    "p-maximize-no-enough",
+    "p-resources-to-paperclips",
+    "p-paperclips-no-stopping"
+  ],
+  "started": "2026-11-15",
+  "learner": null
+}

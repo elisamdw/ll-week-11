@@ -1,0 +1,20 @@
+[
+  {
+    "id": "src-bostrom-2012",
+    "title": "The Superintelligent Will: Motivation and Instrumental Rationality in Advanced Artificial Agents",
+    "creators": ["Nick Bostrom"],
+    "year": 2012,
+    "url": "https://nickbostrom.com/superintelligentwill.pdf",
+    "file": null,
+    "note": "Minds and Machines 22 (2012): 71–85. Author's preprint. Listed in readings/links.md."
+  },
+  {
+    "id": "src-bostrom-2003",
+    "title": "Ethical Issues in Advanced Artificial Intelligence",
+    "creators": ["Nick Bostrom"],
+    "year": 2003,
+    "url": "https://nickbostrom.com/ethics/ai",
+    "file": null,
+    "note": "Where the paperclip maximizer first appears. Listed in readings/links.md."
+  }
+]

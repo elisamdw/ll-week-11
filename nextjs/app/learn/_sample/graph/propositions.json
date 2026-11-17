@@ -1,0 +1,66 @@
+[
+  {
+    "id": "p-a-game-has-pieces",
+    "name": "A game has pieces",
+    "statement": "Every game is made of things that can be named and counted: boards, cards, tokens, players, scores.",
+    "kind": "foundation",
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-pieces-1", "prompt": "Name four things in Monopoly that you could list in a table.", "answer": "For example: the 40 spaces, the players, each player's money, the property deeds and who owns them.", "kind": "short" }
+    ]
+  },
+  {
+    "id": "p-a-template",
+    "name": "Templates",
+    "statement": "A template is the general description of a kind of piece, the same in every game: a property card with its price and rent.",
+    "kind": "foundation",
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-template-1", "prompt": "Which of these is a template?", "choices": ["Boardwalk: price 400, rent 50", "The red player owns Boardwalk", "It is the red player's turn"], "answer": "Boardwalk: price 400, rent 50", "kind": "choice" }
+    ]
+  },
+  {
+    "id": "p-an-instance",
+    "name": "Instances",
+    "statement": "An instance is one piece in one game, made from a template and carrying its own values: this Boardwalk, owned by red, with two houses.",
+    "kind": "derived",
+    "requires": ["p-a-template"],
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-instance-1", "prompt": "Two games of Monopoly are running at once. What do their Boardwalks share, and what can differ?", "answer": "They share the template (price, rents); the owner and number of houses belong to each instance and can differ.", "kind": "short" }
+    ]
+  },
+  {
+    "id": "p-the-state",
+    "name": "The state",
+    "statement": "The game state is every instance's current values at one moment: enough to say exactly where the game stands.",
+    "kind": "derived",
+    "requires": ["p-a-game-has-pieces", "p-an-instance"],
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-state-1", "prompt": "You photograph a chess board mid-game. What does the photo miss that the state needs?", "answer": "Whose turn it is (and rules-relevant history such as castling rights); the photo shows positions only.", "kind": "short" }
+    ]
+  },
+  {
+    "id": "p-the-view",
+    "name": "The view",
+    "statement": "What the player sees is drawn from the state; two screens can draw the same state differently.",
+    "kind": "derived",
+    "requires": ["p-the-state"],
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-view-1", "prompt": "In a card game, each player's screen shows a different hand. Is the state different for each player?", "choices": ["Yes, each player has their own state", "No, one state, drawn differently for each player"], "answer": "No, one state, drawn differently for each player", "kind": "choice" }
+    ]
+  },
+  {
+    "id": "p-a-save-is-the-state",
+    "name": "A save is the state",
+    "statement": "A save file is the state written down; load it, draw the view again, and the game is back where it was.",
+    "kind": "derived",
+    "requires": ["p-the-state", "p-the-view"],
+    "sessions": ["s-20261115-a-game-is-data"],
+    "questions": [
+      { "id": "q-save-1", "prompt": "Why doesn't a save file need to store a picture of the screen?", "answer": "The screen is drawn from the state, so storing the state is enough to draw it again.", "kind": "short" }
+    ]
+  }
+]

@@ -1,0 +1,392 @@
+{
+  "_about": "HI's additions to GM's 50 cards (The Notebook, apps/tdm155ai/tdm155ai-week-11/game-mechanics/cards/), keyed by card number. GM's wording is read from the cards at build time and never copied here. inOurGame describes the week 11 game's rulesets on Nov 14 (Data Center, The Committee, Normal Technology, Blank). readings are keys in readings.json.",
+  "1": {
+    "inOurGame": "yes: every version (Data Center ends on the AI's share of the map or the last round; The Committee and Normal Technology the same way)",
+    "aiAngle": "Who sets the AI's goal, and can anyone change it? A fixed, trivial goal is the paperclip maximizer; a goal the players must name is alignment.",
+    "readings": [
+      "bostrom2003",
+      "bostrom2014",
+      "suits",
+      "costikyan1994",
+      "elias",
+      "meier"
+    ]
+  },
+  "2": {
+    "inOurGame": "yes: every version (AI draws, upkeep, factions act)",
+    "aiAngle": "The AI's loop runs on its own beside the players' loop; the drama is where the two meet.",
+    "readings": [
+      "fizek",
+      "lantz",
+      "fullerton",
+      "sellers"
+    ]
+  },
+  "3": {
+    "inOurGame": "yes: Data Center and Normal Technology (trust and harm tracks, each faction's own score)",
+    "aiAngle": "Scoring is where an AI's goal is written down; whatever the score rewards, an optimizer will pursue to the letter (perverse instantiation).",
+    "readings": [
+      "bostrom2014",
+      "nguyen2024",
+      "bogost2007",
+      "building-blocks"
+    ]
+  },
+  "4": {
+    "inOurGame": "no",
+    "aiAngle": "Humans retry; an AI that learns from each loss (self-play) gets stronger every time you reset it.",
+    "readings": []
+  },
+  "5": {
+    "inOurGame": "no",
+    "aiAngle": "Compute and data-center deals as debt: the town that took the money now owes the AI water and power.",
+    "readings": []
+  },
+  "6": {
+    "inOurGame": "yes: a fixed number of rounds in every version",
+    "aiAngle": "A countdown to the AI's endgame that players can delay by paying (Bogost's Cowpocalypse clock).",
+    "readings": [
+      "bogost-cowclicker",
+      "kurzweil"
+    ]
+  },
+  "7": {
+    "inOurGame": "yes: every version (the AI's phase, then each faction in turn)",
+    "aiAngle": "Where the AI sits in the turn order decides whether humans react to it or anticipate it.",
+    "readings": [
+      "building-blocks",
+      "elias"
+    ]
+  },
+  "8": {
+    "inOurGame": "no (async play on a clock is proposed)",
+    "aiAngle": "The AI acts on a clock whether or not the humans have moved (Fizek's idle games).",
+    "readings": [
+      "fizek",
+      "fisch"
+    ]
+  },
+  "9": {
+    "inOurGame": "no",
+    "aiAngle": "Can a human keep time with a machine that never drifts?",
+    "readings": [
+      "fisch"
+    ]
+  },
+  "10": {
+    "inOurGame": "yes: the AI's goal number grows each round in every version",
+    "aiAngle": "The AI's growth compounds; the players tune its rate (Paperclips, Fizek, Kurzweil's doubling).",
+    "readings": [
+      "paperclips",
+      "fizek",
+      "kurzweil",
+      "bostrom2014",
+      "machinations",
+      "sellers"
+    ]
+  },
+  "11": {
+    "inOurGame": "yes: the AI's acceleration and its 'grow' cards",
+    "aiAngle": "Each round the AI asks a little more; the question is whether the humans notice the slope.",
+    "readings": [
+      "bostrom2014",
+      "machinations"
+    ]
+  },
+  "12": {
+    "inOurGame": "yes: the AI's deck is shuffled with a seed in every version",
+    "aiAngle": "Chance stands in for what the humans can't predict about the AI; a seeded shuffle lets every table face the same machine.",
+    "readings": [
+      "costikyan2013",
+      "building-blocks"
+    ]
+  },
+  "13": {
+    "inOurGame": "no",
+    "aiAngle": "One more model scale-up, or stop while it's still controllable?",
+    "readings": [
+      "ai2027",
+      "costikyan2013",
+      "building-blocks"
+    ]
+  },
+  "14": {
+    "inOurGame": "yes: Data Center and The Committee (the turn card is hidden in the AI's deck)",
+    "aiAngle": "The AI knows its plan; the humans see only its moves. The treacherous turn is a hidden-information mechanic.",
+    "readings": [
+      "bostrom2014",
+      "costikyan2013"
+    ]
+  },
+  "15": {
+    "inOurGame": "no (proposed: a player secretly working for the AI)",
+    "aiAngle": "One player is secretly the AI's ally, or secretly an AI; the group has to find out (Werewolf for LLMs, the Turing test).",
+    "readings": [
+      "building-blocks"
+    ]
+  },
+  "16": {
+    "inOurGame": "no",
+    "aiAngle": "The AI's real objective is a hidden rule players infer from its moves.",
+    "readings": []
+  },
+  "17": {
+    "inOurGame": "no (proposed: an AI seat that sees only through its sensors)",
+    "aiAngle": "Players see the AI's infrastructure only where they have looked: the invisibility of data centers.",
+    "readings": [
+      "costikyan2013",
+      "star"
+    ]
+  },
+  "18": {
+    "inOurGame": "partly: Data Center and Normal Technology factions have private goals",
+    "aiAngle": "The company knows what the AI pays; the neighbors know what it costs. No one sees the whole system.",
+    "readings": [
+      "nguyen",
+      "elias"
+    ]
+  },
+  "19": {
+    "inOurGame": "yes: Data Center, The Committee and Normal Technology (the AI's proposals wait for an approve or block vote until the turn)",
+    "aiAngle": "The group decides whether to approve the AI's requests; after the turn, it stops asking.",
+    "readings": [
+      "ai2027",
+      "bostrom2014",
+      "building-blocks"
+    ]
+  },
+  "20": {
+    "inOurGame": "yes: the factions win or lose together against the AI's share of the map",
+    "aiAngle": "Humans cooperating against a system, while each faction's private goal pulls them apart.",
+    "readings": [
+      "galloway2004",
+      "building-blocks"
+    ]
+  },
+  "21": {
+    "inOurGame": "yes: Data Center and Normal Technology (utility, council, company, neighbors)",
+    "aiAngle": "Roles are the actors hidden behind 'the AI': companies, utilities, regulators, workers.",
+    "readings": [
+      "dyer",
+      "crawford"
+    ]
+  },
+  "22": {
+    "inOurGame": "yes: Data Center and Normal Technology (sell and deal actions)",
+    "aiAngle": "Players trade with the AI itself: selling it power and water is profitable and harms everyone (anti-advergame scoring).",
+    "readings": [
+      "bogost2007",
+      "building-blocks"
+    ]
+  },
+  "23": {
+    "inOurGame": "no (proposed: a treaty with a rival lab that either side can defect from)",
+    "aiAngle": "A pause or treaty between labs, enforceable only by trust: the arms-race dilemma.",
+    "readings": [
+      "ai2027",
+      "yudkowsky",
+      "building-blocks"
+    ]
+  },
+  "24": {
+    "inOurGame": "no",
+    "aiAngle": "The audience can intervene in the AI's run, as Twitch chat did in Claude Plays Pokémon.",
+    "readings": [
+      "taylor2018"
+    ]
+  },
+  "25": {
+    "inOurGame": "no",
+    "aiAngle": "Human and AI take turns adding to the story (AI Dungeon).",
+    "readings": []
+  },
+  "26": {
+    "inOurGame": "no",
+    "aiAngle": "The AI copies its players; imitation learning makes the mirror the method.",
+    "readings": [
+      "nooscope"
+    ]
+  },
+  "27": {
+    "inOurGame": "yes: energy, water and money in Data Center and Normal Technology; money and energy in The Committee",
+    "aiAngle": "The AI competes with people for the same energy and water (Bostrom's instrumental resources; Crawford's material AI).",
+    "readings": [
+      "bostrom2012",
+      "crawford",
+      "machinations"
+    ]
+  },
+  "28": {
+    "inOurGame": "partly: the AI's growth compounds; the humans' engines are proposed",
+    "aiAngle": "The AI's engine is the one that wins: each data center makes the next cheaper (or, in Thorstad's setting, dearer).",
+    "readings": [
+      "bostrom2014",
+      "thorstad",
+      "machinations",
+      "building-blocks"
+    ]
+  },
+  "29": {
+    "inOurGame": "no (proposed: a convergence tech tree)",
+    "aiAngle": "Whatever the goal, the tree leads to the same nodes: instrumental convergence as a tech tree.",
+    "readings": [
+      "bostrom2012",
+      "galloway2004",
+      "sellers",
+      "poblocki"
+    ]
+  },
+  "30": {
+    "inOurGame": "yes: the AI spreads across linked nodes; the game ends if it holds half the map (Data Center)",
+    "aiAngle": "The AI's territory is infrastructure; control of the map is Bostrom's singleton.",
+    "readings": [
+      "bostrom2014",
+      "building-blocks",
+      "poblocki",
+      "easterling",
+      "mukherjee"
+    ]
+  },
+  "31": {
+    "inOurGame": "partly: each faction has a few actions per turn",
+    "aiAngle": "Delegate a worker to an automated manager to save actions, and lose sight of it.",
+    "readings": [
+      "fizek2018",
+      "building-blocks"
+    ]
+  },
+  "32": {
+    "inOurGame": "yes: the AI's behavior is a deck everyone can read; students change the deck through Claude Code",
+    "aiAngle": "The AI as a deck of readable cards rather than a black box; students build the deck.",
+    "readings": [
+      "juul",
+      "togelius",
+      "building-blocks"
+    ]
+  },
+  "33": {
+    "inOurGame": "no",
+    "aiAngle": "Combine inputs (chips, power, water, data) to build the AI's next capability.",
+    "readings": [
+      "thorstad",
+      "machinations"
+    ]
+  },
+  "34": {
+    "inOurGame": "partly: the AI spreads only to nodes linked to its own",
+    "aiAngle": "Where the AI is matters: adjacency makes the network the battlefield (Vinge: cut the links).",
+    "readings": [
+      "vinge"
+    ]
+  },
+  "35": {
+    "inOurGame": "no",
+    "aiAngle": "Walking into a sensor's view triggers the system: surveillance as a zone.",
+    "readings": [
+      "chun"
+    ]
+  },
+  "36": {
+    "inOurGame": "no",
+    "aiAngle": "A gesture model reads the body; the game is whether it reads you right.",
+    "readings": []
+  },
+  "37": {
+    "inOurGame": "no",
+    "aiAngle": "Machines never forget a sequence; the human's limit is the game.",
+    "readings": []
+  },
+  "38": {
+    "inOurGame": "no",
+    "aiAngle": "Play as the AI with only its senses: a camera feed, a meter, a log.",
+    "readings": []
+  },
+  "39": {
+    "inOurGame": "no (the map could be built from the class's index-card database of real infrastructure)",
+    "aiAngle": "The board is the real region: the data centers, rivers and substations near you.",
+    "readings": [
+      "hogan",
+      "easterling",
+      "star"
+    ]
+  },
+  "40": {
+    "inOurGame": "partly: actions like moratorium and zoning forbid the AI on a node",
+    "aiAngle": "A self-imposed rule (no AI on this node) costs efficiency and keeps meaning (Bostrom's Deep Utopia; Flanagan's unplaying).",
+    "readings": [
+      "bostrom2024",
+      "flanagan"
+    ]
+  },
+  "41": {
+    "inOurGame": "yes: the AI's cards break in each round",
+    "aiAngle": "The AI is the interruption: each round it draws a card the humans must absorb.",
+    "readings": [
+      "building-blocks"
+    ]
+  },
+  "42": {
+    "inOurGame": "no",
+    "aiAngle": "Rewind the AI's last move: the off switch as a game mechanic, and why it fails once the AI has turned.",
+    "readings": [
+      "bostrom2014"
+    ]
+  },
+  "43": {
+    "inOurGame": "yes: the turn card in Data Center and The Committee cannot be undone",
+    "aiAngle": "Some AI decisions can't be reversed: once it stops asking, it never asks again.",
+    "readings": [
+      "bostrom2014",
+      "meier"
+    ]
+  },
+  "44": {
+    "inOurGame": "no",
+    "aiAngle": "An AI solves the lock instantly; the puzzle becomes knowing what to ask.",
+    "readings": [
+      "schell"
+    ]
+  },
+  "45": {
+    "inOurGame": "no",
+    "aiAngle": "Authored branches against an LLM that answers anything (Façade between them).",
+    "readings": []
+  },
+  "46": {
+    "inOurGame": "no (proposed: a voice field for the AI's lines, and a tutor face)",
+    "aiAngle": "This is the AI as a character: the Nov 18 co-star, from Façade and Event[0] to LLM NPCs.",
+    "readings": []
+  },
+  "47": {
+    "inOurGame": "partly: each faction's private goal works as a mission",
+    "aiAngle": "Who gives the AI its quest, and what does it count as done?",
+    "readings": [
+      "nguyen2024"
+    ]
+  },
+  "48": {
+    "inOurGame": "no (proposed: the AI climbs a strategy ladder as compute crosses thresholds)",
+    "aiAngle": "The AI levels up; its stance moves from friendly to domination as it does (Isaksen et al.'s table).",
+    "readings": [
+      "isaksen",
+      "lantz2017",
+      "schell"
+    ]
+  },
+  "49": {
+    "inOurGame": "no",
+    "aiAngle": "Benchmarks are the AI's achievements: chess, Go, poker, Diplomacy, Pokémon.",
+    "readings": [
+      "bogost2011"
+    ]
+  },
+  "50": {
+    "inOurGame": "partly: the play page logs and narrates each event",
+    "aiAngle": "Juice makes an AI's loop feel good even when nothing is decided (Bogost's Cow Clicker; Lantz's token test).",
+    "readings": [
+      "bogost-cowclicker",
+      "lantz2017",
+      "schell"
+    ]
+  }
+}

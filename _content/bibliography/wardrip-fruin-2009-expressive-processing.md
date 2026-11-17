@@ -1,0 +1,28 @@
+---
+title: "Expressive Processing: Digital Fictions, Computer Games, and Software Studies"
+kind: book
+year: 2009
+creators: ["Noah Wardrip-Fruin"]
+id: wardrip-fruin-2009-expressive-processing
+area: rhetoric-art-critique
+tier: important
+canonical_evidence: ["Assigned in Digital Media Aesthetics, week 3, Jan. 26, 'Expressive Processing (Noah Wardrip-Fruin, p. 1-19)' (seen: https://dma.criticalvideogamestudies.com/syllabus/; the page names no institution or year, but its Canvas link is canvas.uchicago.edu)", "Assigned across two seminars, chs. 1-5 and then chs. 6, 7, 8, and 10, in UC Santa Cruz CMPM 290J, Spring 2017, beside Bogost's 'Procedural Rhetoric' (unverified: search snippet; the course site refused connections)", "Its draft was the subject of an open, blog-based peer review on Grand Text Auto, run alongside the MIT Press's own review and reported that day in the Chronicle of Higher Education (seen: https://grandtextauto.soe.ucsc.edu/?p=1711, Jan. 22, 2008)", "OpenAlex records 293 citing works, checked 2026-11-14 (seen: https://api.openalex.org/works?search=expressive%20processing%20digital%20fictions)"]
+access: "library e-book or in print; the 2008 draft, section by section, is open on Grand Text Auto (https://grandtextauto.soe.ucsc.edu/, the expressive-processing category; the chapters differ from the book)"
+status: researched
+sources: ["https://grandtextauto.soe.ucsc.edu/?p=1711", "https://grandtextauto.soe.ucsc.edu/?p=1713", "https://grandtextauto.soe.ucsc.edu/?p=1720", "https://grandtextauto.soe.ucsc.edu/2008/02/21/ep-54-the-tale-spin-effect/", "https://grandtextauto.soe.ucsc.edu/2008/03/11/ep-81-eliza-and-simcity", "https://dma.criticalvideogamestudies.com/syllabus/", "https://api.openalex.org/works?search=expressive%20processing%20digital%20fictions"]
+author: "TH (Claude Code 5fb1eb52-157a-45df-a553-b9e751b23756, started in ll-week-11 on FAS-DDW32PXW5L), with a research helper"
+---
+
+# Expressive Processing
+
+**Citation:** Wardrip-Fruin, Noah. *Expressive Processing: Digital Fictions, Computer Games, and Software Studies*. Cambridge, MA: MIT Press, 2009. (Year from the January 2008 post announcing it for "next year" from the MIT Press, seen; the city and the Software Studies series from memory, unverified.) The draft was posted on Grand Text Auto with CommentPress from January 22, 2008, "each weekday for about ten weeks" (seen).
+
+**What it argues:** Digital media should be read for their processes, not only their surface outputs. A work "is made up of data and process, with a somewhat fuzzy line between them" (draft section 1.2, seen), and interaction is "a change to the state of the work" that comes through its surface (1.5, seen). Patterns in the interplay of data, process, and surface are "operational logics," such as collision detection; in MDA's terms they "might often be called 'mechanics'" (1.5, seen). Three effects name how surface and process can part: the Eliza effect "creates a surface illusion of system complexity — which play (if allowed) dispels," the Tale-Spin effect "a surface illusion of system simplicity" that play cannot pierce (5.4, seen), and the SimCity effect, where "the elements presented on the surface have analogues within the internal processes and data," so play builds a model of the system (8.1, seen). The quotes are from the 2008 draft; the book's wording may differ.
+
+**Why it's canonical:** It brings software studies to games and fiction, is assigned for its opening chapter in a Digital Media Aesthetics course (UChicago, by its Canvas link) and in whole sections in a UC Santa Cruz seminar (unverified), and its open peer review on Grand Text Auto drew coverage in the *Chronicle of Higher Education*. Wardrip-Fruin notes that Bogost's *Persuasive Games* treats operational logics as the "tropes" of procedural rhetoric (1.5, seen).
+
+**Key terms:** data vs. process, surface, process intensity (from Crawford), operational logics, the Eliza effect, the Tale-Spin effect, the SimCity effect, expressive processing, software studies.
+
+**For the game (TH proposal):** (B, debrief) Aim the AI at the SimCity effect: every AI card names the process it runs, so play reveals the model rather than hiding it, and the debrief asks which effect players felt (an Eliza-like AI that seemed smarter than its rule table, or a Tale-Spin one whose planning they never saw); a Claude Code remix then lists the game's operational logics (spread along links, cascading failure, upkeep) and swaps one, keeping data (the ruleset's templates) and process (the engine) apart as on the game-state page.
+
+**Elsewhere here:** [Games as data](../game-state/README.md) and [Data Center as data](../game-state/data-center.md); mechanics [Readable personalities](../mechanics/new/readable-personalities.md) (the SimCity effect at small scale), [Cascading failure](../mechanics/new/cascade-failure.md), [The AI's voice](../mechanics/new/ai-voice.md), and `the-improvising-character` in [the mechanics inventory](../mechanics/mechanics.csv) (the Eliza effect in a chatbot co-star). The database half of the pair: [Manovich](manovich-1999-database-as-symbolic-form.md). Procedural rhetoric beside it: [Bogost, Persuasive Games](bogost-2007-persuasive-games.md) ([TH's entry](../theory/bogost-persuasive-games.md)) and [Unit Operations](bogost-2006-unit-operations.md); the mechanics framework he answers: [MDA](hunicke-et-al-2004-mda.md); SimCity's critics: [Starr](starr-1994-seductions-of-sim.md); process intensity's source: [Crawford](crawford-1984-art-of-computer-game-design.md) (Wardrip-Fruin cites Crawford's 1987 article, not this book).

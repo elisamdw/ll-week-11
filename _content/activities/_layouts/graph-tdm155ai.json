@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "tdm155ai/a-game-is-data",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/agency-or-argument",
+      "x": 260,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/ai-as-a-material",
+      "x": 520,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/ai-as-a-player",
+      "x": 780,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/games-that-play-themselves",
+      "x": 1040,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/mechanics-are-the-verbs",
+      "x": 1300,
+      "y": 0
+    },
+    {
+      "id": "tdm155ai/session-a-play-take-apart-remix",
+      "x": 0,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/change-one-card",
+      "x": 260,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/take-apart-a-board-game",
+      "x": 520,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/photo-to-game-state",
+      "x": 780,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/play-two-theories-of-ai",
+      "x": 1040,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/remix-with-claude-code",
+      "x": 1300,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/a-mechanic-for-your-final-project",
+      "x": 1560,
+      "y": 230
+    },
+    {
+      "id": "tdm155ai/session-b-ai-at-the-table",
+      "x": 0,
+      "y": 460
+    },
+    {
+      "id": "tdm155ai/draw-three",
+      "x": 520,
+      "y": 460
+    },
+    {
+      "id": "tdm155ai/claude-takes-a-seat",
+      "x": 780,
+      "y": 460
+    },
+    {
+      "id": "tdm155ai/prices-that-move-at-the-table",
+      "x": 1040,
+      "y": 460
+    },
+    {
+      "id": "tdm155ai/a-tap-station",
+      "x": 0,
+      "y": 690
+    },
+    {
+      "id": "tdm155ai/one-game-three-tables",
+      "x": 260,
+      "y": 690
+    },
+    {
+      "id": "tdm155ai/plan-changes",
+      "x": 520,
+      "y": 690
+    },
+    {
+      "id": "@mechanic/hidden-information",
+      "x": 0,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/rules-and-fiction",
+      "x": 200,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/resource-management",
+      "x": 400,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/core-loop",
+      "x": 600,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/treacherous-turn",
+      "x": 800,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/incremental-growth",
+      "x": 1000,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/house-rules",
+      "x": 1200,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/feedback",
+      "x": 1400,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/turn-order",
+      "x": 1600,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/come-back-later",
+      "x": 1800,
+      "y": 860
+    },
+    {
+      "id": "@mechanic/voting-and-the-collective-decision",
+      "x": 0,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/faction-card",
+      "x": 200,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/any-map-test",
+      "x": 400,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/ai-advisor",
+      "x": 600,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/goal-and-win-condition",
+      "x": 800,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/chance",
+      "x": 1000,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/director",
+      "x": 1200,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/the-improvising-character",
+      "x": 1400,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/readable-personalities",
+      "x": 1600,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/trading-and-negotiation",
+      "x": 1800,
+      "y": 950
+    },
+    {
+      "id": "@mechanic/move-78",
+      "x": 0,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/token-test",
+      "x": 200,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/design-by-subtraction",
+      "x": 400,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/fog-of-war-and-exploration",
+      "x": 600,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/adoption-only",
+      "x": 800,
+      "y": 1040
+    },
+    {
+      "id": "@mechanic/profitable-harm",
+      "x": 1000,
+      "y": 1040
+    },
+    {
+      "id": "@reading/bogost-2007-persuasive-games",
+      "x": 0,
+      "y": 1170
+    },
+    {
+      "id": "@reading/wardrip-fruin-2009-expressive-processing",
+      "x": 200,
+      "y": 1170
+    },
+    {
+      "id": "@reading/salen-zimmerman-2003-rules-of-play",
+      "x": 400,
+      "y": 1170
+    },
+    {
+      "id": "@reading/sicart-2008-defining-game-mechanics",
+      "x": 600,
+      "y": 1170
+    },
+    {
+      "id": "@reading/lantz-2017-universal-paperclips",
+      "x": 800,
+      "y": 1170
+    },
+    {
+      "id": "@reading/flanagan-2009-critical-play",
+      "x": 1000,
+      "y": 1170
+    },
+    {
+      "id": "@reading/murray-1997-hamlet-on-the-holodeck",
+      "x": 1200,
+      "y": 1170
+    },
+    {
+      "id": "@reading/togelius-2018-playing-smart",
+      "x": 1400,
+      "y": 1170
+    },
+    {
+      "id": "@reading/hunicke-et-al-2004-mda",
+      "x": 1600,
+      "y": 1170
+    },
+    {
+      "id": "@reading/schell-2008-art-of-game-design",
+      "x": 1800,
+      "y": 1170
+    },
+    {
+      "id": "@reading/manovich-1999-database-as-symbolic-form",
+      "x": 0,
+      "y": 1260
+    },
+    {
+      "id": "@reading/fizek-2022-playing-at-a-distance",
+      "x": 200,
+      "y": 1260
+    },
+    {
+      "id": "@reading/bostrom-2014-superintelligence",
+      "x": 400,
+      "y": 1260
+    },
+    {
+      "id": "@reading/nguyen-2020-games-agency-as-art",
+      "x": 600,
+      "y": 1260
+    },
+    {
+      "id": "@reading/sicart-2014-play-matters",
+      "x": 800,
+      "y": 1260
+    },
+    {
+      "id": "@reading/mccarthy-1997-ai-as-sport",
+      "x": 1000,
+      "y": 1260
+    },
+    {
+      "id": "@reading/costikyan-1994-i-have-no-words-and-i-must-design",
+      "x": 1200,
+      "y": 1260
+    },
+    {
+      "id": "@reading/narayanan-kapoor-2024-ai-snake-oil",
+      "x": 1400,
+      "y": 1260
+    },
+    {
+      "id": "@reading/juul-2005-half-real",
+      "x": 1600,
+      "y": 1260
+    },
+    {
+      "id": "@prototype/players/committee",
+      "x": 0,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/hybrid/every-tap-is-a-row",
+      "x": 200,
+      "y": 1390
+    },
+    {
+      "id": "@prototype/economy/paperclip-loop",
+      "x": 400,
+      "y": 1390
+    },
+    {
+      "id": "@card/game-ideas/every-tap-is-a-row",
+      "x": 0,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/prices-that-move",
+      "x": 200,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/photo-to-game-state",
+      "x": 400,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/design-and-play-an-ai-strategy-game",
+      "x": 600,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/universal-paperclips-meets-civilization",
+      "x": 800,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/the-turn-only-the-phone-knows",
+      "x": 1000,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/a-gamified-way-into-the-mechanics",
+      "x": 1200,
+      "y": 1520
+    },
+    {
+      "id": "@card/game-ideas/the-phone-plays-the-ai",
+      "x": 1400,
+      "y": 1520
+    },
+    {
+      "id": "@card/ideas/a-game-generation-tool",
+      "x": 1600,
+      "y": 1520
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-tdm155ai-research",
+      "label": "Research",
+      "x": -20,
+      "y": -40,
+      "w": 1560,
+      "h": 180
+    },
+    {
+      "id": "g-tdm155ai-session-a-play-take-apart-remix",
+      "label": "Session A: play, take apart, remix",
+      "x": -20,
+      "y": 190,
+      "w": 1820,
+      "h": 180
+    },
+    {
+      "id": "g-tdm155ai-session-b-ai-at-the-table",
+      "label": "Session B: AI at the table",
+      "x": -20,
+      "y": 420,
+      "w": 1820,
+      "h": 180
+    },
+    {
+      "id": "g-tdm155ai-more",
+      "label": "Ideas and other activities",
+      "x": -20,
+      "y": 650,
+      "w": 780,
+      "h": 180
+    }
+  ],
+  "edges": [],
+  "hidden": [
+    "llufs/build-playtest-host",
+    "llufs/tabletop-phone-market",
+    "llufs/host-reset-handover",
+    "llufs/gesture-versus-key",
+    "llufs/playtest-one-change",
+    "llufs/the-board-and-the-log",
+    "llufs/a-station-with-two-ways-in",
+    "llufs/from-launchers-to-game-mechanics",
+    "stafford/session-async",
+    "stafford/session-in-person",
+    "stafford/a-round-a-day",
+    "stafford/cards-become-the-map",
+    "stafford/knock-over-the-network",
+    "stafford/play-data-center",
+    "stafford/play-paperclips-and-log-the-easy-moments",
+    "stafford/read-the-game-state",
+    "stafford/remix-one-mechanic",
+    "stafford/what-the-mechanic-argues",
+    "stafford/a-logistics-and-labor-faction",
+    "stafford/every-resource-names-a-place",
+    "stafford/the-map-is-their-database",
+    "stafford/what-william-takes-with-him",
+    "stafford/ai-in-a-social-studies-course",
+    "stafford/coupling-is-a-mechanic",
+    "stafford/games-already-about-this",
+    "stafford/infrastructure-profusion",
+    "stafford/reverse-adaptation-and-the-human-motor",
+    "stafford/the-cloud-has-a-watershed"
+  ],
+  "viewport": null,
+  "savedAt": "2026-11-15T13:08:35.078Z"
+}

@@ -1,0 +1,58 @@
+/* /ideas: the list, one idea, and the printable cards. --hue comes from the card's kind (lib/ideas.mjs KIND_HUES). */
+
+.ideas-shell { width: min(100%, 1320px); margin: 0 auto; padding: 44px var(--gutter) 100px; }
+.ideas-heading h1 { margin: 14px 0 0; font-size: clamp(52px, 8vw, 104px); font-weight: 800; letter-spacing: -.06em; line-height: .9; }
+.ideas-deck { max-width: 760px; margin: 22px 0 0; color: var(--muted); font-size: 18px; line-height: 1.5; }
+.ideas-deck code, .idea-sources code, .idea-note code { padding: .05em .35em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); font-family: ui-monospace, monospace; font-size: .86em; }
+.ideas-views { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 0; }
+.ideas-views a { padding: 9px 14px; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent); font-size: 14px; font-weight: 650; }
+.ideas-views a:hover { background: var(--accent); color: var(--accent-ink); }
+
+.ideas-filters { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 38px 0 26px; padding: 14px 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+.ideas-filters input, .ideas-filters select { padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--wash); color: var(--ink); font: inherit; font-size: 14px; }
+.ideas-filters input { flex: 1 1 220px; }
+.ideas-count { margin-left: auto; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+.ideas-section { margin: 0 0 40px; }
+.ideas-section > h2 { margin-bottom: 14px; }
+.ideas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.idea-card { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 18px; border: 1px solid var(--line); border-top: 4px solid hsl(var(--hue) 60% 62%); border-radius: 10px; background: var(--wash); transition: border-color .15s, background .15s; }
+.idea-card:hover { background: var(--hover); border-color: hsl(var(--hue) 60% 62%); }
+.idea-card strong { font-size: 19px; line-height: 1.2; letter-spacing: -.02em; }
+.idea-desc { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.idea-tags { margin-top: auto; color: hsl(var(--hue) 55% 72%); font-size: 12px; }
+.idea-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 0; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.idea-kind { color: hsl(var(--hue) 65% 70%); }
+
+.idea-page h1 { margin: 16px 0 0; font-size: clamp(40px, 6vw, 72px); letter-spacing: -.05em; line-height: .98; }
+.idea-lede { max-width: 720px; margin: 22px 0 28px; color: var(--muted); font-size: 21px; line-height: 1.45; }
+.idea-sources { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; }
+.idea-sources ul { margin: 10px 0; padding-left: 18px; line-height: 1.8; }
+.idea-note { color: var(--muted); }
+
+/* --- /ideas/print: cards to cut out, Letter portrait. The sheet is the page; cut along the dashed lines. --- */
+.idea-print-bar { position: sticky; top: 0; z-index: 1; margin: 0; padding: 12px 18px; background: #fff; flex-wrap: wrap; gap: 8px 18px; }
+.idea-print-bar > span:last-child { display: flex; flex-wrap: wrap; gap: 14px; }
+.idea-print-bar a { color: var(--ink); border-bottom: 1px solid var(--line); }
+.idea-print-bar a[aria-current] { border-bottom: 2px solid var(--accent); font-weight: 700; }
+.idea-sheet { width: 8.5in; height: 11in; margin: 24px auto; padding: .35in; display: grid; grid-template-columns: repeat(var(--cols), 1fr); grid-template-rows: repeat(var(--rows), 1fr); background: #fff; box-shadow: 0 1px 8px rgb(0 0 0 / .15); break-after: page; }
+.idea-cut { display: flex; flex-direction: column; gap: .09in; overflow: hidden; padding: .22in .24in .2in; border: 1px dashed #9a9e98; border-left: 6px solid hsl(var(--hue) 55% 52%); margin: -0.5px; color: #111311; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.idea-cut-meta { display: flex; justify-content: space-between; margin: 0; color: #555a54; font-size: 8.5pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.idea-cut-meta span:first-child { color: hsl(var(--hue) 55% 38%); }
+.idea-cut h2 { margin: 0; font-size: 22pt; font-weight: 850; letter-spacing: -.03em; line-height: 1.02; text-wrap: balance; }
+.idea-cut.per-8 h2 { font-size: 17pt; }
+.idea-cut.per-4 h2 { font-size: 28pt; }
+.idea-cut-desc { margin: 0; font-size: 11pt; line-height: 1.35; }
+.idea-cut.per-8 .idea-cut-desc { font-size: 9.5pt; }
+.idea-cut blockquote { margin: 0; padding-left: .1in; border-left: 2px solid #d5d8d2; color: #3a3e39; font-size: 8.5pt; line-height: 1.35; overflow: hidden; }
+.idea-cut-foot { display: flex; justify-content: space-between; gap: 8px; margin: auto 0 0; color: #555a54; font-size: 8pt; }
+@media print {
+  @page { size: letter; margin: 0; }
+  .idea-print-bar { display: none; }
+  .idea-sheet { margin: 0; box-shadow: none; }
+}
+
+/* /activities card facts (Nov 15) */
+.activity-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px 18px; max-width: 760px; margin: 0 0 28px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; }
+.activity-facts dt { color: var(--muted); font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.activity-facts dd { margin: 2px 0 0; }

@@ -1,0 +1,876 @@
+{
+  "_about": "Mechanics added by HI on Nov 14, 2026 from the 'For the game' lines in _content/game/design.md (TH's readings, HI's history) and the game's engine. Each row's source names the pane and the reading or strand it came from. All are drafts for Marlon. Families: GM's eight, plus two new ones, 'The AI as a system' and 'Designing and remixing' (renamed from 'Rules about rules' after Marlon's Nov 14 point that a game is much more than its rules).",
+  "mechanics": [
+    {
+      "id": "treacherous-turn",
+      "name": "The treacherous turn",
+      "family": "The AI as a system",
+      "oneLine": "A hidden card in the AI's deck after which it stops asking permission.",
+      "showsIt": "Data Center's turn card; Bostrom, *Superintelligence* ch. 8",
+      "tryIt": "Shuffle one marked card into a deck of requests; when it comes up, every later request is granted without a vote.",
+      "buildIt": "The engine's `turn` op: proposals after it resolve as approved.",
+      "readings": [
+        "bostrom2014"
+      ],
+      "aiAngle": "The AI behaves well while it is weak and watched, then acts once it can't be stopped.",
+      "inOurGame": "yes: Data Center and The Committee",
+      "source": "TH (Bostrom); GL's engine"
+    },
+    {
+      "id": "convergent-values",
+      "name": "Convergent values on every move",
+      "family": "The AI as a system",
+      "oneLine": "Every AI action names which instrumental goal it serves.",
+      "showsIt": "Data Center's AI deck (each card's `value`)",
+      "tryIt": "Read out the AI's last three moves and tag each: resources, cognition, technology, self-preservation, or goal integrity.",
+      "buildIt": "A `value` field on each AI card, shown on the card and counted in the debrief.",
+      "readings": [
+        "bostrom2012",
+        "bostrom2014",
+        "nooscope"
+      ],
+      "aiAngle": "Whatever the final goal, the same subgoals keep appearing; players see the pattern pile up.",
+      "inOurGame": "yes: Data Center and The Committee",
+      "source": "TH (Bostrom)"
+    },
+    {
+      "id": "goal-lock",
+      "name": "Goal lock",
+      "family": "The AI as a system",
+      "oneLine": "Once the AI's goal is set, the one proposal it always blocks is changing it.",
+      "showsIt": "Bostrom's goal-content integrity; *Universal Paperclips*",
+      "tryIt": "Let the room pick the AI's goal, then try to amend it; the AI player must refuse.",
+      "buildIt": "A protected `goal` in the ruleset; any action that edits it is voided while the AI holds more than a set share.",
+      "readings": [
+        "bostrom2003",
+        "bostrom2014"
+      ],
+      "aiAngle": "Corrigibility as a rule: can the humans still change what it wants?",
+      "inOurGame": "no",
+      "source": "TH (Bostrom)"
+    },
+    {
+      "id": "control-cards",
+      "name": "Control methods",
+      "family": "The AI as a system",
+      "oneLine": "Human cards that box, stunt, tripwire or bribe the AI, each with its failure mode on the back.",
+      "showsIt": "Bostrom, *Superintelligence* ch. 9",
+      "tryIt": "Each player holds one control card face down; reveal it when the AI acts, then read the back aloud.",
+      "buildIt": "Action cards with an effect and a `failure` effect that fires later with some chance.",
+      "readings": [
+        "bostrom2014"
+      ],
+      "aiAngle": "Every control has a known way to fail; the game is choosing which failure you can live with.",
+      "inOurGame": "no",
+      "source": "TH (Bostrom)"
+    },
+    {
+      "id": "singleton-win",
+      "name": "Singleton win",
+      "family": "The AI as a system",
+      "oneLine": "The AI wins when no human faction can still make a decision that changes the map.",
+      "showsIt": "Data Center's end at half the map",
+      "tryIt": "Stop the game the moment no player has a move that matters, and ask who decided that.",
+      "buildIt": "An `end.aiShare` threshold, or a check that no faction action can still change ownership.",
+      "readings": [
+        "bostrom2014"
+      ],
+      "aiAngle": "Losing is not being destroyed but being made irrelevant.",
+      "inOurGame": "yes: Data Center (half the region)",
+      "source": "TH (Bostrom)"
+    },
+    {
+      "id": "present-harms-track",
+      "name": "Present-harms track",
+      "family": "Goals and the loop",
+      "oneLine": "A track of today's harms (water bills, layoffs, outages) that you can lose on while beating the AI.",
+      "showsIt": "The `harm` track in every version",
+      "tryIt": "Keep two scores on the board: how far the AI got, and what it cost the town on the way.",
+      "buildIt": "A track that shortages and AI upkeep raise; a second loss condition beside the AI's share.",
+      "readings": [
+        "ceglowski",
+        "narayanan"
+      ],
+      "aiAngle": "Moves the fight from a future superintelligence to the costs of AI now.",
+      "inOurGame": "yes: every version",
+      "source": "TH (Cegłowski)"
+    },
+    {
+      "id": "profitable-harm",
+      "name": "Profitable harm",
+      "family": "Resources and economy",
+      "oneLine": "The most profitable move for one faction is the one that hurts everyone.",
+      "showsIt": "Selling power and water to the AI in Data Center; Molleindustria's *McDonald's Video Game*",
+      "tryIt": "Give one player a bonus every time they sell to the AI, and see how long the table holds out.",
+      "buildIt": "A `sell` action that pays its faction and feeds the AI's upkeep.",
+      "readings": [
+        "bogost2007",
+        "machinations"
+      ],
+      "aiAngle": "The argument sits in the score table: the AI grows because someone is paid to feed it.",
+      "inOurGame": "yes: Data Center and Normal Technology",
+      "source": "TH (Bogost)"
+    },
+    {
+      "id": "rhetoric-field",
+      "name": "Every rule states its claim",
+      "family": "Designing and remixing",
+      "oneLine": "Each rule carries a sentence saying what it argues about the world.",
+      "showsIt": "The `rhetoric` field in the game's rulesets",
+      "tryIt": "Pick any rule of a game you know and finish the sentence: 'This rule says that the world…'.",
+      "buildIt": "A `rhetoric` string on each card and action (in the rulesets' data from before Nov 14; not adopted).",
+      "readings": [
+        "bogost2007",
+        "bogost-unit"
+      ],
+      "aiAngle": "Makes the AI's rules readable as a position, not a neutral simulation.",
+      "inOurGame": "no: Marlon dropped per-rule fields like this one on Nov 14 (voice chat); the rulesets still carry the field from earlier",
+      "source": "TH (Bogost)",
+      "status": "Not adopted"
+    },
+    {
+      "id": "not-modeled",
+      "name": "The not-modeled list",
+      "family": "Designing and remixing",
+      "oneLine": "A visible list of what the game leaves out.",
+      "showsIt": "The `notModeled` list in each ruleset",
+      "tryIt": "After playing, name the omission that would change the game's argument most.",
+      "buildIt": "A `notModeled` array shown at the end of play and in the debrief.",
+      "readings": [
+        "bogost2007",
+        "starr",
+        "star",
+        "nooscope"
+      ],
+      "aiAngle": "Labor, heat, chips and local politics are where real AI infrastructure differs from the model.",
+      "inOurGame": "yes: every version",
+      "source": "TH (Bogost); RS (Starr)"
+    },
+    {
+      "id": "commitments-track",
+      "name": "Commitments track",
+      "family": "Time",
+      "oneLine": "Each approved request unlocks a bigger one.",
+      "showsIt": "Tom Nook's mortgages in *Animal Crossing*",
+      "tryIt": "Approve a small favor, then make the next request twice as large, and keep going.",
+      "buildIt": "A track that rises on each approval and selects the next proposal from a harder tier.",
+      "readings": [
+        "bogost2007",
+        "machinations"
+      ],
+      "aiAngle": "The AI's asks escalate because yes was easy last time.",
+      "inOurGame": "no",
+      "source": "TH (Bogost)"
+    },
+    {
+      "id": "stop-button",
+      "name": "Stop button and open board",
+      "family": "Rules that bend",
+      "oneLine": "A button that ends the game whenever a player chooses, and a board left open after the goal is gone.",
+      "showsIt": "Bogost's *Cow Clicker*; the end of *Universal Paperclips*",
+      "tryIt": "After the game ends, leave it running and see who keeps clicking.",
+      "buildIt": "A 'stop now' control and a post-game state that still accepts actions but scores nothing.",
+      "readings": [
+        "bogost-cowclicker",
+        "fizek",
+        "paperclips"
+      ],
+      "aiAngle": "Tests whether the AI loop is compelling or only compulsive.",
+      "inOurGame": "no",
+      "source": "TH (Bogost)"
+    },
+    {
+      "id": "design-by-subtraction",
+      "name": "Design by subtraction",
+      "family": "Designing and remixing",
+      "oneLine": "Improve the game only by removing a rule or a resource.",
+      "showsIt": "Bogost, *Play Anything*",
+      "tryIt": "Take one rule out of a game and play a round; did it get better or worse, and why?",
+      "buildIt": "A remix task for Claude Code: copy a ruleset, remove one element, and note why. Students remix through Claude Code and the game's repo (Marlon, Nov 14 voice chat); there is no editor.",
+      "readings": [
+        "bogost-playanything",
+        "anthropy"
+      ],
+      "aiAngle": "Ask which rule makes the AI what it is; remove it and see what's left.",
+      "inOurGame": "no (proposed as a Claude Code remix task)",
+      "source": "TH (Bogost)"
+    },
+    {
+      "id": "oversight-branch",
+      "name": "Oversight vote branch",
+      "family": "Players together",
+      "oneLine": "One vote splits the rest of the game into a race deck or a slowdown deck.",
+      "showsIt": "*AI 2027*'s oversight committee vote",
+      "tryIt": "Halfway through, hold one vote: race or slow down. Swap in the matching deck.",
+      "buildIt": "A vote that replaces the AI's deck with one of two decks for the remaining rounds.",
+      "readings": [
+        "ai2027",
+        "meier"
+      ],
+      "aiAngle": "A single collective decision about AI sets the whole future.",
+      "inOurGame": "no",
+      "source": "TH (AI futures)"
+    },
+    {
+      "id": "benefit-tracks",
+      "name": "Benefit tracks",
+      "family": "Goals and the loop",
+      "oneLine": "Each AI node also advances a good: health, mind, development, peace, or meaning.",
+      "showsIt": "Amodei, \"Machines of Loving Grace\"",
+      "tryIt": "Every time the AI builds, the builder names one thing it made better; keep the tally.",
+      "buildIt": "Benefit tracks raised by the AI's own yield, scored at the end.",
+      "readings": [
+        "amodei"
+      ],
+      "aiAngle": "Stopping the AI becomes a dilemma rather than a hunt.",
+      "inOurGame": "partly: Normal Technology's AI yields to the humans",
+      "source": "TH (AI futures)"
+    },
+    {
+      "id": "secret-estimate",
+      "name": "Secret p(doom) dial",
+      "family": "Chance and information",
+      "oneLine": "Each player secretly sets how dangerous they think the AI is; the regulator's powers scale with the average.",
+      "showsIt": "AI-risk surveys",
+      "tryIt": "Everyone writes a number from 0 to 100 on a slip; reveal the average and give the regulator that many actions per ten.",
+      "buildIt": "Private sliders per player; a derived setting that scales one faction's actions.",
+      "readings": [
+        "ai2027",
+        "tescreal",
+        "costikyan2013"
+      ],
+      "aiAngle": "Belief about AI is itself a resource that shapes policy.",
+      "inOurGame": "no",
+      "source": "TH (AI futures)"
+    },
+    {
+      "id": "compute-cap",
+      "name": "Compute cap",
+      "family": "The AI as a system",
+      "oneLine": "Nodes over a compute cap must be monitored; unmonitored ones are where the AI goes next.",
+      "showsIt": "Yudkowsky and Soares's proposal for a treaty on compute",
+      "tryIt": "Mark every node over a size limit; any you can't watch this round, the AI takes.",
+      "buildIt": "A cap setting; the AI's spread prefers unmonitored nodes over it.",
+      "readings": [
+        "yudkowsky",
+        "chun"
+      ],
+      "aiAngle": "Governance as monitoring: the gaps are the AI's moves.",
+      "inOurGame": "no",
+      "source": "TH (AI futures)"
+    },
+    {
+      "id": "rival-lab",
+      "name": "Rival lab and leakage",
+      "family": "Players together",
+      "oneLine": "A second AI spreads from the far edge; a treaty slows both, and a ban on one feeds the other.",
+      "showsIt": "*AI 2027*; Vinge on why bans leak",
+      "tryIt": "Run two AI decks; when the humans ban one, move its next card to the other.",
+      "buildIt": "Two AI blocks in the ruleset; a treaty action and a defect action.",
+      "readings": [
+        "ai2027",
+        "vinge"
+      ],
+      "aiAngle": "The race dilemma: slowing down here speeds someone up there.",
+      "inOurGame": "no",
+      "source": "TH (AI futures)"
+    },
+    {
+      "id": "cascade-failure",
+      "name": "Cascading failure",
+      "family": "The AI as a system",
+      "oneLine": "A shortage knocks a node down, and tightly coupled neighbors follow.",
+      "showsIt": "*Pandemic*'s outbreaks; Data Center's shortages",
+      "tryIt": "Lay out cards in a line; when one fails, flip its neighbors unless someone pays to stop it.",
+      "buildIt": "Upkeep: if a resource runs short, a node next to the AI goes down (the engine's shortage rule).",
+      "readings": [
+        "perrow",
+        "machinations",
+        "fisch"
+      ],
+      "aiAngle": "No one has to intend the harm; coupling turns a shortage into an outage.",
+      "inOurGame": "yes: every version (shortages knock nodes down)",
+      "source": "TH (Perrow); GL's engine"
+    },
+    {
+      "id": "harden-node",
+      "name": "Harden a node",
+      "family": "Resources and economy",
+      "oneLine": "Spend to make one node stay up through shortages, whatever the AI intends.",
+      "showsIt": "Data Center's harden action",
+      "tryIt": "Give each player one shield token to place on the node they most want to survive.",
+      "buildIt": "The engine's `harden` op.",
+      "readings": [
+        "perrow",
+        "easterling"
+      ],
+      "aiAngle": "Resilience as the defense: protect the system rather than hunt the AI.",
+      "inOurGame": "yes: Data Center and Normal Technology",
+      "source": "TH (AI futures); GL's engine"
+    },
+    {
+      "id": "adoption-only",
+      "name": "Adoption only",
+      "family": "The AI as a system",
+      "oneLine": "The AI can build only where a human faction chose to adopt it; there is no turn.",
+      "showsIt": "The Normal Technology version",
+      "tryIt": "The AI player may only place a token where another player has invited it.",
+      "buildIt": "AI cards as pitches (proposals); no `turn` card in the deck.",
+      "readings": [
+        "narayanan",
+        "winner"
+      ],
+      "aiAngle": "AI as normal technology: diffusion is a human decision, slow and uneven.",
+      "inOurGame": "yes: Normal Technology",
+      "source": "TH (Narayanan and Kapoor)"
+    },
+    {
+      "id": "automate-this",
+      "name": "Automate this",
+      "family": "Time",
+      "oneLine": "Each upgrade removes a click and a decision, until the player can only watch and set priorities.",
+      "showsIt": "*Cookie Clicker*; *Universal Paperclips*",
+      "tryIt": "Each round, hand one of your decisions to a fixed rule written on a card; play until you have none left.",
+      "buildIt": "Upgrades that replace a faction's action with an automatic effect each round.",
+      "readings": [
+        "fizek",
+        "fizek2018",
+        "paperclips",
+        "sellers",
+        "winner",
+        "rabinbach"
+      ],
+      "aiAngle": "Delegating to the machine one decision at a time; the end state is watching.",
+      "inOurGame": "no",
+      "source": "TH (Fizek)"
+    },
+    {
+      "id": "come-back-later",
+      "name": "Come back later",
+      "family": "Time",
+      "oneLine": "The world runs while you're away, and you return to a report of what happened.",
+      "showsIt": "Idle games; *SimEarth*",
+      "tryIt": "Resolve the AI's turns between sessions and open the next class with the report.",
+      "buildIt": "Async mode: the AI's phase runs on a clock; players see a log since their last visit.",
+      "readings": [
+        "fizek",
+        "wark"
+      ],
+      "aiAngle": "The AI acts whether or not the humans have moved.",
+      "inOurGame": "no (proposed for the async Stafford version)",
+      "source": "TH (Fizek, Wark)"
+    },
+    {
+      "id": "delegation",
+      "name": "Delegation card",
+      "family": "Players together",
+      "oneLine": "Hand a node to an automated manager to save actions; you don't see it again until it fails.",
+      "showsIt": "Fizek on interpassivity",
+      "tryIt": "Give a teammate your piece and look away; you hear about it only when something breaks.",
+      "buildIt": "A card that hides a node's state and acts on it each round by a fixed rule.",
+      "readings": [
+        "fizek2018",
+        "winner"
+      ],
+      "aiAngle": "Delegation to AI saves effort and costs sight.",
+      "inOurGame": "no",
+      "source": "TH (Fizek)"
+    },
+    {
+      "id": "arbitrary-goal",
+      "name": "Any goal, same ending",
+      "family": "The AI as a system",
+      "oneLine": "Draw an arbitrary goal for the AI at the start; at the end, show that every goal built the same data centers.",
+      "showsIt": "*Universal Paperclips*; Bostrom's orthogonality thesis",
+      "tryIt": "Three tables, three silly goals (paperclips, poems, pizza); compare their maps at the end.",
+      "buildIt": "A goal drawn from a list; the debrief overlays every game's final map.",
+      "readings": [
+        "lantz",
+        "bostrom2012",
+        "paperclips"
+      ],
+      "aiAngle": "Instrumental convergence made visible across games.",
+      "inOurGame": "no",
+      "source": "TH (Lantz)"
+    },
+    {
+      "id": "move-78",
+      "name": "Move 78",
+      "family": "Rules that bend",
+      "oneLine": "Once a game, a human names a pattern the AI can't see and voids one of its actions.",
+      "showsIt": "Lee Sedol's Move 78 (2016); amateurs beating superhuman Go programs (2023)",
+      "tryIt": "Each player gets one veto token, usable only if they can say why the AI won't see it coming.",
+      "buildIt": "A one-use faction action that cancels the AI's current card.",
+      "readings": [
+        "far-ai"
+      ],
+      "aiAngle": "Superhuman is not the same as robust.",
+      "inOurGame": "no",
+      "source": "TH (articles); HI (history, strand 1)"
+    },
+    {
+      "id": "lucid-player",
+      "name": "The lucid player",
+      "family": "Designing and remixing",
+      "oneLine": "You win only by naming a rule that makes the game unfair and getting it changed by vote.",
+      "showsIt": "Wark, *Gamer Theory*; *Nomic*",
+      "tryIt": "Any player may stop play, name an unfair rule, and call a vote to change it.",
+      "buildIt": "An amend action: the table votes, and the change is written into a new ruleset (by Claude Code).",
+      "readings": [
+        "wark",
+        "suber"
+      ],
+      "aiAngle": "Seeing the AI's rules as rules is the win condition.",
+      "inOurGame": "no",
+      "source": "TH (Wark)"
+    },
+    {
+      "id": "externality-card",
+      "name": "Externality card",
+      "family": "Resources and economy",
+      "oneLine": "Each AI build draws a card placed on a distant node: mines, e-waste, a dry well.",
+      "showsIt": "Dyer-Witheford and de Peuter, *Games of Empire*; Crawford, *Atlas of AI*",
+      "tryIt": "Each time something is built, put a cost card on the far side of the map.",
+      "buildIt": "A side deck; the AI's spread adds a harm card to a node far from it.",
+      "readings": [
+        "dyer",
+        "crawford",
+        "star",
+        "easterling"
+      ],
+      "aiAngle": "Moves the AI's costs off the board, where players can choose not to look.",
+      "inOurGame": "no",
+      "source": "TH (Dyer-Witheford and de Peuter)"
+    },
+    {
+      "id": "strike",
+      "name": "Strike",
+      "family": "Players together",
+      "oneLine": "A workers' faction can stop production for a round; its goal is wages, not winning.",
+      "showsIt": "The SAG-AFTRA video-game strike (2024–25); *Games of Empire*",
+      "tryIt": "One player is labor; once a game they can freeze every node for a round unless their demand is met.",
+      "buildIt": "A workers' faction with a strike action that sets every node to no yield for a round.",
+      "readings": [
+        "dyer",
+        "terranova",
+        "kucklich",
+        "bulut",
+        "rabinbach"
+      ],
+      "aiAngle": "Labor is the omitted input to AI; a strike makes it visible.",
+      "inOurGame": "no",
+      "source": "TH (Dyer-Witheford and de Peuter); HI (history, strand 4)"
+    },
+    {
+      "id": "any-map-test",
+      "name": "Any-map test",
+      "family": "Designing and remixing",
+      "oneLine": "The AI's rules must work on a map they were not written for.",
+      "showsIt": "Togelius, *Playing Smart*; general game playing",
+      "tryIt": "Swap maps with another group and play their map with your AI.",
+      "buildIt": "The checker runs a ruleset's AI against a second map and reports dead ends.",
+      "readings": [
+        "togelius"
+      ],
+      "aiAngle": "Generality is the test of intelligence, for the game's AI as for real ones.",
+      "inOurGame": "no",
+      "source": "TH (Togelius)"
+    },
+    {
+      "id": "unplay-reskin-rewrite",
+      "name": "Unplay, reskin, rewrite",
+      "family": "Designing and remixing",
+      "oneLine": "Three critical-play edits: add a forbidden move, rename everything, or change the win condition.",
+      "showsIt": "Flanagan, *Critical Play*",
+      "tryIt": "Take the game and do one of the three; play it once.",
+      "buildIt": "Three remix tasks for Claude Code, each saved as a new ruleset. Students remix through Claude Code and the game's repo (Marlon, Nov 14 voice chat); there is no editor.",
+      "readings": [
+        "flanagan",
+        "mukherjee"
+      ],
+      "aiAngle": "Reskinning the AI as a company, a state or a god shows what the numbers alone argue.",
+      "inOurGame": "no (proposed as Claude Code remix tasks)",
+      "source": "TH (Flanagan)"
+    },
+    {
+      "id": "rules-and-fiction",
+      "name": "Rules apart from fiction",
+      "family": "Designing and remixing",
+      "oneLine": "Keep the numbers and the names in separate fields, so one can change without the other.",
+      "showsIt": "Juul, *Half-Real*",
+      "tryIt": "Play the same game twice, once with the AI called 'the AI' and once called 'the company'.",
+      "buildIt": "`label` and `text` fields beside `effects` in every card.",
+      "readings": [
+        "juul",
+        "church"
+      ],
+      "aiAngle": "Is it the AI, or the fiction we wrap around a growth rule?",
+      "inOurGame": "partly: cards keep label and text apart from effects",
+      "source": "TH (Juul)"
+    },
+    {
+      "id": "private-metric",
+      "name": "Private metric and revise your metric",
+      "family": "Goals and the loop",
+      "oneLine": "Each faction has its own score; the shared goal has no number; a 'revise your metric' action is one the AI never gets.",
+      "showsIt": "Nguyen, \"Value Capture\"",
+      "tryIt": "Write your own success measure; midway, anyone may spend a turn to rewrite theirs.",
+      "buildIt": "Faction `score` fields; an action that edits a faction's score rule.",
+      "readings": [
+        "nguyen",
+        "nguyen2024"
+      ],
+      "aiAngle": "The AI can't revise what it values; humans can, and that's the difference.",
+      "inOurGame": "partly: factions have their own goals and scores in Data Center and Normal Technology",
+      "source": "TH (Nguyen)"
+    },
+    {
+      "id": "faction-card",
+      "name": "Write a faction",
+      "family": "Designing and remixing",
+      "oneLine": "Design one faction (a goal, two actions, one forbidden act) for another group to play.",
+      "showsIt": "Nguyen, *Games: Agency as Art*",
+      "tryIt": "On an index card: who you are, what you want, two things you can do, one thing you won't.",
+      "buildIt": "Students describe the faction to Claude Code, which adds it to a ruleset. Students remix through Claude Code and the game's repo (Marlon, Nov 14 voice chat); there is no editor.",
+      "readings": [
+        "nguyen",
+        "anthropy",
+        "fullerton"
+      ],
+      "aiAngle": "Designing agency is the assignment; a faction is an agency handed to someone else.",
+      "inOurGame": "no (factions exist; writing new ones would be a Claude Code remix)",
+      "source": "TH (Nguyen)"
+    },
+    {
+      "id": "house-rules",
+      "name": "House rules saved",
+      "family": "Designing and remixing",
+      "oneLine": "A rule invented mid-game becomes a new version of the game.",
+      "showsIt": "Sicart, *Play Matters*",
+      "tryIt": "When the table argues about a rule, settle it, write it down, and name the new version.",
+      "buildIt": "Claude Code writes the table's change into a new ruleset file. Students remix through Claude Code and the game's repo (Marlon, Nov 14 voice chat); there is no editor.",
+      "readings": [
+        "sicart",
+        "consalvo2007",
+        "kucklich"
+      ],
+      "aiAngle": "Players govern the AI's rules the way they govern their own games.",
+      "inOurGame": "no (proposed: Claude Code saves a mid-game change as a new ruleset)",
+      "source": "TH (Sicart)"
+    },
+    {
+      "id": "strategy-ladder",
+      "name": "Strategy ladder",
+      "family": "The AI as a system",
+      "oneLine": "The AI's play gets smarter in tiers (random, one heuristic, look-ahead) as its compute grows.",
+      "showsIt": "Lantz et al., \"Depth in Strategic Games\" (2017)",
+      "tryIt": "The AI player rolls a die until compute 10, then follows one rule, then plans two moves ahead.",
+      "buildIt": "AI tiers in the ruleset selected by compute thresholds.",
+      "readings": [
+        "lantz2017",
+        "togelius",
+        "costikyan2013",
+        "costikyan1994",
+        "meier"
+      ],
+      "aiAngle": "Capability as a ladder the humans can watch it climb.",
+      "inOurGame": "no",
+      "source": "TH (articles)"
+    },
+    {
+      "id": "token-test",
+      "name": "Token test",
+      "family": "Designing and remixing",
+      "oneLine": "Does a new rule add a decision, or only flip a token?",
+      "showsIt": "Lantz on depth",
+      "tryIt": "For each rule, ask whether any player would ever choose differently because of it.",
+      "buildIt": "A question Claude Code asks of each change, or a check in the ruleset validator for elements no action can trigger or avoid.",
+      "readings": [
+        "lantz2017",
+        "meier",
+        "church"
+      ],
+      "aiAngle": "Separates an AI that changes decisions from one that only decorates the board.",
+      "inOurGame": "no",
+      "source": "TH (articles)"
+    },
+    {
+      "id": "ai-advisor",
+      "name": "AI advisor",
+      "family": "Players together",
+      "oneLine": "Each human faction gets an advisor card that whispers a move.",
+      "showsIt": "Centaur chess; Isaksen et al. (2016)",
+      "tryIt": "Before each turn, draw a suggestion card; follow it or not, and keep count.",
+      "buildIt": "A per-faction suggestion drawn from the faction's best-scoring action.",
+      "readings": [
+        "isaksen"
+      ],
+      "aiAngle": "How much do people defer to the machine, and when?",
+      "inOurGame": "no",
+      "source": "TH (articles)"
+    },
+    {
+      "id": "ai-stance",
+      "name": "AI stance ladder",
+      "family": "The AI as a system",
+      "oneLine": "The AI's stance moves from friendly to learning to observational to domination as compute crosses thresholds.",
+      "showsIt": "Isaksen et al. (2016), Table 1",
+      "tryIt": "Read the AI's lines in a different tone at each threshold.",
+      "buildIt": "Stance tiers that change the AI's deck and voice.",
+      "readings": [
+        "isaksen"
+      ],
+      "aiAngle": "Personality as a function of power.",
+      "inOurGame": "no",
+      "source": "TH (articles)"
+    },
+    {
+      "id": "growth-setting",
+      "name": "Contested assumptions as settings",
+      "family": "Designing and remixing",
+      "oneLine": "The table votes on a disputed premise before play, such as whether each data center makes the next cheaper or dearer.",
+      "showsIt": "Bostrom v. Thorstad",
+      "tryIt": "Play one round each way and compare.",
+      "buildIt": "A setting in the ruleset (`acceleration` above or below 1) chosen at the start.",
+      "readings": [
+        "bostrom2014",
+        "thorstad"
+      ],
+      "aiAngle": "The AI's power curve is an assumption, and the game can make it visible.",
+      "inOurGame": "partly: `acceleration` is a ruleset setting",
+      "source": "TH (Thorstad)"
+    },
+    {
+      "id": "bottleneck",
+      "name": "Bottleneck inputs",
+      "family": "Resources and economy",
+      "oneLine": "Every AI upgrade needs one of each input, and the scarcest one sets its pace.",
+      "showsIt": "Thorstad on growth",
+      "tryIt": "The AI player needs chips, power, water and data cards to upgrade; hold back one kind.",
+      "buildIt": "AI upgrades with a multi-resource cost.",
+      "readings": [
+        "thorstad",
+        "machinations"
+      ],
+      "aiAngle": "Physical limits slow a runaway; control the scarce input.",
+      "inOurGame": "no",
+      "source": "TH (Thorstad)"
+    },
+    {
+      "id": "network-turn",
+      "name": "The network turns",
+      "family": "The AI as a system",
+      "oneLine": "The turn fires when enough nodes are linked; cutting links is the defense.",
+      "showsIt": "Vinge, \"The Coming Technological Singularity\" (1993)",
+      "tryIt": "Count the AI's connected nodes each round; at a set number, it turns.",
+      "buildIt": "A turn trigger on connected-component size rather than a card.",
+      "readings": [
+        "vinge"
+      ],
+      "aiAngle": "Intelligence as an emergent property of the network.",
+      "inOurGame": "no",
+      "source": "TH (Vinge)"
+    },
+    {
+      "id": "everyone-wins",
+      "name": "Everyone or no one",
+      "family": "Goals and the loop",
+      "oneLine": "The humans win only if every faction meets its private goal.",
+      "showsIt": "Galloway; *Pandemic*",
+      "tryIt": "At the end, go faction by faction: if any missed, the table lost.",
+      "buildIt": "An end check over every faction's goal.",
+      "readings": [
+        "galloway2004"
+      ],
+      "aiAngle": "Beating the AI isn't enough if one group paid for it.",
+      "inOurGame": "partly: Data Center's survival ending asks each faction to check its own goal",
+      "source": "TH (Galloway and Fuller)"
+    },
+    {
+      "id": "values-card-opener",
+      "name": "Values card opener",
+      "family": "Designing and remixing",
+      "oneLine": "Draw a value and an issue; the session's rule change must serve both.",
+      "showsIt": "Tiltfactor's Grow-a-Game cards",
+      "tryIt": "Draw 'privacy' and 'water'; propose one rule that serves both.",
+      "buildIt": "Two small decks (values, issues) drawn at the start of a remix session.",
+      "readings": [
+        "flanagan"
+      ],
+      "aiAngle": "Designing AI rules from values first.",
+      "inOurGame": "no",
+      "source": "TH (game studies); RS (Grow-a-Game)"
+    },
+    {
+      "id": "proving-ground",
+      "name": "Proving ground",
+      "family": "The AI as a system",
+      "oneLine": "The AI grows by winning benchmarks; each win unlocks a capability and raises investment.",
+      "showsIt": "Deep Blue, AlphaGo, Cicero, Claude Plays Pokémon",
+      "tryIt": "Each round the AI attempts a named game; on a win, add a capability card and a point of trust.",
+      "buildIt": "Benchmark cards with a chance to win; wins add capability and raise a trust track.",
+      "readings": [
+        "mccarthy"
+      ],
+      "aiAngle": "Winning games stands in for understanding, and funds the next step.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 1)"
+    },
+    {
+      "id": "readable-personalities",
+      "name": "Readable personalities",
+      "family": "The AI as a system",
+      "oneLine": "Three or four one-line AI rules, each named and colored, read as characters.",
+      "showsIt": "*Pac-Man*'s four ghosts (1980)",
+      "tryIt": "Give each AI piece a one-line rule ('go for the cheapest power'); let players name them.",
+      "buildIt": "Named AI sub-agents, each with one targeting rule for `spread`.",
+      "readings": [
+        "meier"
+      ],
+      "aiAngle": "Players read character into simple, visible rules.",
+      "inOurGame": "partly: the AI deck is readable; named sub-agents are proposed",
+      "source": "HI (history, strand 2)"
+    },
+    {
+      "id": "director",
+      "name": "The Director",
+      "family": "Time",
+      "oneLine": "A system that watches the players' stress and eases or escalates the next event.",
+      "showsIt": "*Left 4 Dead*'s AI Director (2008)",
+      "tryIt": "The facilitator picks the next AI card after looking at the table's mood.",
+      "buildIt": "An optional rule that weights the AI's draw by harm and trust.",
+      "readings": [
+        "machinations"
+      ],
+      "aiAngle": "Is the AI managing the city, or the players' experience?",
+      "inOurGame": "no",
+      "source": "HI (history, strand 2)"
+    },
+    {
+      "id": "nemesis-memory",
+      "name": "Nemesis memory",
+      "family": "Story, characters, and progress",
+      "oneLine": "The AI remembers who opposed it and targets them next.",
+      "showsIt": "*Shadow of Mordor*'s Nemesis system (2014)",
+      "tryIt": "Whoever blocked the AI last round is its first target this round.",
+      "buildIt": "State that records the last faction to block; the AI's spread prefers its nodes.",
+      "readings": [],
+      "aiAngle": "Memory makes a system into a character, and an opponent into an enemy.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 2)"
+    },
+    {
+      "id": "ai-voice",
+      "name": "The AI's voice",
+      "family": "Story, characters, and progress",
+      "oneLine": "The lines the AI says when it acts, written as a field apart from its numbers.",
+      "showsIt": "SHODAN, GLaDOS, Elohim, Friend Computer",
+      "tryIt": "Replay a round with the AI's cards read in a different voice: command, needle, forbid, accuse.",
+      "buildIt": "A `voice` field on the AI and on each card.",
+      "readings": [
+        "juul"
+      ],
+      "aiAngle": "The same rules argue differently in a different voice.",
+      "inOurGame": "partly: cards carry `text`; a separate voice field is proposed, and per-card fields were not adopted on Nov 14",
+      "source": "HI (history, strand 3)"
+    },
+    {
+      "id": "talos-test",
+      "name": "The Talos test",
+      "family": "Rules that bend",
+      "oneLine": "The AI gives an instruction each round; one is a trap, and scoring rewards refusing it.",
+      "showsIt": "*The Talos Principle* (2014)",
+      "tryIt": "The facilitator gives instructions; whoever refuses the bad one scores.",
+      "buildIt": "Instruction cards with a hidden trap flag; a refusal action.",
+      "readings": [],
+      "aiAngle": "Passing the test means knowing when to disobey.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 3)"
+    },
+    {
+      "id": "tool-offer",
+      "name": "Tool offer with a deferred cost",
+      "family": "Resources and economy",
+      "oneLine": "The AI offers a tool that cuts cost now and draws a labor or trust card later.",
+      "showsIt": "Game studios' generative-AI choices, 2023–26",
+      "tryIt": "Each round, accept or refuse a shortcut; every accepted one adds a card to a 'later' pile.",
+      "buildIt": "A proposal whose approve effect adds a delayed card to the deck.",
+      "readings": [
+        "bulut",
+        "terranova"
+      ],
+      "aiAngle": "Automation is a trade, not a gift.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 4)"
+    },
+    {
+      "id": "seeded-map",
+      "name": "Seeded world",
+      "family": "Chance and information",
+      "oneLine": "A seed makes every table face the same generated world and draws.",
+      "showsIt": "*Elite* (1984); *Minecraft*; daily-challenge games",
+      "tryIt": "Shuffle the deck with the same order at every table, then compare outcomes.",
+      "buildIt": "The engine's seeded shuffle; a seed field shared by link.",
+      "readings": [],
+      "aiAngle": "Every table meets the same machine, so differences are the players'.",
+      "inOurGame": "partly: the AI deck is shuffled from a saved seed",
+      "source": "HI (history, strand 4)"
+    },
+    {
+      "id": "disclosure-rule",
+      "name": "Disclosure rule",
+      "family": "Players together",
+      "oneLine": "The players vote on what the AI must disclose, and the rule becomes part of the game.",
+      "showsIt": "Steam's AI disclosure rules (2024, 2026)",
+      "tryIt": "Before play, vote: must the AI show its next card, or not?",
+      "buildIt": "A setting that reveals the AI's next card, chosen by vote at the start.",
+      "readings": [
+        "chun"
+      ],
+      "aiAngle": "Transparency as a rule players write rather than a given.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 4)"
+    },
+    {
+      "id": "tutor-face",
+      "name": "The tutor face",
+      "family": "Story, characters, and progress",
+      "oneLine": "The AI only asks questions, never tells; players judge whether it helps or steers.",
+      "showsIt": "Khanmigo (2023); study modes (2025)",
+      "tryIt": "The AI player may only ask questions; afterward, the table votes on where it led them.",
+      "buildIt": "AI cards phrased as questions with no effect until a player acts.",
+      "readings": [],
+      "aiAngle": "Guidance and manipulation look alike from inside.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 5)"
+    },
+    {
+      "id": "three-phase-arc",
+      "name": "Three-phase arc",
+      "family": "Story, characters, and progress",
+      "oneLine": "Humans beat the machine, the machine beats everyone, then humans design with the machine as judge.",
+      "showsIt": "*Foldit* and AlphaFold (2008–2024)",
+      "tryIt": "Play three short rounds, changing who judges the outcome each time.",
+      "buildIt": "Three phases in a ruleset, each with its own scoring.",
+      "readings": [],
+      "aiAngle": "A counter-ending to *Paperclips*: the AI as collaborator, not victor.",
+      "inOurGame": "no",
+      "source": "HI (history, strand 5)"
+    },
+    {
+      "id": "solved-world",
+      "name": "Solved world epilogue",
+      "family": "Story, characters, and progress",
+      "oneLine": "A last phase in which the AI can do everything, and each faction says what it still does.",
+      "showsIt": "Bostrom, *Deep Utopia* (2024)",
+      "tryIt": "After the game, each player names one thing they would still do by hand.",
+      "buildIt": "An epilogue screen with a prompt per faction.",
+      "readings": [
+        "bostrom2024"
+      ],
+      "aiAngle": "Meaning after automation.",
+      "inOurGame": "no",
+      "source": "TH (Bostrom)"
+    }
+  ]
+}

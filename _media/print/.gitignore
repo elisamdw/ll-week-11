@@ -1,0 +1,3 @@
+# Printed PDFs stay on this machine: regenerate them with nextjs/app/cards/print/pdf.mjs.
+*
+!.gitignore

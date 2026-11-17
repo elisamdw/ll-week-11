@@ -1,0 +1,6 @@
+[
+  { "id": "c-instance-from-template", "premises": ["p-a-template"], "conclusion": "p-an-instance", "because": "One template can be used many times; each use needs its own values." },
+  { "id": "c-state-from-instances", "premises": ["p-a-game-has-pieces", "p-an-instance"], "conclusion": "p-the-state", "because": "If the pieces are instances with values, listing all the values says where the game stands." },
+  { "id": "c-view-from-state", "premises": ["p-the-state"], "conclusion": "p-the-view", "because": "The screen shows the state; it adds nothing the state doesn't hold." },
+  { "id": "c-save-from-state-and-view", "premises": ["p-the-state", "p-the-view"], "conclusion": "p-a-save-is-the-state", "because": "Store the state, and the view can be drawn again from it." }
+]

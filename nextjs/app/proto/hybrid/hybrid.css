@@ -1,0 +1,200 @@
+/* Hybrid prototypes (/proto/hybrid/*): taps, cameras, cards and the room. Uses the site's tokens; classes start hy-. */
+
+.hy-shell { max-width: 1320px; margin: 0 auto; padding: 32px var(--gutter) 90px; }
+.hy-shell h1 { margin: 12px 0 10px; font-size: clamp(38px, 6vw, 72px); line-height: .95; letter-spacing: -.055em; }
+.hy-shell .eyebrow a { color: var(--accent); }
+.hy-deck { max-width: 780px; margin: 0 0 26px; color: var(--muted); font-size: 17px; line-height: 1.55; }
+.hy-shell kbd { padding: 0 .35em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); font-family: ui-monospace, monospace; font-size: .85em; }
+.hy-shell .button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--wash); color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.hy-shell .button:hover:not(:disabled) { border-color: var(--accent); }
+.hy-shell .button.primary { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.hy-shell .button:disabled { opacity: .4; cursor: not-allowed; }
+.hy-shell .linkish { padding: 0; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.hy-notice { margin: 10px 0 0; padding: 10px 14px; border: 1px solid var(--accent); border-radius: 8px; font-size: 14px; }
+
+.hy-status { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 18px; }
+.hy-status p { margin: 0; }
+.hy-clock { min-width: 4.5ch; font-size: 44px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.04em; }
+.hy-clock.over { color: var(--accent); }
+.hy-actions { display: flex; gap: 10px; margin-left: auto; }
+
+.hy-panel { min-width: 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
+.hy-panel-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin-bottom: 10px; }
+.hy-panel-head h2 { margin: 0; font-size: 22px; letter-spacing: -.03em; }
+.hy-panel-head p { margin: 0; font-size: 13px; }
+.hy-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 18px; align-items: start; margin-top: 18px; }
+@media (max-width: 900px) { .hy-split { grid-template-columns: 1fr; } }
+.hy-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: 1px; }
+
+/* Every tap is a row */
+.hy-tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.hy-chip { display: flex; flex-direction: column; border: 1px solid var(--line); border-left: 4px solid var(--chip); border-radius: 10px; background: var(--wash); overflow: hidden; }
+.hy-chip.turn { box-shadow: 0 0 0 2px var(--chip); }
+.hy-chip.teaching { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.hy-chip-tap { display: flex; flex-direction: column; gap: 4px; padding: 12px 12px 6px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.hy-chip-tap:hover { background: var(--hover); }
+.hy-chip-tap:active { background: var(--accent); color: var(--accent-ink); }
+.hy-chip-tap strong { font-size: 19px; letter-spacing: -.02em; }
+.hy-chip-tap span { color: var(--muted); font-size: 12px; }
+.hy-shell .hy-teach { align-self: flex-start; margin: 0 12px 10px; font-size: 12px; }
+.hy-inputs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 12px; font-size: 13px; }
+
+.hy-board, .hy-log { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.hy-board th, .hy-board td, .hy-log th, .hy-log td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+.hy-board th, .hy-log th { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.hy-board tr.turn td { background: var(--hover); }
+.hy-board .hy-stock td { color: var(--muted); }
+.hy-scrub { display: flex; align-items: center; gap: 12px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+.hy-scrub input { flex: 1; accent-color: var(--accent); }
+.hy-findings { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.hy-findings h3 { margin: 0 0 6px; font-size: 16px; color: var(--accent); }
+.hy-findings ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.55; }
+.hy-findings li { margin: .35em 0; }
+
+.hy-log-wrap { max-height: 560px; overflow: auto; }
+.hy-log tbody tr:first-child { animation: hy-flash 1s ease-out; }
+.hy-log tr.ignored td { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--error) 60%, transparent); }
+.hy-log tr.ignored td:last-child { text-decoration: none; color: var(--error); }
+.hy-log tr.future td { opacity: .3; }
+.hy-uid { font-family: ui-monospace, monospace; font-size: 12px; }
+@keyframes hy-flash { from { background: color-mix(in srgb, var(--accent) 35%, transparent); } to { background: transparent; } }
+
+/* Photo to game state */
+.hy-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; font-size: 14px; }
+.hy-toolbar select, .hy-board-set select, .hy-field input, .hy-field select { padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); font: inherit; font-size: 14px; }
+.hy-tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.hy-tabs button { padding: 8px 14px; border: 0; border-right: 1px solid var(--line); background: var(--wash); color: var(--muted); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.hy-tabs button:last-child { border-right: 0; }
+.hy-tabs button.on { background: var(--accent); color: var(--accent-ink); }
+.hy-tabs button small { font-weight: 450; opacity: .8; }
+.hy-tabs.small button { padding: 4px 10px; font-size: 12px; }
+.hy-photo-split { grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1fr); }
+@media (max-width: 900px) { .hy-photo-split { grid-template-columns: 1fr; } }
+.hy-frame { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #000; touch-action: none; user-select: none; }
+.hy-frame img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.hy-frame.mode-place, .hy-frame.mode-corners { cursor: crosshair; }
+.hy-space { position: absolute; border: 1px dashed color-mix(in srgb, var(--accent) 70%, transparent); pointer-events: none; }
+.hy-corner { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border: 2px solid var(--accent); border-radius: 50%; pointer-events: none; }
+.hy-pin { position: absolute; transform: translate(-50%, -50%); min-width: 26px; height: 26px; padding: 0 6px; border: 2px solid #111; border-radius: 13px; background: var(--pin); color: #111; font: inherit; font-size: 12px; font-weight: 800; line-height: 22px; white-space: nowrap; cursor: grab; box-shadow: 0 1px 4px #0009; }
+.hy-pin.on { outline: 3px solid var(--accent); outline-offset: 2px; }
+.hy-pin:active { cursor: grabbing; }
+.hy-hint { margin: 10px 2px 0; font-size: 13px; }
+.hy-camera { display: grid; gap: 10px; }
+.hy-camera video { width: 100%; border-radius: 8px; background: #000; }
+.hy-palette { display: flex; flex-wrap: wrap; gap: 8px; }
+.hy-piece { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+.hy-piece.on { border-color: var(--pin); box-shadow: 0 0 0 2px var(--pin); }
+.hy-board-set { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 12px; font-size: 13px; }
+.hy-shell .linkish:disabled { opacity: .4; cursor: not-allowed; }
+.hy-editor { display: grid; gap: 8px; margin-top: 14px; padding: 12px; border: 1px solid var(--accent); border-radius: 10px; font-size: 13px; }
+.hy-editor p { margin: 0; }
+.hy-field { display: grid; gap: 4px; color: var(--muted); }
+.hy-field.check { display: flex; align-items: center; gap: 8px; color: var(--ink); }
+.hy-state-head { margin-top: 20px; }
+.hy-json { max-height: 380px; margin: 0; padding: 12px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); font-size: 12px; line-height: 1.45; }
+.hy-notes { margin: 12px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.55; }
+.hy-notes li { margin: .3em 0; }
+.hy-diff { margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.5; }
+.hy-diff li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.hy-diff li span { display: inline-block; min-width: 68px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.hy-diff li.added span { color: var(--ok); }
+.hy-diff li.changed span { color: #ffd36b; }
+.hy-diff li.gone span { color: var(--error); }
+.hy-photo .hy-board th, .hy-photo .hy-board td { white-space: normal; }
+
+/* Monopoly with live rents */
+.hy-bad { color: var(--error); }
+.hy-rent-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 18px 32px; }
+.hy-rent-modes { display: grid; gap: 10px; flex: 1; min-width: 280px; }
+.hy-rent-modes p { margin: 0; font-size: 14px; }
+.hy-rent-modes .hy-actions { margin-left: 0; align-items: center; }
+.hy-rent-round { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.hy-rent-design { margin-top: 18px; }
+.hy-rent-dials { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 22px; }
+.hy-rent-dials label { display: grid; grid-template-columns: 82px 1fr 48px; align-items: center; gap: 8px; padding-left: 8px; border-left: 4px solid var(--band); font-size: 13px; }
+.hy-rent-dials input { accent-color: var(--accent); }
+.hy-rent-split { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+@media (max-width: 900px) { .hy-rent-split { grid-template-columns: 1fr; } }
+.hy-rent-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.hy-rent-picker.compact { grid-template-columns: 1fr; gap: 10px; }
+.hy-rent-group { border-top: 6px solid var(--band); border-radius: 6px; background: var(--paper); }
+.hy-rent-group > p { display: flex; justify-content: space-between; margin: 0; padding: 6px 10px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.hy-rent-prop { display: flex; justify-content: space-between; gap: 8px; width: 100%; padding: 8px 10px; border: 0; border-top: 1px solid var(--line); background: none; color: var(--ink); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.hy-rent-prop:hover { background: var(--hover); }
+.hy-rent-picker.compact .hy-rent-prop { padding: 12px 12px; font-size: 16px; }
+.hy-trend { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.hy-trend.up { color: var(--error); }
+.hy-trend.down { color: var(--ok); }
+.hy-rent-history { display: block; width: 100%; height: 90px; margin-bottom: 10px; }
+.hy-rent-history .base { stroke: var(--line); stroke-dasharray: 3 3; }
+.hy-rent-modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 16px; background: #000b; }
+.hy-rent-modal > div { width: min(460px, 100%); max-height: 92vh; overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--wash); }
+.hy-rent-sheet { display: grid; gap: 12px; }
+.hy-rent-deed { padding: 10px; border-radius: 8px; background: #f4f1e8; color: #111; }
+.hy-rent-band { margin: 0 0 8px; padding: 10px; background: var(--band); color: #111; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: .04em; }
+.hy-rent-deed table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.hy-rent-deed td { padding: 6px 4px; border-bottom: 1px solid #ddd; cursor: pointer; }
+.hy-rent-deed td:nth-child(n+2) { text-align: right; white-space: nowrap; }
+.hy-rent-deed .muted { color: #777; }
+.hy-rent-deed tr.on td { background: #ffe9a8; }
+.hy-rent-small { margin: 0; font-size: 12px; }
+.hy-rent-deed .hy-rent-small { margin-top: 8px; color: #666; }
+.hy-rent-owned { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.hy-rent-owned button { padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--muted); font: inherit; font-size: 14px; cursor: pointer; }
+.hy-rent-owned button.on { border-color: var(--accent); color: var(--ink); box-shadow: 0 0 0 1px var(--accent); }
+.hy-rent-due { margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -.03em; }
+.hy-rent-sheet .hy-actions { margin-left: 0; justify-content: flex-end; }
+.hy-phone { max-width: 520px; padding-top: 18px; }
+.hy-phone-stack { display: grid; gap: 14px; }
+.hy-phone-q { margin: 0; font-size: 28px; letter-spacing: -.03em; }
+
+/* The room is the board */
+.hy-room-line { flex: 1; min-width: 260px; margin: 0; font-size: 16px; line-height: 1.45; }
+.hy-room-source { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: 12px; font-size: 13px; }
+.hy-room-stage { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: radial-gradient(ellipse at 50% 120%, #2a2d29, #121412 70%); touch-action: none; user-select: none; }
+.hy-room-stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); opacity: .75; }
+.hy-room-zones { position: absolute; inset: 0; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
+.hy-room-zone { display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 14px; border-right: 2px dashed #ffffff30; transition: background .4s; }
+.hy-room-zone:last-child { border-right: 0; }
+.hy-room-zone p { margin: 0; padding: 3px 10px; border-radius: 999px; background: #000a; font-size: clamp(11px, 1.4vw, 18px); font-weight: 700; }
+.hy-room-zone strong { font-size: clamp(28px, 5vw, 72px); line-height: 1; text-shadow: 0 2px 8px #000; }
+.hy-room-zone span { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-shadow: 0 1px 4px #000; }
+.hy-room-zone.ai { background: color-mix(in srgb, var(--accent) 38%, transparent); }
+.hy-room-zone.took { animation: hy-took 1s ease-out 2; }
+.hy-room-zone.retook { background: color-mix(in srgb, var(--ok) 30%, transparent); }
+@keyframes hy-took { 50% { background: color-mix(in srgb, var(--accent) 70%, transparent); } }
+.hy-room-body { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border: 3px solid #111; border-radius: 50%; background: #ffd36b; box-shadow: 0 0 0 3px #ffd36b66; pointer-events: none; }
+.hy-room-body.standin { width: 38px; height: 38px; margin: -19px 0 0 -19px; color: #111; font: inherit; font-weight: 800; pointer-events: auto; cursor: grab; }
+.hy-room-log { margin-top: 18px; overflow-x: auto; }
+.hy-room-log td.hy-ai { color: var(--accent); font-weight: 700; }
+.hy-room-log td.hy-ok { color: var(--ok); font-weight: 700; }
+
+/* The audience layer */
+.hy-aud-split { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); }
+@media (max-width: 900px) { .hy-aud-split { grid-template-columns: 1fr; } }
+.hy-aud-grid { display: grid; gap: 8px; }
+.hy-aud-cell { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; aspect-ratio: 4 / 3; border: 2px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); font: inherit; cursor: pointer; transition: background .3s, border-color .3s; }
+.hy-aud-cell:disabled { cursor: default; }
+.hy-aud-cell span { font-size: clamp(16px, 2.4vw, 30px); font-weight: 800; letter-spacing: -.02em; }
+.hy-aud-cell em { font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.hy-aud-cell.ai { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 45%, var(--paper)); }
+.hy-aud-cell.shield { border-color: var(--ok); box-shadow: inset 0 0 0 3px var(--ok); }
+.hy-aud-cell.lit-row { background: color-mix(in srgb, #ffd36b 14%, var(--paper)); }
+.hy-aud-cell.lit-cell { background: color-mix(in srgb, #ffd36b 40%, var(--paper)); border-color: #ffd36b; }
+.hy-aud-cell.target { border-color: #ffd36b; background: color-mix(in srgb, #ffd36b 35%, var(--paper)); }
+.hy-aud-cell.blocked { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 30%, var(--paper)); }
+.hy-aud-cell.took { animation: hy-took 1s ease-out 2; }
+.hy-aud-cell.fed { border-color: #f08c2a; }
+.hy-aud-grid.small .hy-aud-cell span { font-size: 18px; }
+.hy-aud-grid.small .hy-aud-cell em { font-size: 9px; }
+.hy-aud-tally { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.hy-aud-tally div { display: grid; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+.hy-aud-tally strong { font-size: 34px; line-height: 1; }
+.hy-aud-tally span { color: var(--muted); font-size: 12px; }
+.hy-aud-people { margin: 0 0 12px; padding: 0; list-style: none; font-size: 14px; }
+.hy-aud-people li { padding: 4px 0; border-bottom: 1px solid var(--line); }
+.hy-aud-nudges { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hy-aud-nudges .button { min-height: 56px; font-size: 16px; }
+.hy-ok { color: var(--ok); }
+.hy-ai { color: var(--accent); }
+.hy-aud-cell.ai.lit-row, .hy-aud-cell.ai.lit-cell { background: color-mix(in srgb, var(--accent) 45%, var(--paper)); }

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://www.partykit.io/schema.json",
+  "name": "ll-scrabble",
+  "main": "party/scrabble.js",
+  "compatibilityDate": "2024-09-01"
+}

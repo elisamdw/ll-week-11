@@ -1,0 +1,173 @@
+/* /ideas/graph: the cards as a node graph. --hue comes from the card's kind (lib/ideas.mjs KIND_HUES).
+   React Flow's own colors are overridden here, scoped under .graph-. */
+
+.graph-page { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+.graph-page .site-header { flex: none; }
+.graph-main { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.graph-message { max-width: 720px; padding: 44px var(--gutter); }
+.graph-message h1 { margin: 14px 0 18px; font-size: clamp(36px, 5vw, 56px); letter-spacing: -.05em; line-height: 1; }
+.graph-message p { color: var(--muted); line-height: 1.6; }
+.graph-message a { color: var(--accent); text-decoration: underline; }
+.graph-message code { padding: .05em .35em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); font-family: ui-monospace, monospace; font-size: .86em; }
+
+/* --- the bar above the canvas --- */
+.graph-bar { flex: none; display: flex; flex-direction: column; gap: 8px; padding: 10px var(--gutter); border-bottom: 1px solid var(--line); font-size: 13px; }
+.graph-bar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.graph-title { display: flex; align-items: baseline; gap: 8px; margin: 0; }
+.graph-title a { color: var(--muted); }
+.graph-title a:hover { color: var(--accent); }
+.graph-title strong { font-size: 15px; letter-spacing: -.01em; }
+.graph-count { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.graph-tools, .graph-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.graph-tools { flex: 1; }
+.graph-tools label, .graph-name label { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); white-space: nowrap; }
+.graph-sep { width: 1px; height: 18px; background: var(--line); }
+.graph-bar input, .graph-bar select, .graph-bar button, .graph-edge-panel input, .graph-edge-panel button, .graph-side button, .graph-side-actions a {
+  padding: 5px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--wash); color: var(--ink); font: inherit; font-size: 13px;
+}
+.graph-bar input[type="checkbox"] { padding: 0; accent-color: var(--accent); }
+.graph-bar button, .graph-edge-panel button, .graph-side button, .graph-side-actions a { cursor: pointer; }
+.graph-bar button:hover:not(:disabled), .graph-edge-panel button:hover, .graph-side button:hover, .graph-side-actions a:hover { border-color: var(--accent); color: var(--accent); }
+.graph-bar button:disabled { opacity: .4; cursor: default; }
+.graph-filters input[type="search"] { width: 200px; }
+.graph-name { margin-left: auto; }
+.graph-name input { width: 120px; }
+.graph-status { margin-left: auto; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.graph-status.is-saved { color: var(--ok); }
+.graph-status.is-saving { color: var(--muted); }
+.graph-status.is-error { color: var(--error); }
+.graph-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 4px 3px 10px; border: 1px solid var(--accent); border-radius: 999px; color: var(--accent); font-size: 12px; }
+.graph-chip button { padding: 0 6px; border: 0; background: none; color: inherit; font-size: 15px; line-height: 1; }
+
+/* --- the canvas and React Flow's colors --- */
+.graph-canvas { position: relative; flex: 1; min-height: 0; }
+.graph-flow {
+  --xy-background-color: var(--paper);
+  --xy-background-pattern-dots-color: #343833;
+  --xy-edge-stroke: #6c7068;
+  --xy-edge-stroke-selected: var(--accent);
+  --xy-edge-stroke-width: 1.5;
+  --xy-connectionline-stroke: var(--accent);
+  --xy-handle-background-color: var(--accent);
+  --xy-handle-border-color: var(--paper);
+  --xy-selection-background-color: rgb(169 139 255 / .08);
+  --xy-selection-border: 1px dashed rgb(169 139 255 / .7);
+  --xy-minimap-background-color: var(--wash);
+  --xy-minimap-mask-background-color: rgb(18 20 18 / .7);
+  --xy-minimap-mask-stroke-color: var(--line);
+  --xy-controls-button-background-color: var(--wash);
+  --xy-controls-button-background-color-hover: var(--hover);
+  --xy-controls-button-color: var(--ink);
+  --xy-controls-button-color-hover: var(--accent);
+  --xy-controls-button-border-color: var(--line);
+  --xy-controls-box-shadow: none;
+  --xy-attribution-background-color: transparent;
+  --xy-resize-background-color: var(--accent);
+  font-family: inherit;
+}
+.graph-flow .react-flow__controls { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.graph-flow .react-flow__minimap { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.graph-flow .react-flow__attribution a { color: var(--muted); }
+.graph-hint { margin: 10px 12px; color: var(--muted); font-size: 11px; pointer-events: none; }
+
+/* --- cards --- */
+.graph-card {
+  position: relative; display: flex; flex-direction: column; gap: 4px; width: 220px; height: 120px; padding: 9px 11px 10px;
+  border: 1px solid var(--line); border-top: 3px solid hsl(var(--hue) 60% 62%); border-radius: 8px; background: var(--wash); color: var(--ink);
+  transition: opacity .15s, border-color .15s, box-shadow .15s;
+}
+.graph-card:hover { border-color: hsl(var(--hue) 60% 62%); background: var(--hover); }
+.graph-card.is-selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.graph-card.is-focus { box-shadow: 0 0 0 2px hsl(var(--hue) 60% 62%), 0 0 24px hsl(var(--hue) 60% 50% / .35); }
+.graph-card.is-dim { opacity: .16; }
+.graph-card-meta { display: flex; gap: 8px; color: var(--muted); font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.graph-card-kind { color: hsl(var(--hue) 65% 70%); }
+.graph-card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 14px; line-height: 1.2; letter-spacing: -.01em; }
+.graph-card-desc { overflow: hidden; color: var(--muted); font-size: 11.5px; line-height: 1.35; white-space: nowrap; text-overflow: ellipsis; }
+.graph-card-tags { margin-top: auto; overflow: hidden; color: hsl(var(--hue) 55% 72%); font-size: 10.5px; white-space: nowrap; text-overflow: ellipsis; }
+
+.graph-flow .graph-handle { width: 9px; height: 9px; border: 2px solid var(--paper); background: var(--accent); opacity: 0; transition: opacity .12s; }
+.graph-flow .react-flow__node:hover .graph-handle, .graph-flow .react-flow__node.selected .graph-handle, .graph-flow .connectingfrom, .graph-flow .graph-handle.connectionindicator:hover { opacity: 1; }
+.graph-flow.react-flow .react-flow__handle.connectingto { opacity: 1; background: var(--ok); }
+
+/* --- group boxes --- */
+.graph-box { width: 100%; height: 100%; border: 1px dashed rgb(169 139 255 / .45); border-radius: 12px; background: rgb(169 139 255 / .045); }
+.graph-box.is-selected { border-style: solid; border-color: var(--accent); }
+.graph-box-label { display: inline-block; max-width: calc(100% - 20px); margin: 10px 0 0 14px; overflow: hidden; color: #c9b8ff; font-size: 13px; font-weight: 750; letter-spacing: .02em; white-space: nowrap; text-overflow: ellipsis; cursor: text; }
+.graph-flow .graph-resize-line { border-color: var(--accent); }
+.graph-flow .graph-resize-handle { width: 9px; height: 9px; border: 1px solid var(--paper); border-radius: 2px; background: var(--accent); }
+
+/* --- links --- */
+.graph-flow .graph-edge { stroke: #6c7068; stroke-width: 1.5; transition: stroke-opacity .15s; }
+.graph-flow .graph-edge-leads { stroke: #8a8e86; }
+.graph-flow .graph-edge.is-selected { stroke: var(--accent); stroke-width: 2.25; }
+.graph-flow .graph-edge.is-dim { stroke-opacity: .12; }
+.graph-flow .react-flow__edge:hover .graph-edge:not(.is-selected) { stroke: var(--ink); }
+.graph-edge-label {
+  position: absolute; padding: 2px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink);
+  font-size: 11px; line-height: 1.4; white-space: nowrap; pointer-events: all; cursor: text;
+}
+.graph-edge-label.is-selected { border-color: var(--accent); color: var(--accent); }
+.graph-edge-label.is-dim { opacity: .2; }
+.graph-label-input { width: 160px; padding: 2px 6px; border: 1px solid var(--accent); border-radius: 6px; background: var(--paper); color: var(--ink); font: inherit; font-size: 12px; outline: none; }
+
+.graph-flow .graph-suggested-path { stroke: var(--accent); stroke-width: 1.25; stroke-dasharray: 4 5; stroke-opacity: .32; }
+.graph-flow .graph-suggested { cursor: pointer; }
+.graph-flow .graph-suggested:hover .graph-suggested-path { stroke-opacity: .9; stroke-width: 2; }
+.graph-flow .graph-suggested.is-dim .graph-suggested-path { stroke-opacity: .06; }
+
+.graph-edge-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; max-width: min(720px, calc(100vw - 32px)); padding: 8px 10px; border: 1px solid var(--accent); border-radius: 10px; background: var(--paper); font-size: 13px; }
+.graph-edge-ends { max-width: 280px; overflow: hidden; color: var(--muted); font-size: 12px; white-space: nowrap; text-overflow: ellipsis; }
+.graph-edge-panel input { width: 160px; }
+.graph-seg { display: inline-flex; }
+.graph-seg button { border-radius: 0; }
+.graph-seg button:first-child { border-radius: 6px 0 0 6px; }
+.graph-seg button:last-child { border-left: 0; border-radius: 0 6px 6px 0; }
+.graph-seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* --- the side panel --- */
+.graph-side {
+  position: absolute; z-index: 6; top: 0; right: 0; bottom: 0; width: min(420px, 100%); overflow-y: auto; padding: 18px 22px 40px;
+  border-left: 1px solid var(--line); border-top: 4px solid hsl(var(--hue) 60% 62%); background: var(--paper); box-shadow: -12px 0 32px rgb(0 0 0 / .35);
+}
+.graph-side-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.graph-side-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 0; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.graph-side .graph-close { padding: 0 8px; font-size: 20px; line-height: 1.3; }
+.graph-side h2 { margin: 12px 0 8px; font-size: 28px; line-height: 1.08; letter-spacing: -.035em; }
+.graph-side-desc { margin: 0 0 14px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.graph-side-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.graph-side-actions button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.graph-side section { margin: 0 0 20px; }
+.graph-side .eyebrow { margin-bottom: 8px; }
+.graph-side-body { font-size: 14px; line-height: 1.6; }
+.graph-side-body > :first-child { margin-top: 0; }
+.graph-side-body p { margin: 0 0 .9em; }
+.graph-side-body blockquote { margin: 0 0 .7em; padding: 8px 14px; border-left: 3px solid hsl(var(--hue) 60% 62%); border-radius: 0 6px 6px 0; background: var(--wash); }
+.graph-side-body blockquote p:last-child { margin: 0; }
+.graph-side-body a { color: var(--accent); text-decoration: underline; }
+.graph-side-tags { margin: 0 0 20px; color: hsl(var(--hue) 55% 72%); font-size: 12px; }
+.graph-side-links, .graph-side-sources { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.graph-side-links li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.graph-side-links li > span { color: var(--muted); }
+.graph-side-links button { padding: 0; border: 0; background: none; color: var(--ink); text-align: left; }
+.graph-side-links em { color: var(--muted); font-size: 12px; }
+.graph-side-sources li { margin: 0 0 6px; }
+.graph-side-sources code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+
+@media (max-width: 720px) {
+  .graph-hint { display: none; }
+  .graph-filters input[type="search"] { width: 140px; }
+  .graph-flow .react-flow__minimap { display: none; }
+}
+
+/* --- /activities: links drawn from the cards' frontmatter, and small nodes for what they link to (Nov 15) --- */
+.graph-card.is-ext { width: 170px; height: 62px; padding: 6px 9px; border-top-width: 2px; border-style: dashed; border-top-style: solid; background: transparent; }
+.graph-card.is-ext .graph-card-title { font-size: 12px; -webkit-line-clamp: 2; }
+.graph-card.is-ext .graph-card-desc, .graph-card.is-ext .graph-card-tags { display: none; }
+.graph-card.is-missing { opacity: .55; }
+.graph-flow .graph-edge-link { stroke-width: 1; stroke-dasharray: 3 4; opacity: .7; }
+.graph-flow .graph-edge-mechanic { stroke: hsl(35 55% 55%); }
+.graph-flow .graph-edge-reading { stroke: hsl(265 45% 65%); }
+.graph-flow .graph-edge-prototype { stroke: hsl(0 55% 62%); }
+.graph-flow .graph-edge-idea { stroke: hsl(100 40% 55%); }
+.graph-flow .graph-edge-sequence { stroke: hsl(330 60% 66%); stroke-width: 2; stroke-dasharray: none; opacity: 1; }

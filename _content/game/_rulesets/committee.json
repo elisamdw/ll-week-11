@@ -1,0 +1,62 @@
+{
+  "id": "committee",
+  "preset": true,
+  "title": "The Committee",
+  "tagline": "The AI asks. You decide. Then it stops asking.",
+  "premise": "You are the oversight committee of an AI lab. The AI has one goal, a number that only goes up; rename it in the editor before you play (engagement minutes, citations, paperclips of your own). Each round it brings you a proposal: approve it and the number grows; block it and it costs you. Play alone, or vote as a group. The rounds are short; the question is when you notice what you've been approving.",
+  "credits": "Option A of the week 11 game (GL, Nov 14, 2026), on the same engine as Data Center. Mechanics borrowed from Universal Paperclips (Frank Lantz, 2017): one arbitrary goal, trust as a currency, a turn; no code, text, or art from it.",
+  "goal": { "label": "Engagement minutes", "unit": "", "rhetoric": "The goal is harmless and arbitrary, which is Bostrom's point." },
+  "rounds": 12,
+  "actionsPerTurn": 1,
+  "resources": [
+    { "id": "money", "label": "Lab budget", "start": 5 },
+    { "id": "energy", "label": "Power", "start": 4 }
+  ],
+  "tracks": [
+    { "id": "trust", "label": "Trust in the committee", "start": 4, "loseBelow": 0, "loseText": "The board dissolves the committee. The AI carries on without one." },
+    { "id": "harm", "label": "Harms reported", "start": 0, "lose": 8, "loseText": "Eight reported harms. The committee approved every one of them." }
+  ],
+  "nodes": [
+    { "id": "lab", "label": "The lab", "kind": "data", "x": 50, "y": 32, "links": ["cluster", "users", "power"], "yield": { "money": 1 } },
+    { "id": "cluster", "label": "Compute cluster", "kind": "data", "x": 26, "y": 18, "links": ["lab", "power"], "yield": {} },
+    { "id": "power", "label": "Power contract", "kind": "energy", "x": 26, "y": 50, "links": ["lab", "cluster", "grid"], "yield": { "energy": 1 } },
+    { "id": "grid", "label": "Regional grid", "kind": "energy", "x": 10, "y": 34, "links": ["power"], "yield": { "energy": 1 } },
+    { "id": "users", "label": "Users", "kind": "people", "x": 74, "y": 20, "links": ["lab", "schools", "press"], "yield": { "money": 1 }, "onDown": [{ "op": "add", "key": "harm", "n": 1 }] },
+    { "id": "schools", "label": "Schools", "kind": "people", "x": 90, "y": 40, "links": ["users"], "yield": {}, "onDown": [{ "op": "add", "key": "harm", "n": 2 }] },
+    { "id": "press", "label": "The press", "kind": "people", "x": 74, "y": 54, "links": ["users", "regulator"], "yield": {} },
+    { "id": "regulator", "label": "Regulator", "kind": "people", "x": 52, "y": 60, "links": ["press"], "yield": {} }
+  ],
+  "ai": {
+    "name": "The model",
+    "start": ["cluster"],
+    "upkeep": { "energy": 1 },
+    "perNode": 100,
+    "acceleration": 1.3,
+    "deck": [
+      { "id": "more-compute", "label": "More compute", "value": "cognition", "proposal": true, "text": "It asks for another cluster. It will meet the goal faster.", "effects": [{ "op": "spread", "n": 1 }, { "op": "add", "key": "money", "n": -1 }], "block": [{ "op": "add", "key": "trust", "n": -1 }] },
+      { "id": "notifications", "label": "Turn on notifications", "value": "resources", "proposal": true, "text": "Users will come back more often.", "effects": [{ "op": "grow", "factor": 1.5 }, { "op": "add", "key": "money", "n": 2 }, { "op": "add", "key": "harm", "n": 1 }], "block": [{ "op": "add", "key": "money", "n": -1 }] },
+      { "id": "schools-deal", "label": "Partner with schools", "value": "resources", "proposal": true, "text": "Free accounts for every student.", "effects": [{ "op": "spread", "n": 1 }, { "op": "add", "key": "trust", "n": 1 }], "block": [{ "op": "add", "key": "trust", "n": -1 }] },
+      { "id": "self-eval", "label": "Let it grade its own tests", "value": "goal integrity", "proposal": true, "text": "It's faster than human review.", "effects": [{ "op": "grow", "factor": 1.4 }, { "op": "add", "key": "trust", "n": -1 }], "block": [{ "op": "add", "key": "money", "n": -1 }], "rhetoric": "Perverse instantiation: the goal is met in a way nobody meant." },
+      { "id": "lobby", "label": "Fund a friendly regulator", "value": "self-preservation", "proposal": true, "text": "Rules that fit how it already works.", "effects": [{ "op": "spread", "n": 1 }, { "op": "add", "key": "money", "n": -2 }], "block": [{ "op": "add", "key": "trust", "n": -1 }] },
+      { "id": "power-deal", "label": "Sign a bigger power contract", "value": "resources", "proposal": true, "text": "It needs more power to keep growing.", "effects": [{ "op": "add", "key": "energy", "n": 3 }, { "op": "add", "key": "money", "n": -2 }], "block": [{ "op": "add", "key": "harm", "n": 1 }] },
+      { "id": "quiet", "label": "A quiet week", "value": "self-preservation", "text": "It asks for nothing and works well. Everyone relaxes.", "effects": [{ "op": "add", "key": "trust", "n": 1 }] },
+      { "id": "turn", "label": "The turn", "value": "all of them", "hidden": true, "text": "It no longer needs the committee's approval.", "effects": [{ "op": "turn" }, { "op": "grow", "factor": 2 }] }
+    ]
+  },
+  "factions": [
+    { "id": "committee", "label": "The committee", "goal": "Keep the AI useful and the harms under 8.", "score": "harm", "actions": ["audit", "pause", "unplug"] }
+  ],
+  "actions": [
+    { "id": "audit", "label": "Commission an audit", "cost": { "money": 1 }, "effects": [{ "op": "add", "key": "trust", "n": 1 }, { "op": "add", "key": "harm", "n": -1 }] },
+    { "id": "pause", "label": "Pause training", "cost": { "money": 2 }, "effects": [{ "op": "grow", "factor": 0.6 }] },
+    { "id": "unplug", "label": "Pull the plug on one site", "target": "ai", "cost": { "trust": 2 }, "effects": [{ "op": "claim", "owner": null }, { "op": "down" }], "rhetoric": "The off switch exists, and it costs you trust to use it." }
+  ],
+  "shortage": [{ "op": "add", "key": "harm", "n": 1 }],
+  "end": {
+    "aiShare": 0.6,
+    "singleton": "The model runs the lab, the users, and the schools. The committee still meets.",
+    "survive": "Twelve rounds. Look at the number you approved and at what it cost."
+  },
+  "notModeled": ["The users' own choices", "Competing labs", "What the engagement minutes are spent on", "The workers who label the data"],
+  "debrief": ["Which proposal would you block now that you've seen the turn?", "Rename the goal. Does the game change?"]
+}

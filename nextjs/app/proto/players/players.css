@@ -1,0 +1,164 @@
+/* PI's prototypes (/proto/players/*): information and players. Uses the site's tokens; .button comes from here too, so the pages don't depend on game.css. */
+
+.pi-shell { max-width: 1180px; margin: 0 auto; padding: 32px var(--gutter) 90px; }
+.pi-top h1 { margin: 10px 0 12px; font-size: clamp(40px, 6vw, 72px); line-height: .95; letter-spacing: -.055em; }
+.pi-deck { max-width: 760px; margin: 0 0 26px; color: var(--muted); font-size: 18px; line-height: 1.55; }
+.pi-foot { margin-top: 48px; font-size: 13px; line-height: 1.6; }
+.pi-foot code, .pi-shell code { padding: .05em .35em; border: 1px solid var(--line); border-radius: 4px; background: var(--code); font-family: ui-monospace, monospace; font-size: .86em; }
+
+.pi-shell .button { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 40px; padding: 8px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--wash); color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-align: center; }
+.pi-shell .button:hover:not(:disabled) { border-color: var(--accent); }
+.pi-shell .button.primary { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.pi-shell .button:disabled { opacity: .4; cursor: not-allowed; }
+.pi-shell .button small { font-weight: 450; font-size: 12px; opacity: .85; }
+.muted { color: var(--muted); }
+
+.pi-label { display: block; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.pi-small { font-size: 13px; line-height: 1.5; }
+.pi-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.pi-good { color: var(--ok); }
+.pi-bad { color: var(--error); }
+.pi-accent { color: var(--accent); }
+
+.pi-scoreboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.pi-scoreboard > div { padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--wash); }
+.pi-scoreboard strong { display: block; margin-top: 4px; font-size: 28px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+.pi-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 860px) { .pi-grid { grid-template-columns: 1fr; } }
+
+.pi-card, .pi-vote, .pi-last, .pi-ending { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
+.pi-card h2 { margin: 8px 0 10px; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -.04em; line-height: 1.05; }
+.pi-pitch { margin: 0; font-size: 18px; line-height: 1.55; }
+.pi-review { margin-top: 16px; padding: 14px 16px; border: 1px dashed var(--muted); border-radius: 10px; }
+.pi-review p { margin: 6px 0 0; line-height: 1.5; }
+.pi-advisor { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.pi-advice { margin: 8px 0 6px; font-size: 17px; line-height: 1.5; }
+.pi-chip { display: inline-block; margin-right: 6px; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.pi-chip.approve { background: var(--ok); color: #0b1a0d; }
+.pi-chip.block { background: var(--error); color: #2a0b08; }
+
+.pi-tallies { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0 14px; }
+.pi-tally { padding: 12px; border: 1px solid var(--line); border-radius: 10px; text-align: center; }
+.pi-tally strong { display: block; margin: 4px 0 8px; font-size: 44px; font-variant-numeric: tabular-nums; }
+.pi-tally .pi-row { justify-content: center; }
+.pi-decide { width: 100%; margin-bottom: 14px; }
+
+.pi-last { margin-top: 18px; }
+.pi-last p { margin: 6px 0 0; line-height: 1.55; }
+
+.pi-ending h2 { margin: 8px 0 14px; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -.04em; line-height: 1.1; }
+.pi-stats { margin: 0 0 16px; padding-left: 1.2em; line-height: 1.7; }
+.pi-reveal { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--accent); border-radius: 10px; }
+.pi-reveal p { margin: 6px 0 0; line-height: 1.55; }
+.pi-record { width: 100%; margin: 0 0 18px; border-collapse: collapse; font-size: 14px; }
+.pi-record th, .pi-record td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.pi-record th { color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+@media (max-width: 640px) { .pi-record { display: block; overflow-x: auto; } }
+
+/* Private goals on your phone */
+.pi-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.pi-gap { margin-top: 18px; }
+.pi-goals-top { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; margin-bottom: 18px; }
+.pi-goals-status { max-width: 520px; }
+.pi-goals-status p { margin: 0 0 6px; }
+.pi-panel { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
+.pi-panel h2.pi-turn { margin: 8px 0 10px; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -.04em; line-height: 1.1; }
+.pi-seats { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; padding: 0; list-style: none; }
+.pi-seats li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-weight: 600; }
+.pi-log { margin: 10px 0 0; padding-left: 1.3em; font-size: 15px; line-height: 1.6; }
+
+.pi-board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 18px; }
+.pi-track { display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
+.pi-track strong { font-size: 40px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.pi-tokens { display: flex; flex-wrap: wrap; gap: 6px; min-height: 52px; align-content: flex-start; }
+.pi-token { width: 20px; height: 20px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 640px) { .pi-board { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.pi-board.small { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 20px; }
+.pi-board.small .pi-track { padding: 8px; gap: 6px; }
+.pi-board.small strong { font-size: 22px; }
+.pi-board.small .pi-tokens { min-height: 0; gap: 3px; }
+.pi-board.small .pi-token { width: 9px; height: 9px; }
+.pi-board.small .pi-label { font-size: 9px; letter-spacing: .04em; }
+
+.pi-phone-shell { max-width: 480px; margin: 0 auto; padding: 20px 16px 60px; }
+.pi-phone-shell .button { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 52px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--wash); color: var(--ink); font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
+.pi-phone-shell .button.primary { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.pi-phone-shell .button:disabled { opacity: .35; cursor: not-allowed; }
+.pi-phone-shell .button small { font-weight: 450; font-size: 12px; opacity: .85; }
+.pi-phone-shell .linkish { margin-top: 10px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; }
+.pi-phone-shell form { display: grid; gap: 14px; margin-top: 14px; }
+.pi-field { display: grid; gap: 6px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.pi-field input { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); font: inherit; font-size: 20px; }
+.pi-phone-big { margin: 16px 0; font-size: 20px; line-height: 1.4; letter-spacing: -.01em; }
+.pi-secret { display: grid; gap: 8px; place-content: center; width: 100%; min-height: 150px; margin: 14px 0 6px; padding: 18px; border: 2px dashed var(--muted); border-radius: 14px; background: var(--wash); color: var(--muted); font: inherit; font-size: 17px; text-align: center; cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: none; }
+.pi-secret.open { border-style: solid; border-color: var(--accent); color: var(--ink); }
+.pi-secret.open.ai { border-color: var(--error); }
+.pi-secret strong { font-size: 24px; line-height: 1.25; letter-spacing: -.02em; }
+.pi-move-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* The readout */
+.pi-places { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 8px; }
+.pi-place { display: grid; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.pi-place strong { font-size: 20px; letter-spacing: -.02em; line-height: 1.15; }
+.pi-place:hover:not(:disabled) { border-color: var(--accent); }
+.pi-place:disabled { cursor: default; }
+.pi-place.chosen { border: 2px solid #ffd36b; }
+.pi-place.fortified { border-color: var(--ok); }
+.pi-place.fortified .pi-small { color: var(--ok); }
+.pi-place.taken { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.pi-place.taken .pi-label { color: var(--accent-ink); }
+
+/* The intent */
+.pi-meter { height: 10px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.pi-meter span { display: block; height: 100%; background: var(--accent); transition: width .4s; }
+.pi-moves { display: grid; gap: 10px; margin: 6px 0 14px; padding: 0; list-style: none; }
+.pi-moves li { padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 17px; }
+.pi-fx { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; margin-left: 4px; font-size: .85em; font-weight: 600; }
+.pi-move-list { display: grid; gap: 10px; }
+.pi-move-list .button { align-items: flex-start; text-align: left; }
+.pi-lock { width: 100%; margin-top: 12px; }
+
+/* The deadline */
+.pi-clock { font-variant-numeric: tabular-nums; }
+.pi-scoreboard .pi-small-strong { font-size: 16px; letter-spacing: 0; line-height: 1.5; }
+.pi-inventory { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 12px 0 8px; }
+.pi-inventory > div { display: grid; gap: 4px; justify-items: center; padding: 8px 4px; border: 1px solid var(--line); border-radius: 10px; background: var(--wash); }
+.pi-inventory strong { font-size: 26px; font-variant-numeric: tabular-nums; }
+.pi-inventory .button { min-height: 40px; padding: 4px 6px; font-size: 13px; }
+.pi-offers { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.pi-offers .eyebrow { margin-bottom: 10px; }
+.pi-offer { margin-bottom: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; }
+.pi-offer p { margin: 0 0 8px; line-height: 1.45; }
+.pi-steppers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.pi-stepper { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; gap: 4px; text-align: center; font-size: 14px; }
+.pi-stepper .button { min-height: 40px; padding: 0; }
+
+/* The phone plays the AI */
+.pi-mapbox { padding: 12px; }
+.pi-map { display: block; width: 100%; height: auto; user-select: none; }
+.pi-map .pi-link .line { stroke: var(--muted); stroke-width: .6; }
+.pi-map .pi-link .hit { stroke: transparent; stroke-width: 5; }
+.pi-map .pi-link.hot .line { stroke: var(--accent); stroke-width: 1; }
+.pi-map .pi-link.cut .line { stroke: var(--error); stroke-dasharray: 1.4 1.2; stroke-opacity: .7; }
+.pi-map .pi-link.live { cursor: pointer; }
+.pi-map .pi-link.live:hover .line { stroke: #ffd36b; stroke-width: 1.2; }
+.pi-map .pi-node circle { fill: var(--paper); stroke: var(--muted); stroke-width: .6; transition: fill .3s; }
+.pi-map .pi-node.near circle { stroke: var(--accent); stroke-dasharray: 1.2 .8; }
+.pi-map .pi-node.ai circle { fill: var(--accent); stroke: var(--accent); stroke-dasharray: none; }
+.pi-map .pi-node.guarded circle { stroke: #ffd36b; stroke-width: 1.4; stroke-dasharray: none; }
+.pi-map .pi-node.live { cursor: pointer; }
+.pi-map .pi-node.live:hover circle { fill: #ffd36b; }
+.pi-map .pi-node text { fill: var(--ink); font-size: 3.2px; font-weight: 600; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--wash); stroke-width: .8px; }
+.pi-aisays { padding: 14px 16px; border: 1px solid var(--accent); border-radius: 10px; }
+.pi-aisays p { margin: 6px 0 0; line-height: 1.55; }
+.pi-voice { display: flex; gap: 8px; align-items: center; margin-top: 16px; color: var(--muted); }
+.pi-rules { margin-top: 10px; color: var(--muted); }
+.pi-rules summary { cursor: pointer; }
+.pi-rules ul { padding-left: 1.2em; line-height: 1.6; }
+
+/* Place to commit */
+.pi-reveal-list { display: grid; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 20px; }
+.pi-reveal-list li { padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; animation: pi-flip .5s both; }
+@keyframes pi-flip { from { opacity: 0; transform: rotateX(80deg); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pi-reveal-list li { animation: none; } }

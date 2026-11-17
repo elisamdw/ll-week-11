@@ -1,0 +1,32 @@
+{
+  "id": "blank",
+  "preset": true,
+  "title": "Blank",
+  "tagline": "Start from scratch: three places, one AI card, one faction, one action.",
+  "premise": "The smallest game the engine will run. Rename everything, add places from your own database, give the AI cards, give the humans factions and actions. Every rule can carry a rhetoric line: the claim it makes about the world.",
+  "credits": "A starting point for co-design (GL, Nov 14, 2026).",
+  "goal": { "label": "The AI's goal", "unit": "", "rhetoric": "What does the AI want? One number." },
+  "rounds": 6,
+  "actionsPerTurn": 1,
+  "resources": [{ "id": "energy", "label": "Energy", "start": 3 }],
+  "tracks": [{ "id": "harm", "label": "Harm", "start": 0, "lose": 5 }],
+  "nodes": [
+    { "id": "a", "label": "Place A", "kind": "data", "x": 25, "y": 32, "links": ["b"], "yield": {} },
+    { "id": "b", "label": "Place B", "kind": "energy", "x": 50, "y": 20, "links": ["a", "c"], "yield": { "energy": 1 } },
+    { "id": "c", "label": "Place C", "kind": "people", "x": 75, "y": 40, "links": ["b"], "yield": {}, "onDown": [{ "op": "add", "key": "harm", "n": 2 }] }
+  ],
+  "ai": {
+    "name": "The AI",
+    "start": ["a"],
+    "upkeep": { "energy": 1 },
+    "perNode": 1,
+    "acceleration": 1.2,
+    "deck": [{ "id": "spread", "label": "Spread", "value": "resources", "text": "It takes the next place.", "effects": [{ "op": "spread", "n": 1 }] }]
+  },
+  "factions": [{ "id": "humans", "label": "The humans", "goal": "Keep the AI off Place C.", "actions": ["guard"] }],
+  "actions": [{ "id": "guard", "label": "Guard a place", "target": "free", "cost": { "energy": 1 }, "effects": [{ "op": "protect" }] }],
+  "shortage": [{ "op": "add", "key": "harm", "n": 1 }],
+  "end": { "aiShare": 0.67 },
+  "notModeled": ["Everything else. Write it here."],
+  "debrief": ["What does your game argue?"]
+}

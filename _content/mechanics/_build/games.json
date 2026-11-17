@@ -1,0 +1,1341 @@
+{
+  "_about": "EG's games table (Nov 17, 2026): every game named as an example in definitions.json, plus the games the LL has in hand in week 11. Fields follow ../format.md v1.0 (Games). year, designer and definition come from the sources listed; where sources is empty they are EG's from general knowledge and not yet checked. inTheLL entries cite the LL's record. build.mjs adds each game's mechanics from the examples.",
+  "games": [
+    {
+      "id": "data-center",
+      "name": "Data Center",
+      "year": 2026,
+      "designer": "The LL (GL, Claude Code), for week 11",
+      "form": "LL-made",
+      "whereToGet": "http://localhost:3111/game/play/data-center (the week's reader app, on the laptop)",
+      "definition": "The week 11 game: an AI spreads across a region's infrastructure while four human factions (the utility, the city council, the company, the neighbors) act in turn, each with a private goal; one hidden card in the AI's deck is the turn.",
+      "definitionSources": [
+        "_content/game/README.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Built Nov 14, 2026, for TDM 155AI on Nov 18 and William Stafford's SOC-STD 98to workshop on Nov 23.",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "normal-technology",
+          "the-committee",
+          "blank",
+          "universal-paperclips"
+        ]
+      },
+      "howTo": "Run the reader app (`pnpm dev` in `nextjs/`) and open `/game/play/data-center`; four players or teams share one screen. `/game/edit/data-center` opens the rules for a remix."
+    },
+    {
+      "id": "normal-technology",
+      "name": "Normal Technology",
+      "year": 2026,
+      "designer": "The LL (GL, Claude Code), for week 11",
+      "form": "LL-made",
+      "whereToGet": "http://localhost:3111/game/play/normal-technology",
+      "definition": "The Data Center map rewritten after Narayanan and Kapoor's 'AI as Normal Technology': the AI spreads only where someone approves or signs a deal, every site pays something back, and there is no turn.",
+      "definitionSources": [
+        "_content/game/_rulesets/normal-technology.json"
+      ],
+      "inTheLL": [
+        {
+          "text": "Built Nov 14, 2026, to play after Data Center and compare the claims.",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "data-center"
+        ]
+      },
+      "howTo": "Open `/game/play/normal-technology` in the reader app, after a round of Data Center."
+    },
+    {
+      "id": "the-committee",
+      "name": "The Committee",
+      "year": 2026,
+      "designer": "The LL (GL, Claude Code), for week 11",
+      "form": "LL-made",
+      "whereToGet": "http://localhost:3111/game/play/committee",
+      "definition": "A version of the week 11 game in which the AI brings proposals to one oversight committee; the players rename its goal before playing.",
+      "definitionSources": [
+        "_content/game/README.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Built Nov 14, 2026 (option A of the design notes).",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "data-center"
+        ]
+      },
+      "howTo": "Open `/game/play/committee` in the reader app."
+    },
+    {
+      "id": "blank",
+      "name": "Blank",
+      "year": 2026,
+      "designer": "The LL (GL, Claude Code), for week 11",
+      "form": "LL-made",
+      "whereToGet": "http://localhost:3111/game/edit/blank",
+      "definition": "The week 11 game's empty starting point: three places, one card, one faction, one action, for students who build a game from scratch.",
+      "definitionSources": [
+        "_content/game/README.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Built Nov 14, 2026, for remixing from scratch.",
+          "sources": [
+            "_content/game/README.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "data-center"
+        ]
+      },
+      "howTo": "Open `/game/edit/blank` and add to it, or ask Claude Code to change `_content/game/_rulesets/blank.json`."
+    },
+    {
+      "id": "universal-paperclips",
+      "name": "Universal Paperclips",
+      "year": 2017,
+      "designer": "Frank Lantz",
+      "form": "Video",
+      "whereToGet": "https://www.decisionproblem.com/paperclips/ (free in the browser)",
+      "definition": "Frank Lantz's 2017 browser game, in which the player is an AI that makes paperclips until there is nothing left.",
+      "definitionSources": [
+        "_content/paperclips/README.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "The starting point for the week 11 game and for William Stafford's Nov 23 workshop (Nov 2026).",
+          "sources": [
+            "_content/paperclips/README.md"
+          ]
+        },
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026).",
+          "sources": [
+            "_content/game-state/paperclips.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "cookie-clicker",
+          "data-center"
+        ]
+      }
+    },
+    {
+      "id": "monopoly",
+      "name": "Monopoly",
+      "year": 1935,
+      "designer": "Hasbro (Parker Brothers)",
+      "form": "Board",
+      "definition": "A board game of buying property around a loop of forty spaces and charging rent, until all but one player is bankrupt.",
+      "definitionSources": [
+        "_content/game-state/monopoly.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026), from overhead photos of a game in progress, for TDM 155AI.",
+          "sources": [
+            "_content/game-state/monopoly.md",
+            "_content/game-state/README.md"
+          ]
+        },
+        {
+          "text": "The LL's own Monopoly set is the table for the prototype 'Monopoly with live rents' (Nov 15, 2026).",
+          "sources": [
+            "_content/prototypes/hybrid/monopoly-with-live-rents.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "proto-monopoly-with-live-rents"
+        ]
+      }
+    },
+    {
+      "id": "risk",
+      "name": "Risk",
+      "year": 1959,
+      "designer": "Hasbro (Parker Brothers / Avalon Hill)",
+      "form": "Board",
+      "definition": "A board game of world conquest on a map of 42 territories in six continents, with battles decided by dice.",
+      "definitionSources": [
+        "_content/game-state/risk.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026).",
+          "sources": [
+            "_content/game-state/risk.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-game-of-life",
+      "name": "The Game of Life",
+      "year": 1960,
+      "designer": "Hasbro (Milton Bradley)",
+      "form": "Board",
+      "definition": "A board game along one branching track of a life (college or career, marriage, family, retirement), moved by a spinner from 1 to 10.",
+      "definitionSources": [
+        "_content/game-state/game-of-life.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026).",
+          "sources": [
+            "_content/game-state/game-of-life.md"
+          ]
+        },
+        {
+          "text": "Named in the ENGL 189VG planning for the difference between rolling dice and spinning a spinner (fall 2026).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "texas-holdem",
+      "name": "Texas Hold'em",
+      "year": "",
+      "designer": "Traditional",
+      "form": "Card",
+      "definition": "A poker game in which each player holds two hole cards face down and shares five community cards, betting over four rounds.",
+      "definitionSources": [
+        "_content/game-state/texas-holdem.md"
+      ],
+      "inTheLL": [
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026).",
+          "sources": [
+            "_content/game-state/texas-holdem.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "civilization",
+      "name": "Civilization",
+      "year": 1991,
+      "designer": "Sid Meier (MicroProse); later Firaxis Games",
+      "form": "Video",
+      "definition": "A turn-based strategy series in which the player leads a civilization from its first city through history, exploring, expanding, exploiting and exterminating (4X).",
+      "inTheLL": [
+        {
+          "text": "Modeled as data on the week 11 game-state pages (Nov 14, 2026), from Civilization V–VII's game definitions.",
+          "sources": [
+            "_content/game-state/civilization.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Civilization_(video_game)"
+      ]
+    },
+    {
+      "id": "dungeons-and-dragons",
+      "name": "Dungeons & Dragons",
+      "year": 1974,
+      "designer": "Gary Gygax and Dave Arneson",
+      "form": "Tabletop role-playing",
+      "definition": "A tabletop role-playing game in which players voice characters in a story run by a dungeon master, with dice deciding what their actions achieve.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG brainstorm as an example of loops and of open-world play (fall 2026).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Dungeons_%26_Dragons"
+      ]
+    },
+    {
+      "id": "league-of-legends",
+      "name": "League of Legends",
+      "year": 2009,
+      "designer": "Riot Games",
+      "form": "Video",
+      "definition": "A team game (a multiplayer online battle arena) in which two teams of five champions fight to destroy each other's base.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG brainstorm as an example of a loop (fall 2026).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/League_of_Legends"
+      ]
+    },
+    {
+      "id": "baldurs-gate",
+      "name": "Baldur's Gate (series)",
+      "year": 1998,
+      "designer": "BioWare; Baldur's Gate 3 (2023) by Larian Studios",
+      "form": "Video",
+      "definition": "A series of role-playing video games set in the Dungeons & Dragons world, in which the player leads a party whose conversations and choices shape the story.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG brainstorm as an example of open-world narrative (fall 2026; the note does not say which game in the series).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "dungeons-and-dragons"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Baldur%27s_Gate_(series)"
+      ]
+    },
+    {
+      "id": "final-fantasy-x",
+      "name": "Final Fantasy X",
+      "year": 2001,
+      "designer": "Square",
+      "form": "Video",
+      "definition": "A Japanese role-playing game in which a party travels a world fighting in turn-based battles to defeat a recurring monster, Sin.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG brainstorm for endings unlocked by exploration (fall 2026).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Final_Fantasy_X"
+      ]
+    },
+    {
+      "id": "god-of-war-2018",
+      "name": "God of War (2018)",
+      "year": 2018,
+      "designer": "Santa Monica Studio",
+      "form": "Video",
+      "definition": "An action game in which Kratos and his son cross a Norse world; Kratos's main weapon, the Leviathan Axe, can be thrown and recalled.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG planning as a close-reading example: 'god of war axe mechanic' (fall 2026; the note does not name the game's year, and the axe is the 2018 game's).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md"
+          ]
+        }
+      ],
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)"
+      ]
+    },
+    {
+      "id": "the-legend-of-zelda",
+      "name": "The Legend of Zelda",
+      "year": 1986,
+      "designer": "Nintendo (Shigeru Miyamoto, Takashi Tezuka)",
+      "form": "Video",
+      "definition": "An action-adventure game in which Link explores an overworld and dungeons room by room, gathering items that open new areas.",
+      "inTheLL": [
+        {
+          "text": "Named in the ENGL 189VG vibe-coding station notes ('old-zelda-like room based system') as a model for a simple vibe-coded game (fall 2026).",
+          "sources": [
+            "NB/_context/hackmd/HackMD_Team_1794685979353/video-games-vibe-coding-station.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "zelda-breath-of-the-wild"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)"
+      ]
+    },
+    {
+      "id": "zelda-breath-of-the-wild",
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "year": 2017,
+      "designer": "Nintendo",
+      "form": "Video",
+      "definition": "An open-world Zelda game in which the player can go almost anywhere from the start and solve problems with physics and chemistry systems.",
+      "inTheLL": [
+        {
+          "text": "Marlon's example of template and instance (every horse has the same properties; yours is an instance), Nov 14, 2026.",
+          "sources": [
+            "_content/glossary/README.md"
+          ]
+        }
+      ],
+      "related": {
+        "games": [
+          "the-legend-of-zelda"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+      ]
+    },
+    {
+      "id": "chess",
+      "name": "Chess",
+      "year": "",
+      "designer": "Traditional",
+      "form": "Board",
+      "definition": "A two-player game on a board of 64 squares, in which each side tries to checkmate the other's king.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Chess"
+      ],
+      "inTheLL": [
+        {
+          "text": "Nov 16, 2026: the first test of computer vision that reads game boards in the studio started with chess (Marlon's day-one report, voice agent's record).",
+          "sources": [
+            "NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "year": "",
+      "designer": "Traditional",
+      "form": "Board",
+      "definition": "A two-player game of placing stones on a 19x19 grid to surround territory.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Go_(game)"
+      ]
+    },
+    {
+      "id": "pandemic",
+      "name": "Pandemic",
+      "year": 2008,
+      "designer": "Matt Leacock (Z-Man Games)",
+      "form": "Board",
+      "definition": "A cooperative board game in which players with different roles travel the world treating outbreaks and racing to cure four diseases.",
+      "related": {
+        "games": [
+          "pandemic-legacy"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pandemic_(board_game)"
+      ]
+    },
+    {
+      "id": "pandemic-legacy",
+      "name": "Pandemic Legacy: Season 1",
+      "year": 2015,
+      "designer": "Rob Daviau and Matt Leacock (Z-Man Games)",
+      "form": "Board",
+      "definition": "A campaign version of Pandemic played over a year of game months, in which the board and cards are changed for good after each game.",
+      "related": {
+        "games": [
+          "pandemic"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pandemic_Legacy"
+      ]
+    },
+    {
+      "id": "catan",
+      "name": "Catan",
+      "year": 1995,
+      "designer": "Klaus Teuber",
+      "form": "Board",
+      "definition": "A board game of settling an island of hexes, collecting resources by dice roll and trading them to build roads, settlements and cities.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Catan"
+      ]
+    },
+    {
+      "id": "dominion",
+      "name": "Dominion",
+      "year": 2008,
+      "designer": "Donald X. Vaccarino (Rio Grande Games)",
+      "form": "Card",
+      "definition": "The first deck-building card game: players buy cards from a shared supply into their own decks, aiming for the most victory points.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Dominion_(card_game)"
+      ]
+    },
+    {
+      "id": "slay-the-spire",
+      "name": "Slay the Spire",
+      "year": 2019,
+      "designer": "Mega Crit",
+      "form": "Video",
+      "definition": "A single-player game that combines deck-building with a roguelike climb, fighting with the cards you collect.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Slay_the_Spire"
+      ]
+    },
+    {
+      "id": "hanabi",
+      "name": "Hanabi",
+      "year": 2010,
+      "designer": "Antoine Bauza",
+      "form": "Card",
+      "definition": "A cooperative card game in which players hold their cards facing out and give each other limited hints to build fireworks in order.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Hanabi_(card_game)"
+      ]
+    },
+    {
+      "id": "puerto-rico",
+      "name": "Puerto Rico",
+      "year": 2002,
+      "designer": "Andreas Seyfarth",
+      "form": "Board",
+      "definition": "A board game of running a colonial plantation economy, in which players take roles in turn each round.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)"
+      ]
+    },
+    {
+      "id": "werewolf",
+      "name": "Werewolf (Mafia)",
+      "year": 1986,
+      "designer": "Dmitry Davidoff (Mafia); Werewolf variant by Andrew Plotkin",
+      "form": "Party",
+      "definition": "A party game of hidden roles in which a village votes each day to eliminate a suspect, while werewolves secretly kill at night.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Mafia_(party_game)"
+      ]
+    },
+    {
+      "id": "quiplash",
+      "name": "Quiplash",
+      "year": 2015,
+      "designer": "Jackbox Games",
+      "form": "Party",
+      "definition": "A party game played on phones in which players write funny answers to prompts and everyone votes between pairs of answers.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Quiplash"
+      ]
+    },
+    {
+      "id": "stratego",
+      "name": "Stratego",
+      "year": 1946,
+      "designer": "Jacques Johan Mogendorff (Jumbo)",
+      "form": "Board",
+      "definition": "A two-player game of capturing the flag, in which each piece's rank is hidden from the opponent.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Stratego"
+      ]
+    },
+    {
+      "id": "battlestar-galactica-board-game",
+      "name": "Battlestar Galactica: The Board Game",
+      "year": 2008,
+      "designer": "Corey Konieczka (Fantasy Flight Games)",
+      "form": "Board",
+      "definition": "A semi-cooperative board game in which humans flee the Cylons, while one or more players are secretly Cylons working against them.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Battlestar_Galactica:_The_Board_Game"
+      ]
+    },
+    {
+      "id": "yahtzee",
+      "name": "Yahtzee",
+      "year": 1956,
+      "designer": "E. S. Lowe; later Milton Bradley",
+      "form": "Board",
+      "definition": "A dice game of rolling five dice up to three times a turn to make scoring combinations.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Yahtzee"
+      ]
+    },
+    {
+      "id": "boggle",
+      "name": "Boggle",
+      "year": 1973,
+      "designer": "Allan Turoff (Parker Brothers)",
+      "form": "Board",
+      "definition": "A word game in which players find words in a grid of lettered dice before a sand timer runs out.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Boggle"
+      ]
+    },
+    {
+      "id": "scrabble",
+      "name": "Scrabble",
+      "year": 1948,
+      "designer": "Alfred Mosher Butts",
+      "form": "Board",
+      "definition": "A word game of placing lettered tiles on a grid to make words, scored by letter values and premium squares.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Scrabble"
+      ]
+    },
+    {
+      "id": "pac-man",
+      "name": "Pac-Man",
+      "year": 1980,
+      "designer": "Namco (Toru Iwatani)",
+      "form": "Video",
+      "definition": "An arcade game in which the player eats dots in a maze while four ghosts chase them.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pac-Man"
+      ]
+    },
+    {
+      "id": "tetris",
+      "name": "Tetris",
+      "year": 1985,
+      "designer": "Alexey Pajitnov",
+      "form": "Video",
+      "definition": "A puzzle game in which falling pieces of four squares are turned and placed to clear full lines.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Tetris"
+      ]
+    },
+    {
+      "id": "space-invaders",
+      "name": "Space Invaders",
+      "year": 1978,
+      "designer": "Tomohiro Nishikado (Taito)",
+      "form": "Video",
+      "definition": "An arcade game in which the player's cannon shoots rows of descending aliens.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Space_Invaders"
+      ]
+    },
+    {
+      "id": "cookie-clicker",
+      "name": "Cookie Clicker",
+      "year": 2013,
+      "designer": "Julien Thiennot (Orteil)",
+      "form": "Video",
+      "definition": "An incremental browser game in which clicking a cookie, then buying buildings that bake for you, makes ever larger numbers of cookies.",
+      "related": {
+        "games": [
+          "universal-paperclips"
+        ]
+      },
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Cookie_Clicker"
+      ]
+    },
+    {
+      "id": "the-oregon-trail",
+      "name": "The Oregon Trail",
+      "year": 1971,
+      "designer": "Don Rawitsch, Bill Heinemann and Paul Dillenberger (MECC)",
+      "form": "Video",
+      "definition": "An educational game in which a party of settlers travels the trail from Missouri to Oregon in 1847, managing supplies through random hardships.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/The_Oregon_Trail_(1971_video_game)"
+      ]
+    },
+    {
+      "id": "mass-effect",
+      "name": "Mass Effect",
+      "year": 2007,
+      "designer": "BioWare",
+      "form": "Video",
+      "definition": "A science-fiction role-playing game in which the player's dialogue choices and decisions carry across a trilogy.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)"
+      ]
+    },
+    {
+      "id": "frostpunk",
+      "name": "Frostpunk",
+      "year": 2018,
+      "designer": "11 bit studios",
+      "form": "Video",
+      "definition": "A city-building survival game in which the player runs the last city in a frozen world, passing laws that keep people alive at a cost.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Frostpunk"
+      ]
+    },
+    {
+      "id": "mcdonalds-video-game",
+      "name": "McDonald's Video Game",
+      "year": 2006,
+      "designer": "Molleindustria",
+      "form": "Video",
+      "definition": "A satirical browser game in which the player runs a fast-food corporation from pasture to restaurant to boardroom.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/McDonald%27s_Video_Game"
+      ]
+    },
+    {
+      "id": "fishbanks",
+      "name": "Fishbanks",
+      "year": 1986,
+      "designer": "Dennis Meadows",
+      "form": "Classroom",
+      "definition": "A role-play simulation in which teams run fishing companies sharing one fish stock, used to teach the management of common resources.",
+      "definitionSources": [
+        "https://www.sambuz.com/doc/fishbanks-ppt-presentation-746972"
+      ]
+    },
+    {
+      "id": "skylanders",
+      "name": "Skylanders: Spyro's Adventure",
+      "year": 2011,
+      "designer": "Toys for Bob (Activision)",
+      "form": "Video",
+      "definition": "A video game played by placing toy figures on a 'Portal of Power' connected to the console, which brings each figure's character into the game.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Skylanders:_Spyro%27s_Adventure"
+      ]
+    },
+    {
+      "id": "fluxx",
+      "name": "Fluxx",
+      "year": 1997,
+      "designer": "Andrew Looney (Looney Labs)",
+      "form": "Card",
+      "definition": "A card game whose rules and goal change as cards are played.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Fluxx"
+      ]
+    },
+    {
+      "id": "pokemon-red-and-blue",
+      "name": "Pokémon Red and Blue",
+      "year": 1996,
+      "designer": "Game Freak (Nintendo)",
+      "form": "Video",
+      "definition": "A role-playing game in which the player catches and trains creatures and fights turn-based battles.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "name": "Super Mario Bros.",
+      "year": 1985,
+      "designer": "Nintendo (Shigeru Miyamoto)",
+      "form": "Video",
+      "definition": "A side-scrolling platform game in which Mario runs and jumps through levels to rescue a princess.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+      ]
+    },
+    {
+      "id": "keep-talking-and-nobody-explodes",
+      "name": "Keep Talking and Nobody Explodes",
+      "year": 2015,
+      "designer": "Steel Crate Games",
+      "form": "Video",
+      "definition": "A cooperative game in which one player defuses a bomb on screen while the others read the defusal manual aloud.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Keep_Talking_and_Nobody_Explodes"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "name": "Dark Souls",
+      "year": 2011,
+      "designer": "FromSoftware",
+      "form": "Video",
+      "definition": "An action role-playing game set in a decaying kingdom of interconnected areas, known for its difficulty.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Dark_Souls_(video_game)"
+      ]
+    },
+    {
+      "id": "portal",
+      "name": "Portal",
+      "year": 2007,
+      "designer": "Valve",
+      "form": "Video",
+      "definition": "A first-person puzzle game in which the player solves test chambers with a gun that makes linked portals.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Portal_(video_game)"
+      ]
+    },
+    {
+      "id": "undertale",
+      "name": "Undertale",
+      "year": 2015,
+      "designer": "Toby Fox",
+      "form": "Video",
+      "definition": "A role-playing game in which the player can spare every monster instead of fighting it.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Undertale"
+      ]
+    },
+    {
+      "id": "final-fantasy-x-2",
+      "name": "Final Fantasy X-2",
+      "year": 2003,
+      "designer": "Square",
+      "form": "Video",
+      "definition": "The sequel to Final Fantasy X, with mission-based play and several endings that depend on how much the player completed.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Final_Fantasy_X-2"
+      ]
+    },
+    {
+      "id": "papers-please",
+      "name": "Papers, Please",
+      "year": 2013,
+      "designer": "Lucas Pope",
+      "form": "Video",
+      "definition": "A game in which the player is an immigration inspector in a fictional authoritarian state, checking documents at a border crossing.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Papers,_Please"
+      ]
+    },
+    {
+      "id": "brothers-a-tale-of-two-sons",
+      "name": "Brothers: A Tale of Two Sons",
+      "year": 2013,
+      "designer": "Starbreeze Studios (Josef Fares)",
+      "form": "Video",
+      "definition": "An adventure game in which one player steers two brothers at once, one on each half of the controller.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Brothers:_A_Tale_of_Two_Sons"
+      ]
+    },
+    {
+      "id": "animal-crossing",
+      "name": "Animal Crossing",
+      "year": 2001,
+      "designer": "Nintendo",
+      "form": "Video",
+      "definition": "A life-simulation game in which the player lives in a village of animals and pays off a house loan to the shopkeeper Tom Nook.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Animal_Crossing_(video_game)"
+      ]
+    },
+    {
+      "id": "the-sims",
+      "name": "The Sims",
+      "year": 2000,
+      "designer": "Maxis (Will Wright)",
+      "form": "Video",
+      "definition": "A life-simulation game in which the player creates people and directs their daily lives in a house.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/The_Sims_(video_game)"
+      ]
+    },
+    {
+      "id": "wii-sports",
+      "name": "Wii Sports",
+      "year": 2006,
+      "designer": "Nintendo",
+      "form": "Video",
+      "definition": "A collection of sports games played by swinging the Wii Remote.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Wii_Sports"
+      ]
+    },
+    {
+      "id": "guitar-hero",
+      "name": "Guitar Hero",
+      "year": 2005,
+      "designer": "Harmonix (RedOctane)",
+      "form": "Video",
+      "definition": "A rhythm game played on a guitar-shaped controller, pressing colored frets and strumming in time to songs.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Guitar_Hero_(video_game)"
+      ]
+    },
+    {
+      "id": "hades",
+      "name": "Hades",
+      "designer": "Supergiant Games",
+      "form": "Video",
+      "definition": "A roguelike action game in which Zagreus tries again and again to escape the underworld.",
+      "year": 2020,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Hades_(video_game)"
+      ]
+    },
+    {
+      "id": "overcooked",
+      "name": "Overcooked!",
+      "designer": "Ghost Town Games",
+      "form": "Video",
+      "definition": "A cooperative cooking game in which players prepare and serve orders in chaotic kitchens against a clock.",
+      "year": 2016,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Overcooked"
+      ]
+    },
+    {
+      "id": "dance-dance-revolution",
+      "name": "Dance Dance Revolution",
+      "designer": "Konami",
+      "form": "Video",
+      "definition": "A rhythm game played by stepping on arrows on a dance pad in time to music.",
+      "year": 1998,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Dance_Dance_Revolution_(1998_video_game)"
+      ]
+    },
+    {
+      "id": "cant-stop",
+      "name": "Can't Stop",
+      "designer": "Sid Sackson",
+      "form": "Board",
+      "definition": "A dice game of pushing your luck up columns numbered 2 to 12.",
+      "year": 1980,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Can%27t_Stop_(board_game)"
+      ]
+    },
+    {
+      "id": "blackjack",
+      "name": "Blackjack",
+      "designer": "Traditional",
+      "form": "Card",
+      "definition": "A casino card game in which players try to get closer to 21 than the dealer without going over.",
+      "year": "",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Blackjack"
+      ]
+    },
+    {
+      "id": "among-us",
+      "name": "Among Us",
+      "designer": "Innersloth",
+      "form": "Video",
+      "definition": "A social deduction game in which crewmates try to find the impostors among them.",
+      "year": 2018,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Among_Us"
+      ]
+    },
+    {
+      "id": "zendo",
+      "name": "Zendo",
+      "designer": "Kory Heath",
+      "form": "Board",
+      "definition": "A game of inductive logic in which players discover a secret rule by building arrangements of pieces.",
+      "year": 2001,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Zendo_(game)"
+      ]
+    },
+    {
+      "id": "diplomacy",
+      "name": "Diplomacy",
+      "designer": "Allan B. Calhamer",
+      "form": "Board",
+      "definition": "A strategy game of pre-First World War Europe with no dice, in which players negotiate and then move at the same time.",
+      "year": 1959,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Diplomacy_(game)"
+      ]
+    },
+    {
+      "id": "twitch-plays-pokemon",
+      "name": "Twitch Plays Pokémon",
+      "designer": "An anonymous Australian programmer",
+      "form": "Video",
+      "definition": "A 2014 stream in which viewers played Pokémon Red together by typing commands in the chat.",
+      "year": 2014,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon"
+      ]
+    },
+    {
+      "id": "once-upon-a-time",
+      "name": "Once Upon a Time",
+      "designer": "Richard Lambert, Andrew Rilstone and James Wallis (Atlas Games)",
+      "form": "Card",
+      "definition": "A storytelling card game in which players tell a fairy tale together, each aiming for their own ending.",
+      "year": 1994,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Once_Upon_a_Time_(game)"
+      ]
+    },
+    {
+      "id": "simon-says",
+      "name": "Simon Says",
+      "designer": "Traditional",
+      "form": "Party",
+      "definition": "A children's game in which players obey commands only when they begin 'Simon says'.",
+      "year": "",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Simon_Says"
+      ]
+    },
+    {
+      "id": "just-dance",
+      "name": "Just Dance",
+      "designer": "Ubisoft",
+      "form": "Video",
+      "definition": "A dance game in which players copy an on-screen dancer's moves.",
+      "year": 2009,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Just_Dance_(video_game)"
+      ]
+    },
+    {
+      "id": "splendor",
+      "name": "Splendor",
+      "designer": "Marc André",
+      "form": "Board",
+      "definition": "A card game of collecting gems to buy development cards that discount later purchases.",
+      "year": 2014,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Splendor_(game)"
+      ]
+    },
+    {
+      "id": "agricola",
+      "name": "Agricola",
+      "designer": "Uwe Rosenberg",
+      "form": "Board",
+      "definition": "A worker-placement game about running a seventeenth-century farm.",
+      "year": 2007,
+      "definitionSources": [
+        "https://lookout-spiele.de/en/games/agricola.html"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "name": "Minecraft",
+      "designer": "Mojang Studios (Markus Persson)",
+      "form": "Video",
+      "definition": "A sandbox game of mining, gathering and building in a world of blocks.",
+      "year": 2011,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Minecraft"
+      ]
+    },
+    {
+      "id": "infinite-craft",
+      "name": "Infinite Craft",
+      "designer": "Neal Agarwal",
+      "form": "Video",
+      "definition": "A browser game of combining elements into new ones, with results decided by a language model.",
+      "year": 2024,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Infinite_Craft"
+      ]
+    },
+    {
+      "id": "twister",
+      "name": "Twister",
+      "designer": "Charles Foley and Neil Rabens (Milton Bradley)",
+      "form": "Party",
+      "definition": "A physical game in which players place hands and feet on colored circles named by a spinner.",
+      "year": 1966,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Twister_(game)"
+      ]
+    },
+    {
+      "id": "pokemon-go",
+      "name": "Pokémon Go",
+      "designer": "Niantic",
+      "form": "Video",
+      "definition": "A location-based phone game in which players catch creatures at real-world places.",
+      "year": 2016,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go"
+      ]
+    },
+    {
+      "id": "simon",
+      "name": "Simon",
+      "designer": "Ralph Baer and Howard Morrison (Milton Bradley)",
+      "form": "Party",
+      "definition": "An electronic memory toy that plays growing sequences of lights and tones for the player to repeat.",
+      "year": 1978,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Simon_(game)"
+      ]
+    },
+    {
+      "id": "marco-polo",
+      "name": "Marco Polo",
+      "designer": "Traditional",
+      "form": "Party",
+      "definition": "A tag game played in a pool, in which the seeker keeps their eyes closed.",
+      "year": "",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Marco_Polo_(game)"
+      ]
+    },
+    {
+      "id": "pictionary",
+      "name": "Pictionary",
+      "designer": "Robert Angel",
+      "form": "Party",
+      "definition": "A word-guessing game played by drawing.",
+      "year": 1985,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Pictionary"
+      ]
+    },
+    {
+      "id": "taboo",
+      "name": "Taboo",
+      "designer": "Brian Hersch",
+      "form": "Party",
+      "definition": "A word-guessing game in which the clue-giver may not say the word or the listed related words.",
+      "year": 1989,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Taboo_(game)"
+      ]
+    },
+    {
+      "id": "twenty-questions",
+      "name": "Twenty Questions",
+      "designer": "Traditional",
+      "form": "Party",
+      "definition": "A guessing game of identifying something with no more than twenty yes-or-no questions.",
+      "year": "",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Twenty_questions"
+      ]
+    },
+    {
+      "id": "braid",
+      "name": "Braid",
+      "designer": "Jonathan Blow",
+      "form": "Video",
+      "definition": "A puzzle platformer built around rewinding time.",
+      "year": 2008,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Braid_(video_game)"
+      ]
+    },
+    {
+      "id": "prince-of-persia-the-sands-of-time",
+      "name": "Prince of Persia: The Sands of Time",
+      "designer": "Ubisoft Montreal",
+      "form": "Video",
+      "definition": "An action-adventure game in which a dagger lets the prince rewind time.",
+      "year": 2003,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Prince_of_Persia:_The_Sands_of_Time"
+      ]
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "designer": "Michael Mateas and Andrew Stern",
+      "form": "Video",
+      "definition": "An interactive drama in which the player types to a couple whose marriage is falling apart.",
+      "year": 2005,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Fa%C3%A7ade_(video_game)"
+      ]
+    },
+    {
+      "id": "ai-dungeon",
+      "name": "AI Dungeon",
+      "designer": "Nick Walton (Latitude)",
+      "form": "Video",
+      "definition": "A text adventure narrated by a language model in response to whatever the player types.",
+      "year": 2019,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/AI_Dungeon"
+      ]
+    },
+    {
+      "id": "peggle",
+      "name": "Peggle",
+      "designer": "PopCap Games",
+      "form": "Video",
+      "definition": "A puzzle game of shooting a ball to clear orange pegs from a board.",
+      "year": 2007,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Peggle"
+      ]
+    },
+    {
+      "id": "cow-clicker",
+      "name": "Cow Clicker",
+      "designer": "Ian Bogost",
+      "form": "Video",
+      "definition": "Ian Bogost's satirical Facebook game, in which players click a cow every six hours.",
+      "year": 2010,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Cow_Clicker"
+      ]
+    },
+    {
+      "id": "nomic",
+      "name": "Nomic",
+      "designer": "Peter Suber",
+      "form": "Classroom",
+      "definition": "A game in which changing the rules is the move.",
+      "year": 1982,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Nomic"
+      ]
+    },
+    {
+      "id": "dead-of-winter",
+      "name": "Dead of Winter",
+      "designer": "Jonathan Gilmour and Isaac Vega (Plaid Hat Games)",
+      "form": "Board",
+      "definition": "A semi-cooperative survival game in which each player also has a secret objective.",
+      "year": 2014,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Dead_of_Winter:_A_Crossroads_Game"
+      ]
+    },
+    {
+      "id": "grow-a-game",
+      "name": "Grow-a-Game",
+      "designer": "Tiltfactor (Mary Flanagan)",
+      "form": "Card",
+      "definition": "A card deck of values, verbs, games and issues used as prompts for designing games.",
+      "year": 2007,
+      "definitionSources": [
+        "https://maryflanagan.com/?p=2062"
+      ]
+    },
+    {
+      "id": "left-4-dead",
+      "name": "Left 4 Dead",
+      "designer": "Valve",
+      "form": "Video",
+      "definition": "A cooperative zombie shooter whose AI Director adjusts the game to the players.",
+      "year": 2008,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Left_4_Dead"
+      ]
+    },
+    {
+      "id": "middle-earth-shadow-of-mordor",
+      "name": "Middle-earth: Shadow of Mordor",
+      "designer": "Monolith Productions",
+      "form": "Video",
+      "definition": "An action game set in Mordor, known for its Nemesis system of orc captains who remember the player.",
+      "year": 2014,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Middle-earth:_Shadow_of_Mordor"
+      ]
+    },
+    {
+      "id": "system-shock",
+      "name": "System Shock",
+      "designer": "Looking Glass Technologies",
+      "form": "Video",
+      "definition": "A first-person game aboard a space station run by a hostile AI, SHODAN.",
+      "year": 1994,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/System_Shock"
+      ]
+    },
+    {
+      "id": "the-talos-principle",
+      "name": "The Talos Principle",
+      "designer": "Croteam",
+      "form": "Video",
+      "definition": "A first-person puzzle game in which a voice called Elohim gives the player commands.",
+      "year": 2014,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/The_Talos_Principle"
+      ]
+    },
+    {
+      "id": "wordle",
+      "name": "Wordle",
+      "designer": "Josh Wardle",
+      "form": "Video",
+      "definition": "A daily word game in which everyone guesses the same five-letter word in six tries.",
+      "year": 2021,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Wordle"
+      ]
+    },
+    {
+      "id": "foldit",
+      "name": "Foldit",
+      "designer": "University of Washington",
+      "form": "Video",
+      "definition": "A puzzle game in which players fold proteins.",
+      "year": 2008,
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Foldit"
+      ]
+    },
+    {
+      "id": "hole-in-the-wall",
+      "name": "Hole in the Wall",
+      "year": 2011,
+      "designer": "Ludia (Microsoft)",
+      "form": "Video",
+      "definition": "A Kinect game, based on the American TV game show (itself adapted from Japan's Brain Wall), in which players fit their bodies through cut-out shapes in an approaching wall.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Hole_in_the_Wall_(video_game)"
+      ]
+    },
+    {
+      "id": "wii-fit",
+      "name": "Wii Fit",
+      "year": 2007,
+      "designer": "Nintendo",
+      "form": "Video",
+      "definition": "An exercise game played on the Balance Board, with yoga, strength, aerobics and balance activities.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Wii_Fit"
+      ]
+    },
+    {
+      "id": "eyetoy-play",
+      "name": "EyeToy: Play",
+      "year": 2003,
+      "designer": "SCE London Studio (Sony)",
+      "form": "Video",
+      "definition": "A collection of minigames for the PlayStation 2's EyeToy camera, played by moving in front of it.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/EyeToy:_Play"
+      ]
+    },
+    {
+      "id": "fruit-ninja-kinect",
+      "name": "Fruit Ninja Kinect",
+      "year": 2011,
+      "designer": "Halfbrick Studios",
+      "form": "Video",
+      "definition": "A Kinect version of Fruit Ninja in which the player slices thrown fruit with their arms.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/Fruit_Ninja"
+      ]
+    },
+    {
+      "id": "king-of-the-hill",
+      "name": "King of the hill",
+      "year": "",
+      "designer": "Traditional",
+      "form": "Party",
+      "definition": "A children's game in which one player holds a hill or mound and the others try to knock them off it.",
+      "definitionSources": [
+        "https://en.wikipedia.org/wiki/King_of_the_Hill_(game)"
+      ]
+    }
+  ]
+}

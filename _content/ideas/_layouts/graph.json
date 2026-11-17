@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "build-a-game",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-0-mwfgvi9p"
+    },
+    {
+      "id": "expos-40-home-game-for-terrys-class",
+      "x": 260,
+      "y": 40,
+      "parentId": "box-0-mwfgvi9p"
+    },
+    {
+      "id": "game-mechanics-inventory-in-the-class-repo",
+      "x": 500,
+      "y": 40,
+      "parentId": "box-0-mwfgvi9p"
+    },
+    {
+      "id": "level-up-aibl-connect-with-gamified-things",
+      "x": 20,
+      "y": 180,
+      "parentId": "box-0-mwfgvi9p"
+    },
+    {
+      "id": "tools-supports-and-props-for-active-learning",
+      "x": 260,
+      "y": 180,
+      "parentId": "box-0-mwfgvi9p"
+    },
+    {
+      "id": "turn-the-index-cards-into-a-database",
+      "x": -300,
+      "y": 83
+    },
+    {
+      "id": "design-a-game-on-the-classs-own-database",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-1-mwfgvi9p"
+    },
+    {
+      "id": "design-and-play-an-ai-strategy-game",
+      "x": 260,
+      "y": 40,
+      "parentId": "box-1-mwfgvi9p"
+    },
+    {
+      "id": "play-universal-paperclips-before-the-workshop",
+      "x": 20,
+      "y": 180,
+      "parentId": "box-1-mwfgvi9p"
+    },
+    {
+      "id": "the-stafford-game-as-an-async-online-experience",
+      "x": 260,
+      "y": 180,
+      "parentId": "box-1-mwfgvi9p"
+    },
+    {
+      "id": "classic-texts-on-learning-games",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-2-mwfgvi9p"
+    },
+    {
+      "id": "old-game-show-ads-for-the-home-game",
+      "x": 260,
+      "y": 40,
+      "parentId": "box-2-mwfgvi9p"
+    },
+    {
+      "id": "research-games-that-connect-to-the-stafford-game",
+      "x": 20,
+      "y": 180,
+      "parentId": "box-2-mwfgvi9p"
+    },
+    {
+      "id": "a-game-generation-tool",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-3-mwfgvi9p"
+    },
+    {
+      "id": "a-gamified-way-into-the-mechanics",
+      "x": 260,
+      "y": 40,
+      "parentId": "box-3-mwfgvi9p"
+    },
+    {
+      "id": "a-game-william-can-take-with-him",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "games-and-interaction-as-the-week-11-theme",
+      "x": 260,
+      "y": 40,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "games-are-complex-with-many-parts",
+      "x": 500,
+      "y": 40,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "home-game-versions-of-other-things",
+      "x": 20,
+      "y": 180,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "interaction-belongs-to-games-and-installations",
+      "x": 260,
+      "y": 180,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "universal-paperclips-meets-civilization",
+      "x": 500,
+      "y": 180,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "autonomy-as-the-stafford-games-theme",
+      "x": 20,
+      "y": 320,
+      "parentId": "box-4-mwfgvi9p"
+    },
+    {
+      "id": "game-mechanics-printed-throughout-the-space",
+      "x": 20,
+      "y": 40,
+      "parentId": "box-5-mwfgvi9p"
+    }
+  ],
+  "groups": [
+    {
+      "id": "box-0-mwfgvi9p",
+      "label": "Build",
+      "x": 0,
+      "y": 0,
+      "w": 740,
+      "h": 320
+    },
+    {
+      "id": "box-1-mwfgvi9p",
+      "label": "Activity",
+      "x": 820,
+      "y": 0,
+      "w": 500,
+      "h": 320
+    },
+    {
+      "id": "box-2-mwfgvi9p",
+      "label": "Research",
+      "x": 0,
+      "y": 400,
+      "w": 500,
+      "h": 320
+    },
+    {
+      "id": "box-3-mwfgvi9p",
+      "label": "Tool",
+      "x": 580,
+      "y": 400,
+      "w": 500,
+      "h": 180
+    },
+    {
+      "id": "box-4-mwfgvi9p",
+      "label": "Concept",
+      "x": 0,
+      "y": 800,
+      "w": 740,
+      "h": 460
+    },
+    {
+      "id": "box-5-mwfgvi9p",
+      "label": "Space",
+      "x": 820,
+      "y": 800,
+      "w": 260,
+      "h": 180
+    }
+  ],
+  "edges": [],
+  "hidden": [],
+  "viewport": {
+    "x": 434,
+    "y": 187,
+    "zoom": 0.678
+  },
+  "savedAt": "2026-11-17T16:01:38.589Z"
+}

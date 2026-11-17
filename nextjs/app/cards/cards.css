@@ -1,0 +1,66 @@
+/* /cards: what the card views add to AL's ideas.css (imported beside this; the list and card page reuse its classes). */
+.cards-section-desc { max-width: 760px; margin: -6px 0 14px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.ideas-section > h2 a { color: inherit; }
+.ideas-section > h2 a:hover { color: var(--accent); }
+.cards-after { color: var(--muted); font-size: 12px; font-style: italic; }
+.cards-print-these { padding: 8px 12px; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 14px; font-weight: 650; }
+.cards-print-these:hover { background: var(--accent); color: var(--accent-ink); }
+
+/* one card */
+.cards-facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; max-width: 760px; margin: 0 0 28px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; }
+.cards-facts dt { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding-top: 2px; }
+.cards-facts dd { margin: 0; }
+.cards-facts dd a { color: var(--accent); }
+.cards-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 28px; max-width: 900px; margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; }
+.cards-links h2 { margin: 0 0 8px; }
+.cards-links ul { margin: 0; padding: 0; list-style: none; line-height: 1.5; }
+.cards-links li { margin: 0 0 8px; }
+.cards-links li a { color: var(--ink); border-bottom: 1px solid var(--line); }
+.cards-links li a:hover { border-color: var(--accent); }
+.cards-links small { display: block; color: var(--muted); font-size: 12px; }
+.cards-missing { color: var(--error, #e07a6f); }
+.cards-chain-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; max-width: 900px; margin: 40px 0 0; padding: 14px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.cards-chain-nav a { color: var(--accent); }
+.cards-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+.cards-actions a { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 13px; }
+.cards-actions a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* convolutes and chains */
+.cards-convolute { margin: 0 0 56px; scroll-margin-top: 20px; }
+.cards-convolute > h2 { margin: 0; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -.03em; line-height: 1.05; }
+.cards-convolute-desc { max-width: 760px; margin: 10px 0 18px; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.cards-convolute-desc p { margin: 0; }
+.cards-letter { display: inline-block; min-width: 1.3em; margin-right: .35em; color: var(--accent); }
+.cards-convolute-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.cards-convolute-head a { color: var(--accent); font-size: 13px; }
+.cards-seq { margin: 0; padding: 0; list-style: none; counter-reset: seq; max-width: 900px; }
+.cards-seq li { position: relative; margin: 0; padding: 12px 0 12px calc(40px + var(--depth, 0) * 28px); border-top: 1px solid var(--line); counter-increment: seq; }
+.cards-seq li::before { content: counter(seq); position: absolute; left: calc(var(--depth, 0) * 28px); top: 13px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.cards-seq li a { color: var(--ink); font-size: 18px; font-weight: 700; letter-spacing: -.015em; }
+.cards-seq li a:hover { color: var(--accent); }
+.cards-seq li p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.cards-seq .is-branch::after { content: "branch"; margin-left: 8px; color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.cards-chain { max-width: 760px; }
+.cards-chain-card { margin: 0 0 12px; padding: 28px 0 24px calc(var(--depth, 0) * 24px); border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+.cards-chain-card.is-here { border-top: 3px solid hsl(var(--hue) 60% 62%); }
+.cards-chain-card h2 { margin: 6px 0 0; font-size: clamp(26px, 3vw, 36px); letter-spacing: -.03em; line-height: 1.05; }
+.cards-chain-card h2 a { color: inherit; }
+.cards-chain-card .idea-lede { margin: 12px 0 18px; font-size: 18px; }
+.cards-chain-branch { color: var(--muted); font-size: 13px; font-style: italic; }
+
+/* the print set (list): a mark on each tile, and the bar that names the set */
+.cards-set-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: -12px 0 26px; padding: 10px 14px; border: 1px dashed var(--line); border-radius: 8px; color: var(--muted); font-size: 13px; }
+.cards-set-bar input { width: 10em; margin-left: 4px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--wash); color: var(--ink); font: inherit; }
+.cards-set-bar input[aria-invalid="true"] { border-color: var(--error, #e07a6f); }
+.cards-set-bar a { color: var(--accent); }
+.cards-set-bar button { padding: 4px 10px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+.cards-set-status { margin-left: auto; }
+.cards-tile { position: relative; display: flex; }
+.cards-tile > .idea-card { flex: 1; }
+.cards-mark { position: absolute; z-index: 1; top: 10px; right: 10px; min-width: 26px; height: 26px; padding: 0 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--muted); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.cards-mark:hover { border-color: var(--accent); color: var(--accent); }
+.cards-mark.is-on { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+
+/* the abstract (format 1.1): the card's summary above the rest, a little heavier, closed by a short solid rule */
+.cards-abstract { font-weight: 500; }
+.cards-abstract::after { content: ""; display: block; width: 64px; margin: 1.4em 0 1.6em; border-top: 2px solid hsl(var(--hue, 265) 60% 62%); }

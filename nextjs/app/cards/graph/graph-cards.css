@@ -1,0 +1,26 @@
+/* /cards/graph: what the card graph changes in AL's graph.css (imported before this). `links:` are plain solid edges,
+   `follows:` the pink arrowed chain (AL's sequence style), the card a card grew from (its first link with a slash, format 1.0) dashed with an arrow. */
+.cards-graph .graph-flow .graph-edge-link.graph-edge-relates { stroke: #8a8e86; stroke-dasharray: none; stroke-width: 1.25; opacity: .85; }
+.cards-graph .graph-flow .graph-edge-link.graph-edge-grows { stroke: hsl(100 40% 58%); stroke-dasharray: 6 4; stroke-width: 1.25; opacity: .9; }
+.cards-graph .graph-flow .graph-edge-link.graph-edge-sequence { stroke-width: 2.5; }
+.cards-graph-key { display: flex; flex-wrap: wrap; gap: 4px 14px; color: var(--muted); font-size: 12px; }
+.cards-graph-key b { font-weight: 600; }
+.cards-graph-key .k-seq { color: hsl(330 60% 66%); }
+.cards-graph-key .k-grows { color: hsl(100 40% 58%); }
+.cards-graph .graph-side-whole summary { cursor: pointer; margin: 0 0 8px; }
+.cards-graph .graph-side-whole[open] summary { margin-bottom: 8px; }
+
+/* The lenses (KG, Nov 16): a card's step in a chosen chain, and the convolute lens panel. */
+.cards-graph .graph-card-step { padding: 0 5px; border-radius: 3px; background: hsl(330 60% 66%); color: #111; letter-spacing: .04em; }
+.cards-graph .graph-lens-map { display: block; width: 100%; height: auto; margin: 4px 0 12px; overflow: visible; }
+.cards-graph .graph-lens-edge { stroke: #8a8e86; stroke-linecap: round; opacity: .7; cursor: pointer; }
+.cards-graph .graph-lens-edge:hover, .cards-graph .graph-lens-edge.is-on { stroke: var(--accent); opacity: 1; }
+.cards-graph .graph-lens-edge.is-dim { opacity: .18; }
+.cards-graph .graph-lens-node { cursor: pointer; }
+.cards-graph .graph-lens-node circle { fill: hsl(265 45% 62%); stroke: var(--paper); stroke-width: 1.5; }
+.cards-graph .graph-lens-node:hover circle { fill: var(--accent); }
+.cards-graph .graph-lens-node text { fill: var(--ink); font-size: 13px; font-weight: 800; }
+.cards-graph .graph-lens-pairs { margin: 0; padding: 0; list-style: none; }
+.cards-graph .graph-lens-pairs button { display: flex; justify-content: space-between; gap: 12px; width: 100%; margin: 0 0 4px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: none; color: var(--ink); font: inherit; font-size: 13px; text-align: left; }
+.cards-graph .graph-lens-pairs button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.cards-graph .graph-lens-pairs small { color: var(--muted); font-variant-numeric: tabular-nums; }

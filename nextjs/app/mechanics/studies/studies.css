@@ -1,0 +1,188 @@
+/* Mechanics studies (/mechanics/studies/<slug> and its 11x17 /print). Classes start ms-. Colors come from the site's
+   tokens, so the same diagram is dark on the studio screen and light inside .print-root. */
+
+.ms-shell { width: min(100%, 1400px); margin: 0 auto; padding: 40px var(--gutter) 90px; }
+.ms-title { margin: 14px 0 12px; font-size: clamp(40px, 5.5vw, 76px); font-weight: 800; letter-spacing: -.05em; line-height: 1; text-wrap: balance; }
+.ms-title span { color: var(--accent); font-variant-numeric: tabular-nums; }
+.ms-definition { max-width: 980px; margin: 0 0 34px; font-size: clamp(19px, 1.9vw, 25px); line-height: 1.45; letter-spacing: -.015em; }
+.ms-definition p { margin: 0 0 .5em; }
+.ms-definition strong { color: var(--accent); }
+
+/* The illustration: the diagram beside the playable version */
+.ms-study { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.ms-figure { margin: 0; }
+.ms-figure figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+.ms-diagram { width: 100%; height: auto; display: block; }
+.ms-box { fill: var(--wash); stroke: var(--line); stroke-width: 1.5; }
+.ms-box-move { stroke: var(--accent); stroke-width: 2.5; }
+.ms-box-replay { fill: var(--accent); stroke: none; }
+.ms-box-replay + text, .ms-box-replay ~ text { fill: var(--accent-ink); }
+.ms-label { fill: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .1em; }
+.ms-big { fill: var(--ink); font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+.ms-small { fill: var(--muted); font-size: 15px; }
+.ms-strong { fill: var(--ink); font-weight: 700; }
+.ms-mono { fill: var(--ink); font-family: ui-monospace, monospace; font-size: 17px; }
+.ms-dim { fill: var(--muted); }
+.ms-hot { fill: var(--accent) !important; font-weight: 800; }
+.ms-cell { fill: var(--ink); font-size: 30px; font-weight: 800; }
+.ms-grid { stroke: var(--muted); stroke-width: 2; fill: none; }
+.ms-flow { stroke: var(--ink); stroke-width: 2.5; fill: none; }
+.ms-flow-back { stroke-dasharray: 6 5; stroke: var(--accent); }
+.ms-arrowhead { fill: var(--ink); }
+
+.ms-play { display: grid; gap: 22px; }
+.ms-play-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: start; }
+.ms-board { display: grid; grid-template-columns: repeat(3, clamp(64px, 7vw, 104px)); grid-auto-rows: clamp(64px, 7vw, 104px); gap: 6px; }
+.ms-square { border: 2px solid var(--line); border-radius: 10px; background: var(--wash); color: var(--ink); font: inherit; font-size: clamp(36px, 4vw, 58px); font-weight: 800; cursor: pointer; }
+.ms-square:not(:disabled):hover { border-color: var(--accent); background: var(--hover); }
+.ms-square:disabled { cursor: default; }
+.ms-square.is-line { border-color: var(--accent); color: var(--accent); }
+.ms-square:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.ms-status { margin: 0 0 12px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.ms-empty { margin: 0; color: var(--muted); }
+.ms-log { width: 100%; border-collapse: collapse; font-family: ui-monospace, monospace; font-size: 16px; }
+.ms-log th { padding: 4px 10px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: left; text-transform: uppercase; letter-spacing: .08em; }
+.ms-log td { padding: 5px 10px; border-bottom: 1px solid var(--line); }
+.ms-log tbody tr { cursor: pointer; }
+.ms-log tbody tr:hover td { background: var(--hover); }
+.ms-log tr.is-future td { color: var(--muted); text-decoration: line-through; opacity: .55; }
+.ms-controls { display: grid; gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; }
+.ms-slider { display: grid; gap: 8px; font-size: 16px; }
+.ms-slider input { width: 100%; accent-color: var(--accent); }
+.ms-rule { margin: 0; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 16px; }
+.ms-rule legend { margin-bottom: 6px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.ms-rule input { accent-color: var(--accent); }
+.ms-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.ms-buttons button { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
+.ms-buttons button:hover { border-color: var(--accent); color: var(--accent); }
+.ms-print-note { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* Study 02: seats around one screen */
+.ms-seats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ms-seat { display: grid; gap: 10px; align-content: start; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); }
+.ms-seat.is-open { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ms-seat strong { font-size: 17px; }
+.ms-secret { font-size: 15px; color: var(--muted); }
+.ms-secret b { color: var(--accent); font-size: 26px; }
+.ms-seat button, .ms-vote button { padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
+.ms-seat button:hover:not(:disabled) { border-color: var(--accent); }
+.ms-seat button:disabled { cursor: default; opacity: .7; }
+.ms-claim { display: grid; gap: 4px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.ms-claim input { width: 100%; min-width: 0; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; font-size: 20px; font-weight: 700; }
+.ms-vote { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.ms-vote button.is-on { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); font-weight: 700; opacity: 1; }
+.ms-buttons button:disabled { opacity: .5; cursor: default; }
+
+/* Study 03: the loop and its chart */
+.ms-line-out { fill: none; stroke: var(--ink); stroke-width: 3; }
+.ms-line-up { fill: none; stroke: var(--accent); stroke-width: 3; }
+.ms-flow-hot { stroke: var(--accent); }
+.ms-marker { stroke-width: 2; fill: none; }
+.ms-tick { fill: var(--muted); font-size: 13px; }
+.ms-log-wide { font-size: 14px; table-layout: fixed; }
+.ms-play { min-width: 0; }
+.ms-log-wide tbody tr { cursor: default; }
+.ms-log tr.is-loss td { color: var(--accent); }
+.ms-buttons .ms-primary { padding: 12px 20px; border-color: var(--accent); font-size: 17px; font-weight: 700; }
+
+/* Study 04: the market */
+.ms-line-ghost { fill: none; stroke: var(--muted); stroke-width: 2; stroke-dasharray: 4 5; }
+.ms-dot-a { fill: var(--accent); }
+.ms-dot-b { fill: var(--ink); }
+.ms-buyers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ms-buyer { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--wash); font-size: 14px; color: var(--muted); }
+.ms-buyer strong { color: var(--ink); font-size: 17px; }
+.ms-buyer > span:last-child { grid-column: 2; }
+.ms-buyer.is-turn { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ms-swatch { width: 14px; height: 14px; border-radius: 50%; grid-row: span 2; }
+.ms-swatch.ms-dot-a { background: var(--accent); }
+.ms-swatch.ms-dot-b { background: var(--ink); }
+.ms-designer { margin: 0; padding: 0; border: 0; display: grid; gap: 10px; }
+.ms-designer legend { margin-bottom: 6px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.ms-designer label { display: grid; gap: 4px; font-size: 15px; }
+.ms-designer input { width: 100%; accent-color: var(--accent); }
+.ms-log tr.is-designer td { color: var(--accent); font-weight: 700; }
+
+/* Study 05: the grid and its timeline */
+.ms-network { width: 100%; height: auto; display: block; }
+.ms-link-tight { stroke: var(--ink); stroke-width: 4; fill: none; }
+.ms-link-loose { stroke: var(--muted); stroke-width: 3; stroke-dasharray: 3 7; stroke-linecap: round; fill: none; }
+.ms-link-tight.is-carrying, .ms-link-loose.is-carrying { stroke: var(--accent); }
+.ms-link-hit { stroke: transparent; stroke-width: 18; cursor: pointer; }
+.ms-link-hit:hover, .ms-link-hit:focus-visible { stroke: color-mix(in srgb, var(--accent) 35%, transparent); outline: none; }
+.ms-place rect { fill: var(--wash); stroke: var(--line); stroke-width: 2; }
+.ms-place text { fill: var(--ink); font-size: 14px; font-weight: 700; }
+.ms-place[role="button"] { cursor: pointer; }
+.ms-place[role="button"]:hover rect, .ms-place:focus-visible rect { stroke: var(--accent); }
+.ms-place:focus-visible { outline: none; }
+.ms-place.is-down rect { fill: var(--accent); stroke: var(--accent); }
+.ms-place.is-down text { fill: var(--accent-ink); }
+.ms-place.is-hard rect { stroke: var(--ok); stroke-width: 4; }
+.ms-place.is-coming rect { stroke: var(--accent); stroke-dasharray: 6 4; stroke-width: 3; }
+.ms-cell-up { fill: var(--wash); stroke: var(--line); }
+.ms-cell-down { fill: color-mix(in srgb, var(--accent) 45%, var(--paper)); }
+.ms-cell-new { fill: var(--accent); }
+.ms-cell-hard { fill: var(--wash); stroke: var(--ok); stroke-width: 3; }
+.ms-select { display: grid; gap: 4px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.ms-select select { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; font-size: 15px; text-transform: none; letter-spacing: 0; }
+.ms-buttons { align-items: end; }
+
+/* Study 06: the loops */
+.ms-on-accent { fill: var(--accent-ink) !important; }
+.ms-struck { text-decoration: line-through; }
+.ms-turn { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+.ms-turn.is-current { stroke: var(--ink); stroke-width: 3; }
+.ms-steptick { stroke: var(--muted); stroke-width: 3; }
+.ms-steptick.is-vote { stroke: var(--accent); }
+.ms-steptick.is-game { stroke: var(--ink); }
+.ms-steps { margin: 0; padding-left: 2.2em; display: grid; gap: 4px; font-size: 15px; color: var(--muted); }
+.ms-steps li:last-child { color: var(--ink); font-weight: 700; }
+.ms-steps li.is-vote { color: var(--accent); }
+
+/* The table version and the remix prompt */
+.ms-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+.ms-card { padding: 22px 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--wash); }
+.ms-card h2 { margin: 0 0 12px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.ms-card .prose { max-width: none; font-size: 17px; line-height: 1.6; }
+.ms-card .prose > :last-child { margin-bottom: 0; }
+.ms-card .prose code { overflow-wrap: anywhere; }
+.ms-card .prose blockquote { margin: 12px 0 0; background: var(--paper); }
+
+.ms-entry { margin-top: 56px; padding-top: 10px; border-top: 1px solid var(--line); }
+.ms-nav { display: flex; justify-content: space-between; gap: 20px; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; }
+.ms-nav a:hover { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .ms-study, .ms-pair { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .ms-play-top, .ms-seats, .ms-buyers { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The 11x17 sheet: 10 x 16 inches inside the margins, laid out at a fixed width so the browser and the PDF agree */
+.ms-sheet { width: 10in; margin: 0 auto; padding: 0.3in 0; }
+.ms-sheet .ms-title { font-size: 60px; }
+.ms-sheet .ms-definition { font-size: 21px; margin-bottom: 20px; }
+.ms-sheet .ms-study { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; }
+.ms-sheet .ms-seats { gap: 8px; }
+.ms-sheet .ms-seat { padding: 10px; }
+.ms-sheet .ms-seat strong { font-size: 15px; }
+.ms-sheet .ms-board { grid-template-columns: repeat(3, 70px); grid-auto-rows: 70px; }
+.ms-sheet .ms-square { font-size: 40px; }
+.ms-sheet .ms-log { font-size: 14px; }
+.ms-sheet .ms-log td { padding: 3px 8px; }
+.ms-sheet .ms-log-wide { font-size: 12px; }
+.ms-sheet .ms-log-wide th, .ms-sheet .ms-log-wide td { padding: 3px 4px; font-size: 10px; }
+.ms-sheet .ms-log-wide td { font-size: 12px; }
+.ms-sheet .ms-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 22px; gap: 18px; }
+.ms-sheet .ms-card { padding: 18px 22px; }
+.ms-sheet .ms-card .prose { font-size: 15.5px; line-height: 1.5; }
+.ms-sheet .ms-card .prose ol, .ms-sheet .ms-card .prose ul { margin: 0; padding-left: 1.2em; }
+/* the second pair (why to, home game) is the reference half of the sheet: a size smaller */
+.ms-sheet .ms-pair + .ms-pair .ms-card .prose { font-size: 14px; line-height: 1.45; }
+.ms-sheet .ms-pair + .ms-pair .ms-card .prose h3 { margin: .8em 0 .3em; font-size: 15px; }
+.ms-sheet .ms-figure figcaption { display: none; }
+@media print {
+  .ms-sheet { width: auto; padding: 0; }
+  .ms-card, .ms-study, .ms-figure { break-inside: avoid; }
+}

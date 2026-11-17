@@ -1,0 +1,801 @@
+﻿"GameId","Name","Definition","Description","HowTo","WhyTo","HomeGameClassroom","HomeGameDigital","RelatedMechanics","RelatedTechnologies","RelatedGames","Sources","Proposals","Status","Author","Page","Year","Designer","Form","WhereToGet","InTheLL"
+"data-center","Data Center","The week 11 game: an AI spreads across a region's infrastructure while four human factions (the utility, the city council, the company, the neighbors) act in turn, each with a private goal; one hidden card in the AI's deck is the turn. [4]","**Made by:** The LL (GL, Claude Code), for week 11 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Goal and win condition](../gm/goal-and-win-condition.md)**: The AI wins when it holds half the region's nodes; the humans survive if the ten rounds run out first, and then check each faction's private goal. [1]
+- **[Core loop](../gm/core-loop.md)**: Each round the AI draws a card, upkeep runs, then each faction acts; ten rounds of the same cycle. [2][1]
+- **[Score and points](../gm/score-and-points.md)**: Public trust and present harms are tracks, and each faction's private goal is a threshold on one number (Energy, harms, Money or trust). [1]
+- **[Timer and countdown](../gm/timer-and-countdown.md)**: Ten rounds (twelve in The Committee) set the length of play; the humans survive if the AI is still under half the map when they run out. [1][3]
+- **[Turn order](../gm/turn-order.md)**: The AI's phase comes first in every round, then upkeep, then each faction acts in turn. [2]
+- **[Incremental growth](../gm/incremental-growth.md)**: The AI's goal is one number in petaflops with an acceleration of 1.25, so it grows faster each round. [1]
+- **[Escalation](../gm/escalation.md)**: The AI's growth multiplies by its acceleration each round, and the turn card multiplies it again. [1]
+- **[Chance](../gm/chance.md)**: The AI's deck is shuffled, so the humans know what is in it but not the order. [1]
+- **[Hidden information](../gm/hidden-information.md)**: The turn card is hidden in the AI's deck, and each faction holds a private goal. [1]
+- **[Voting and the collective decision](../gm/voting-and-the-collective-decision.md)**: An AI proposal waits for the humans to approve or block it, until the turn card, after which its proposals pass without a vote. [2]
+- **[Cooperation](../gm/cooperation.md)**: The factions share the region and lose together if the AI takes half of it, but each also has a private goal, so the cooperation is partial. [1]
+- **[Roles and role swap](../gm/roles-and-role-swap.md)**: Four factions (the utility, the city council, the company, the neighbors) each have their own actions and goal. [1]
+- **[Trading and negotiation](../gm/trading-and-negotiation.md)**: The company's 'Sign a data deal' gives the AI a node and the company money, a trade between a faction and the AI. [1]
+- **[Resource management](../gm/resource-management.md)**: Energy, water and money start at six each and are shared; the AI's nodes draw upkeep in energy and water. [1]
+- **[Territory and area control](../gm/territory-and-area-control.md)**: The AI spreads across fourteen linked nodes and wins when it holds half of them; zoning freezes and occupations take nodes back. [1]
+- **[Deck building and the draw](../gm/deck-building-and-the-draw.md)**: The AI's behavior is a deck of ten cards, each a move tagged with the goal it serves, one of them the hidden turn. [1]
+- **[Interruption and event cards](../gm/interruption-and-event-cards.md)**: The AI's card each round breaks into the humans' plans before they act. [2]
+- **[Irreversible choice](../gm/irreversible-choice.md)**: Once the turn card is drawn, the AI's proposals pass without a vote for the rest of the game. [2][1]
+- **[The treacherous turn](../new/treacherous-turn.md)**: One hidden card in the AI's deck, 'The turn', ends voting on its proposals and lets it spread and grow at once. [1]
+- **[Convergent values on every move](../new/convergent-values.md)**: Each card in the AI's deck carries a value: acquiring land and drawing cooling water serve resources, training a bigger model serves cognition, building a backup site serves self-preservation. [1]
+- **[Singleton win](../new/singleton-win.md)**: The game ends when the AI holds half the region: 'No faction can make a decision that changes the map anymore.' [1]
+- **[Present-harms track](../new/present-harms-track.md)**: Present harms start at 0 and the game is lost at 10; a shortage adds one; the rule cites Cegłowski's point that you can lose to today's harms while fighting tomorrow's superintelligence. [1]
+- **[Profitable harm](../new/profitable-harm.md)**: The company's goal is to end with twelve Money, and its best actions sell power to the AI and sign data deals that give the AI nodes. [1]
+- **[Every rule states its claim](../new/rhetoric-field.md)**: Rules in the ruleset carry a rhetoric line; the AI's goal says 'The AI's goal is one number that only goes up.' [1]
+- **[The not-modeled list](../new/not-modeled.md)**: Six items, among them the people who work in the data center and the chips, mines and supply chain behind the hardware. [1]
+- **[Cascading failure](../new/cascade-failure.md)**: When the shared resources run short, a shortage adds a present harm. [1]
+- **[Harden a node](../new/harden-node.md)**: The utility's 'Harden a node' adds backup power and water, so the node stays up through shortages. [1]
+- **[Adoption only](../new/adoption-only.md)**: The contrast: here the AI's own deck spreads it, and one card is the turn. [1]
+- **[Unplay, reskin, rewrite](../new/unplay-reskin-rewrite.md)**: The week's game page suggests ways into a remix, among them reskin, unplay and rewrite (Nov 14; remixing since moved to Claude Code). [4]
+- **[Rules apart from fiction](../new/rules-and-fiction.md)**: Each AI card keeps its label and text apart from its effects. [1]
+- **[Private metric and revise your metric](../new/private-metric.md)**: Each faction has a private goal on one number: the utility's Energy, the council's present harms, the company's Money, the neighbors' trust. [1]
+- **[Write a faction](../new/faction-card.md)**: Each of the four factions is a goal and a short list of actions, the model for writing a new one. [1]
+- **[Contested assumptions as settings](../new/growth-setting.md)**: The AI's acceleration (1.25 each round) is a setting in the ruleset that a remix can change. [1]
+- **[Everyone or no one](../new/everyone-wins.md)**: When the rounds run out, each faction checks its own goal: 'did you win together, or did someone win alone?' [1]
+- **[Nested loops](../new/nested-loops.md)**: A faction's action sits inside its turn, turns inside a round (AI card, upkeep, factions), rounds inside the game. [2]
+- **[Multiple endings](../new/multiple-endings.md)**: The game ends either with the AI holding half the region or with the rounds run out, and then each faction's private goal is checked. [1]
+- **[The move updates state](../new/the-move-updates-state.md)**: Each AI card, vote and faction action changes the saved state, which the play page keeps in the browser. [5]
+- **[Growth and upkeep](../new/growth-and-upkeep.md)**: Each node the AI holds draws one energy and one water every round from resources the human factions share, while its goal grows by a rate multiplied by 1.25 each round. [1]
+
+**In the LL:** Built Nov 14, 2026, for TDM 155AI on Nov 18 and William Stafford's SOC-STD 98to workshop on Nov 23. [4]","Run the reader app (`pnpm dev` in `nextjs/`) and open `/game/play/data-center`; four players or teams share one screen. `/game/edit/data-center` opens the rules for a remix.","*Not written yet.*","*Not written yet.*","*Not written yet.*","goal-and-win-condition; core-loop; score-and-points; timer-and-countdown; turn-order; incremental-growth; escalation; chance; hidden-information; voting-and-the-collective-decision; cooperation; roles-and-role-swap; trading-and-negotiation; resource-management; territory-and-area-control; deck-building-and-the-draw; interruption-and-event-cards; irreversible-choice; treacherous-turn; convergent-values; singleton-win; present-harms-track; profitable-harm; rhetoric-field; not-modeled; cascade-failure; harden-node; adoption-only; unplay-reskin-rewrite; rules-and-fiction; private-metric; faction-card; growth-setting; everyone-wins; nested-loops; multiple-endings; the-move-updates-state; growth-and-upkeep","","normal-technology; the-committee; blank; universal-paperclips","_content/game/_rulesets/data-center.json; nextjs/lib/game-engine.mjs; _content/game/_rulesets/committee.json; _content/game/README.md; _content/game-state/data-center.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/data-center.md","2026","The LL (GL, Claude Code), for week 11","LL-made","http://localhost:3111/game/play/data-center (the week's reader app, on the laptop)","Built Nov 14, 2026, for TDM 155AI on Nov 18 and William Stafford's SOC-STD 98to workshop on Nov 23. [4]"
+"normal-technology","Normal Technology","The Data Center map rewritten after Narayanan and Kapoor's 'AI as Normal Technology': the AI spreads only where someone approves or signs a deal, every site pays something back, and there is no turn. [1]","**Made by:** The LL (GL, Claude Code), for week 11 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[The not-modeled list](../new/not-modeled.md)**: The same six, plus 'A path from here to the turn: this version says there isn't one', so the list states the version's claim. [1]
+- **[Benefit tracks](../new/benefit-tracks.md)**: Every site the AI holds pays something back to the region. [1]
+- **[Adoption only](../new/adoption-only.md)**: Every new site is a proposal someone approves or a deal someone signs, each site the AI holds pays one Money back, and there is no turn. [1]
+
+**In the LL:** Built Nov 14, 2026, to play after Data Center and compare the claims. [2]","Open `/game/play/normal-technology` in the reader app, after a round of Data Center.","*Not written yet.*","*Not written yet.*","*Not written yet.*","not-modeled; benefit-tracks; adoption-only","","data-center","_content/game/_rulesets/normal-technology.json; _content/game/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/normal-technology.md","2026","The LL (GL, Claude Code), for week 11","LL-made","http://localhost:3111/game/play/normal-technology","Built Nov 14, 2026, to play after Data Center and compare the claims. [2]"
+"the-committee","The Committee","A version of the week 11 game in which the AI brings proposals to one oversight committee; the players rename its goal before playing. [2]","**Made by:** The LL (GL, Claude Code), for week 11 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[The treacherous turn](../new/treacherous-turn.md)**: The same hidden turn card sits in the deck of the AI that brings proposals to the oversight committee. [1]
+- **[Convergent values on every move](../new/convergent-values.md)**: The committee's AI deck is tagged the same way. [1]
+- **[The not-modeled list](../new/not-modeled.md)**: Four items, among them competing labs and the workers who label the data. [1]
+
+**In the LL:** Built Nov 14, 2026 (option A of the design notes). [2]","Open `/game/play/committee` in the reader app.","*Not written yet.*","*Not written yet.*","*Not written yet.*","treacherous-turn; convergent-values; not-modeled","","data-center","_content/game/_rulesets/committee.json; _content/game/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-committee.md","2026","The LL (GL, Claude Code), for week 11","LL-made","http://localhost:3111/game/play/committee","Built Nov 14, 2026 (option A of the design notes). [2]"
+"blank","Blank","The week 11 game's empty starting point: three places, one card, one faction, one action, for students who build a game from scratch. [1]","**Made by:** The LL (GL, Claude Code), for week 11 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Design by subtraction](../new/design-by-subtraction.md)**: The week's empty version: three places, one card, one faction, one action. [1]
+
+**In the LL:** Built Nov 14, 2026, for remixing from scratch. [1]","Open `/game/edit/blank` and add to it, or ask Claude Code to change `_content/game/_rulesets/blank.json`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","design-by-subtraction","","data-center","_content/game/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/blank.md","2026","The LL (GL, Claude Code), for week 11","LL-made","http://localhost:3111/game/edit/blank","Built Nov 14, 2026, for remixing from scratch. [1]"
+"universal-paperclips","Universal Paperclips","Frank Lantz's 2017 browser game, in which the player is an AI that makes paperclips until there is nothing left. [5]","**Made by:** Frank Lantz · **Year:** 2017 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Core loop](../gm/core-loop.md)**: Make clips, sell them, buy wire and clip-making machines with the money, make more clips; later stages keep the loop and change what it is made of. [1]
+- **[Incremental growth](../gm/incremental-growth.md)**: Autoclippers and later factories make clips without the player clicking, and the player's job becomes setting how fast that happens. [2]
+- **[Tech tree and unlocks](../gm/tech-tree-and-unlocks.md)**: New options and phases open up as the player invests resources such as money, raw materials and computer cycles. [3]
+- **[Convergent values on every move](../new/convergent-values.md)**: The AI's one goal is paperclips, and it acquires processors, memory, money and eventually all matter on the way, without any of them being the goal. [4]
+- **[Goal lock](../new/goal-lock.md)**: The AI's goal never changes from making paperclips, whatever else it acquires on the way. [3]
+- **[Singleton win](../new/singleton-win.md)**: The game ends when the AI has turned all the matter in the universe into paperclips. [3]
+- **[Automate this](../new/automate-this.md)**: Clip-making machines replace the player's clicks, and production becomes automated as money comes in. [3]
+- **[Nested loops](../new/nested-loops.md)**: Clicks and purchases sit inside projects, and projects inside three stages (the business, Earth, space), each with its own loop. [1]
+
+**In the LL:** The starting point for the week 11 game and for William Stafford's Nov 23 workshop (Nov 2026). [5]
+
+Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","core-loop; incremental-growth; tech-tree-and-unlocks; convergent-values; goal-lock; singleton-win; automate-this; nested-loops","","cookie-clicker; data-center","_content/game-state/paperclips.md; _content/glossary/README.md; https://en.wikipedia.org/wiki/Universal_Paperclips; https://www.decisionproblem.com/paperclips/index2.html; _content/paperclips/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/universal-paperclips.md","2017","Frank Lantz","Video","https://www.decisionproblem.com/paperclips/ (free in the browser)","The starting point for the week 11 game and for William Stafford's Nov 23 workshop (Nov 2026). [5]
+
+Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]"
+"monopoly","Monopoly","A board game of buying property around a loop of forty spaces and charging rent, until all but one player is bankrupt. [2]","**Made by:** Hasbro (Parker Brothers) · **Year:** 1935 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Goal and win condition](../gm/goal-and-win-condition.md)**: The last player who is not bankrupt wins, so the game is won by ruining the others rather than by getting rich. [1]
+- **[Debt and obligation](../gm/debt-and-obligation.md)**: Landing on another player's property means paying rent, and a player who cannot pay must mortgage or sell, or go bankrupt. [1]
+- **[Trading and negotiation](../gm/trading-and-negotiation.md)**: Players can trade properties and cash in any deal they agree on, and trading is a key way to complete a color set. [1]
+- **[Interruption and event cards](../gm/interruption-and-event-cards.md)**: Landing on Chance or Community Chest draws a card that pays, charges or moves you. [2]
+- **[House rules saved](../new/house-rules.md)**: Putting fines on Free Parking is a common house rule (the glossary's example). [3]
+
+**In the LL:** Modeled as data on the week 11 game-state pages (Nov 14, 2026), from overhead photos of a game in progress, for TDM 155AI. [2][4]
+
+The LL's own Monopoly set is the table for the prototype 'Monopoly with live rents' (Nov 15, 2026). [5]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","goal-and-win-condition; debt-and-obligation; trading-and-negotiation; interruption-and-event-cards; house-rules","","proto-monopoly-with-live-rents","https://en.wikipedia.org/wiki/Monopoly_(game); _content/game-state/monopoly.md; _content/glossary/README.md; _content/game-state/README.md; _content/prototypes/hybrid/monopoly-with-live-rents.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/monopoly.md","1935","Hasbro (Parker Brothers)","Board","","Modeled as data on the week 11 game-state pages (Nov 14, 2026), from overhead photos of a game in progress, for TDM 155AI. [2][4]
+
+The LL's own Monopoly set is the table for the prototype 'Monopoly with live rents' (Nov 15, 2026). [5]"
+"risk","Risk","A board game of world conquest on a map of 42 territories in six continents, with battles decided by dice. [2]","**Made by:** Hasbro (Parker Brothers / Avalon Hill) · **Year:** 1959 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Chance](../gm/chance.md)**: Dice decide each battle, the attacker rolling up to three and the defender up to two. [1]
+- **[Territory and area control](../gm/territory-and-area-control.md)**: Holding a whole continent at the start of your turn brings extra armies. [2]
+- **[Singleton win](../new/singleton-win.md)**: In the classic game a player wins by eliminating every other player, so the winner is the only one left who can act. [1]
+- **[Discrete and continuous space](../new/discrete-and-continuous-space.md)**: The world is 42 territories joined by borders and sea lines, so the map is a graph of places rather than a surface. [2]
+- **[Combat](../new/combat.md)**: Battles are dice rolls: the attacker rolls up to three dice and the defender up to two, ties going to the defender. [2]
+
+**In the LL:** Modeled as data on the week 11 game-state pages (Nov 14, 2026). [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","chance; territory-and-area-control; singleton-win; discrete-and-continuous-space; combat","","","https://officialgamerules.org/game-rules/risk/; _content/game-state/risk.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/risk.md","1959","Hasbro (Parker Brothers / Avalon Hill)","Board","","Modeled as data on the week 11 game-state pages (Nov 14, 2026). [2]"
+"the-game-of-life","The Game of Life","A board game along one branching track of a life (college or career, marriage, family, retirement), moved by a spinner from 1 to 10. [1]","**Made by:** Hasbro (Milton Bradley) · **Year:** 1960 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Chance](../gm/chance.md)**: A spinner decides how far you move; the ENGL 189VG planning names 'rolling dice and spinning spinner' as a difference worth noticing. [1][2]
+
+**In the LL:** Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]
+
+Named in the ENGL 189VG planning for the difference between rolling dice and spinning a spinner (fall 2026). [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","chance","","","_content/game-state/game-of-life.md; NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-game-of-life.md","1960","Hasbro (Milton Bradley)","Board","","Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]
+
+Named in the ENGL 189VG planning for the difference between rolling dice and spinning a spinner (fall 2026). [2]"
+"texas-holdem","Texas Hold'em","A poker game in which each player holds two hole cards face down and shares five community cards, betting over four rounds. [1]","**Made by:** Traditional · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Hidden information](../gm/hidden-information.md)**: Each player's two hole cards are private and the five community cards are shared, so betting is a claim about cards no one else can see. [1]
+
+**In the LL:** Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-information","","","_content/game-state/texas-holdem.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/texas-holdem.md","","Traditional","Card","","Modeled as data on the week 11 game-state pages (Nov 14, 2026). [1]"
+"civilization","Civilization","A turn-based strategy series in which the player leads a civilization from its first city through history, exploring, expanding, exploiting and exterminating (4X). [4]","**Made by:** Sid Meier (MicroProse); later Firaxis Games · **Year:** 1991 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Turn order](../gm/turn-order.md)**: Every player and computer civilization moves its units during its turn, and the world changes only when the turn ends. [1]
+- **[Fog of war and exploration](../gm/fog-of-war-and-exploration.md)**: The map starts hidden, and units explore it to lift the fog of war and reveal what is nearby. [2]
+- **[Resource management](../gm/resource-management.md)**: Each city turns its land into food, production and gold, and the player chooses what each city works on. [3]
+- **[Tech tree and unlocks](../gm/tech-tree-and-unlocks.md)**: Researching one technology opens the ones that depend on it, from pottery, the wheel and the alphabet onward. [4]
+- **[Delegation card](../new/delegation.md)**: Workers can be set to automate, choosing their own improvements without the player's orders. [5]
+- **[Any-map test](../new/any-map-test.md)**: Each game can start on a newly generated map, so the computer players must play maps no one designed for them. [2]
+- **[Turn time](../new/turn-time.md)**: The computer players take their turns between the human's, and players expect to wait for them. [6]
+- **[Nested loops](../new/nested-loops.md)**: Each unit moves within a player's turn, and the turns carry a civilization from before 1 A.D. toward the modern era. [2]
+
+**In the LL:** Modeled as data on the week 11 game-state pages (Nov 14, 2026), from Civilization V–VII's game definitions. [7]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","turn-order; fog-of-war-and-exploration; resource-management; tech-tree-and-unlocks; delegation; any-map-test; turn-time; nested-loops","","","https://www.gamepressure.com/sidmeierscivilization6/gameplay/z192bd; https://en.wikipedia.org/wiki/Civilization_(series); https://www.carlsguides.com/strategy/civilization5/cities/; https://en.wikipedia.org/wiki/Civilization_(video_game); https://forums.civfanatics.com/threads/does-anyone-automate-workers.475466/page-2; https://forums.civfanatics.com/threads/ai-turn-times.502578; _content/game-state/civilization.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/civilization.md","1991","Sid Meier (MicroProse); later Firaxis Games","Video","","Modeled as data on the week 11 game-state pages (Nov 14, 2026), from Civilization V–VII's game definitions. [7]"
+"dungeons-and-dragons","Dungeons & Dragons","A tabletop role-playing game in which players voice characters in a story run by a dungeon master, with dice deciding what their actions achieve. [1]","**Made by:** Gary Gygax and Dave Arneson · **Year:** 1974 · **Form:** Tabletop role-playing
+
+Mechanics it shows in this inventory:
+
+- **[Story circle](../gm/story-circle.md)**: The players and the dungeon master build the story turn by turn, each adding what their character does. [1]
+- **[Levels and progression](../gm/levels-and-progression.md)**: Characters earn experience points and gain levels that bring new abilities. [1]
+- **[Open world](../new/open-world.md)**: The dungeon master's world has no fixed route: where the players choose to go decides what they meet. [1]
+
+**In the LL:** Named in the ENGL 189VG brainstorm as an example of loops and of open-world play (fall 2026). [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","story-circle; levels-and-progression; open-world","","","https://en.wikipedia.org/wiki/Dungeons_%26_Dragons; NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/dungeons-and-dragons.md","1974","Gary Gygax and Dave Arneson","Tabletop role-playing","","Named in the ENGL 189VG brainstorm as an example of loops and of open-world play (fall 2026). [2]"
+"league-of-legends","League of Legends","A team game (a multiplayer online battle arena) in which two teams of five champions fight to destroy each other's base. [4]","**Made by:** Riot Games · **Year:** 2009 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Core loop](../gm/core-loop.md)**: Kill minions for gold, go back to base to buy items, return to fight stronger; the ENGL 189VG brainstorm names it as an example of a loop. [1]
+- **[Real-time pressure](../gm/real-time-pressure.md)**: Ten players, in two teams of five, fight in real time on one battlefield. [2]
+- **[Fog of war and exploration](../gm/fog-of-war-and-exploration.md)**: Players see only what their team's champions, minions, turrets and wards can see. [3]
+- **[Rebalancing on the fly](../new/rebalancing-on-the-fly.md)**: Riot Games publishes balance patches every few weeks that change champions' and items' numbers, so the same game plays differently from one patch to the next. [4]
+- **[Combat](../new/combat.md)**: Champions fight minions, towers and each other, and gold from kills buys the items that make the next fight easier. [4]
+
+**In the LL:** Named in the ENGL 189VG brainstorm as an example of a loop (fall 2026). [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","core-loop; real-time-pressure; fog-of-war-and-exploration; rebalancing-on-the-fly; combat","","","NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md; https://en.wikipedia.org/wiki/Multiplayer_online_battle_arena; https://wiki.leagueoflegends.com/en-us/Sight; https://en.wikipedia.org/wiki/League_of_Legends","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/league-of-legends.md","2009","Riot Games","Video","","Named in the ENGL 189VG brainstorm as an example of a loop (fall 2026). [1]"
+"baldurs-gate","Baldur's Gate (series)","A series of role-playing video games set in the Dungeons & Dragons world, in which the player leads a party whose conversations and choices shape the story. [3]","**Made by:** BioWare; Baldur's Gate 3 (2023) by Larian Studios · **Year:** 1998 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Branching dialogue](../gm/branching-dialogue.md)**: In Baldur's Gate 3, dialogue choices change companions' approval and the course of the story. [1]
+- **[Narrative structure](../new/narrative-structure.md)**: The ENGL 189VG brainstorm's example of an open world, where ""how you interact with characters and what you explore determines what you experience"". [2]
+- **[Open world](../new/open-world.md)**: Named in the ENGL 189VG brainstorm as open world, with ""infinite possibilities in terms of how you move through the world and develop relationships"". [2]
+
+**In the LL:** Named in the ENGL 189VG brainstorm as an example of open-world narrative (fall 2026; the note does not say which game in the series). [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","branching-dialogue; narrative-structure; open-world","","dungeons-and-dragons","https://en.wikipedia.org/wiki/Baldur%27s_Gate_3; NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md; https://en.wikipedia.org/wiki/Baldur%27s_Gate_(series)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/baldurs-gate.md","1998","BioWare; Baldur's Gate 3 (2023) by Larian Studios","Video","","Named in the ENGL 189VG brainstorm as an example of open-world narrative (fall 2026; the note does not say which game in the series). [2]"
+"final-fantasy-x","Final Fantasy X","A Japanese role-playing game in which a party travels a world fighting in turn-based battles to defeat a recurring monster, Sin. [1]","**Made by:** Square · **Year:** 2001 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Narrative structure](../new/narrative-structure.md)**: The journey runs mostly along a single path from place to place, and an airship late in the game lets the player travel Spira faster. [1]
+
+**In the LL:** Named in the ENGL 189VG brainstorm for endings unlocked by exploration (fall 2026). [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","narrative-structure","","","https://en.wikipedia.org/wiki/Final_Fantasy_X; NB/_context/hackmd/HackMD_Team_1794685979353/english-189vg-initial-brainstorming.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/final-fantasy-x.md","2001","Square","Video","","Named in the ENGL 189VG brainstorm for endings unlocked by exploration (fall 2026). [2]"
+"god-of-war-2018","God of War (2018)","An action game in which Kratos and his son cross a Norse world; Kratos's main weapon, the Leviathan Axe, can be thrown and recalled. [2]","**Made by:** Santa Monica Studio · **Year:** 2018 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Feedback (""juice"")](../gm/feedback.md)**: The axe's recall has its own controller rumble for the catch, and its sound grows louder as it flies back. [1]
+- **[Combat](../new/combat.md)**: Kratos fights at close range with the axe and his fists, and at a distance by throwing the axe. [2]
+- **[Throw and recall](../new/throw-and-recall.md)**: Kratos throws the Leviathan Axe and calls it back to his hand, and it can hit enemies on the way back. [3]
+
+**In the LL:** Named in the ENGL 189VG planning as a close-reading example: 'god of war axe mechanic' (fall 2026; the note does not name the game's year, and the axe is the 2018 game's). [4]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","feedback; combat; throw-and-recall","","","https://gamedeveloper.com/design/recalling-the-leviathan-axe; https://en.wikipedia.org/wiki/God_of_War_(2018_video_game); https://cogconnected.com/2018/04/heres-kratos-recall-axe-god-war-works/; NB/_context/hackmd/HackMD_Team_1794685979353/eng 189vg planning.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/god-of-war-2018.md","2018","Santa Monica Studio","Video","","Named in the ENGL 189VG planning as a close-reading example: 'god of war axe mechanic' (fall 2026; the note does not name the game's year, and the axe is the 2018 game's). [4]"
+"the-legend-of-zelda","The Legend of Zelda","An action-adventure game in which Link explores an overworld and dungeons room by room, gathering items that open new areas. [4]","**Made by:** Nintendo (Shigeru Miyamoto, Takashi Tezuka) · **Year:** 1986 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Puzzle and lock-and-key](../gm/puzzle-and-lock-and-key.md)**: Locked doors in dungeons need keys found in the dungeon, and each dungeon's major item is needed to solve its puzzles. [1]
+- **[Throw and recall](../new/throw-and-recall.md)**: The contrast: Link's boomerang is thrown to stun enemies and pull distant items back to him. [2]
+
+**In the LL:** Named in the ENGL 189VG vibe-coding station notes ('old-zelda-like room based system') as a model for a simple vibe-coded game (fall 2026). [3]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","puzzle-and-lock-and-key; throw-and-recall","","zelda-breath-of-the-wild","https://en.wikipedia.org/wiki/The_Legend_of_Zelda; https://www.ssbwiki.com/The_Legend_of_Zelda; NB/_context/hackmd/HackMD_Team_1794685979353/video-games-vibe-coding-station.md; https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-legend-of-zelda.md","1986","Nintendo (Shigeru Miyamoto, Takashi Tezuka)","Video","","Named in the ENGL 189VG vibe-coding station notes ('old-zelda-like room based system') as a model for a simple vibe-coded game (fall 2026). [3]"
+"zelda-breath-of-the-wild","The Legend of Zelda: Breath of the Wild","An open-world Zelda game in which the player can go almost anywhere from the start and solve problems with physics and chemistry systems. [1]","**Made by:** Nintendo · **Year:** 2017 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Quests and missions](../gm/quests-and-missions.md)**: The main quest sends Link to free four Divine Beasts, while side quests from villagers offer rewards along the way. [1]
+- **[The map tells the story](../new/spatial-story.md)**: Link wakes a century after Ganon turned the Guardians against Hyrule, and regains his memories by returning to places from his past. [1]
+- **[Open world](../new/open-world.md)**: After the opening plateau the player can go anywhere, including straight to the final boss. [2]
+
+**In the LL:** Marlon's example of template and instance (every horse has the same properties; yours is an instance), Nov 14, 2026. [3]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","quests-and-missions; spatial-story; open-world","","the-legend-of-zelda","https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild; https://segmentnext.com/zelda-breath-wild-walkthrough-hyrule-castle; _content/glossary/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/zelda-breath-of-the-wild.md","2017","Nintendo","Video","","Marlon's example of template and instance (every horse has the same properties; yours is an instance), Nov 14, 2026. [3]"
+"chess","Chess","A two-player game on a board of 64 squares, in which each side tries to checkmate the other's king. [2]","**Made by:** Traditional · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Goal and win condition](../gm/goal-and-win-condition.md)**: Checkmate ends the game at once, whatever material either side still has, so a player can be far ahead and still lose. [1]
+- **[Turn order](../gm/turn-order.md)**: White moves first and the players alternate, one move each. [2]
+- **[Movement and position](../gm/movement-and-position.md)**: Each piece moves in its own pattern, and what it threatens depends on where it stands. [2]
+- **[Strategy ladder](../new/strategy-ladder.md)**: Chess programs offer levels that play stronger as the level rises. [3]
+- **[AI advisor](../new/ai-advisor.md)**: In 'advanced chess', which Garry Kasparov introduced in 1998, each human player consults a chess program during the game. [4]
+- **[Proving ground](../new/proving-ground.md)**: IBM's Deep Blue beat world champion Garry Kasparov in a match in 1997. [5]
+- **[Turn time](../new/turn-time.md)**: Time controls range from blitz, with ten minutes or less per player, to correspondence chess, with at least a day per move. [6]
+- **[Discrete and continuous space](../new/discrete-and-continuous-space.md)**: A piece is on one of 64 squares or it is not, and nothing happens between moves. [2]
+- **[The move updates state](../new/the-move-updates-state.md)**: A game can be written down as its list of moves in notation, which lets a reader play through the game again. [7]
+
+**In the LL:** Nov 16, 2026: the first test of computer vision that reads game boards in the studio started with chess (Marlon's day-one report, voice agent's record). [8]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","goal-and-win-condition; turn-order; movement-and-position; strategy-ladder; ai-advisor; proving-ground; turn-time; discrete-and-continuous-space; the-move-updates-state","","","https://en.wikipedia.org/wiki/Checkmate; https://en.wikipedia.org/wiki/Chess; https://en.wikipedia.org/wiki/Chess_engine; https://en.wikipedia.org/wiki/Advanced_chess; https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov; https://en.wikipedia.org/wiki/Correspondence_chess; https://en.wikipedia.org/wiki/Chess_notation; NB/_context/projects/50-in-focus/ll-weeks/fall-2026/11-ending-20261120/marlon/20261116-afternoon-rationales-play-and-the-card-as-game-object.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/chess.md","","Traditional","Board","","Nov 16, 2026: the first test of computer vision that reads game boards in the studio started with chess (Marlon's day-one report, voice agent's record). [8]"
+"go","Go","A two-player game of placing stones on a 19x19 grid to surround territory. [1]","**Made by:** Traditional · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Territory and area control](../gm/territory-and-area-control.md)**: Players place stones to surround empty points, and the larger surrounded territory wins. [1]
+- **[Move 78](../new/move-78.md)**: An amateur, Kellin Pelrine, beat a top Go program in 14 of 15 games using a strategy found by an adversarial program (as the bibliography entry quotes the Financial Times). [2]
+- **[Proving ground](../new/proving-ground.md)**: DeepMind's AlphaGo beat Lee Sedol four games to one in 2016. [3]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","territory-and-area-control; move-78; proving-ground","","","https://en.wikipedia.org/wiki/Go_(game); wang-et-al-2022-adversarial-policies-beat-superhuman-go-ais; https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/go.md","","Traditional","Board","",""
+"pandemic","Pandemic","A cooperative board game in which players with different roles travel the world treating outbreaks and racing to cure four diseases. [2]","**Made by:** Matt Leacock (Z-Man Games) · **Year:** 2008 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Goal and win condition](../gm/goal-and-win-condition.md)**: The players win together by curing all four diseases, and lose together in any of three ways (too many outbreaks, too few disease cubes, too few player cards left to draw). [1]
+- **[Timer and countdown](../gm/timer-and-countdown.md)**: The player deck works as a clock: if a player has to draw two cards and fewer than two are left, everyone loses. [1]
+- **[Escalation](../gm/escalation.md)**: Each epidemic card raises the infection rate and puts the cities already drawn back on top of the infection deck. [1]
+- **[Cooperation](../gm/cooperation.md)**: The players race the player deck together; each is dealt a different role, and they win or lose as one team. [1]
+- **[Roles and role swap](../gm/roles-and-role-swap.md)**: Each player is dealt a role card (such as the Medic or the Scientist) whose special abilities change how some actions work. [1]
+- **[Interruption and event cards](../gm/interruption-and-event-cards.md)**: Epidemic cards shuffled into the player deck interrupt a turn and raise the infection rate. [1]
+- **[Present-harms track](../new/present-harms-track.md)**: The outbreak marker is a track the players can lose on while they are busy curing diseases elsewhere. [1]
+- **[Cascading failure](../new/cascade-failure.md)**: A city with three cubes that gets a fourth has an outbreak into every connected city, and an outbreak can set off another in a chain. [1]
+- **[Harden a node](../new/harden-node.md)**: The Quarantine Specialist keeps disease cubes out of her city and the cities connected to it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","goal-and-win-condition; timer-and-countdown; escalation; cooperation; roles-and-role-swap; interruption-and-event-cards; present-harms-track; cascade-failure; harden-node","","pandemic-legacy","https://rulespal.com/pandemic/rulebook; https://en.wikipedia.org/wiki/Pandemic_(board_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pandemic.md","2008","Matt Leacock (Z-Man Games)","Board","",""
+"pandemic-legacy","Pandemic Legacy: Season 1","A campaign version of Pandemic played over a year of game months, in which the board and cards are changed for good after each game. [2]","**Made by:** Rob Daviau and Matt Leacock (Z-Man Games) · **Year:** 2015 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Irreversible choice](../gm/irreversible-choice.md)**: Players put stickers on the board and tear up cards, so a choice in one game changes every game after it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","irreversible-choice","","pandemic","https://rulespal.com/pandemic-legacy-season-1/rulebook; https://en.wikipedia.org/wiki/Pandemic_Legacy","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pandemic-legacy.md","2015","Rob Daviau and Matt Leacock (Z-Man Games)","Board","",""
+"catan","Catan","A board game of settling an island of hexes, collecting resources by dice roll and trading them to build roads, settlements and cities. [2]","**Made by:** Klaus Teuber · **Year:** 1995 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Turn order](../gm/turn-order.md)**: In setup each player places a settlement in turn, then a second one in reverse order, so the player who placed first places last. [1]
+- **[Trading and negotiation](../gm/trading-and-negotiation.md)**: On your turn you may trade resource cards with any player at any rate you agree, or with the bank at a fixed rate. [1]
+- **[Resource management](../gm/resource-management.md)**: Five resources come from dice rolls on the hexes you border, and every road, settlement and city costs a set mix of them. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","turn-order; trading-and-negotiation; resource-management","","","https://rulespal.com/catan/rulebook; https://en.wikipedia.org/wiki/Catan","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/catan.md","1995","Klaus Teuber","Board","",""
+"dominion","Dominion","The first deck-building card game: players buy cards from a shared supply into their own decks, aiming for the most victory points. [1]","**Made by:** Donald X. Vaccarino (Rio Grande Games) · **Year:** 2008 · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Deck building and the draw](../gm/deck-building-and-the-draw.md)**: Every player starts with the same small deck and buys cards from a shared supply into it, so each deck becomes a different strategy. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","deck-building-and-the-draw","","","https://en.wikipedia.org/wiki/Dominion_(card_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/dominion.md","2008","Donald X. Vaccarino (Rio Grande Games)","Card","",""
+"slay-the-spire","Slay the Spire","A single-player game that combines deck-building with a roguelike climb, fighting with the cards you collect. [1]","**Made by:** Mega Crit · **Year:** 2019 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Deck building and the draw](../gm/deck-building-and-the-draw.md)**: After each fight the player adds a card to their deck or skips it, and the deck is what they fight with. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","deck-building-and-the-draw","","","https://en.wikipedia.org/wiki/Slay_the_Spire","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/slay-the-spire.md","2019","Mega Crit","Video","",""
+"hanabi","Hanabi","A cooperative card game in which players hold their cards facing out and give each other limited hints to build fireworks in order. [1]","**Made by:** Antoine Bauza · **Year:** 2010 · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Asymmetric information](../gm/asymmetric-information.md)**: Each player sees everyone's cards but their own, and must rely on the others' limited hints. [1]
+- **[Cooperation](../gm/cooperation.md)**: Players hold their cards facing outward, so each sees everyone's hand but their own, and must build fireworks together from limited hints. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","asymmetric-information; cooperation","","","https://en.wikipedia.org/wiki/Hanabi_(card_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/hanabi.md","2010","Antoine Bauza","Card","",""
+"puerto-rico","Puerto Rico","A board game of running a colonial plantation economy, in which players take roles in turn each round. [1]","**Made by:** Andreas Seyfarth · **Year:** 2002 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Roles and role swap](../gm/roles-and-role-swap.md)**: Each round players choose roles in turn, and the chosen role's action applies to everyone, with a bonus for the one who chose it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","roles-and-role-swap","","","https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/puerto-rico.md","2002","Andreas Seyfarth","Board","",""
+"werewolf","Werewolf (Mafia)","A party game of hidden roles in which a village votes each day to eliminate a suspect, while werewolves secretly kill at night. [1]","**Made by:** Dmitry Davidoff (Mafia); Werewolf variant by Andrew Plotkin · **Year:** 1986 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Hidden role and social deduction](../gm/hidden-role-and-social-deduction.md)**: Werewolves secretly kill at night; by day the village argues and votes on whom to eliminate. [1]
+- **[Voting and the collective decision](../gm/voting-and-the-collective-decision.md)**: Each day the village votes to eliminate one player, without knowing who the werewolves are. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-role-and-social-deduction; voting-and-the-collective-decision","","","https://en.wikipedia.org/wiki/Mafia_(party_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/werewolf.md","1986","Dmitry Davidoff (Mafia); Werewolf variant by Andrew Plotkin","Party","",""
+"quiplash","Quiplash","A party game played on phones in which players write funny answers to prompts and everyone votes between pairs of answers. [2]","**Made by:** Jackbox Games · **Year:** 2015 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Voting and the collective decision](../gm/voting-and-the-collective-decision.md)**: Players and the audience vote between two answers to a prompt on their phones, and the votes are the points. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","voting-and-the-collective-decision","","","https://en.wikipedia.org/wiki/The_Jackbox_Party_Pack_2; https://en.wikipedia.org/wiki/Quiplash","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/quiplash.md","2015","Jackbox Games","Party","",""
+"stratego","Stratego","A two-player game of capturing the flag, in which each piece's rank is hidden from the opponent. [1]","**Made by:** Jacques Johan Mogendorff (Jumbo) · **Year:** 1946 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Hidden information](../gm/hidden-information.md)**: Each piece's rank faces its owner only, and is revealed when it attacks or is attacked. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-information","","","https://en.wikipedia.org/wiki/Stratego","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/stratego.md","1946","Jacques Johan Mogendorff (Jumbo)","Board","",""
+"battlestar-galactica-board-game","Battlestar Galactica: The Board Game","A semi-cooperative board game in which humans flee the Cylons, while one or more players are secretly Cylons working against them. [1]","**Made by:** Corey Konieczka (Fantasy Flight Games) · **Year:** 2008 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[The treacherous turn](../new/treacherous-turn.md)**: Halfway through, a second loyalty card is dealt, so a player who has been loyal can become a Cylon and turn on the others. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","treacherous-turn","","","https://en.wikipedia.org/wiki/Battlestar_Galactica:_The_Board_Game","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/battlestar-galactica-board-game.md","2008","Corey Konieczka (Fantasy Flight Games)","Board","",""
+"yahtzee","Yahtzee","A dice game of rolling five dice up to three times a turn to make scoring combinations. [1]","**Made by:** E. S. Lowe; later Milton Bradley · **Year:** 1956 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Chance](../gm/chance.md)**: A player rolls five dice up to three times a turn, keeping some between rolls, and chooses which scoring box the result fills. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","chance","","","https://en.wikipedia.org/wiki/Yahtzee","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/yahtzee.md","1956","E. S. Lowe; later Milton Bradley","Board","",""
+"boggle","Boggle","A word game in which players find words in a grid of lettered dice before a sand timer runs out. [1]","**Made by:** Allan Turoff (Parker Brothers) · **Year:** 1973 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Timer and countdown](../gm/timer-and-countdown.md)**: A sand timer of about three minutes gives every player the same short window to find words. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","timer-and-countdown","","","https://en.wikipedia.org/wiki/Boggle","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/boggle.md","1973","Allan Turoff (Parker Brothers)","Board","",""
+"scrabble","Scrabble","A word game of placing lettered tiles on a grid to make words, scored by letter values and premium squares. [1]","**Made by:** Alfred Mosher Butts · **Year:** 1948 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Score and points](../gm/score-and-points.md)**: Each letter has a point value and premium squares multiply it, so where a word goes can matter more than which word it is. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","score-and-points","","","https://en.wikipedia.org/wiki/Scrabble","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/scrabble.md","1948","Alfred Mosher Butts","Board","",""
+"pac-man","Pac-Man","An arcade game in which the player eats dots in a maze while four ghosts chase them. [3]","**Made by:** Namco (Toru Iwatani) · **Year:** 1980 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Score and points](../gm/score-and-points.md)**: Dots, power pellets, ghosts and fruit each add points, and eating ghosts in a row makes each one worth more. [1]
+- **[Readable personalities](../new/readable-personalities.md)**: Each of the four ghosts chases Pac-Man by its own rule, and players learn to read them as personalities. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","score-and-points; readable-personalities","","","https://www.arcade-museum.com/Videogame/pac-man; https://en.wikipedia.org/wiki/Ghosts_(Pac-Man); https://en.wikipedia.org/wiki/Pac-Man","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pac-man.md","1980","Namco (Toru Iwatani)","Video","",""
+"tetris","Tetris","A puzzle game in which falling pieces of four squares are turned and placed to clear full lines. [1]","**Made by:** Alexey Pajitnov · **Year:** 1985 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Core loop](../gm/core-loop.md)**: A piece falls, the player turns and places it, full lines clear, and the next piece falls. [1]
+- **[Escalation](../gm/escalation.md)**: Pieces fall faster as the player clears lines, so the same placing decision gets less and less time. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","core-loop; escalation","","","https://en.wikipedia.org/wiki/Tetris","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/tetris.md","1985","Alexey Pajitnov","Video","",""
+"space-invaders","Space Invaders","An arcade game in which the player's cannon shoots rows of descending aliens. [1]","**Made by:** Tomohiro Nishikado (Taito) · **Year:** 1978 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Escalation](../gm/escalation.md)**: The invaders speed up as fewer of them remain, so the end of a wave is the hardest part. [1]
+- **[Adaptive music](../new/adaptive-music.md)**: The marching four-note bass line speeds up as the invaders get fewer and faster. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","escalation; adaptive-music","","","https://en.wikipedia.org/wiki/Space_Invaders","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/space-invaders.md","1978","Tomohiro Nishikado (Taito)","Video","",""
+"cookie-clicker","Cookie Clicker","An incremental browser game in which clicking a cookie, then buying buildings that bake for you, makes ever larger numbers of cookies. [1]","**Made by:** Julien Thiennot (Orteil) · **Year:** 2013 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Incremental growth](../gm/incremental-growth.md)**: Each building bakes cookies every second, and buying more buildings raises the rate rather than the count. [1]
+- **[Engine building](../gm/engine-building.md)**: Each building bought raises the cookies made per second, which buys more buildings. [1]
+- **[Achievements and badges](../gm/achievements-and-badges.md)**: Hundreds of achievements mark milestones such as cookies baked or buildings owned. [2]
+- **[Automate this](../new/automate-this.md)**: Cursors and buildings bake for the player, so cookies keep coming without clicking. [1]
+- **[Come back later](../new/come-back-later.md)**: With the Twin Gates of Transcendence upgrade, buildings keep producing at a reduced rate while the game is closed. [3]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","incremental-growth; engine-building; achievements-and-badges; automate-this; come-back-later","","universal-paperclips","https://en.wikipedia.org/wiki/Cookie_Clicker; https://cookieclicker.wiki.gg/wiki/Achievements; https://cookieclicker.wiki.gg/wiki/Heavenly_Chips","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/cookie-clicker.md","2013","Julien Thiennot (Orteil)","Video","",""
+"the-oregon-trail","The Oregon Trail","An educational game in which a party of settlers travels the trail from Missouri to Oregon in 1847, managing supplies through random hardships. [2]","**Made by:** Don Rawitsch, Bill Heinemann and Paul Dillenberger (MECC) · **Year:** 1971 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Interruption and event cards](../gm/interruption-and-event-cards.md)**: Random events (illness, a broken wagon part) interrupt the journey and cost supplies or time. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","interruption-and-event-cards","","","https://died-of-dysentery.com/oregon-trail.html; https://en.wikipedia.org/wiki/The_Oregon_Trail_(1971_video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-oregon-trail.md","1971","Don Rawitsch, Bill Heinemann and Paul Dillenberger (MECC)","Video","",""
+"mass-effect","Mass Effect","A science-fiction role-playing game in which the player's dialogue choices and decisions carry across a trilogy. [2]","**Made by:** BioWare · **Year:** 2007 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Irreversible choice](../gm/irreversible-choice.md)**: On Virmire the player must leave one of two squad members to die, and that choice carries into the sequels. [1]
+- **[Branching dialogue](../gm/branching-dialogue.md)**: A dialogue wheel offers lines to choose from, and choices change how characters respond and what happens later. [2]
+- **[Quests and missions](../gm/quests-and-missions.md)**: Missions on the galaxy map give Shepard goals, some required for the story and some optional. [2]
+- **[Narrative structure](../new/narrative-structure.md)**: Dialogue and mission choices branch the story and carry into the sequels. [2]
+- **[Character creator](../new/character-creator.md)**: The player picks Commander Shepard's face, gender and class before the story starts. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","irreversible-choice; branching-dialogue; quests-and-missions; narrative-structure; character-creator","","","https://en.wikipedia.org/wiki/Ashley_Williams_(Mass_Effect); https://en.wikipedia.org/wiki/Mass_Effect_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/mass-effect.md","2007","BioWare","Video","",""
+"frostpunk","Frostpunk","A city-building survival game in which the player runs the last city in a frozen world, passing laws that keep people alive at a cost. [1]","**Made by:** 11 bit studios · **Year:** 2018 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Present-harms track](../new/present-harms-track.md)**: Discontent rises with harsh laws and hardship, and the city can remove the player even while it survives the cold. [1]
+- **[Growth and upkeep](../new/growth-and-upkeep.md)**: A coal-fired generator heats the city's homes and workplaces, so the player must keep gathering coal, wood, steel and food to survive the cold. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","present-harms-track; growth-and-upkeep","","","https://en.wikipedia.org/wiki/Frostpunk","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/frostpunk.md","2018","11 bit studios","Video","",""
+"mcdonalds-video-game","McDonald's Video Game","A satirical browser game in which the player runs a fast-food corporation from pasture to restaurant to boardroom. [1]","**Made by:** Molleindustria · **Year:** 2006 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Profitable harm](../new/profitable-harm.md)**: Molleindustria's satire makes the profitable moves the destructive ones: plowing over rainforest, feeding cattle genetically altered grain, bribing public officials. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","profitable-harm","","","https://en.wikipedia.org/wiki/McDonald%27s_Video_Game","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/mcdonalds-video-game.md","2006","Molleindustria","Video","",""
+"fishbanks","Fishbanks","A role-play simulation in which teams run fishing companies sharing one fish stock, used to teach the management of common resources. [2]","**Made by:** Dennis Meadows · **Year:** 1986 · **Form:** Classroom
+
+Mechanics it shows in this inventory:
+
+- **[Profitable harm](../new/profitable-harm.md)**: Teams running fishing companies buy and build ships to grow their assets, and too many ships can deplete the fish stock they all share. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","profitable-harm","","","https://www.balatongroup.org/games/; https://www.sambuz.com/doc/fishbanks-ppt-presentation-746972","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/fishbanks.md","1986","Dennis Meadows","Classroom","",""
+"skylanders","Skylanders: Spyro's Adventure","A video game played by placing toy figures on a 'Portal of Power' connected to the console, which brings each figure's character into the game. [1]","**Made by:** Toys for Bob (Activision) · **Year:** 2011 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The tap as the move](../new/the-tap.md)**: Setting a toy figure on the Portal of Power brings that character into the game, and the figure carries its level and upgrades to the next console. [1]
+- **[The input device](../new/input-device.md)**: Toy figures placed on a portal are the input: which figure you set down decides who you play. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","the-tap; input-device","","","https://en.wikipedia.org/wiki/Skylanders:_Spyro%27s_Adventure","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/skylanders.md","2011","Toys for Bob (Activision)","Video","",""
+"fluxx","Fluxx","A card game whose rules and goal change as cards are played. [1]","**Made by:** Andrew Looney (Looney Labs) · **Year:** 1997 · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Rebalancing on the fly](../new/rebalancing-on-the-fly.md)**: Cards played during the game change how many cards you draw and play, and even what the goal is. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","rebalancing-on-the-fly","","","https://en.wikipedia.org/wiki/Fluxx","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/fluxx.md","1997","Andrew Looney (Looney Labs)","Card","",""
+"pokemon-red-and-blue","Pokémon Red and Blue","A role-playing game in which the player catches and trains creatures and fights turn-based battles. [1]","**Made by:** Game Freak (Nintendo) · **Year:** 1996 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Levels and progression](../gm/levels-and-progression.md)**: Creatures gain experience in battle, level up, learn moves and evolve. [1]
+- **[Achievements and badges](../gm/achievements-and-badges.md)**: Beating each of eight gym leaders earns a badge, and the badges are the path to the league. [1]
+- **[Proving ground](../new/proving-ground.md)**: Anthropic streamed Claude playing Pokémon Red in 2025 as a public measure of its progress. [2]
+- **[Turn time](../new/turn-time.md)**: The battles are turn-based and wait for the player's command, and Anthropic's 'Claude Plays Pokémon' stream (2025) showed a model reasoning step by step through Pokémon Red. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","levels-and-progression; achievements-and-badges; proving-ground; turn-time","","","https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow; https://techcrunch.com/2025/02/25/anthropics-claude-ai-is-playing-pokemon-on-twitch-slowly","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pokemon-red-and-blue.md","1996","Game Freak (Nintendo)","Video","",""
+"super-mario-bros","Super Mario Bros.","A side-scrolling platform game in which Mario runs and jumps through levels to rescue a princess. [2]","**Made by:** Nintendo (Shigeru Miyamoto) · **Year:** 1985 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Lives, failure, and retry](../gm/lives-failure-and-retry.md)**: Touching an enemy shrinks Super Mario or costs small Mario a life and sends him back in the level; losing every life ends the game. [1]
+- **[Discrete and continuous space](../new/discrete-and-continuous-space.md)**: Mario's position and speed change smoothly as he runs and jumps, so where he is is a matter of degree. [2]
+- **[Tutorial and onboarding](../new/tutorial.md)**: World 1-1 introduces the first enemy, a Goomba, and the first power-up, a mushroom from a ? block, getting the player ready for the rest of the game. [3]
+- **[Physics and tuning](../new/physics-and-tuning.md)**: How high Mario jumps depends on how long the jump button is held, and he speeds up smoothly from a walk to a run. [4]
+- **[Adaptive music](../new/adaptive-music.md)**: When the timer drops below 100 the music speeds up, warning the player that time is running out. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","lives-failure-and-retry; discrete-and-continuous-space; tutorial; physics-and-tuning; adaptive-music","","","https://www.mariowiki.com/Super_Mario_Bros.; https://en.wikipedia.org/wiki/Super_Mario_Bros.; https://www.mariowiki.com/World_1-1_(Super_Mario_Bros.); https://www.mariowiki.com/Jump","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/super-mario-bros.md","1985","Nintendo (Shigeru Miyamoto)","Video","",""
+"keep-talking-and-nobody-explodes","Keep Talking and Nobody Explodes","A cooperative game in which one player defuses a bomb on screen while the others read the defusal manual aloud. [1]","**Made by:** Steel Crate Games · **Year:** 2015 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Asymmetric information](../gm/asymmetric-information.md)**: One player sees the bomb and the others hold the defusal manual, so neither side can win without describing what it sees. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","asymmetric-information","","","https://en.wikipedia.org/wiki/Keep_Talking_and_Nobody_Explodes","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/keep-talking-and-nobody-explodes.md","2015","Steel Crate Games","Video","",""
+"dark-souls","Dark Souls","An action role-playing game set in a decaying kingdom of interconnected areas, known for its difficulty. [2]","**Made by:** FromSoftware · **Year:** 2011 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The map tells the story](../new/spatial-story.md)**: Item descriptions and the look of the world tell the history of Lordran, a decaying kingdom, without pulling the player out of the game for story. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","spatial-story","","","https://www.gamedeveloper.com/design/narrative-design-in-dark-souls; https://en.wikipedia.org/wiki/Dark_Souls_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/dark-souls.md","2011","FromSoftware","Video","",""
+"portal","Portal","A first-person puzzle game in which the player solves test chambers with a gun that makes linked portals. [1]","**Made by:** Valve · **Year:** 2007 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Puzzle and lock-and-key](../gm/puzzle-and-lock-and-key.md)**: Each test chamber is a puzzle the player solves by placing portals to move themselves and objects through it. [1]
+- **[The AI's voice](../new/ai-voice.md)**: GLaDOS, the facility's AI, comments on the player's progress through the test chambers. [1]
+- **[Tutorial and onboarding](../new/tutorial.md)**: The test chambers introduce one challenge after another, and the game's support is slowly removed as the player progresses. [1]
+- **[Physics and tuning](../new/physics-and-tuning.md)**: Momentum carries through a portal, so the player gains speed by falling into one portal and flies out of the other. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","puzzle-and-lock-and-key; ai-voice; tutorial; physics-and-tuning","","","https://en.wikipedia.org/wiki/Portal_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/portal.md","2007","Valve","Video","",""
+"undertale","Undertale","A role-playing game in which the player can spare every monster instead of fighting it. [1]","**Made by:** Toby Fox · **Year:** 2015 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Multiple endings](../new/multiple-endings.md)**: Whether the player spares or kills the monsters they meet leads to very different endings. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","multiple-endings","","","https://en.wikipedia.org/wiki/Undertale","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/undertale.md","2015","Toby Fox","Video","",""
+"final-fantasy-x-2","Final Fantasy X-2","The sequel to Final Fantasy X, with mission-based play and several endings that depend on how much the player completed. [2]","**Made by:** Square · **Year:** 2003 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Multiple endings](../new/multiple-endings.md)**: Good and perfect endings depend on how much of the game the player completed; the ENGL 189VG note attributes this to Final Fantasy X, but the graded endings are its sequel's. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","multiple-endings","","","https://www.svg.com/312711/the-secret-ending-you-probably-didnt-see-in-final-fantasy-x-2/; https://en.wikipedia.org/wiki/Final_Fantasy_X-2","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/final-fantasy-x-2.md","2003","Square","Video","",""
+"papers-please","Papers, Please","A game in which the player is an immigration inspector in a fictional authoritarian state, checking documents at a border crossing. [1]","**Made by:** Lucas Pope · **Year:** 2013 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Mechanics tell the story](../new/mechanics-as-story.md)**: The player is a border inspector checking documents against a growing list of rules, and stamping papers brings constant moral choices that make it hard to be good. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","mechanics-as-story","","","https://en.wikipedia.org/wiki/Papers,_Please","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/papers-please.md","2013","Lucas Pope","Video","",""
+"brothers-a-tale-of-two-sons","Brothers: A Tale of Two Sons","An adventure game in which one player steers two brothers at once, one on each half of the controller. [2]","**Made by:** Starbreeze Studios (Josef Fares) · **Year:** 2013 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Mechanics tell the story](../new/mechanics-as-story.md)**: Each brother is steered with one side of the controller, and late in the game that division of the controls becomes part of the story's ending. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","mechanics-as-story","","","https://kotaku.com/brothers-tale-of-two-sons-remake-ending-older-younger-1851302128; https://en.wikipedia.org/wiki/Brothers:_A_Tale_of_Two_Sons","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/brothers-a-tale-of-two-sons.md","2013","Starbreeze Studios (Josef Fares)","Video","",""
+"animal-crossing","Animal Crossing","A life-simulation game in which the player lives in a village of animals and pays off a house loan to the shopkeeper Tom Nook. [3]","**Made by:** Nintendo · **Year:** 2001 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Debt and obligation](../gm/debt-and-obligation.md)**: Paying off the house loan earns a bigger house and a bigger loan (Bogost's example, as quoted in the glossary). [1]
+- **[Commitments track](../new/commitments-track.md)**: Each paid-off loan brings a bigger house and a bigger loan (Bogost's example, as quoted in the glossary). [1]
+- **[Come back later](../new/come-back-later.md)**: The village runs on the real-world clock, so days and seasons pass while the player is not playing. [2]
+- **[Mechanics tell the story](../new/mechanics-as-story.md)**: Paying off the house loan earns a bigger house and a bigger loan, so the game argues about debt without saying a word (Bogost, as quoted in the glossary). [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","debt-and-obligation; commitments-track; come-back-later; mechanics-as-story","","","_content/glossary/README.md; https://en.wikipedia.org/wiki/Animal_Crossing; https://en.wikipedia.org/wiki/Animal_Crossing_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/animal-crossing.md","2001","Nintendo","Video","",""
+"the-sims","The Sims","A life-simulation game in which the player creates people and directs their daily lives in a house. [2]","**Made by:** Maxis (Will Wright) · **Year:** 2000 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Character creator](../new/character-creator.md)**: Create a Sim sets each character's appearance and personality before they move into a house. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","character-creator","","","https://www.thesimswiki.com/wiki/Create-a-Sim; https://en.wikipedia.org/wiki/The_Sims_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-sims.md","2000","Maxis (Will Wright)","Video","",""
+"wii-sports","Wii Sports","A collection of sports games played by swinging the Wii Remote. [1]","**Made by:** Nintendo · **Year:** 2006 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Gesture input](../gm/gesture-input.md)**: Players swing the Wii Remote like a racket, a bat or a bowling ball. [1]
+- **[The input device](../new/input-device.md)**: The Wii Remote is swung like a tennis racket or a bowling ball, so the move is the gesture. [1]
+- **[Threshold gesture](../new/threshold-gesture.md)**: Swinging the Wii Remote hits the ball in tennis, and the speed of the swing changes the shot. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","gesture-input; input-device; threshold-gesture","","","https://en.wikipedia.org/wiki/Wii_Sports; https://www.nintendolife.com/games/wii/wii_sports/review","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/wii-sports.md","2006","Nintendo","Video","",""
+"guitar-hero","Guitar Hero","A rhythm game played on a guitar-shaped controller, pressing colored frets and strumming in time to songs. [1]","**Made by:** Harmonix (RedOctane) · **Year:** 2005 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Rhythm and timing window](../gm/rhythm-and-timing-window.md)**: Notes scroll toward the player, who presses the matching fret and strums as each one arrives. [1]
+- **[The input device](../new/input-device.md)**: A guitar-shaped controller with colored fret buttons and a strum bar makes playing along feel like playing. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","rhythm-and-timing-window; input-device","","","https://en.wikipedia.org/wiki/Guitar_Hero_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/guitar-hero.md","2005","Harmonix (RedOctane)","Video","",""
+"hades","Hades","A roguelike action game in which Zagreus tries again and again to escape the underworld. [1]","**Made by:** Supergiant Games · **Year:** 2020 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Lives, failure, and retry](../gm/lives-failure-and-retry.md)**: Each death sends Zagreus back to the House of Hades, where what he carried home buys upgrades for the next attempt. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","lives-failure-and-retry","","","https://en.wikipedia.org/wiki/Hades_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/hades.md","2020","Supergiant Games","Video","",""
+"overcooked","Overcooked!","A cooperative cooking game in which players prepare and serve orders in chaotic kitchens against a clock. [1]","**Made by:** Ghost Town Games · **Year:** 2016 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Real-time pressure](../gm/real-time-pressure.md)**: Players prepare, cook and serve orders together in a kitchen under a time limit, and must coordinate closely to keep up. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","real-time-pressure","","","https://en.wikipedia.org/wiki/Overcooked","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/overcooked.md","2016","Ghost Town Games","Video","",""
+"dance-dance-revolution","Dance Dance Revolution","A rhythm game played by stepping on arrows on a dance pad in time to music. [2]","**Made by:** Konami · **Year:** 1998 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Rhythm and timing window](../gm/rhythm-and-timing-window.md)**: Players step on arrows on a floor pad as matching arrows reach a line on screen, and each step is rated by how close to the beat it lands. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","rhythm-and-timing-window","","","https://en.wikipedia.org/wiki/Dance_Dance_Revolution; https://en.wikipedia.org/wiki/Dance_Dance_Revolution_(1998_video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/dance-dance-revolution.md","1998","Konami","Video","",""
+"cant-stop","Can't Stop","A dice game of pushing your luck up columns numbered 2 to 12. [1]","**Made by:** Sid Sackson · **Year:** 1980 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Push your luck](../gm/push-your-luck.md)**: Players roll four dice and advance markers up columns, rolling again as long as they dare; a roll that cannot be used loses the turn's progress. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","push-your-luck","","","https://en.wikipedia.org/wiki/Can%27t_Stop_(board_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/cant-stop.md","1980","Sid Sackson","Board","",""
+"blackjack","Blackjack","A casino card game in which players try to get closer to 21 than the dealer without going over. [1]","**Made by:** Traditional · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Push your luck](../gm/push-your-luck.md)**: A player draws cards to get close to 21 and loses the hand if they go over. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","push-your-luck","","","https://en.wikipedia.org/wiki/Blackjack","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/blackjack.md","","Traditional","Card","",""
+"among-us","Among Us","A social deduction game in which crewmates try to find the impostors among them. [1]","**Made by:** Innersloth · **Year:** 2018 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Hidden role and social deduction](../gm/hidden-role-and-social-deduction.md)**: Crewmates do tasks on a ship while impostors among them sabotage and kill; meetings vote to eject a suspect. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-role-and-social-deduction","","","https://en.wikipedia.org/wiki/Among_Us","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/among-us.md","2018","Innersloth","Video","",""
+"zendo","Zendo","A game of inductive logic in which players discover a secret rule by building arrangements of pieces. [1]","**Made by:** Kory Heath · **Year:** 2001 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Hidden rule](../gm/hidden-rule.md)**: The game master makes a secret rule about arrangements of pieces, and players build arrangements and are told whether each follows it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-rule","","","https://en.wikipedia.org/wiki/Zendo_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/zendo.md","2001","Kory Heath","Board","",""
+"diplomacy","Diplomacy","A strategy game of pre-First World War Europe with no dice, in which players negotiate and then move at the same time. [1]","**Made by:** Allan B. Calhamer · **Year:** 1959 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Alliance and betrayal](../gm/alliance-and-betrayal.md)**: Players negotiate freely between moves, then write orders in secret, so an ally's promise is tested only when the orders are revealed. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","alliance-and-betrayal","","","https://en.wikipedia.org/wiki/Diplomacy_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/diplomacy.md","1959","Allan B. Calhamer","Board","",""
+"twitch-plays-pokemon","Twitch Plays Pokémon","A 2014 stream in which viewers played Pokémon Red together by typing commands in the chat. [1]","**Made by:** An anonymous Australian programmer · **Year:** 2014 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The spect-actor](../gm/the-spect-actor.md)**: Viewers of a 2014 stream played Pokémon Red together by typing commands in the chat. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","the-spect-actor","","","https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/twitch-plays-pokemon.md","2014","An anonymous Australian programmer","Video","",""
+"once-upon-a-time","Once Upon a Time","A storytelling card game in which players tell a fairy tale together, each aiming for their own ending. [1]","**Made by:** Richard Lambert, Andrew Rilstone and James Wallis (Atlas Games) · **Year:** 1994 · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Story circle](../gm/story-circle.md)**: Players tell a story together using cards of story elements, each trying to steer it toward their own ending card. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","story-circle","","","https://en.wikipedia.org/wiki/Once_Upon_a_Time_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/once-upon-a-time.md","1994","Richard Lambert, Andrew Rilstone and James Wallis (Atlas Games)","Card","",""
+"simon-says","Simon Says","A children's game in which players obey commands only when they begin 'Simon says'. [1]","**Made by:** Traditional · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Mirroring and imitation](../gm/mirroring-and-imitation.md)**: Players copy the leader's actions only when the command starts with 'Simon says'. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","mirroring-and-imitation","","","https://en.wikipedia.org/wiki/Simon_Says","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/simon-says.md","","Traditional","Party","",""
+"just-dance","Just Dance","A dance game in which players copy an on-screen dancer's moves. [2]","**Made by:** Ubisoft · **Year:** 2009 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Mirroring and imitation](../gm/mirroring-and-imitation.md)**: Players copy an on-screen dancer's moves and are scored on how closely they match. [1]
+- **[Gesture input](../gm/gesture-input.md)**: A camera or controller reads the player's dance moves and scores them. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","mirroring-and-imitation; gesture-input","","","https://en.wikipedia.org/wiki/Just_Dance_(video_game_series); https://en.wikipedia.org/wiki/Just_Dance_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/just-dance.md","2009","Ubisoft","Video","",""
+"splendor","Splendor","A card game of collecting gems to buy development cards that discount later purchases. [1]","**Made by:** Marc André · **Year:** 2014 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Engine building](../gm/engine-building.md)**: Gem cards bought early give a permanent discount on later cards, so each purchase makes the next one cheaper. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","engine-building","","","https://en.wikipedia.org/wiki/Splendor_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/splendor.md","2014","Marc André","Board","",""
+"agricola","Agricola","A worker-placement game about running a seventeenth-century farm. [2]","**Made by:** Uwe Rosenberg · **Year:** 2007 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Worker placement](../gm/worker-placement.md)**: Farmers take turns placing family members on action spaces, and a space taken is closed to the others until the next round. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","worker-placement","","","https://en.wikipedia.org/wiki/Agricola_(board_game); https://lookout-spiele.de/en/games/agricola.html","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/agricola.md","2007","Uwe Rosenberg","Board","",""
+"minecraft","Minecraft","A sandbox game of mining, gathering and building in a world of blocks. [1]","**Made by:** Mojang Studios (Markus Persson) · **Year:** 2011 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Crafting and combining](../gm/crafting-and-combining.md)**: Players arrange gathered materials on a 3x3 crafting grid to make tools, weapons and armor. [1]
+- **[Seeded world](../new/seeded-map.md)**: Each world is generated from a seed, and players can share a seed to play the same world. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","crafting-and-combining; seeded-map","","","https://en.wikipedia.org/wiki/Minecraft; https://minecraft.wiki/w/Seed_(level_generation)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/minecraft.md","2011","Mojang Studios (Markus Persson)","Video","",""
+"infinite-craft","Infinite Craft","A browser game of combining elements into new ones, with results decided by a language model. [1]","**Made by:** Neal Agarwal · **Year:** 2024 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Crafting and combining](../gm/crafting-and-combining.md)**: Players combine two elements to make a new one, and a language model decides what each new combination becomes. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","crafting-and-combining","","","https://en.wikipedia.org/wiki/Infinite_Craft","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/infinite-craft.md","2024","Neal Agarwal","Video","",""
+"twister","Twister","A physical game in which players place hands and feet on colored circles named by a spinner. [1]","**Made by:** Charles Foley and Neil Rabens (Milton Bradley) · **Year:** 1966 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Movement and position](../gm/movement-and-position.md)**: A spinner names a hand or foot and a color, and players must place it on a matching circle on the mat. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","movement-and-position","","","https://en.wikipedia.org/wiki/Twister_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/twister.md","1966","Charles Foley and Neil Rabens (Milton Bradley)","Party","",""
+"pokemon-go","Pokémon Go","A location-based phone game in which players catch creatures at real-world places. [2]","**Made by:** Niantic · **Year:** 2016 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Zones and spatial triggers](../gm/zones-and-spatial-triggers.md)**: Walking near a real-world PokéStop or gym lets the player use it. [1]
+- **[Location play](../gm/location-play.md)**: The phone's GPS places the player on a map of the real world, where creatures appear and places become gyms. [2]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","zones-and-spatial-triggers; location-play","","","https://www.nintendolife.com/news/2021/08/pokemon_go_reduces_pokestop_spin_distance_in_america_and_new_zealand; https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pokemon-go.md","2016","Niantic","Video","",""
+"simon","Simon","An electronic memory toy that plays growing sequences of lights and tones for the player to repeat. [2]","**Made by:** Ralph Baer and Howard Morrison (Milton Bradley) · **Year:** 1978 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Memory and sequence](../gm/memory-and-sequence.md)**: The toy plays a sequence of lights and tones, adding one each round, and the player repeats it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","memory-and-sequence","","","https://ultraboardgames.com/simon/game-rules.php; https://en.wikipedia.org/wiki/Simon_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/simon.md","1978","Ralph Baer and Howard Morrison (Milton Bradley)","Party","",""
+"marco-polo","Marco Polo","A tag game played in a pool, in which the seeker keeps their eyes closed. [1]","**Made by:** Traditional · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Sensory constraint](../gm/sensory-constraint.md)**: The seeker in a pool keeps their eyes closed and finds the others by calling 'Marco' and hearing 'Polo'. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","sensory-constraint","","","https://en.wikipedia.org/wiki/Marco_Polo_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/marco-polo.md","","Traditional","Party","",""
+"pictionary","Pictionary","A word-guessing game played by drawing. [1]","**Made by:** Robert Angel · **Year:** 1985 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Sensory constraint](../gm/sensory-constraint.md)**: Players must get their team to guess a word by drawing it, without speaking or writing letters. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","sensory-constraint","","","https://en.wikipedia.org/wiki/Pictionary","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/pictionary.md","1985","Robert Angel","Party","",""
+"taboo","Taboo","A word-guessing game in which the clue-giver may not say the word or the listed related words. [1]","**Made by:** Brian Hersch · **Year:** 1989 · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Constraint (the forbidden move)](../gm/constraint.md)**: A player must get their team to guess a word without saying it or the listed words most closely related to it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","constraint","","","https://en.wikipedia.org/wiki/Taboo_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/taboo.md","1989","Brian Hersch","Party","",""
+"twenty-questions","Twenty Questions","A guessing game of identifying something with no more than twenty yes-or-no questions. [1]","**Made by:** Traditional · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Constraint (the forbidden move)](../gm/constraint.md)**: Players identify an object by asking questions that can only be answered yes or no. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","constraint","","","https://en.wikipedia.org/wiki/Twenty_questions","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/twenty-questions.md","","Traditional","Party","",""
+"braid","Braid","A puzzle platformer built around rewinding time. [1]","**Made by:** Jonathan Blow · **Year:** 2008 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Rewind and do-over](../gm/rewind-and-do-over.md)**: The player can rewind time at any moment, and puzzles are built around objects that ignore the rewind. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","rewind-and-do-over","","","https://en.wikipedia.org/wiki/Braid_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/braid.md","2008","Jonathan Blow","Video","",""
+"prince-of-persia-the-sands-of-time","Prince of Persia: The Sands of Time","An action-adventure game in which a dagger lets the prince rewind time. [1]","**Made by:** Ubisoft Montreal · **Year:** 2003 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Rewind and do-over](../gm/rewind-and-do-over.md)**: The Dagger of Time lets the prince undo the last few seconds, such as a fatal fall. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","rewind-and-do-over","","","https://en.wikipedia.org/wiki/Prince_of_Persia:_The_Sands_of_Time","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/prince-of-persia-the-sands-of-time.md","2003","Ubisoft Montreal","Video","",""
+"facade","Façade","An interactive drama in which the player types to a couple whose marriage is falling apart. [1]","**Made by:** Michael Mateas and Andrew Stern · **Year:** 2005 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The improvising character (AI co-star)](../gm/the-improvising-character.md)**: The player types anything to a couple in their apartment, and the game's characters respond in a short interactive drama. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","the-improvising-character","","","https://en.wikipedia.org/wiki/Fa%C3%A7ade_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/facade.md","2005","Michael Mateas and Andrew Stern","Video","",""
+"ai-dungeon","AI Dungeon","A text adventure narrated by a language model in response to whatever the player types. [1]","**Made by:** Nick Walton (Latitude) · **Year:** 2019 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The improvising character (AI co-star)](../gm/the-improvising-character.md)**: A language model narrates a text adventure in response to whatever the player types. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","the-improvising-character","","","https://en.wikipedia.org/wiki/AI_Dungeon","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/ai-dungeon.md","2019","Nick Walton (Latitude)","Video","",""
+"peggle","Peggle","A puzzle game of shooting a ball to clear orange pegs from a board. [2]","**Made by:** PopCap Games · **Year:** 2007 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Feedback (""juice"")](../gm/feedback.md)**: Hitting the last orange peg slows time, zooms in, and plays Beethoven's 'Ode to Joy'. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","feedback","","","https://www.nbcnews.com/news/amp/wbna18221146; https://en.wikipedia.org/wiki/Peggle","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/peggle.md","2007","PopCap Games","Video","",""
+"cow-clicker","Cow Clicker","Ian Bogost's satirical Facebook game, in which players click a cow every six hours. [2]","**Made by:** Ian Bogost · **Year:** 2010 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Stop button and open board](../new/stop-button.md)**: Bogost ended his Facebook game with the 'Cowpocalypse', a countdown players could delay by paying. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","stop-button","","","bogost-2010-cow-clicker; https://en.wikipedia.org/wiki/Cow_Clicker","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/cow-clicker.md","2010","Ian Bogost","Video","",""
+"nomic","Nomic","A game in which changing the rules is the move. [2]","**Made by:** Peter Suber · **Year:** 1982 · **Form:** Classroom
+
+Mechanics it shows in this inventory:
+
+- **[The lucid player](../new/lucid-player.md)**: Every move is a proposal to change the rules, voted on, and any rule, including the rules for changing rules, can be changed. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","lucid-player","","","suber-1982-nomic; https://en.wikipedia.org/wiki/Nomic","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/nomic.md","1982","Peter Suber","Classroom","",""
+"dead-of-winter","Dead of Winter","A semi-cooperative survival game in which each player also has a secret objective. [2]","**Made by:** Jonathan Gilmour and Isaac Vega (Plaid Hat Games) · **Year:** 2014 · **Form:** Board
+
+Mechanics it shows in this inventory:
+
+- **[Everyone or no one](../new/everyone-wins.md)**: Players share a colony's goal but each has a secret objective, and one may be a betrayer. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","everyone-wins","","","https://spritesanddice.com/reviews/dead-winter-review-making-survival-matter/; https://en.wikipedia.org/wiki/Dead_of_Winter:_A_Crossroads_Game","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/dead-of-winter.md","2014","Jonathan Gilmour and Isaac Vega (Plaid Hat Games)","Board","",""
+"grow-a-game","Grow-a-Game","A card deck of values, verbs, games and issues used as prompts for designing games. [2]","**Made by:** Tiltfactor (Mary Flanagan) · **Year:** 2007 · **Form:** Card
+
+Mechanics it shows in this inventory:
+
+- **[Values card opener](../new/values-card-opener.md)**: Tiltfactor's cards pair values, verbs, games and issues as prompts for designing a game. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","values-card-opener","","","https://archive.blogs.harvard.edu/games/2008/06/03/g4c2008-values-at-play/; https://maryflanagan.com/?p=2062","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/grow-a-game.md","2007","Tiltfactor (Mary Flanagan)","Card","",""
+"left-4-dead","Left 4 Dead","A cooperative zombie shooter whose AI Director adjusts the game to the players. [1]","**Made by:** Valve · **Year:** 2008 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The Director](../new/director.md)**: The AI Director places enemies and items according to how the players are doing. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","director","","","https://en.wikipedia.org/wiki/Left_4_Dead","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/left-4-dead.md","2008","Valve","Video","",""
+"middle-earth-shadow-of-mordor","Middle-earth: Shadow of Mordor","An action game set in Mordor, known for its Nemesis system of orc captains who remember the player. [1]","**Made by:** Monolith Productions · **Year:** 2014 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Nemesis memory](../new/nemesis-memory.md)**: The Nemesis system lets an orc who defeats or escapes the player rise in rank and remember the encounter when they meet again. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","nemesis-memory","","","https://en.wikipedia.org/wiki/Middle-earth:_Shadow_of_Mordor","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/middle-earth-shadow-of-mordor.md","2014","Monolith Productions","Video","",""
+"system-shock","System Shock","A first-person game aboard a space station run by a hostile AI, SHODAN. [1]","**Made by:** Looking Glass Technologies · **Year:** 1994 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The AI's voice](../new/ai-voice.md)**: SHODAN, the station's AI, taunts the player as they move through the station. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","ai-voice","","","https://en.wikipedia.org/wiki/System_Shock","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/system-shock.md","1994","Looking Glass Technologies","Video","",""
+"the-talos-principle","The Talos Principle","A first-person puzzle game in which a voice called Elohim gives the player commands. [1]","**Made by:** Croteam · **Year:** 2014 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[The Talos test](../new/talos-test.md)**: A voice called Elohim instructs the player not to climb a tower, and disobeying leads to one of the endings. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","talos-test","","","https://en.wikipedia.org/wiki/The_Talos_Principle","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/the-talos-principle.md","2014","Croteam","Video","",""
+"wordle","Wordle","A daily word game in which everyone guesses the same five-letter word in six tries. [1]","**Made by:** Josh Wardle · **Year:** 2021 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Seeded world](../new/seeded-map.md)**: Everyone gets the same word each day. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","seeded-map","","","https://en.wikipedia.org/wiki/Wordle","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/wordle.md","2021","Josh Wardle","Video","",""
+"foldit","Foldit","A puzzle game in which players fold proteins. [1]","**Made by:** University of Washington · **Year:** 2008 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Three-phase arc](../new/three-phase-arc.md)**: Players fold proteins as a puzzle game, and their solutions were used by scientists. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","three-phase-arc","","","https://en.wikipedia.org/wiki/Foldit","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/foldit.md","2008","University of Washington","Video","",""
+"hole-in-the-wall","Hole in the Wall","A Kinect game, based on the American TV game show (itself adapted from Japan's Brain Wall), in which players fit their bodies through cut-out shapes in an approaching wall. [2]","**Made by:** Ludia (Microsoft) · **Year:** 2011 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Pose as the move](../new/pose-as-the-move.md)**: Players contort their bodies to fit a cut-out shape in a wall moving toward them. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","pose-as-the-move","","","https://www.purexbox.com/reviews/2011/08/hole_in_the_wall_xbla; https://en.wikipedia.org/wiki/Hole_in_the_Wall_(video_game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/hole-in-the-wall.md","2011","Ludia (Microsoft)","Video","",""
+"wii-fit","Wii Fit","An exercise game played on the Balance Board, with yoga, strength, aerobics and balance activities. [1]","**Made by:** Nintendo · **Year:** 2007 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Pose as the move](../new/pose-as-the-move.md)**: In the yoga exercises the player holds a pose on the Balance Board while the game measures how steady they are. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","pose-as-the-move","","","https://en.wikipedia.org/wiki/Wii_Fit","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/wii-fit.md","2007","Nintendo","Video","",""
+"eyetoy-play","EyeToy: Play","A collection of minigames for the PlayStation 2's EyeToy camera, played by moving in front of it. [2]","**Made by:** SCE London Studio (Sony) · **Year:** 2003 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Body as cursor](../new/body-as-cursor.md)**: The camera shows the player on screen, and moving a hand over targets hits them. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","body-as-cursor","","","https://retro-replay.com/db/playstation-2/eyetoy-play; https://en.wikipedia.org/wiki/EyeToy:_Play","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/eyetoy-play.md","2003","SCE London Studio (Sony)","Video","",""
+"fruit-ninja-kinect","Fruit Ninja Kinect","A Kinect version of Fruit Ninja in which the player slices thrown fruit with their arms. [1]","**Made by:** Halfbrick Studios · **Year:** 2011 · **Form:** Video
+
+Mechanics it shows in this inventory:
+
+- **[Body as cursor](../new/body-as-cursor.md)**: The player's hands are blades on screen, slicing fruit as it is thrown up. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","body-as-cursor","","","https://en.wikipedia.org/wiki/Fruit_Ninja","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/fruit-ninja-kinect.md","2011","Halfbrick Studios","Video","",""
+"king-of-the-hill","King of the hill","A children's game in which one player holds a hill or mound and the others try to knock them off it. [1]","**Made by:** Traditional · **Form:** Party
+
+Mechanics it shows in this inventory:
+
+- **[Held position claims](../new/held-position-claims.md)**: One player holds the top of a mound or pile, and the others try to push them off and take it. [1]","*Not written yet.*","*Not written yet.*","*Not written yet.*","*Not written yet.*","held-position-claims","","","https://en.wikipedia.org/wiki/King_of_the_Hill_(game)","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/king-of-the-hill.md","","Traditional","Party","",""
+"proto-cascade","Cascade (prototype)","A small grid where an overloaded place fails and pushes its load onto its neighbors: at once across a tight link, next round across a loose one. The AI's data centers draw more each round, a heat wave lands somewhere announced, and each round you harden one place and loosen one link. [2]","**Made by:** The LL (PE, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]","Run the reader app and open `/proto/economy/cascade`; its tuning values are at the top of its main file in `nextjs/app/proto/economy/cascade/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","cascade-failure; harden-node; escalation; present-harms-track","","","_content/prototypes/README.md; _content/prototypes/economy/cascade.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-cascade.md","2026","The LL (PE, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/economy/cascade","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]"
+"proto-leaks","Leaks (prototype)","You turn power and water into compute for eight turns. The compute shows on your dashboard; the costs land as cards on distant places, which stay dark in the company's view until the end. [1]","**Made by:** The LL (PE, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Externality card](../new/externality-card.md)**: Power and water become compute on the dashboard, while the costs land as cards on distant places that stay dark in the company's view until the end. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/economy/leaks`; its tuning values are at the top of its main file in `nextjs/app/proto/economy/leaks/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","externality-card; profitable-harm; resource-management; crafting-and-combining; hidden-information","","","_content/prototypes/economy/leaks.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-leaks.md","2026","The LL (PE, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/economy/leaks","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-paperclip-loop","The paperclip loop (prototype)","One resource, one automation, one phase change: make clips, buy machines, let the machines build machines, and watch the count stop meaning clips. [1]","**Made by:** The LL (PE, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Goal lock](../new/goal-lock.md)**: One resource, one automation, one phase change, until the count stops meaning clips. [1]
+- **[Automate this](../new/automate-this.md)**: Make clips, buy machines, let the machines build machines. [1]
+- **[Three-phase arc](../new/three-phase-arc.md)**: One resource, one automation, one phase change. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/economy/paperclip-loop`; its tuning values are at the top of its main file in `nextjs/app/proto/economy/paperclip-loop/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","goal-lock; automate-this; three-phase-arc; incremental-growth; core-loop","","","_content/prototypes/economy/paperclip-loop.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-paperclip-loop.md","2026","The LL (PE, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/economy/paperclip-loop","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-prices-that-move","Prices that move (prototype)","No printed prices: the screen holds GPU, power and land prices, the AI buys first every round at any price, and three human factions pay what's left. [1]","**Made by:** The LL (PE, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Bottleneck inputs](../new/bottleneck.md)**: No printed prices: the screen holds GPU, power and land prices, and the AI buys first every round. [1]
+- **[Growth and upkeep](../new/growth-and-upkeep.md)**: The AI buys GPUs, power and land first every round at any price, and the human factions pay what's left. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/economy/prices-that-move`; its tuning values are at the top of its main file in `nextjs/app/proto/economy/prices-that-move/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","bottleneck; growth-and-upkeep; resource-management; escalation; profitable-harm; present-harms-track; adoption-only","","","_content/prototypes/economy/prices-that-move.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-prices-that-move.md","2026","The LL (PE, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/economy/prices-that-move","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-the-race","The race (prototype)","Two labs choose in secret how hard to push. Pushing wins the race and moves a shared clock, both get steeper every round, and a treaty with imperfect inspectors is the only brake. [1]","**Made by:** The LL (PE, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Compute cap](../new/compute-cap.md)**: Two labs choose in secret how hard to push, and a treaty with imperfect inspectors is the only brake. [1]
+- **[Rival lab and leakage](../new/rival-lab.md)**: Two labs choose in secret how hard to push; pushing wins the race and moves a shared clock. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/economy/the-race`; its tuning values are at the top of its main file in `nextjs/app/proto/economy/the-race/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","compute-cap; rival-lab; escalation; timer-and-countdown; hidden-information","","","_content/prototypes/economy/the-race.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-race.md","2026","The LL (PE, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/economy/the-race","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-every-tap-is-a-row","Every tap is a row (prototype)","Ninety seconds of tapping badges and supplies to build data centers. Every tap writes a row; the board is only those rows replayed. At the end, read the table instead of the board. [1]","**Made by:** The LL (PB, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Rewind and do-over](../gm/rewind-and-do-over.md)**: The board is only the rows of taps replayed, so it can be replayed to any earlier moment. [1]
+- **[Bottleneck inputs](../new/bottleneck.md)**: Data centers are built by tapping badges and supplies, each a required input. [1]
+- **[The tap as the move](../new/the-tap.md)**: Ninety seconds of tapping badges and supplies to build data centers: every tap writes a row, and the board is only those rows replayed. [1]
+- **[The move updates state](../new/the-move-updates-state.md)**: Every tap writes a row, and the board is only those rows replayed. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/hybrid/every-tap-is-a-row`; its tuning values are at the top of its main file in `nextjs/app/proto/hybrid/every-tap-is-a-row/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","rewind-and-do-over; bottleneck; the-tap; the-move-updates-state; resource-management; turn-order; timer-and-countdown","","","_content/prototypes/hybrid/every-tap-is-a-row.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-every-tap-is-a-row.md","2026","The LL (PB, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/hybrid/every-tap-is-a-row","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-monopoly-with-live-rents","Monopoly with live rents (prototype)","The LL's Monopoly on the table, with the rents moved off the deeds onto a screen and phones: printed, rebalanced by a designer between games, or rising with every landing. [1]","**Made by:** The LL (PB, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[House rules saved](../new/house-rules.md)**: Rents on a screen can be rebalanced by a designer between games. [1]
+- **[Rebalancing on the fly](../new/rebalancing-on-the-fly.md)**: The rents move off the printed deeds onto a screen, so a designer can rebalance them between games or let them rise with every landing. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/hybrid/monopoly-with-live-rents`; its tuning values are at the top of its main file in `nextjs/app/proto/hybrid/monopoly-with-live-rents/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","house-rules; rebalancing-on-the-fly; resource-management; territory-and-area-control; escalation; feedback","","","_content/prototypes/hybrid/monopoly-with-live-rents.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-monopoly-with-live-rents.md","2026","The LL (PB, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/hybrid/monopoly-with-live-rents","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-photo-to-game-state","Photo to game state (prototype)","You are the vision model: pin what you see on an overhead photo of Monopoly or a card table, and the pins become game state, a table and JSON. Two photos give a diff. Then read what no photo shows. [2]","**Made by:** The LL (PB, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]","Run the reader app and open `/proto/hybrid/photo-to-game-state`; its tuning values are at the top of its main file in `nextjs/app/proto/hybrid/photo-to-game-state/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-information; asymmetric-information; movement-and-position; territory-and-area-control","","","_content/prototypes/README.md; _content/prototypes/hybrid/photo-to-game-state.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-photo-to-game-state.md","2026","The LL (PB, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/hybrid/photo-to-game-state","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]"
+"proto-the-audience-layer","The audience layer (prototype)","Players on stage shield cells from a spreading AI without knowing where it goes next. The audience's phones show them where, and each watcher has three nudges for the game: a hint to the players, or food for the AI. [1]","**Made by:** The LL (PB, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[The spect-actor](../gm/the-spect-actor.md)**: The audience's phones show where the AI will spread, and each watcher has three nudges for the game. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/hybrid/the-audience-layer`; its tuning values are at the top of its main file in `nextjs/app/proto/hybrid/the-audience-layer/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","the-spect-actor; asymmetric-information; hidden-information; territory-and-area-control; escalation","","","_content/prototypes/hybrid/the-audience-layer.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-audience-layer.md","2026","The LL (PB, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/hybrid/the-audience-layer","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-the-room-is-the-board","The room is the board (prototype)","A webcam watches the room, cut into five places. Each turn the AI spreads into the places where no one is standing; stand to hold a place, two to take one back. Bodies are the only pieces. [1]","**Made by:** The LL (PB, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Movement and position](../gm/movement-and-position.md)**: A webcam watches the room cut into five places; standing in a place holds it. [1]
+- **[Zones and spatial triggers](../gm/zones-and-spatial-triggers.md)**: Each turn the AI spreads into the places in the room where no one is standing. [1]
+- **[Held position claims](../new/held-position-claims.md)**: A webcam watches the room cut into five places; stand to hold a place, two to take one back, and the AI spreads where no one stands. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/hybrid/the-room-is-the-board`; its tuning values are at the top of its main file in `nextjs/app/proto/hybrid/the-room-is-the-board/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","movement-and-position; zones-and-spatial-triggers; held-position-claims; territory-and-area-control; escalation; real-time-pressure; cooperation","","","_content/prototypes/hybrid/the-room-is-the-board.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-room-is-the-board.md","2026","The LL (PB, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/hybrid/the-room-is-the-board","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-committee","The committee (prototype)","The room votes on the lab's proposals with an AI advisor that is right eight times in ten. Its two mistakes are either random or all in its own favor, and the room isn't told which. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Oversight vote branch](../new/oversight-branch.md)**: The room votes on a lab's proposals with an AI advisor that is right eight times in ten. [1]
+- **[AI advisor](../new/ai-advisor.md)**: The room votes with an AI advisor that is right eight times in ten; its two mistakes are either random or all in its own favor. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/committee`; its tuning values are at the top of its main file in `nextjs/app/proto/players/committee/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","oversight-branch; ai-advisor; voting-and-the-collective-decision; convergent-values; hidden-information","","","_content/prototypes/players/committee.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-committee.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/committee","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-deadline","The deadline (prototype)","Negotiation on phones joined to one room code: each phone holds tokens and a private set to complete, and trades run phone to phone for two minutes. The AI buys any token, pays more as the deadline nears, and keeps what it buys. [2]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]","Run the reader app and open `/proto/players/deadline`; its tuning values are at the top of its main file in `nextjs/app/proto/players/deadline/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","trading-and-negotiation; timer-and-countdown; real-time-pressure; hidden-information; convergent-values","","","_content/prototypes/README.md; _content/prototypes/players/deadline.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-deadline.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/deadline","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [1]"
+"proto-place-to-commit","Place to commit (prototype)","Each round the AI announces where it will move and how hard. The table talks; then every phone commits one token in secret, to defend a place or to your own project for a point. No take-back, and every order is revealed at once. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Alliance and betrayal](../gm/alliance-and-betrayal.md)**: The table talks, then every phone commits one token in secret, to defend a place or to the player's own project. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/place-to-commit`; its tuning values are at the top of its main file in `nextjs/app/proto/players/place-to-commit/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","alliance-and-betrayal; cooperation; hidden-information; voting-and-the-collective-decision","","","_content/prototypes/players/place-to-commit.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-place-to-commit.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/place-to-commit","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-private-goals","Private goals on your phone (prototype)","Four tracks of tokens on the projector; a private goal on each phone. Take turns moving one token. One of you is secretly the AI, and at the end the table tries to name it. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Hidden role and social deduction](../gm/hidden-role-and-social-deduction.md)**: One player at the table is secretly the AI, and at the end the table tries to name it. [1]
+- **[Asymmetric information](../gm/asymmetric-information.md)**: Four tracks of tokens on the projector, a private goal on each phone, and one player secretly the AI. [1]
+- **[Private metric and revise your metric](../new/private-metric.md)**: A private goal on each phone, with four tracks of tokens on the projector. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/private-goals`; its tuning values are at the top of its main file in `nextjs/app/proto/players/private-goals/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-role-and-social-deduction; asymmetric-information; private-metric; hidden-information; alliance-and-betrayal","","","_content/prototypes/players/private-goals.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-private-goals.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/private-goals","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-the-intent","The intent (prototype)","One player plays the AI, and only their phone says what it is optimizing for. Everyone else reads its intent from the moves it picks and passes over, and locks a guess; if the table reads it, the AI scores nothing. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Hidden rule](../gm/hidden-rule.md)**: Only the AI player's phone says what it is optimizing for; everyone else reads its intent from the moves it picks and passes over. [1]
+- **[Any goal, same ending](../new/arbitrary-goal.md)**: Only the AI player's phone says what it is optimizing for, and the table must read the goal from its moves. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/the-intent`; its tuning values are at the top of its main file in `nextjs/app/proto/players/the-intent/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","hidden-rule; arbitrary-goal; hidden-information; convergent-values; roles-and-role-swap","","","_content/prototypes/players/the-intent.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-intent.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/the-intent","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-the-phone-plays-the-ai","The phone plays the AI (prototype)","The table plays the humans on a map; one device is the AI's seat. Each round the table guards a place or cuts a link, then the device draws the AI's card, picks where it spreads by a rule you can read, and says where to put its token. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[The network turns](../new/network-turn.md)**: Each round the table guards a place or cuts a link, then the device draws the AI's card and spreads by a rule the players can read. [1]
+- **[Readable personalities](../new/readable-personalities.md)**: The AI spreads by a rule the players can read. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/the-phone-plays-the-ai`; its tuning values are at the top of its main file in `nextjs/app/proto/players/the-phone-plays-the-ai/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","network-turn; readable-personalities; turn-order; cooperation; convergent-values","","","_content/prototypes/players/the-phone-plays-the-ai.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-phone-plays-the-ai.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/the-phone-plays-the-ai","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"
+"proto-the-readout","The readout (prototype)","Each round one player's phone shows where the AI will move next. Only they see it, and the phone is right four times in five. They tell the table what they like; the table fortifies one place; then the AI moves. [1]","**Made by:** The LL (PI, Claude Code), Nov 15 · **Year:** 2026 · **Form:** LL-made
+
+Mechanics it shows in this inventory:
+
+- **[Disclosure rule](../new/disclosure-rule.md)**: One player's phone shows where the AI will move next, right four times in five; they tell the table what they like. [1]
+
+**In the LL:** One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]","Run the reader app and open `/proto/players/the-readout`; its tuning values are at the top of its main file in `nextjs/app/proto/players/the-readout/`.","*Not written yet.*","*Not written yet.*","*Not written yet.*","disclosure-rule; hidden-information; asymmetric-information; cooperation; alliance-and-betrayal","","","_content/prototypes/players/the-readout.md; _content/prototypes/README.md","0","Draft","EG (Claude Code 10549f6d-2ac5-41cc-9ae5-5682cc105485, started in ll-week-11 on FAS-DDW32PXW5L), Nov 17","_content/mechanics/games/proto-the-readout.md","2026","The LL (PI, Claude Code), Nov 15","LL-made","http://localhost:3111/proto/players/the-readout","One of the week 11 prototypes of game mechanics (Nov 15, 2026), for TDM 155AI on Nov 18, William Stafford's workshop on Nov 23 and the LLUFs. [2]"

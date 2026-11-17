@@ -1,0 +1,9 @@
+{
+  "format": "ll-learner-graph/0.1",
+  "topic": "A game is data (sample)",
+  "goal": ["p-a-save-is-the-state"],
+  "goalStatement": "Why a save file can bring a whole game back: the state is data, and the screen is drawn from it.",
+  "started": "2026-11-15",
+  "learner": "sample",
+  "note": "HB's stand-in for /learn until HD's worked example lands in starters/learning-harness/examples/. Written by Claude; not a student's graph."
+}
